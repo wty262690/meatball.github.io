@@ -1,0 +1,28 @@
+
+body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-color: rgb(255, 252, 228);
+}
+
+p {
+    color: rgb(76, 60, 60);
+}
+
+.dot{
+    margin-left:10vw;
+    width: 200px;
+    height: 200px;
+    background-image: url("image/head.gif");
+    mix-blend-mode: multiply;
+    border-radius: 50%;
+    display: inline-block;
+    background-position-x: -70px;
+    background-size: cover;
+}
+img{
+    mix-blend-mode: multiply;
+    width: 200px;
+}
