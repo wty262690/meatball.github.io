@@ -5,7 +5,8 @@ body {
     background-position: center;
     background-size: cover;
     background-color: rgb(255, 252, 228);
-    display: inline-block;
+    /*display: inline-block;*/
+
 }
 
 p, a {
@@ -37,4 +38,9 @@ img{
     mix-blend-mode: darken;
     width: 200px;
     float: left;
+}
+
+.message{
+    height:100px;
+    width:100px;
 }
