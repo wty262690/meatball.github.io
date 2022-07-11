@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Meatball Portfolio</title>
     <link href="css/writing.css" rel="stylesheet" type="text/css">
+    <script>
+        window.onload=function(){
+            var file = new XMLHttpRequest();
+            file.open("GET", "word/hero.txt", false);
+            file.onreadystatechange = function() {
+                if (file.readyState === 4) {
+                    var allText = file.responseText;
+                    document.getElementById("fileOutput").innerHTML = allText;
+                    }
+                }
+            file.send(null);
+            }
+    </script>
     </head>
     <body>
 		<nav class="menu">
@@ -19,5 +32,12 @@
             <a href="/programming.html" class="menu-item item"></a>
 			<a href="/index.html" class="back"></a>
 		</nav>
+        <input type="checkbox" class="story-open" name="story-open" id="story-open"/>
+        <label class="stroy-open-button" for="stroy-open">
+            <span class="story-title">英雄夢</span>
+            <span class="story-title">信念</span>
+            <span class="story-title">客總朝拜</span>
+        </label>
+        <div id="fileOutput" rows="15" cols="60"></div>
 	</body>
 </html>
