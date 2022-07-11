@@ -1,55 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head >
+	<head >
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Meatball Portfolio</title>
     <link href="css/int.css" rel="stylesheet" type="text/css">
     
     <script >
-      window.onload=function(){
+	window.onload=function(){
         var file = new XMLHttpRequest();
         file.open("GET", "word/introduciton.txt", false);
         file.onreadystatechange = function() {
-          if (file.readyState === 4) {
-            var allText = file.responseText;
-            document.getElementById("fileOutput").innerHTML = allText;
-          }
-        }
+			if (file.readyState === 4) {
+				var allText = file.responseText;
+				document.getElementById("fileOutput").innerHTML = allText;
+				}
+			}
         file.send(null);
-      }
+		}
     </script>
-  
-  </head>
-  <body>
+
+	</head>
+	<body>
 		<nav class="menu">
-      <input type="checkbox" class="menu-open" name="menu-open" id="menu-open"/>
-      <label class="menu-open-button" for="menu-open">
-        <span class="hamburger hamburger-1"></span>
-        <span class="hamburger hamburger-2"></span>
-        <span class="hamburger hamburger-3"></span>
-      </label>
-      <a href="/drawing.html" class="menu-item item"></a>
-      <a href="/int.html" class="menu-item item"></a>
-      <a href="/int.html" class="menu-item item"></a>
+			<input type="checkbox" class="menu-open" name="menu-open" id="menu-open"/>
+			<label class="menu-open-button" for="menu-open">
+				<span class="hamburger hamburger-1"></span>
+				<span class="hamburger hamburger-2"></span>
+				<span class="hamburger hamburger-3"></span>
+			</label>
+			<a href="/drawing.html" class="menu-item item"></a>
+			<a href="/int.html" class="menu-item item"></a>
+			<a href="/int.html" class="menu-item item"></a>
 			<a href="/index.html" class="back"></a>
 		</nav>
     <div class="profile">
-      <img src="image/head.gif" alt="meatball's profile picture" class= "head">
-      <div class="meatball">
-        <p class="meatballname">貢丸meatball</p>
-        <p class="annotation">-人生充滿了bug-</p>
-        <br>
-        <p class="introduction title">INTRODUCTION</p>
-        <div id="fileOutput" rows="15" cols="60"></div>
-        <p class="title">OTHER PAGES 繪圖|寫作|程式設計</p>
-        <a href="https://www.penana.com/user/44317/%E8%B2%A2%E4%B8%B8-%E7%B1%B3%E7%B2%89/portfolio">Penana</a>
-        <a href="https://www.pixiv.net/users/33021767">Pixiv</a>
-        <a href="https://openprocessing.org/user/239229?view=sketches&o=1">OpenProcessing</a>
-        <a href="https://github.com/wty262690">GitHub</a>
-      </div>
+		<img src="image/head.gif" alt="meatball's profile picture" class= "head">
+		<div class="meatball">
+			<p class="meatballname">貢丸meatball</p>
+			<p class="annotation">-人生充滿了bug-</p>
+			<br>
+			<p class="introduction title">INTRODUCTION</p>
+			<div id="fileOutput" rows="15" cols="60"></div>
+			<p class="title">OTHER PAGES 繪圖|寫作|程式設計</p>
+			<a href="https://www.penana.com/user/44317/%E8%B2%A2%E4%B8%B8-%E7%B1%B3%E7%B2%89/portfolio">Penana</a>
+			<a href="https://www.pixiv.net/users/33021767">Pixiv</a>
+			<a href="https://openprocessing.org/user/239229?view=sketches&o=1">OpenProcessing</a>
+			<a href="https://github.com/wty262690">GitHub</a>
+		</div>
     </div>
-
-  </body>
+	</body>
 </html>
 

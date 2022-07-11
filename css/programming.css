@@ -8,10 +8,6 @@ body {
     /*display: inline-block;*/
 }
 
-.profile{
-    width:80vw;
-}
-
 
 .menu, .back{
     position:absolute;
@@ -157,12 +153,4 @@ body {
     transform: translate3d(100px, 400px, 0);
 }
 
-.artwork{
-    background-image:url("https://i.imgur.com/iufIvoA.png");
-    /*background-image: url("https://raw.githubusercontent.com/wty262690/painting-image/main/traditionalart/S__28459013.jpg");
-    background-image: url("https://raw.githubusercontent.com/wty262690/painting-image/main/traditionalart/S__28459013.jpg");*/
-    background-size:contain;
-    width:100vw;
-    height:100vh;
-    max-height:100vh;
-}
+
