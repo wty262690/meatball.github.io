@@ -11,7 +11,7 @@ void setup(){
 }
 
 void draw(){
-  background(0);
+  background(255, 252, 228);
   DrawDot();
   MouseIn();  
 }

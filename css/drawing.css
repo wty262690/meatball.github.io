@@ -8,51 +8,10 @@ body {
     /*display: inline-block;*/
 }
 
-p, a , pre {
-    color: rgb(76, 60, 60);
-    font-size: 14px;
-    margin:0;
-    word-break: break-all;
-}
-
-pre {
-    white-space: pre-wrap;
-    word-wrap: break-word;
-}
-
 .profile{
     width:80vw;
 }
 
-.meatball{
-    width:30vw;
-    min-width: 100px;
-    float: left;
-    margin-top: 20px;
-}
-
-
-.meatballname{
-    font-size: 40px;
-}
-
-.annotation{
-    font-size: 12px;
-}
-
-
-.head{
-    mix-blend-mode: darken;
-    width: 50vw;
-    max-width: 500px;
-    min-width: 400px;
-    float: left;
-}
-
-.message{
-    height:100px;
-    width:100px;
-}
 
 .menu, .back{
     position:absolute;
