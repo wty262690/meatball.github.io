@@ -10,6 +10,8 @@
     
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/addons/p5.sound.min.js"></script>
     <script type="text/javascript" src="sockets/public/sketch.js"></script>
+    <script defer src=https://Unpkg.com/processing-js></script>
+    <canvas data-processing-sources="Brownian_Motion.pde ArrayQueue.pde"></canvas>
   </head>
   <body>
     <div class="profile">
@@ -17,32 +19,6 @@
     <a href="/sockets/public/index.html">sct</a>
     </div>
     <img src="image/icon.svg" alt="meatball's icon" class= "icon">
-    <script type="text/processing">
-      void setup() {
-        size(400,200);
-        textAlign(CENTER, CENTER);
-        background(0,0,100);
-        fill(255,230,75);
-        text("Processing.js", width/2, height/2);
-        noLoop();
-      }
-
-      void draw() {
-      }
-
-      void mouseMoved() {
-        stroke(255);
-        point(mouseX, mouseY);
-        redraw();
-      }
-
-      void mousePressed() {
-        line(0,mouseY,width,mouseY);
-        line(mouseX,0,mouseX,height);
-        println(mouseX, mouseY);
-      }
-    </script>
-    <canvas></canvas>
 
   </body>
 </html>
