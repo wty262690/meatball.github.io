@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Meatball Portfolio</title>
     <link href="css/programming.css" rel="stylesheet" type="text/css">
+    <script defer src=https://Unpkg.com/processing-js></script>	
+    <script type="text/processing" src="/js/processing.js"></script>
     </head>
     <body>
 		<nav class="menu">
@@ -19,5 +21,13 @@
             <a href="/programming.html" class="menu-item item"></a>
 			<a href="/index.html" class="back"></a>
 		</nav>
+        <div class="processing">
+            <canvas data-processing-sources="
+            sockets/OutsideTheWindow/OutsideTheWindow.pde 
+            sockets/OutsideTheWindow/pageclass.pde 
+            sockets/OutsideTheWindow/startwindow.pde 
+            sockets/OutsideTheWindow/comicwindow.pde 
+            sockets/ArrayQueue.pde" class="processing"></canvas>
+        </div>
 	</body>
 </html>
