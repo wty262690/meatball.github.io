@@ -4,9 +4,9 @@ SoundFile schoolbell, birdsound;
 boolean playschoolbell=false, playbirdsound=false;
 void comicset(){
   PAGE=new BP();
-  //birdsound = new SoundFile(this, "robin_brid_sound.wav");
+  //birdsound = new Audio(this, Path+"sound/robin_brid_sound.wav");
   //birdsound.amp(1);
-  //schoolbell = new SoundFile(this, "sound/schoolbell.wav");
+  //schoolbell = new Audio(this, Path+"sound/schoolbell.wav");
   //schoolbell.amp(0.05);
   buttonr=min(W,H)/15;
 }

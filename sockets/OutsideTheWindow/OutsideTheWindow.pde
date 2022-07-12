@@ -23,9 +23,8 @@ void setup(){
   printArray(PFont.list());
   textFont(createFont(PFont.list()[143],200));
   */
-	//startmusic = new SoundFile(this,"https://raw.githubusercontent.com/wty262690/OusideTheWindow/main/sound/KeysofMoon-CozyPlacecut.wav");
+	startmusic = new Audio(Path+"sound/KeysofMoon-CozyPlacecut.wav");
   //startmusic.amp(startmcvolume);
-	
   reset();  
 	imageMode(CORNERS);
   }
@@ -34,9 +33,21 @@ void setup(){
 void draw(){
 	background(255);
   if (video)  mousewheel+=wheelspeed/10;
-  /*
-  startmusic.amp(startmcvolume);//println(startmcvolume);
+  
+  //startmusic.amp(startmcvolume);//println(startmcvolume);
   if (!startmusic.isPlaying()){startmusic.loop();}
+  /*if (typeof startmusic.loop == 'boolean')
+  {
+      startmusic.loop = true;
+  }
+  else
+  {
+      startmusic.addEventListener('ended', function() {
+          this.currentTime = 0;
+          this.play();
+      }, false);
+  }
+  startmusic.play();
   */
 	if(frameCount<fadetime/2) {
 		fadeout(b);
