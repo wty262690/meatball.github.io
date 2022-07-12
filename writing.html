@@ -6,16 +6,26 @@
     <title>Meatball Portfolio</title>
     <link href="css/writing.css" rel="stylesheet" type="text/css">
     <script>
-        window.onload=function(){
-            var file = new XMLHttpRequest();
-            file.open("GET", "word/hero.txt", false);
-            file.onreadystatechange = function() {
-                if (file.readyState === 4) {
-                    var allText = file.responseText;
-                    document.getElementById("fileOutput").innerHTML = allText;
-                    }
+        function clicktitle(){
+            var radios = document.getElementsByName('story-open');
+                console.log(radios.length);
+                for (var i = 0, length = radios.length; i < length; i++) {
+                if (radios[i].checked) {
+                    console.log(radios[i].value);
+                    var file = new XMLHttpRequest();
+                    file.open("GET", "word/"+radios[i].value+".txt", false);
+                    file.onreadystatechange = function() {
+                        if (file.readyState === 4) {
+                            var allText = file.responseText;
+                            document.getElementById("fileOutput").innerHTML = allText;
+                            }
+                        }
+                    file.send(null);
+                    break;
                 }
-            file.send(null);
+            }
+        }
+        window.onload=function(){
             }
     </script>
     </head>
@@ -32,12 +42,14 @@
             <a href="/programming.html" class="menu-item item"></a>
 			<a href="/index.html" class="back"></a>
 		</nav>
-        <input type="checkbox" class="story-open" name="story-open" id="story-open"/>
-        <label class="stroy-open-button" for="stroy-open">
-            <span class="story-title">英雄夢</span>
-            <span class="story-title">信念</span>
-            <span class="story-title">客總朝拜</span>
-        </label>
+        
+        <input type="radio" class="story-open" name="story-open" id="story-open" value="hero" onclick="clicktitle()"/>
+        <span class="story-title">英雄夢</span>
+        <input type="radio" class="story-open" name="story-open" id="story-open" value="beleive" onclick="clicktitle()"/>
+        <span class="story-title">貫徹的信念</span>
+
+        <div class="story">
         <div id="fileOutput" rows="15" cols="60"></div>
-	</body>
+        </div>
+    </body>
 </html>
