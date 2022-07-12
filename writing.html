@@ -7,11 +7,15 @@
     <link href="css/writing.css" rel="stylesheet" type="text/css">
     <script>
         function clicktitle(){
-            var radios = document.getElementsByName('story-open');
-                console.log(radios.length);
-                for (var i = 0, length = radios.length; i < length; i++) {
+            var radios = document.getElementsByClassName('story-open');
+            var title = document.getElementById("title");
+
+            for (var i = 0, length = radios.length; i < length; i++) {
                 if (radios[i].checked) {
+                    var storytitle = document.getElementById(radios[i].value);
+                    title.innerHTML="<p>"+storytitle.textContent+"</p>";
                     console.log(radios[i].value);
+                    console.log(storytitle.textContent);
                     var file = new XMLHttpRequest();
                     file.open("GET", "word/"+radios[i].value+".txt", false);
                     file.onreadystatechange = function() {
@@ -42,13 +46,20 @@
             <a href="/programming.html" class="menu-item item"></a>
 			<a href="/index.html" class="back"></a>
 		</nav>
-        
-        <input type="radio" class="story-open" name="story-open" id="story-open" value="hero" onclick="clicktitle()"/>
-        <span class="story-title">英雄夢</span>
-        <input type="radio" class="story-open" name="story-open" id="story-open" value="beleive" onclick="clicktitle()"/>
-        <span class="story-title">貫徹的信念</span>
 
+        <div class="story-list">
+            <label class="story-open-button">
+                <input type="radio" class="story-open" name="story-open" id="story-open" value="hero" onclick="clicktitle()"/>
+                <span id="hero">英雄夢</span>
+            </label>
+            <label class="story-open-button">
+                <input type="radio" class="story-open" name="story-open" id="story-open" value="beleive" onclick="clicktitle()"/>
+                <span id="beleive">貫徹的信念</span>
+            </label>
+        </div>
+        
         <div class="story">
+        <div id="title"></div>
         <div id="fileOutput" rows="15" cols="60"></div>
         </div>
     </body>

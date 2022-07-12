@@ -1,14 +1,6 @@
+@import "main.css"; 
 
-body {
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    background-color: rgb(255, 252, 228);
-    /*display: inline-block;*/
-}
-
-p, a , pre {
+/*p, a , pre {
     color: rgb(76, 60, 60);
     font-size: 14px;
     margin:0;
@@ -18,7 +10,7 @@ p, a , pre {
 pre {
     white-space: pre-wrap;
     word-wrap: break-word;
-}
+}*/
 
 .profile{
     width:80vw;

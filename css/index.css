@@ -1,91 +1,15 @@
+@import "main.css"; 
 
-body {
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    background-color: rgb(255, 252, 228);
-    /*display: inline-block;*/
-}
 .icon{
     position:absolute;
     margin:0;
-    margin-left:10vw;
-    margin-top:0.5vw;
+    margin-left:5vw;
+    margin-top:0.6vw;
     left:0px;
     transition-duration: 2s;
     opacity: 1;
     background-color: rgb(255, 252, 228,0);
-    width:50%;
-}
-
-.profile{
-    width:80vw;
-}
-
-.menu {
-    position:absolute;
-    width:100vw;
-    margin:0;
-    margin-top:50px;
-    height: 20px;
-    box-sizing: border-box;
-    font-size: 20px;
-    z-index: 3;
-}
-
-.menu-open-button {
-    position: absolute;
-    right: 80px;
-    width: 20px;
-    height: 20px;
-    color: white;
-    transform: translate3d(0, 0, 0);
-    transition: transform ease-out 200ms;
-}
-
-.menu-item{  
-    opacity: 0;
-    height:100px;
-    width:400px;
-    position:fixed;
-    top:20vh;
-    left:5vw;
-    padding:10px;
-    padding-bottom:20px;
-    font-family:"normalc";
-    text-decoration-line: unset;
-    /*background-color:rgb(0, 255, 98);*/
-    background-size:contain;
-}
-.menu-open {
-    margin:0;
-    display: none;
-}
-
-.hamburger {
-    width: 200%;
-    height: 50%;
-    float:right;
-    display: block;
-    position: absolute;
-    transition: transform 200ms;
-    background-size:cover;
-}
-
-.hamburger-1 {
-    background-image:url("../image/hamburger-03.svg");
-    transform: translate3d(-7px, -10px, 0);
-}
-
-.hamburger-2 {
-    background-image:url("../image/hamburger-04.svg");
-    transform: translate3d(-7px, 0, 0);
-}
-
-.hamburger-3 {
-    background-image:url("../image/hamburger-04.svg");
-    transform: translate3d(-7px, 10px, 0);
+    width:70%;
 }
 
 
