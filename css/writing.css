@@ -7,7 +7,24 @@
     display:none;
 }
 
+.list-open{
+    display:none;
+}
+
+.list-open-button{
+    transition-duration:2s;
+    position:fixed;
+    width:2px;
+    left:0px;
+    margin:0px;
+    margin-top:50vh;
+}
+
 .list-open:checked ~ .story-list{
+    transition-duration:2s;
+    transform: translate3d(14vw, 0, 0);
+}
+.list-open:checked +label>.list-open-button{
     transition-duration:2s;
     transform: translate3d(14vw, 0, 0);
 }
@@ -25,7 +42,7 @@
     padding-top: 150px;
     width:90vw;
     letter-spacing:3px;
-    line-height: 24px;
+    line-height: 40px;
 }
 
 .title{
@@ -35,7 +52,7 @@
 
 .story-list{
     transition-duration:2s;
-    position: absolute;
+    position: fixed;
     font-size:25px;
     margin:0 auto;
     left:-12vw;
