@@ -6,6 +6,21 @@
     <title>Meatball Portfolio</title>
     <link href="css/writing.css" rel="stylesheet" type="text/css">
     <script>
+        function listopen(){
+            var open=document.getElementsByName("menu-open").checked;
+            console.log(open);
+            console.log("list");
+            if (open){
+                document.getElementsByName("menu-open").checked=false;
+            } 
+        }
+
+        function menuopen(){
+            var open=document.getElementsByName("list-open").checked;
+            console.log(document.getElementsByName("list-open").checked);
+            document.getElementsByName("list-open").checked=false;
+        }
+
         function clicktitle(){
             var radios = document.getElementsByClassName('story-open');
             var title = document.getElementById("title");
@@ -35,7 +50,7 @@
     </head>
     <body>
 		<nav class="menu">
-            <input type="checkbox" class="menu-open" name="menu-open" id="menu-open"/>
+            <input type="checkbox" class="menu-open" name="menu-open" id="menu-open" onclick="menuopen()"/>
             <label class="menu-open-button" for="menu-open">
                 <span class="hamburger hamburger-1"></span>
                 <span class="hamburger hamburger-2"></span>
@@ -48,7 +63,7 @@
 		</nav>
         
         <nav>
-        <input type="checkbox" class="list-open" name="list-open" id="list-open"/>
+        <input type="checkbox" class="list-open" name="list-open" id="list-open" onclick="listopen()"/>
         <label for="list-open">
             <span class="list-open-button">story list</span>
         </label>

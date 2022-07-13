@@ -43,7 +43,7 @@ a,a:hover,a:active,a:visited,a:link,a:focus{
 }
 
 .menu, .back{
-    position:absolute;
+    position:fixed;
     width:100vw;
     margin:0;
     margin-top:50px;
@@ -54,8 +54,8 @@ a,a:hover,a:active,a:visited,a:link,a:focus{
 }
 
 .back{
-    width:50px;
-    height:50px;
+    width:30px;
+    height:30px;
     margin-left:35px;
     margin-top:-15px;
     background-image: url("../image/back.svg");
@@ -64,10 +64,10 @@ a,a:hover,a:active,a:visited,a:link,a:focus{
 }
 
 .menu-open-button {
-    position: absolute;
-    right: 80px;
-    width: 20px;
-    height: 20px;
+    position: fixed;
+    right: 50px;
+    width: 15px;
+    height: 15px;
     color: white;
     transform: translate3d(0, 0, 0);
     transition: transform ease-out 200ms;
@@ -75,17 +75,13 @@ a,a:hover,a:active,a:visited,a:link,a:focus{
 
 .menu-item{  
     opacity: 0;
-    height:100px;
-    width:400px;
-    position:fixed;
-    top:20vh;
-    left:5vw;
-    padding:10px;
-    padding-bottom:20px;
+    height:50px;
+    width:150px;
+    position:absolute;
     font-family:"normalc";
-    text-decoration-line: unset;
-    background-size:contain;
+    background-size:cover;
 }
+
 .menu-open {
     margin:0;
     display: none;
@@ -98,12 +94,12 @@ a,a:hover,a:active,a:visited,a:link,a:focus{
     display: block;
     position: absolute;
     transition: transform 200ms;
-    background-size:cover;
+    background-size:contain;
 }
 
 .hamburger-1 {
     background-image:url("../image/hamburger-03.svg");
-    transform: translate3d(-7px, -10px, 0);
+    transform: translate3d(-7px, -7px, 0);
 }
 
 .hamburger-2 {
@@ -113,7 +109,7 @@ a,a:hover,a:active,a:visited,a:link,a:focus{
 
 .hamburger-3 {
     background-image:url("../image/hamburger-04.svg");
-    transform: translate3d(-7px, 10px, 0);
+    transform: translate3d(-7px, 7px, 0);
 }
 
 
@@ -126,4 +122,22 @@ a,a:hover,a:active,a:visited,a:link,a:focus{
 }
 .menu-open:checked + .menu-open-button .hamburger-3 {
     transform: translate3d(-8.5px, -2.5px, 0) rotate(-45deg);
+}
+
+.menu-open-button {
+    z-index: 2;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-duration: 400ms;
+    transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+    cursor: pointer;
+}
+
+.menu-open-button:hover{
+    transform: scale(1.4, 1.4) translate3d(0, 0, 0);
+}
+
+.menu-open:checked + .menu-open-button {
+    transition-timing-function: linear;
+    transition-duration: 200ms;
+    transform: scale(1, 1) translate3d(0, 0, 0);
 }
