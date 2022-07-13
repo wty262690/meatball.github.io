@@ -1,4 +1,17 @@
+html {
+    overflow: -moz-hidden-unscrollable;
+    height: 100%;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
 body {
+    -ms-overflow-style: none;
+    height: 100%;
+	width: calc(100vw + 18px);
+	overflow: auto;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -14,6 +27,11 @@ p, a , pre {
     margin:0 auto;
     white-space: pre-wrap;
     word-wrap: break-word;
+}
+
+@font-face {
+    font-family: titlefont;
+    src: url("font/03HomuraM-SemiLight-2.otf") format("opentype");
 }
 
 a,a:hover,a:active,a:visited,a:link,a:focus{
