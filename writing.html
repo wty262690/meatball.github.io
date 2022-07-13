@@ -21,7 +21,7 @@
                     file.onreadystatechange = function() {
                         if (file.readyState === 4) {
                             var allText = file.responseText;
-                            document.getElementById("fileOutput").innerHTML = allText;
+                            document.getElementById("fileOutput").innerHTML = "<br>"+allText+"<div class='buttom'></div>";
                             }
                         }
                     file.send(null);
@@ -63,12 +63,16 @@
                 <span id="Cthulhu">聖誕夜</span>
             </label>
             <div class="list-br"></div>
+            <label class="story-open-button">
+                <input type="radio" class="story-open" name="story-open" id="story-open" value="robot&human" onclick="clicktitle()"/>
+                <span id="robot&human">隔閡-固有色</span>
+            </label>
+            <div class="list-br"></div>
         </div>
         <div class="cover"></div>
         <div class="story">
         <div class="title" id="title"></div>
         <div id="fileOutput" rows="15" cols="60"></div>
         </div>
-        <div class="buttom"></div>
     </body>
 </html>
