@@ -16,6 +16,14 @@ p, a , pre {
     word-wrap: break-word;
 }
 
+a,a:hover,a:active,a:visited,a:link,a:focus{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    outline:none;
+    text-decoration: none;
+
+}
+
 .menu, .back{
     position:absolute;
     width:100vw;

@@ -1,10 +1,5 @@
 @import "main.css"; 
 
-.story{
-    margin:0 auto;
-    margin-top: 300px;
-    width:70vw;
-}
 
 .story-list{
     align-items:center;
@@ -15,6 +10,26 @@
 
 .story-open{
     display:none;
+}
+
+.story{
+    margin:0 auto;
+    margin-top: 300px;
+    width:70vw;
+}
+.title{
+    font-size:40px;
+}
+
+.line{
+    width:100%;
+    height:20px;
+    background-color:aqua;
+
+}
+
+sup{
+    font-size:7px;
 }
 
 .menu-open:checked + .menu-open-button .hamburger-1 {
