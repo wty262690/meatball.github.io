@@ -12,7 +12,7 @@
 }
 
 .list-open-button{
-    transition-duration:2s;
+    transition-duration:1s;
     position:fixed;
     width:2px;
     left:0px;
@@ -21,26 +21,22 @@
 }
 
 .list-open:checked ~ .story-list{
-    transition-duration:2s;
+    transition-duration:1s;
     transform: translate3d(14vw, 0, 0);
 }
 .list-open:checked +label>.list-open-button{
-    transition-duration:2s;
+    transition-duration:1s;
     transform: translate3d(14vw, 0, 0);
-}
-.list-open:checked ~ .story{
-    transition-duration:2s;
-    width:75vw;
-    padding-left:13vw;
 }
 
 .story{
-    transition-duration:2s;
+    transition-duration:1s;
     margin:0 auto;
     padding-bottom:20px;
-    padding-left:0vw;
+    padding-left:13vw;
+    padding-right:0vw;
     padding-top: 150px;
-    width:90vw;
+    width:75vw;
     letter-spacing:3px;
     line-height: 40px;
 }
@@ -51,7 +47,7 @@
 }
 
 .story-list{
-    transition-duration:2s;
+    transition-duration:1s;
     position: fixed;
     font-size:25px;
     margin:0 auto;

@@ -5,22 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Meatball Portfolio</title>
     <link href="css/writing.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-        function listopen(){
-            var open=document.getElementsByName("menu-open").checked;
-            console.log(open);
-            console.log("list");
-            if (open){
-                document.getElementsByName("menu-open").checked=false;
-            } 
-        }
-
-        function menuopen(){
-            var open=document.getElementsByName("list-open").checked;
-            console.log(document.getElementsByName("list-open").checked);
-            document.getElementsByName("list-open").checked=false;
-        }
-
+        function menuclick(){
+            console.log("click");
+            document.getElementById("story").style.color="blue";
+        };
         function clicktitle(){
             var radios = document.getElementsByClassName('story-open');
             var title = document.getElementById("title");
@@ -32,7 +22,7 @@
                     title.innerHTML+="<div class='line'></div>";
 
                     var file = new XMLHttpRequest();
-                    file.open("GET", "word/"+radios[i].value+".txt", false);
+                    file.open("GET", "word/"+radios[i].value+".txt");
                     file.onreadystatechange = function() {
                         if (file.readyState === 4) {
                             var allText = file.responseText;
@@ -40,61 +30,92 @@
                             }
                         }
                     file.send(null);
+                    window.scrollTo(0,0);
                     break;
                 }
             }
         }
-        window.onload=function(){
-            }
+        
     </script>
+        <script>
+            $(document).ready(function(){
+                var old=null;
+                $("input[name='menu-open']").each(function(){
+                    if(this.checked){
+                        old=this;
+                    }
+                    this.onclick=function(){
+                        if(this==old){
+                            this.checked=false;
+                            old=null;
+                            $(".story").css("width","90vw")
+                            $(".story").css("padding-left","0vw")
+                            $(".story").css("padding-right","0vw")
+                        } 
+                        else{
+                            old=this;
+                            $(".story").css("width","75vw")
+                            if (this.id=="menu-open"){
+                                $(".story").css("padding-left","0px")
+                                $(".story").css("padding-right","13vw")
+                            }
+                            else if (this.id=="list-open"){
+                                $(".story").css("padding-left","13vw")
+                                $(".story").css("padding-right","0px")
+                            }
+                        }
+                    }
+                });
+            });
+        </script>
     </head>
     <body>
 		<nav class="menu">
-            <input type="checkbox" class="menu-open" name="menu-open" id="menu-open" onclick="menuopen()"/>
+            <input type="radio" class="menu-open" name="menu-open" id="menu-open" aria-labelledby="menu" />
             <label class="menu-open-button" for="menu-open">
                 <span class="hamburger hamburger-1"></span>
                 <span class="hamburger hamburger-2"></span>
                 <span class="hamburger hamburger-3"></span>
             </label>
-            <a href="/drawing.html" class="menu-item item"></a>
-            <a href="/writing.html" class="menu-item item"></a>
-            <a href="/programming.html" class="menu-item item"></a>
-			<a href="/index.html" class="back"></a>
+            <a href="/drawing.html" class="menu-item item" aria-labelledby="menu-drawing"></a>
+            <a href="/writing.html" class="menu-item item" aria-labelledby="menu-writing"></a>
+            <a href="/programming.html" class="menu-item item" aria-labelledby="menu-programming"></a>
+			<a href="/index.html" class="back" aria-labelledby="back"></a>
 		</nav>
         
         <nav>
-        <input type="checkbox" class="list-open" name="list-open" id="list-open" onclick="listopen()"/>
-        <label for="list-open">
-            <span class="list-open-button">story list</span>
-        </label>
-        <div class="story-list title" >
-            <label class="story-open-button">
-                <input type="radio" class="story-open" name="story-open" id="story-open" value="hero" onclick="clicktitle()"/>
-                <span id="hero">英雄夢</span>
+            <input type="radio" class="list-open" name="menu-open" id="list-open" checked="checked" />
+            <label for="list-open">
+                <span class="list-open-button">story list</span>
             </label>
-            <div class="list-br"></div>
-            <label class="story-open-button">
-                <input type="radio" class="story-open" name="story-open" id="story-open" value="beleive" onclick="clicktitle()"/>
-                <span id="beleive">貫徹的信念</span>
-            </label>
-            <div class="list-br"></div>
-            <label class="story-open-button">
-                <input type="radio" class="story-open" name="story-open" id="story-open" value="Cthulhu" onclick="clicktitle()"/>
-                <span id="Cthulhu">克蘇魯-聖誕夜</span>
-            </label>
-            <div class="list-br"></div>
-            <label class="story-open-button">
-                <input type="radio" class="story-open" name="story-open" id="story-open" value="robot&human" onclick="clicktitle()"/>
-                <span id="robot&human">固有色</span>
-            </label>
-            <div class="list-br"></div>
-        </div>
-        
-        <div class="story">
-            <div class="cover"></div>
-            <div class="title" id="title"></div>
-            <div id="fileOutput" rows="15" cols="60"></div>
-        </div>
+            <div class="story-list title" >
+                <label class="story-open-button">
+                    <input type="radio" class="story-open" name="story-open" value="hero" onclick="clicktitle()"/>
+                    <span id="hero">英雄夢</span>
+                </label>
+                <div class="list-br"></div>
+                <label class="story-open-button">
+                    <input type="radio" class="story-open" name="story-open" value="beleive" onclick="clicktitle()"/>
+                    <span id="beleive">貫徹的信念</span>
+                </label>
+                <div class="list-br"></div>
+                <label class="story-open-button">
+                    <input type="radio" class="story-open" name="story-open" value="Cthulhu" onclick="clicktitle()"/>
+                    <span id="Cthulhu">克蘇魯-聖誕夜</span>
+                </label>
+                <div class="list-br"></div>
+                <label class="story-open-button">
+                    <input type="radio" class="story-open" name="story-open" value="robot&human" onclick="clicktitle()"/>
+                    <span id="robot&human">固有色</span>
+                </label>
+                <div class="list-br"></div>
+            </div>
+
+            <div class="story" id="story">
+                <div class="cover"></div>
+                <div class="title" id="title"></div>
+                <div id="fileOutput" rows="15" cols="60"></div>
+            </div>
         </nav>
 
     </body>
