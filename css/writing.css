@@ -101,22 +101,21 @@ sup{
 
 
 .menu-item{
-    right:0px;
+    text-align: right;
+    right:-75px;
+    width:13vw;
 }
 
 .menu-item:nth-child(3) {
     margin-top:40vh;
-    background-image:url("../image/tilte-drawing.svg");
     transition-duration: 1000ms;
 }
 .menu-item:nth-child(4) {
     margin-top:50vh;
-    background-image:url("../image/title-writing.svg");
     transition-duration: 900ms;
 }
 .menu-item:nth-child(5) {
     margin-top:60vh;
-    background-image:url("../image/title-programming.svg");
     transition-duration: 800ms;
 }
 
