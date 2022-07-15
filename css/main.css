@@ -76,6 +76,10 @@ a,a:hover,a:active,a:visited,a:link,a:focus{
     z-index:1;
 }
 
+.back:hover{
+    transform: scale(1.4, 1.4);
+}
+
 .menu-open-button {
     position: fixed;
     right: 50px;
