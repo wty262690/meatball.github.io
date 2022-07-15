@@ -7,37 +7,43 @@
     <link href="css/writing.css" rel="stylesheet" type="text/css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-        function menuclick(){
-            console.log("click");
-            document.getElementById("story").style.color="blue";
-        };
+        var oldstory=null;
         function clicktitle(){
             var radios = document.getElementsByClassName('story-open');
             var title = document.getElementById("title");
-
+            
             for (var i = 0, length = radios.length; i < length; i++) {
                 if (radios[i].checked) {
-                    var storytitle = document.getElementById(radios[i].value);
-                    title.innerHTML="<p class='title'>"+storytitle.textContent+"</p>"
-                    title.innerHTML+="<div class='line'></div>";
+                    if(radios[i]==oldstory){
+                        radios[i].checked=false;
+                        oldstory=null;
+                        title.innerHTML=""
+                        document.getElementById("fileOutput").innerHTML = "";
+                    }
+                    else{
+                        oldstory=radios[i];
+                        var storytitle = document.getElementById(radios[i].value);
+                        title.innerHTML="<p class='title'>"+storytitle.textContent+"</p>"
+                        title.innerHTML+="<div class='line'></div>";
 
-                    var file = new XMLHttpRequest();
-                    file.open("GET", "word/"+radios[i].value+".txt");
-                    file.onreadystatechange = function() {
-                        if (file.readyState === 4) {
-                            var allText = file.responseText;
-                            document.getElementById("fileOutput").innerHTML = "<br>"+allText+"<div class='buttom'></div>";
+                        var file = new XMLHttpRequest();
+                        file.open("GET", "word/"+radios[i].value+".txt");
+                        file.onreadystatechange = function() {
+                            if (file.readyState === 4) {
+                                var allText = file.responseText;
+                                document.getElementById("fileOutput").innerHTML = "<br>"+allText+"<div class='buttom'></div>";
+                                }
                             }
-                        }
-                    file.send(null);
-                    window.scrollTo(0,0);
-                    break;
+                        file.send(null);
+                        window.scrollTo(0,0);
+                        break;
+                    }
                 }
             }
         }
-        
     </script>
-        <script>
+    
+    <script>
             $(document).ready(function(){
                 var old=null;
                 $("input[name='menu-open']").each(function(){
@@ -67,7 +73,7 @@
                     }
                 });
             });
-        </script>
+    </script>
     </head>
     <body>
 		<nav class="menu">
@@ -101,12 +107,12 @@
                 <div class="list-br"></div>
                 <label class="story-open-button">
                     <input type="radio" class="story-open" name="story-open" value="Cthulhu" onclick="clicktitle()"/>
-                    <span id="Cthulhu">克蘇魯──聖誕夜</span>
+                    <span id="Cthulhu">克蘇魯&#x2015;聖誕夜</span>
                 </label>
                 <div class="list-br"></div>
                 <label class="story-open-button">
-                    <input type="radio" class="story-open" name="story-open" value="robot&human" onclick="clicktitle()"/>
-                    <span id="robot&human">固有色</span>
+                    <input type="radio" class="story-open" name="story-open" value="robothuman" onclick="clicktitle()"/>
+                    <span id="robothuman">固有色</span>
                 </label>
                 <div class="list-br"></div>
             </div>
