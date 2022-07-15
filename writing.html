@@ -44,36 +44,38 @@
     </script>
     
     <script>
-            $(document).ready(function(){
-                var old=null;
-                $("input[name='menu-open']").each(function(){
-                    if(this.checked){
+        $( window ).scroll(function() {
+            $( ".list-open-button" ).css( "background-position-y",-($(window).scrollTop())/20);
+        });
+        $(document).ready(function(){
+            var old=null;
+            $("input[name='menu-open']").each(function(){
+                if(this.checked){
+                    old=this;
+                }
+                this.onclick=function(){
+                    if(this==old){
+                        this.checked=false;
+                        old=null;
+                        $(".story").css("width","85vw")
+                        $(".story").css("padding-left","10px")
+                        $(".story").css("padding-right","0vw")
+                    } 
+                    else{
                         old=this;
-                    }
-                    this.onclick=function(){
-                        if(this==old){
-                            this.checked=false;
-                            old=null;
-                            $(".story").css("width","85vw")
-                            $(".story").css("padding-left","10px")
-                            $(".story").css("padding-right","0vw")
-                        } 
-                        else{
-                            old=this;
-                            $(".story").css("width","75vw")
-                            if (this.id=="menu-open"){
-                                $(".story").css("padding-left","0px")
-                                $(".story").css("padding-right","13vw")
-                            }
-                            else if (this.id=="list-open"){
-                                $(".story").css("padding-left","13vw")
-                                $(".story").css("padding-right","0px")
-
-                            }
+                        $(".story").css("width","75vw")
+                        if (this.id=="menu-open"){
+                            $(".story").css("padding-left","0px")
+                            $(".story").css("padding-right","13vw")
+                        }
+                        else if (this.id=="list-open"){
+                            $(".story").css("padding-left","13vw")
+                            $(".story").css("padding-right","0px")
                         }
                     }
-                });
+                }
             });
+        });
     </script>
     </head>
     <body>
@@ -93,7 +95,7 @@
         <nav class="nocopy">
             <input type="radio" class="list-open" name="menu-open" id="list-open" checked="checked" />
             <label for="list-open">
-                <span class="list-open-button list-button"></span>
+                <span class="list-open-button list-button" id="list-open-button"></span>
             </label>
             <div class="story-list title" >
                 <label class="story-open-button">
@@ -123,6 +125,7 @@
                 <div class="title" id="title"></div>
                 <div id="fileOutput" rows="15" cols="60"></div>
             </div>
+            <div id="output"></div>
         </nav>
 
     </body>
