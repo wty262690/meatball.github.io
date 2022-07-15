@@ -1,77 +1,63 @@
 @import "main.css"; 
-
-/*p, a , pre {
-    color: rgb(76, 60, 60);
-    font-size: 14px;
-    margin:0;
-    word-break: break-all;
-}
-
-pre {
-    white-space: pre-wrap;
-    word-wrap: break-word;
-}*/
-
+/*---biggest block---*/
 .profile{
+    margin:0 auto;
+    padding-top:100px;
     width:80vw;
 }
-
-.meatball{
-    width:30vw;
-    min-width: 100px;
-    float: left;
-    margin-top: 20px;
+.photoblock{
+    margin:0;
+    float:left;
+    text-align: center;
+    margin-top:70px;
+    margin-left:-40px;
+    width: calc(80vw - 100px);
+    max-width: 600px;
+    min-width:300px;
+}
+.wordblock{
+    padding-top:100px;
+    margin:0;
+    margin-top:65px;
+    float:left;
+    width: calc(40vw - 100px);
+    min-width:300px;
 }
 
+/*---word in photo block*/
+.annotation{
+    letter-spacing:10px;
+    font-size: 15px;
+
+}
+
+/*---word in word block*/
+
+.line{
+    height:30px;
+}
 
 .meatballname{
     font-size: 40px;
 }
 
-.annotation{
-    font-size: 12px;
+.introduction{
+    font-size: 20px;
 }
 
+#fileOutput{
+    letter-spacing:3px;
+    line-height: 34px;
+}
 
+/*---gif of head---*/
 .head{
     mix-blend-mode: darken;
-    width: 50vw;
-    max-width: 500px;
-    min-width: 400px;
+    width: calc(80vw - 100px);
+    min-width:300px;
+    max-width: 600px;
     float: left;
 }
-
-.message{
-    height:100px;
-    width:100px;
-}
-
-
-.hamburger {
-    width: 200%;
-    height: 50%;
-    float:right;
-    display: block;
-    position: absolute;
-    transition: transform 200ms;
-    background-size:cover;
-}
-
-.hamburger-1 {
-    background-image:url("../image/hamburger-03.svg");
-    transform: translate3d(-7px, -10px, 0);
-}
-
-.hamburger-2 {
-    background-image:url("../image/hamburger-04.svg");
-    transform: translate3d(-7px, 0, 0);
-}
-
-.hamburger-3 {
-    background-image:url("../image/hamburger-04.svg");
-    transform: translate3d(-7px, 10px, 0);
-}
-
 
 .menu-open:checked + .menu-open-button .hamburger-1 {
     transform: translate3d(-8.5px, -2.5px, 0) rotate(45deg);
