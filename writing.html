@@ -24,7 +24,7 @@
                         oldstory=radios[i];
                         var storytitle = document.getElementById(radios[i].value);
                         title.innerHTML="<p class='title'>"+storytitle.textContent+"</p>"
-                        title.innerHTML+="<div class='line'></div>";
+                        //title.innerHTML+="<div class='line'></div>";
 
                         var file = new XMLHttpRequest();
                         file.open("GET", "word/"+radios[i].value+".txt");
@@ -54,8 +54,8 @@
                         if(this==old){
                             this.checked=false;
                             old=null;
-                            $(".story").css("width","90vw")
-                            $(".story").css("padding-left","0vw")
+                            $(".story").css("width","85vw")
+                            $(".story").css("padding-left","10px")
                             $(".story").css("padding-right","0vw")
                         } 
                         else{
@@ -68,6 +68,7 @@
                             else if (this.id=="list-open"){
                                 $(".story").css("padding-left","13vw")
                                 $(".story").css("padding-right","0px")
+
                             }
                         }
                     }
@@ -92,7 +93,7 @@
         <nav class="nocopy">
             <input type="radio" class="list-open" name="menu-open" id="list-open" checked="checked" />
             <label for="list-open">
-                <span class="list-open-button">story list</span>
+                <span class="list-open-button list-button"></span>
             </label>
             <div class="story-list title" >
                 <label class="story-open-button">

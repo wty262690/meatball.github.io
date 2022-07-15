@@ -52,20 +52,24 @@ a,a:hover,a:active,a:visited,a:link,a:focus{
 }
 
 .menu, .back{
+    background-color:rgb(255, 252, 228);
     position:fixed;
     width:100vw;
     margin:0;
-    margin-top:50px;
     height: 20px;
     box-sizing: border-box;
     font-size: 20px;
     z-index: 3;
 }
+.menu{
+    padding-top:40px;
+    padding-bottom:40px;
+}
 
 .back{
     width:30px;
     height:30px;
-    margin-left:35px;
+    margin-left:1vw;
     margin-top:-15px;
     background-image: url("../image/back.svg");
     background-size: cover;
