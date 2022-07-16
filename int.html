@@ -8,6 +8,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script >
 	window.onload=function(){
+		if ($(window).width()*(80/100)>=$(".photoblock").width()+$(".wordblock").width()){
+				$(".photoblock").css("float","left");
+			}
+		else{
+				$(".photoblock").css("float","none");
+		}
+
         var file = new XMLHttpRequest();
         file.open("GET", "word/introduciton.txt", false);
         file.onreadystatechange = function() {
@@ -19,36 +26,18 @@
         file.send(null);
 		}
     </script>
-
 	<script>
-		$(document).ready(function(){
-			var old=null;
-			$("input[name='menu-open']").each(function(){
-				if(this.checked){
-					old=this;
-				}
-				this.onclick=function(){
-					if(this==old){
-						this.checked=false;
-						old=null;
-						/*$(".story").css("width","85vw")
-						$(".story").css("padding-left","10px")
-						$(".story").css("padding-right","0vw")*/
-					} 
-					else{
-						old=this;
-						/*$(".story").css("width","75vw")
-						if (this.id=="menu-open"){
-							$(".story").css("padding-left","0px")
-							$(".story").css("padding-right","13vw")
-						}
-						else if (this.id=="list-open"){
-							$(".story").css("padding-left","13vw")
-							$(".story").css("padding-right","0px")
-						}*/
-					}
-				}
-			});
+		$(window).resize(function(){
+			if ($(window).width()*(80/100)>=$(".photoblock").width()+$(".wordblock").width()){
+				$(".photoblock").css("float","left");
+				$(".wordblock").css("float","left");
+				$(".wordblock").css("width","45vw");
+			}
+			else{
+				$(".photoblock").css("float","none");
+				$(".wordblock").css("float","none");
+				//$(".wordblock").css("width","60vw");
+			}
 		});
 	</script>
 
@@ -61,23 +50,23 @@
 				$('.menu').load('menu.html');
 			});
 		</script>
-    <div class="profile">
-		<div class="photoblock">
-			<img src="image/head.gif" alt="meatball's profile picture" class= "head">
-			<p class="annotation title">-人生充滿了bug-</p>
+    	<div class="profile">
+			<div class="photoblock">
+				<img src="image/head.gif" alt="meatball's profile picture" class= "head">
+				<p class="annotation">-人生充滿了bug-</p>
+			</div>
+			<div class="wordblock">
+				<p class="meatballname title">貢丸meatball</p>
+				<div class="line"></div>
+				<br>
+				<p class="introduction title">INTRODUCTION</p>
+				<div id="fileOutput"></div>
+				<a href="https://www.penana.com/user/44317/%E8%B2%A2%E4%B8%B8-%E7%B1%B3%E7%B2%89/portfolio">Penana</a>
+				<a href="https://www.pixiv.net/users/33021767">Pixiv</a>
+				<a href="https://openprocessing.org/user/239229?view=sketches&o=1">OpenProcessing</a>
+				<a href="https://github.com/wty262690">GitHub</a>
+			</div>
 		</div>
-		<div class="wordblock">
-			<p class="meatballname title">貢丸meatball</p>
-			<div class="line"></div>
-			<br>
-			<p class="introduction title">INTRODUCTION</p>
-			<div id="fileOutput"></div>
-			<a href="https://www.penana.com/user/44317/%E8%B2%A2%E4%B8%B8-%E7%B1%B3%E7%B2%89/portfolio">Penana</a>
-			<a href="https://www.pixiv.net/users/33021767">Pixiv</a>
-			<a href="https://openprocessing.org/user/239229?view=sketches&o=1">OpenProcessing</a>
-			<a href="https://github.com/wty262690">GitHub</a>
-		</div>
-    </div>
 	</body>
 </html>
 
