@@ -49,10 +49,23 @@
     line-height: 34px;
 }
 
+.webiconblock{
+    text-align: center;
+    width:100%;
+    height:50px;    
+}
+.webiconblock span{
+    white-space:nowrap;
+}
+.webicon{
+    padding:10px;
+    height:100%;
+    
+}
+
 /*---gif of head---*/
 .head{
     mix-blend-mode: darken;
     width: 100%;
     float: left;
 }
-

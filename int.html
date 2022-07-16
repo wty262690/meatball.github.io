@@ -9,10 +9,13 @@
     <script >
 	window.onload=function(){
 		if ($(window).width()*(80/100)>=$(".photoblock").width()+$(".wordblock").width()){
-				$(".photoblock").css("float","left");
-			}
+			$(".photoblock").css("float","left");
+			$(".wordblock").css("float","left");
+			$(".wordblock").css("width","45vw");
+		}
 		else{
-				$(".photoblock").css("float","none");
+			$(".photoblock").css("float","none");
+			$(".wordblock").css("float","none");
 		}
 
         var file = new XMLHttpRequest();
@@ -36,7 +39,6 @@
 			else{
 				$(".photoblock").css("float","none");
 				$(".wordblock").css("float","none");
-				//$(".wordblock").css("width","60vw");
 			}
 		});
 	</script>
@@ -61,10 +63,20 @@
 				<br>
 				<p class="introduction title">INTRODUCTION</p>
 				<div id="fileOutput"></div>
-				<a href="https://www.penana.com/user/44317/%E8%B2%A2%E4%B8%B8-%E7%B1%B3%E7%B2%89/portfolio">Penana</a>
-				<a href="https://www.pixiv.net/users/33021767">Pixiv</a>
-				<a href="https://openprocessing.org/user/239229?view=sketches&o=1">OpenProcessing</a>
-				<a href="https://github.com/wty262690">GitHub</a>
+				<nav class="webiconblock">
+					<a href="https://www.penana.com/user/44317/%E8%B2%A2%E4%B8%B8-%E7%B1%B3%E7%B2%89/portfolio">
+						<span>繪圖</span>
+						<img src="image/png/webicon-15.png" class="webicon">
+					</a>
+					<a href="https://www.pixiv.net/users/33021767">
+						<span>寫作</span>
+						<img src="image/png/webicon-14.png" class="webicon">
+					</a>
+					<a href="https://github.com/wty262690">
+						<span>程式設計</span>
+						<img src="image/png/webicon-16.png" class="webicon">
+					</a>
+				</nav>
 			</div>
 		</div>
 	</body>
