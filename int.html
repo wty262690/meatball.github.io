@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Meatball Portfolio</title>
     <link href="css/int.css" rel="stylesheet" type="text/css">
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script >
 	window.onload=function(){
         var file = new XMLHttpRequest();
@@ -20,20 +20,47 @@
 		}
     </script>
 
+	<script>
+		$(document).ready(function(){
+			var old=null;
+			$("input[name='menu-open']").each(function(){
+				if(this.checked){
+					old=this;
+				}
+				this.onclick=function(){
+					if(this==old){
+						this.checked=false;
+						old=null;
+						/*$(".story").css("width","85vw")
+						$(".story").css("padding-left","10px")
+						$(".story").css("padding-right","0vw")*/
+					} 
+					else{
+						old=this;
+						/*$(".story").css("width","75vw")
+						if (this.id=="menu-open"){
+							$(".story").css("padding-left","0px")
+							$(".story").css("padding-right","13vw")
+						}
+						else if (this.id=="list-open"){
+							$(".story").css("padding-left","13vw")
+							$(".story").css("padding-right","0px")
+						}*/
+					}
+				}
+			});
+		});
+	</script>
+
 	</head>
 	<body>
-		<nav class="menu">
-			<input type="checkbox" class="menu-open" name="menu-open" id="menu-open"/>
-			<label class="menu-open-button" for="menu-open">
-				<span class="hamburger hamburger-1"></span>
-				<span class="hamburger hamburger-2"></span>
-				<span class="hamburger hamburger-3"></span>
-			</label>
-			<a href="/drawing.html" class="menu-item item"></a>
-			<a href="/int.html" class="menu-item item"></a>
-			<a href="/int.html" class="menu-item item"></a>
-			<a href="/index.html" class="back"></a>
+		<nav class="menu nocopy">
 		</nav>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('.menu').load('menu.html');
+			});
+		</script>
     <div class="profile">
 		<div class="photoblock">
 			<img src="image/head.gif" alt="meatball's profile picture" class= "head">

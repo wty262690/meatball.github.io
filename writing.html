@@ -79,18 +79,14 @@
     </script>
     </head>
     <body>
-		<nav class="menu nocopy">
-            <input type="radio" class="menu-open" name="menu-open" id="menu-open" aria-labelledby="menu" />
-            <label class="menu-open-button" for="menu-open">
-                <span class="hamburger hamburger-1"></span>
-                <span class="hamburger hamburger-2"></span>
-                <span class="hamburger hamburger-3"></span>
-            </label>
-            <a href="/drawing.html" class="menu-item item" aria-labelledby="menu-drawing">繪圖</a>
-            <a href="/writing.html" class="menu-item item" aria-labelledby="menu-writing">寫作</a>
-            <a href="/programming.html" class="menu-item item" aria-labelledby="menu-programming">程式設計</a>
-			<a href="/index.html" class="back" aria-labelledby="back"></a>
+        <nav class="menu nocopy">
 		</nav>
+		<script type="text/javascript">
+			//在js中引入
+			$(document).ready(function () {
+				$('.menu').load('menu.html');
+			});
+		</script>
         
         <nav class="nocopy">
             <input type="radio" class="list-open" name="menu-open" id="list-open" checked="checked" />
