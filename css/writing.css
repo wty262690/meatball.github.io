@@ -1,5 +1,4 @@
 @import "main.css"; 
-@import "menu.css"; 
 
 /*--story--*/
 .story{
@@ -104,45 +103,4 @@ sup{
 .list-open:checked +label>.list-open-button{
     transform: translate3d(calc(14vw - 4px), 0, 0);
 }
-
-
-.menu-item{
-    text-align: right;
-    right:-75px;
-    width:13vw;
-}
-
-.menu-item:nth-child(3) {
-    margin-top:40vh;
-    transition-duration: 1000ms;
-}
-.menu-item:nth-child(4) {
-    margin-top:50vh;
-    transition-duration: 900ms;
-}
-.menu-item:nth-child(5) {
-    margin-top:60vh;
-    transition-duration: 800ms;
-}
-
-.menu-open:checked ~ .menu-item { 
-    transition-duration: 1000ms;
-    opacity: 1;
-    transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
-    align-items: center;
-    transform: translate3d(-100px, 0px, 0);
-}
-
-.menu-open:checked ~ .menu-item:nth-child(3) {
-    transition-duration: 1000ms;
-}
-
-.menu-open:checked ~ .menu-item:nth-child(4) {
-    transition-duration: 1200ms;
-}
-
-.menu-open:checked ~ .menu-item:nth-child(5) {
-    transition-duration: 1400ms;
-}
-
 

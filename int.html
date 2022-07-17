@@ -8,14 +8,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script >
 	window.onload=function(){
-		if ($(window).width()*(80/100)>=$(".photoblock").width()+$(".wordblock").width()){
+		if ($(window).width()>=450){
 			$(".photoblock").css("float","left");
+			$(".photoblock").css("width","45vw");
 			$(".wordblock").css("float","left");
 			$(".wordblock").css("width","45vw");
 		}
 		else{
+			$(".photoblock").css("width","80vw");
 			$(".photoblock").css("float","none");
 			$(".wordblock").css("float","none");
+			$(".wordblock").css("width","80vw");
 		}
 
         var file = new XMLHttpRequest();
@@ -31,14 +34,17 @@
     </script>
 	<script>
 		$(window).resize(function(){
-			if ($(window).width()*(80/100)>=$(".photoblock").width()+$(".wordblock").width()){
+			if ($(window).width()>=450){
 				$(".photoblock").css("float","left");
+				$(".photoblock").css("width","45vw");
 				$(".wordblock").css("float","left");
 				$(".wordblock").css("width","45vw");
 			}
 			else{
+				$(".photoblock").css("width","80vw");
 				$(".photoblock").css("float","none");
 				$(".wordblock").css("float","none");
+				$(".wordblock").css("width","80vw");
 			}
 		});
 	</script>
@@ -64,11 +70,11 @@
 				<p class="introduction title">INTRODUCTION</p>
 				<div id="fileOutput"></div>
 				<nav class="webiconblock">
-					<a href="https://www.penana.com/user/44317/%E8%B2%A2%E4%B8%B8-%E7%B1%B3%E7%B2%89/portfolio">
+					<a href="https://www.pixiv.net/users/33021767">
 						<span>繪圖</span>
 						<img src="image/png/webicon-15.png" class="webicon">
 					</a>
-					<a href="https://www.pixiv.net/users/33021767">
+					<a href="https://www.penana.com/user/44317/%E8%B2%A2%E4%B8%B8-%E7%B1%B3%E7%B2%89/portfolio">
 						<span>寫作</span>
 						<img src="image/png/webicon-14.png" class="webicon">
 					</a>

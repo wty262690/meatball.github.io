@@ -1,5 +1,5 @@
 @import "main.css"; 
-@import "menu.css"; 
+
 /*---biggest block---*/
 .profile{
     margin:0 auto;
@@ -12,6 +12,7 @@
     text-align: center;
     margin-top:70px;
     width: 40vw;
+    min-width:200px;
     max-width: 600px;
 }
 .wordblock{
