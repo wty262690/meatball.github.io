@@ -11,12 +11,14 @@
 		if ($(window).width()*(40/100)>=400){
 				$(".photoblock").css("float","left");
 				$(".photoblock").css("width","40vw");
+				//$(".photoblock").css("margin-left","-50px");
 				$(".wordblock").css("float","left");
 				$(".wordblock").css("width","40vw");
 				$(".webiconblock").css("text-align","left");
 			}
 			else{
 				$(".photoblock").css("width","80vw");
+				//$(".photoblock").css("margin-left","0 auto");
 				$(".photoblock").css("float","none");
 				$(".wordblock").css("float","none");
 				$(".wordblock").css("width","80vw");
@@ -39,18 +41,23 @@
 			if ($(window).width()*(40/100)>=400){
 				$(".photoblock").css("float","left");
 				$(".photoblock").css("width","40vw");
+				$(".profile").css("margin-left","7vw");
 				$(".wordblock").css("float","left");
 				$(".wordblock").css("width","40vw");
-				$(".webiconblock").css("display","block");
 				$(".webiconblock").css("text-align","left");
+				$(".illustration").css("width","40vw");
+				$(".illustration").css("position","absolute");
 			}
 			else{
 				$(".photoblock").css("width","80vw");
 				$(".photoblock").css("float","none");
+				$(".profile").css("margin-left","auto");
 				$(".wordblock").css("float","none");
 				$(".wordblock").css("width","80vw");
-				$(".webiconblock").css("display","normal");
 				$(".webiconblock").css("text-align","center");
+				$(".illustration").css("width","80vw");
+				$(".illustration").css("position","relative");
+
 			}
 		});
 	</script>
@@ -90,6 +97,9 @@
 					</a>
 				</nav>
 			</div>
+		</div>
+		<div class="illustration">
+			<img class="ill-item" src="/image/int-readbook.gif">
 		</div>
 	</body>
 </html>
