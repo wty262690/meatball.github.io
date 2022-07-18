@@ -2,6 +2,7 @@
 
 /*---biggest block---*/
 .profile{
+    transition: 500ms;
     margin:0 auto;
     padding-top:100px;
     margin-left:6vw;
@@ -10,15 +11,14 @@
 .photoblock{
     float:left;
     margin:0 auto;
-    /*margin-left:-60px;*/
     text-align: center;
-    margin-top:70px;
+    margin-top:min(10vw,70px);
     width: 40vw;
 }
 .wordblock{
     padding-top:45px;
     margin:0 auto;
-    margin-top:65px;
+    margin-top:min(5vw,60px);
     float:left;
     width: 40vw;
 }
@@ -86,6 +86,7 @@
 
 /*---illustration---*/
 .illustration{
+    transition: right 500ms;
     position:relative;
     margin-left:20vw;
     margin-top:60px;
