@@ -6,9 +6,9 @@
     <title>Meatball Portfolio</title>
     <link href="css/int.css" rel="stylesheet" type="text/css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+	<script src="js/p5.js"></script>
+	<script src="js/sketch.js"></script>
     <script >
-	
 	function resize() {
 		var radios = document.getElementsByClassName('menu-open');
 		if ($(window).width()*(40/100)>=400){
@@ -94,7 +94,8 @@
 			</div>
 		</div>
 		<div class="illustration">
-			<img class="ill-item" src="/image/int-readbook.gif">
+			<!--<img class="ill-item" src="/image/int-readbook.gif">-->
+			<div id="canvasForHTML"></div>
 		</div>
 	</body>
 </html>
