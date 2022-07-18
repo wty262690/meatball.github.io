@@ -6,23 +6,20 @@
 		<title>Meatball Portfolio</title>
 		<link href="css/index.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script defer src=https://Unpkg.com/processing-js></script>	
 	</head>
 	<body>
-    <nav class="menu">
-		<input type="checkbox" class="menu-open" name="menu-open" id="menu-open"/>
-			<label class="menu-open-button" for="menu-open">
-				<span class="hamburger hamburger-1"></span>
-				<span class="hamburger hamburger-2"></span>
-				<span class="hamburger hamburger-3"></span>
-			</label>
+		<nav class="menu nocopy">
+		</nav>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('.menu').load('menu.html');
+			});
+		</script>
 		<a href="/int.html" class="icon"><img src="image/icon.svg" alt="meatball's icon" class= "icon"></a>
-		<a href="/drawing.html" class="menu-item item"></a>
-		<a href="/writing.html" class="menu-item item"></a>
-		<a href="/programming.html" class="menu-item item"></a>
-	</nav>
-    <div class="processing">
-		<canvas data-processing-sources="sockets/Brownian_Motion.pde sockets/ArrayQueue.pde" class="processing"></canvas>
-    </div>
+		<div class="processing">
+			<!--<canvas data-processing-sources="sockets/Brownian_Motion.pde sockets/ArrayQueue.pde" class="processing"></canvas>-->
+		</div>
 	</body>
 </html>

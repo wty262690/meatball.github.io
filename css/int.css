@@ -2,11 +2,11 @@
 
 /*---biggest block---*/
 .profile{
-    transition: 500ms;
     margin:0 auto;
     padding-top:100px;
     margin-left:6vw;
     width:80vw;
+    transition: 500ms;
 }
 .photoblock{
     float:left;

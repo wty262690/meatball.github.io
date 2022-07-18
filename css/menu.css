@@ -1,4 +1,3 @@
-@import "main.css"; 
 
 .menu, .back{
     background-color:rgb(255, 252, 228);
@@ -109,10 +108,9 @@
 /*---menu item---*/
 
 .item{  
-    display:normal;
     opacity: 0;
     height:50px;
-    position:fixed;
+    position:absolute;
     font-family:"titlefont";
     font-size: 20px;
     background-size:cover;
@@ -123,16 +121,21 @@
 
 
 .menu-item a:nth-child(1) {
-    margin-top:40vh;
+    margin-top:50vh;
     transition-duration: 1000ms;
 }
 .menu-item a:nth-child(2) {
-    margin-top:50vh;
+    margin-top:60vh;
     transition-duration: 900ms;
 }
 .menu-item a:nth-child(3) {
-    margin-top:60vh;
+    margin-top:70vh;
     transition-duration: 800ms;
+}
+
+.menu-item a:nth-child(4) {
+    margin-top:80vh;
+    transition-duration: 700ms;
 }
 
 .menu-open:checked ~ .menu-item a { 
@@ -155,3 +158,8 @@
 .menu-open:checked ~ .menu-item a:nth-child(3) {
     transition-duration: 1400ms;
 }
+
+.menu-open:checked ~ .menu-item a:nth-child(4) {
+    transition-duration: 1600ms;
+}
+
