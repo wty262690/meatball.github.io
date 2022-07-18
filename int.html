@@ -7,41 +7,11 @@
     <link href="css/int.css" rel="stylesheet" type="text/css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script >
-	window.onload=function(){
+	function resize() {
 		if ($(window).width()*(40/100)>=400){
 				$(".photoblock").css("float","left");
 				$(".photoblock").css("width","40vw");
-				//$(".photoblock").css("margin-left","-50px");
-				$(".wordblock").css("float","left");
-				$(".wordblock").css("width","40vw");
-				$(".webiconblock").css("text-align","left");
-			}
-			else{
-				$(".photoblock").css("width","80vw");
-				//$(".photoblock").css("margin-left","0 auto");
-				$(".photoblock").css("float","none");
-				$(".wordblock").css("float","none");
-				$(".wordblock").css("width","80vw");
-				$(".webiconblock").css("text-align","center");
-			}
-
-        var file = new XMLHttpRequest();
-        file.open("GET", "word/introduciton.txt", false);
-        file.onreadystatechange = function() {
-			if (file.readyState === 4) {
-				var allText = file.responseText;
-				document.getElementById("fileOutput").innerHTML = allText;
-				}
-			}
-        file.send(null);
-		}
-    </script>
-	<script>
-		$(window).resize(function(){
-			if ($(window).width()*(40/100)>=400){
-				$(".photoblock").css("float","left");
-				$(".photoblock").css("width","40vw");
-				$(".profile").css("margin-left","7vw");
+				$(".profile").css("margin-left","6vw");
 				$(".wordblock").css("float","left");
 				$(".wordblock").css("width","40vw");
 				$(".webiconblock").css("text-align","left");
@@ -57,8 +27,27 @@
 				$(".webiconblock").css("text-align","center");
 				$(".illustration").css("width","80vw");
 				$(".illustration").css("position","relative");
-
 			}
+	}
+
+	window.onload=function(){
+		resize();
+
+        var file = new XMLHttpRequest();
+        file.open("GET", "word/introduciton.txt", false);
+        file.onreadystatechange = function() {
+			if (file.readyState === 4) {
+				var allText = file.responseText;
+				document.getElementById("fileOutput").innerHTML = allText;
+				}
+			}
+        file.send(null);
+		}
+	
+    </script>
+	<script>
+		$(window).resize(function(){
+			resize();
 		});
 	</script>
 
