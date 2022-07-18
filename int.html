@@ -13,12 +13,14 @@
 				$(".photoblock").css("width","40vw");
 				$(".wordblock").css("float","left");
 				$(".wordblock").css("width","40vw");
+				$(".webiconblock").css("text-align","left");
 			}
 			else{
 				$(".photoblock").css("width","80vw");
 				$(".photoblock").css("float","none");
 				$(".wordblock").css("float","none");
 				$(".wordblock").css("width","80vw");
+				$(".webiconblock").css("text-align","center");
 			}
 
         var file = new XMLHttpRequest();
@@ -39,12 +41,16 @@
 				$(".photoblock").css("width","40vw");
 				$(".wordblock").css("float","left");
 				$(".wordblock").css("width","40vw");
+				$(".webiconblock").css("display","block");
+				$(".webiconblock").css("text-align","left");
 			}
 			else{
 				$(".photoblock").css("width","80vw");
 				$(".photoblock").css("float","none");
 				$(".wordblock").css("float","none");
 				$(".wordblock").css("width","80vw");
+				$(".webiconblock").css("display","normal");
+				$(".webiconblock").css("text-align","center");
 			}
 		});
 	</script>
@@ -71,15 +77,15 @@
 				<div id="fileOutput"></div>
 				<nav class="webiconblock">
 					<a href="https://www.pixiv.net/users/33021767">
-						<span class="webword" >繪圖</span>
+						<span class="webword" >pixiv</span>
 						<img src="image/png/webicon-15.png" class="webicon">
 					</a>
 					<a href="https://www.penana.com/user/44317/%E8%B2%A2%E4%B8%B8-%E7%B1%B3%E7%B2%89/portfolio">
-						<span class="webword" >寫作</span>
+						<span class="webword" >penana</span>
 						<img src="image/png/webicon-14.png" class="webicon">
 					</a>
 					<a href="https://github.com/wty262690">
-						<span class="webword">程式設計</span>
+						<span class="webword">github</span>
 						<img src="image/png/webicon-16.png" class="webicon">
 					</a>
 				</nav>
