@@ -25,6 +25,21 @@
 					link: ["https://i.imgur.com/WzbPIhR.jpg","https://i.imgur.com/3CxXktJ.jpg","https://i.imgur.com/S5kxlIS.jpg","https://i.imgur.com/1zeAGxB.jpg","https://i.imgur.com/mVuXjUM.jpg","https://i.imgur.com/MfAeGKc.jpg"]
 				}
 			];
+			const Imagebar = [
+				{
+					name: 'Mazu-a',
+					link:["https://i.imgur.com/YKYfdIi.jpg","https://i.imgur.com/lZhkCV9.jpg","https://i.imgur.com/DJh0651.jpg","https://i.imgur.com/89ot71s.jpg"
+					]
+				},
+				{
+					name: 'Mazu-b',
+					link:["https://i.imgur.com/BDeiSRr.jpg","https://i.imgur.com/Hh3nZRT.jpg","https://i.imgur.com/3pPhdTR.jpg","https://i.imgur.com/rROw2ZS.jpg"]
+				},
+				{
+					name: 'Mazu-c',
+					link:["https://i.imgur.com/d0f2yPn.jpg","https://i.imgur.com/sCegBYH.jpg","https://i.imgur.com/e8mLEXu.jpg"]
+				}
+			];
 		function comicsize(){
 			var comic=document.getElementsByClassName("comic");
 			var fistpage=document.getElementsByClassName("firstpage");
@@ -33,17 +48,28 @@
 				comic[i].style.height=t;
 			}
 		}
+
 		function comicpage(array){
 			var comic=document.getElementById(array.name);
 			for(var i=0, length=array.link.length; i<length; i++){
 			comic.innerHTML+="<img src='"+array.link[i]+"' class='artwork' alt='comic pages' referrerpolicy='no-referrer'/>";
 			}
 		}
+		function imagebar(array){
+			var image=document.getElementById(array.name);
+			for(var i=0, length=array.link.length; i<length; i++){
+			image.innerHTML+="<img src='"+array.link[i]+"' class='artwork' alt='images in image bar' referrerpolicy='no-referrer'/>";
+			}
+		}
+
+
 		window.onload=function(){
 			comicsize();
-			console.log(ComicTitle.length);
 			for (var i=0, length=ComicTitle.length; i<length; i++){
 				comicpage(ComicTitle[i]);
+			}
+			for (var i=0, length=Imagebar.length; i<length; i++){
+				comicpage(Imagebar[i]);
 			}
 		}
 	</script>
@@ -54,14 +80,15 @@
 		var cot=0;
 		function nex(){
 		if(cot<= 2){
-			$('.imgs img').eq(cot).animate({'margin-left':'-100%'},500);
+			$('.imgs').animate({'margin-left':'-50%'},500)
+			//$('.imgs img').eq(cot).animate({'margin-left':'-50%'},500);
 			cot++;
 		}
 		}
 		function pre(){
 			if(cot>0){
 			cot--;
-			$('.imgs img').eq(cot).animate({'margin-left':'0'},500);
+			$('.imgs').animate({'margin-left':'0'},500);
 			}
 		}
 	</script>
@@ -127,7 +154,7 @@
 
 		<div class="content">
 			<p class="title">丸蛋繪圖</p>
-			
+
 			<!--***********漫畫***********-->
 			<div class="floor1">
 				<img src="https://i.imgur.com/iufIvoA.png" class="artwork" alt='cover or the series' referrerpolicy="no-referrer"/>
@@ -183,6 +210,7 @@
 			</div>
 
 			<div class="whitego"></div>
+			
 			<!--媽祖-->
 			<div class="series Mazu">
 				<p class="title">【媽祖】致敬</p>
@@ -191,11 +219,10 @@
 				</div>
 
 				<div id="Mazu-small"> 
-					<div class="imgs" style="width:100%;">
-						<img src="https://i.imgur.com/BDeiSRr.jpg" class="artwork" alt='work for Mazu' referrerpolicy="no-referrer"/>
-						<img src="https://i.imgur.com/lZhkCV9.jpg" class="artwork" alt='work for Mazu' referrerpolicy="no-referrer"/>
-						<img src="https://i.imgur.com/DJh0651.jpg" class="artwork" alt='work for Mazu' referrerpolicy="no-referrer"/>
-						<img src="https://i.imgur.com/Hh3nZRT.jpg" class="artwork" alt='work for Mazu' referrerpolicy="no-referrer"/>
+					<div class="imgs" id="Mazu">
+						<div class="imgs" id="Mazu-a"></div>
+						<div class="imgs" id="Mazu-b"></div>
+						<div class="imgs" id="Mazu-c"></div>
 					</div>
 					<div>
 						<div onclick="pre()" style="float:left;cursor:pointer">上一頁</div>

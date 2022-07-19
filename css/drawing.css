@@ -207,20 +207,22 @@
     width:100%;
 }
 
-.Mazu .artwork{
-    width:20%;
-}
-
 .imgs{
-    white-space: nowrap;
+    width:100%;
 }
 .imgs img{
+    width:40%;
+    padding:5px;
     transition-duration:500ms;
 }
 
 #Mazu-small{
     width:40%;
-    height:20vw;
+    height:40vw;
     margin:auto;
-    overflow:auto;
+    overflow-x:auto;
+}
+
+#Mazu-a, #Mazu-b, #Mazu-c{
+    white-space:nowrap;
 }
