@@ -6,10 +6,14 @@
     padding-top:100px;
 }
 
-.toblack, .blackgo{
+.toblack, .blackgo, .whitego{
     width:100%;
     height:50vw;
     background-size:contain;
+}
+
+.whitego{
+    background-image:url("../image/whiteto.png");
 }
 
 .toblack{
@@ -18,6 +22,10 @@
 
 .blackgo{
     background-image:url("../image/black-to-yellow.png");
+}
+
+.blacktowhite{
+    background-color:white;
 }
 
 /*---list---*/
@@ -172,4 +180,47 @@
 }
 .GhostSlayer .artwork{
     width:20%;
+}
+
+/*---Farewell My Concubine---*/
+.FarewellMyConcubine{
+    background-color:white;
+}
+
+.FarewellMyConcubine .artwork{
+    width:40%;
+}
+
+/*---Mazu---*/
+#Mazu-bigsize{
+    float:left;
+    width:30%;
+    height:80vh;
+    overflow-y:auto;
+}
+
+#Mazu-bigsize::-webkit-scrollbar ,#Mazu-small::-webkit-scrollbar{
+    display: none;
+}
+
+#Mazu-bigsize .artwork{
+    width:100%;
+}
+
+.Mazu .artwork{
+    width:20%;
+}
+
+.imgs{
+    white-space: nowrap;
+}
+.imgs img{
+    transition-duration:500ms;
+}
+
+#Mazu-small{
+    width:40%;
+    height:20vw;
+    margin:auto;
+    overflow:auto;
 }

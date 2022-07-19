@@ -51,6 +51,19 @@
 		$(window).resize(function(){
 			comicsize();
 		});
+		var cot=0;
+		function nex(){
+		if(cot<= 2){
+			$('.imgs img').eq(cot).animate({'margin-left':'-100%'},500);
+			cot++;
+		}
+		}
+		function pre(){
+			if(cot>0){
+			cot--;
+			$('.imgs img').eq(cot).animate({'margin-left':'0'},500);
+			}
+		}
 	</script>
 	</script>
 	</head>
@@ -112,10 +125,10 @@
 	</nav>
 
 
-
-		<!--<div class="artwork"></div>-->
 		<div class="content">
 			<p class="title">丸蛋繪圖</p>
+			
+			<!--***********漫畫***********-->
 			<div class="floor1">
 				<img src="https://i.imgur.com/iufIvoA.png" class="artwork" alt='cover or the series' referrerpolicy="no-referrer"/>
 				<p class="title">親愛的，這個當興趣就好</p>
@@ -151,14 +164,47 @@
 				</div>
 			</div>
 
+			<!--***********系列***********-->
+			<!--鬼滅-->
 			<div class="series GhostSlayer">
 				<p class="title">【鬼滅之刃】同人圖</p>
-				<img src="https://i.imgur.com/fgKmpe0.jpg" class="artwork firstpage" alt='work for Ghost Slayer' referrerpolicy="no-referrer"/>
-				<img src="https://i.imgur.com/Aq2PUSw.jpg" class="artwork firstpage" alt='work for Ghost Slayer' referrerpolicy="no-referrer"/>
-				<img src="https://i.imgur.com/lvVba7B.jpg" class="artwork firstpage" alt='work for Ghost Slayer' referrerpolicy="no-referrer"/>
+				<img src="https://i.imgur.com/fgKmpe0.jpg" class="artwork" alt='work for Ghost Slayer' referrerpolicy="no-referrer"/>
+				<img src="https://i.imgur.com/Aq2PUSw.jpg" class="artwork" alt='work for Ghost Slayer' referrerpolicy="no-referrer"/>
+				<img src="https://i.imgur.com/lvVba7B.jpg" class="artwork" alt='work for Ghost Slayer' referrerpolicy="no-referrer"/>
 			</div>
 
-			<div class="blackgo"></div>
+			<div class="blackgo blacktowhite"></div>
+			
+			<!--霸王別姬-->
+			<div class="series FarewellMyConcubine">
+				<p class="title">【霸王別姬】致敬</p>
+				<img src="https://i.imgur.com/JvgTn2l.png" class="artwork" alt='work for Farewell My Concubine' referrerpolicy="no-referrer"/>
+				<img src="https://i.imgur.com/66WoxM1.png" class="artwork" alt='work for Farewell My Concubine' referrerpolicy="no-referrer"/>
+			</div>
+
+			<div class="whitego"></div>
+			<!--媽祖-->
+			<div class="series Mazu">
+				<p class="title">【媽祖】致敬</p>
+				<div id="Mazu-bigsize">
+					<img src="https://i.imgur.com/bpNTRvI.jpg" class="artwork" alt='work for Mazu' referrerpolicy="no-referrer"/>
+				</div>
+
+				<div id="Mazu-small"> 
+					<div class="imgs" style="width:100%;">
+						<img src="https://i.imgur.com/BDeiSRr.jpg" class="artwork" alt='work for Mazu' referrerpolicy="no-referrer"/>
+						<img src="https://i.imgur.com/lZhkCV9.jpg" class="artwork" alt='work for Mazu' referrerpolicy="no-referrer"/>
+						<img src="https://i.imgur.com/DJh0651.jpg" class="artwork" alt='work for Mazu' referrerpolicy="no-referrer"/>
+						<img src="https://i.imgur.com/Hh3nZRT.jpg" class="artwork" alt='work for Mazu' referrerpolicy="no-referrer"/>
+					</div>
+					<div>
+						<div onclick="pre()" style="float:left;cursor:pointer">上一頁</div>
+						<div onclick="nex()" style="float:right;cursor:pointer">下一頁</div>
+					</div>
+				</div>
+
+
+			</div>
 
 		</div>
 		
