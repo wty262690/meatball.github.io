@@ -1,10 +1,25 @@
 @import "main.css"; 
 /*---content---*/
 .content{
-    width:60vw;
+    width:100vw;
     margin:0 auto;
     padding-top:100px;
 }
+
+.toblack, .blackgo{
+    width:100%;
+    height:50vw;
+    background-size:contain;
+}
+
+.toblack{
+    background-image:url("../image/yellow-to-black.png");
+}
+
+.blackgo{
+    background-image:url("../image/black-to-yellow.png");
+}
+
 /*---list---*/
 .story-open{
     height:0;
@@ -104,6 +119,7 @@
     margin-top:-5px;
 }
 
+/*---floor1---*/
 .floor1{
     width:100%;
 }
@@ -118,6 +134,7 @@
     height:20vw;
 }
 
+/*---floor2---*/
 #comic-bird{
     mix-blend-mode: darken;
     width:50%;
@@ -126,4 +143,33 @@
 
 #floor2{
     width:50%;
+}
+
+/*---night---*/
+.night{
+    padding:20px;
+    background-color:black;
+}
+#night{
+    width:50%;
+}
+
+
+/*---water---*/
+
+.water{
+    padding:20px;
+    background-color:black;
+}
+#water{
+    width:50%;
+}
+
+/*---Ghost Slayer---*/
+
+.GhostSlayer{
+    background-color:black;
+}
+.GhostSlayer .artwork{
+    width:20%;
 }

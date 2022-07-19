@@ -15,20 +15,28 @@
 				{
 					name : 'floor2',
 					link : ["https://i.imgur.com/h9YQmWm.png","https://i.imgur.com/O17tTsj.png","https://i.imgur.com/gKMxSv3.png","https://i.imgur.com/MX2quQu.png","https://i.imgur.com/CtNodGk.png","https://i.imgur.com/2uALXaf.png","https://i.imgur.com/2USGjCa.png","https://i.imgur.com/1Ys01kW.png","https://i.imgur.com/OeMrjSx.png","https://i.imgur.com/ExZuQFv.png","https://i.imgur.com/VZ8etg6.png","https://i.imgur.com/2pa9wNH.png","https://i.imgur.com/UV2CDrb.png","https://i.imgur.com/y5c6tHX.png","https://i.imgur.com/vDHLyOX.png","https://i.imgur.com/DxlxVMJ.png","https://i.imgur.com/cqgmouS.png","https://i.imgur.com/N54QNTD.png","https://i.imgur.com/WI7VXy1.png","https://i.imgur.com/Dkx9baf.png"]
+				},
+				{
+					name: 'night',
+					link: []
+				},
+				{
+					name: 'water',
+					link: ["https://i.imgur.com/WzbPIhR.jpg","https://i.imgur.com/3CxXktJ.jpg","https://i.imgur.com/S5kxlIS.jpg","https://i.imgur.com/1zeAGxB.jpg","https://i.imgur.com/mVuXjUM.jpg","https://i.imgur.com/MfAeGKc.jpg"]
 				}
 			];
 		function comicsize(){
 			var comic=document.getElementsByClassName("comic");
 			var fistpage=document.getElementsByClassName("firstpage");
 			for (var i = 0, length = comic.length; i < length; i++){
-				var t=fistpage[i].height+"px";
+				var t=fistpage[i].height-10+"px";
 				comic[i].style.height=t;
 			}
 		}
 		function comicpage(array){
 			var comic=document.getElementById(array.name);
 			for(var i=0, length=array.link.length; i<length; i++){
-			comic.innerHTML+="<img src='"+array.link[i]+"' class='artwork' referrerpolicy='no-referrer'/>";
+			comic.innerHTML+="<img src='"+array.link[i]+"' class='artwork' alt='comic pages' referrerpolicy='no-referrer'/>";
 			}
 		}
 		window.onload=function(){
@@ -63,7 +71,7 @@
 		<div class="story-list title" >
 			<label class="story-open-button">
 				<input type="radio" class="story-open" name="story-open" />
-				<span>電腦繪圖</span>
+				<span>創作</span>
 					<input type="radio" class="story-open sub-story-open" name="digital-painting" />
 					<span>漫畫</span>
 					<input type="radio" class="story-open sub-story-open" name="digital-painting" />
@@ -98,7 +106,7 @@
 			<div class="list-br"></div>
 			<label class="story-open-button">	
 				<input type="radio" class="story-open" name="story-open" />
-				<span>塗鴉</span>
+				<span>塗鴉不分區</span>
 			</label>
 		</div>
 	</nav>
@@ -109,21 +117,49 @@
 		<div class="content">
 			<p class="title">丸蛋繪圖</p>
 			<div class="floor1">
-				<img src="https://i.imgur.com/iufIvoA.png" class="artwork" referrerpolicy="no-referrer"/>
+				<img src="https://i.imgur.com/iufIvoA.png" class="artwork" alt='cover or the series' referrerpolicy="no-referrer"/>
 				<p class="title">親愛的，這個當興趣就好</p>
 				<div class="comic" id="floor1">
-					<img src="https://i.imgur.com/sG0GStX.jpg" class="artwork firstpage" referrerpolicy="no-referrer"/>
+					<img src="https://i.imgur.com/sG0GStX.jpg" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
 				</div>
 				<div class="video"></div>
 				<!--<iframe class="video" src="https://www.youtube.com/embed/MDcvo3Y63ZM" title="親愛的，這個當興趣就好" frameborder="0"allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>-->
 			</div>
 			<div class="floor2">
 				<p class="title">Outside the Window 窗外</p>
-				<img src="https://i.imgur.com/K5Y9NKc.png" class="artwork" id="comic-bird" referrerpolicy="no-referrer"/>
+				<img src="https://i.imgur.com/K5Y9NKc.png" class="artwork" id="comic-bird" alt='illustration' referrerpolicy="no-referrer"/>
 				<div class="comic" id="floor2">
-					<img src="https://i.imgur.com/9ZCRmWz.png" class="artwork firstpage" referrerpolicy="no-referrer"/>
+					<img src="https://i.imgur.com/9ZCRmWz.png" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
 				</div>
 			</div>
+
+			<div class="toblack"></div>
+			
+			<div class="night">
+				<p class="title">之夜</p>
+				<div class="comic" id="night">
+					<img src="https://i.imgur.com/uiYOEPj.jpg" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
+				</div>
+				<span>work with 兀心</span>
+				<span>building...</span>
+			</div>
+
+			<div class="water">
+				<p class="title">如果地球上沒有水</p>
+				<div class="comic" id="water">
+					<img src="https://i.imgur.com/QA1p04M.jpg" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
+				</div>
+			</div>
+
+			<div class="series GhostSlayer">
+				<p class="title">【鬼滅之刃】同人圖</p>
+				<img src="https://i.imgur.com/fgKmpe0.jpg" class="artwork firstpage" alt='work for Ghost Slayer' referrerpolicy="no-referrer"/>
+				<img src="https://i.imgur.com/Aq2PUSw.jpg" class="artwork firstpage" alt='work for Ghost Slayer' referrerpolicy="no-referrer"/>
+				<img src="https://i.imgur.com/lvVba7B.jpg" class="artwork firstpage" alt='work for Ghost Slayer' referrerpolicy="no-referrer"/>
+			</div>
+
+			<div class="blackgo"></div>
+
 		</div>
 		
 	</body>
