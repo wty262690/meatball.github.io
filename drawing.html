@@ -5,24 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Meatball Portfolio</title>
     <link href="css/drawing.css" rel="stylesheet" type="text/css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		const ComicTitle = [
+				{
+					name : 'floor1',
+					link : ["https://i.imgur.com/KaM7t5T.png","https://i.imgur.com/eM14Rdf.png","https://i.imgur.com/pS6xU5a.png","https://i.imgur.com/SQz5axx.png","https://i.imgur.com/xwZbSm8.png","https://i.imgur.com/djQyGDh.png","https://i.imgur.com/iF26szu.png","https://i.imgur.com/71YzKnb.png","https://i.imgur.com/4NXiBHx.png","https://i.imgur.com/cxPjTmM.png","https://i.imgur.com/mLJ5stg.png","https://i.imgur.com/Awh06HI.png","https://i.imgur.com/iFHqnmT.png","https://i.imgur.com/zoRRhj1.png","https://i.imgur.com/wzKivfl.png","https://i.imgur.com/EDOYf1C.png","https://i.imgur.com/HI49GfA.png","https://i.imgur.com/nl6hl5j.png","https://i.imgur.com/3KOewtD.png","https://i.imgur.com/W1kuQl6.png","https://i.imgur.com/eno3nOx.png","https://i.imgur.com/afXOBmJ.png","https://i.imgur.com/Pbju3SG.png","https://i.imgur.com/Cjtoo29.png","https://i.imgur.com/4qVNbH1.png","https://i.imgur.com/YLrFLGX.png","https://i.imgur.com/wbi3RDe.png","https://i.imgur.com/4GPDCHu.png","https://i.imgur.com/q6llicV.png","https://i.imgur.com/quh0ITF.png","https://i.imgur.com/OMPFEhO.png","https://i.imgur.com/5NRxyqT.png","https://i.imgur.com/Mw6d7rJ.png","https://i.imgur.com/VCKHesn.png"]
+				}
+			];
+		function comicsize(){
+			var comic=document.getElementsByClassName("comic");
+			var fistpage=document.getElementsByClassName("firstpage");
+			for (var i = 0, length = comic.length; i < length; i++){
+				var t=fistpage[i].height+"px";
+				comic[i].style.height=t;
+			}
+		}
+		function comicpage(array){
+			var comic=document.getElementById(array.name);
+			for(var i=0, length=array.link.length; i<length; i++){
+			comic.innerHTML+="<img src='"+array.link[i]+"' class='artwork' referrerpolicy='no-referrer'/>";
+			}
+		}
+		window.onload=function(){
+			comicsize();
+			console.log(ComicTitle.length);
+			for (var i=0, length=ComicTitle.length; i<length; i++){
+				comicpage(ComicTitle[i]);
+			}
+		}
+	</script>
+	<script>
+		$(window).resize(function(){
+			comicsize();
+		});
+	</script>
+	</script>
 	</head>
 	<body>
-		<nav class="menu">
-			<input type="checkbox" class="menu-open" name="menu-open" id="menu-open"/>
-			<label class="menu-open-button" for="menu-open">
-			<span class="hamburger hamburger-1"></span>
-			<span class="hamburger hamburger-2"></span>
-			<span class="hamburger hamburger-3"></span>
-			</label>
-			<a href="/drawing.html" class="menu-item item"></a>
-			<a href="/writing.html" class="menu-item item"></a>
-			<a href="/programming.html" class="menu-item item"></a>
-			<a href="/index.html" class="back"></a>
+		<nav class="menu nocopy">
 		</nav>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('.menu').load('menu.html');
+			});
+		</script>
+
 		<!--<div class="artwork"></div>-->
 		<div class="content">
 			<img src="https://i.imgur.com/iufIvoA.png" class="artwork" referrerpolicy="no-referrer"/>
-			<img src="sockets/OutsideTheWindow/image/5-2.png">
+			<div class="comic" id="floor1">
+				<img src="https://i.imgur.com/sG0GStX.jpg" class="artwork firstpage" referrerpolicy="no-referrer"/>
+			</div>
 		</div>
 		
 	</body>
