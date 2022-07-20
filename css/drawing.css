@@ -186,10 +186,17 @@
 }
 
 .floor1 .video{
+    opacity: 0;
+    transition: opacity 1000ms;
     left:10%;
+    height:100%;
     position:absolute;
-    bottom: 10px;
+    bottom: -20px;
     background-color:aqua;
+}
+
+#video:checked ~ .video{
+    opacity: 1;
 }
 
 /*---floor2---*/
