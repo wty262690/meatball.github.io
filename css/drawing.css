@@ -174,10 +174,21 @@
     padding:10px;
 }
 
+/*---video button---*/
+#video{
+    display:none;
+}
+
+.video-button{
+    position:absolute;
+    right:0;
+    bottom:0;
+}
+
+
 #floor1display{
     height:100vw;
     position:relative;
-    background-color:blueviolet;
 }
 
 #floor1, .floor1 .video{
@@ -187,15 +198,17 @@
 
 .floor1 .video{
     opacity: 0;
-    transition: opacity 1000ms;
+    visibility: hidden;
+    transition: visibility 0.5s, opacity 0.5s linear;
     left:10%;
     height:100%;
     position:absolute;
-    bottom: -20px;
+    bottom: 0px;
     background-color:aqua;
 }
 
 #video:checked ~ .video{
+    visibility: visible;
     opacity: 1;
 }
 
