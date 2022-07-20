@@ -79,16 +79,19 @@
 		});
 		var cot=0;
 		function nex(){
-		if(cot<= 2){
-			$('.imgs').animate({'margin-left':'-50%'},500)
-			//$('.imgs img').eq(cot).animate({'margin-left':'-50%'},500);
+		console.log(Imagebar[0].link.length);
+		if(cot< Imagebar[0].link.length-1){
 			cot++;
+			var move=-cot*25+'%'
+			$('.imgs').animate({'margin-left':move},500)
+			//$('.imgs img').eq(cot).animate({'margin-left':'-50%'},500);
 		}
 		}
 		function pre(){
 			if(cot>0){
 			cot--;
-			$('.imgs').animate({'margin-left':'0'},500);
+			var move=-cot*25+'%'
+			$('.imgs').animate({'margin-left':move},500)
 			}
 		}
 	</script>
@@ -225,8 +228,8 @@
 						<div class="imgs" id="Mazu-c"></div>
 					</div>
 					<div>
-						<div onclick="pre()" style="float:left;cursor:pointer">上一頁</div>
-						<div onclick="nex()" style="float:right;cursor:pointer">下一頁</div>
+						<div class="button" onclick="pre()" style="float:left;cursor:pointer">上一頁</div>
+						<div class="button" onclick="nex()" style="float:right;cursor:pointer">下一頁</div>
 					</div>
 				</div>
 
