@@ -5,13 +5,27 @@
     margin:0 auto;
     padding-top:100px;
 }
+.black, .white{
+    width:100%;
+}
 
-.toblack, .blackgo, .whitego{
+.black{
+    color:white;
+    background-color:black;
+}
+.white{
+    background-color: white;
+}
+
+.toblack, .blackgo, .whitego,.towhite{
     width:100%;
     height:50vw;
     background-size:contain;
 }
 
+.towhite{
+    background-image: url("../image/towhite.png");
+}
 .whitego{
     background-image:url("../image/whiteto.png");
 }
@@ -112,10 +126,18 @@
 /*---artwork---*/
 .comic{
     height:0vw;
+    white-space:pre-line;
     overflow-y:auto;
 }
 .comic::-webkit-scrollbar {
     display: none;
+}
+
+.title{
+    font-size:17px;
+}
+.sub-title{
+    font-size:12px;
 }
 
 .artwork{
@@ -127,26 +149,55 @@
     margin-top:-5px;
 }
 
-/*---floor1---*/
-.floor1{
-    width:100%;
+.int, .floor1, .floor2, .night, .water, .GhostSlayer, .FarewellMyConcubine,.Mazu{
+    margin:auto;
+    width:70%;
+    text-align: center;
+}
+/*---int---*/
+.int{
+    padding:20%;
+    padding-left:0;
+    padding-right:0;
 }
 
-#floor1{
-    float:left;
-    width:30vw;
+/*---floor1---*/
+
+.floor1>.artwork{
+    padding-top:20px;
+    width:90%;
 }
+.floor1>.title{
+    padding-top:50px;
+}
+.floor1>.sub-title{
+    padding:10px;
+}
+
+#floor1display{
+    height:100vw;
+    position:relative;
+    background-color:blueviolet;
+}
+
+#floor1, .floor1 .video{
+    margin:0 auto;
+    width:80%;
+}
+
 .floor1 .video{
-    float:left;
-    width:30vw;
-    height:20vw;
+    left:10%;
+    position:absolute;
+    bottom: 10px;
+    background-color:aqua;
 }
 
 /*---floor2---*/
+
 #comic-bird{
     mix-blend-mode: darken;
     width:50%;
-    float:left
+    float:left;
 }
 
 #floor2{
@@ -155,31 +206,32 @@
 
 /*---night---*/
 .night{
-    padding:20px;
-    background-color:black;
+    height:4px;
 }
+.night span{
+    padding:10px;
+    left:20%;
+    position:absolute;
+}
+
 #night{
-    width:50%;
+    padding:10px;
+    float:left;
+    width:45%;
 }
 
 
 /*---water---*/
 
-.water{
-    padding:20px;
-    background-color:black;
-}
 #water{
-    width:50%;
+    width:45%;
 }
 
 /*---Ghost Slayer---*/
-
-.GhostSlayer{
-    background-color:black;
-}
 .GhostSlayer .artwork{
-    width:20%;
+    padding:0.5%;
+    padding-top:20%;
+    width:30%;
 }
 
 /*---Farewell My Concubine---*/

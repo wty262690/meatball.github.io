@@ -94,6 +94,14 @@
 			$('.imgs').animate({'margin-left':move},500)
 			}
 		}
+		$(document).ready(function(){
+			$("input[name='video']").each(function(){
+				this.onclick=function(){
+					if(this.checked) $(this).next().hide();  
+					else $(this).next().show();
+				}
+			});
+		});
 	</script>
 	</script>
 	</head>
@@ -156,28 +164,38 @@
 
 
 		<div class="content">
-			<p class="title">丸蛋繪圖</p>
-
+			<div class="int">
+				<p class="title">丸蛋繪圖</p>
+				<pre>丸蛋繪圖，鐵定完蛋</pre>
+			</div>
 			<!--***********漫畫***********-->
-			<div class="floor1">
-				<img src="https://i.imgur.com/iufIvoA.png" class="artwork" alt='cover or the series' referrerpolicy="no-referrer"/>
-				<p class="title">親愛的，這個當興趣就好</p>
-				<div class="comic" id="floor1">
-					<img src="https://i.imgur.com/sG0GStX.jpg" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
+			<div class="towhite"></div>
+			<div class="white">
+				<div class="floor1">
+					<img src="https://i.imgur.com/tTGNe7c.png" class="artwork" alt='cover or the series' referrerpolicy="no-referrer"/>
+					<p class="title"> Ch.1</p>
+					<p class="title sub-title"> 親愛的，這個當興趣就好</p>
+					<div id="floor1display">
+						<input type="checkbox" name="video">
+						<div class="comic" id="floor1">
+							<img src="https://i.imgur.com/sG0GStX.jpg" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
+						</div>
+						<iframe class="video"src="https://www.youtube.com/embed/MDcvo3Y63ZM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<div class="">video(I can't put youtube on without error message)</div>
+					</div>
 				</div>
-				<div class="video"></div>
-				<!--<iframe class="video" src="https://www.youtube.com/embed/MDcvo3Y63ZM" title="親愛的，這個當興趣就好" frameborder="0"allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>-->
-			</div>
-			<div class="floor2">
-				<p class="title">Outside the Window 窗外</p>
-				<img src="https://i.imgur.com/K5Y9NKc.png" class="artwork" id="comic-bird" alt='illustration' referrerpolicy="no-referrer"/>
-				<div class="comic" id="floor2">
-					<img src="https://i.imgur.com/9ZCRmWz.png" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
-				</div>
-			</div>
 
-			<div class="toblack"></div>
-			
+
+				<div class="floor2">
+					<p class="title">Outside the Window 窗外</p>
+					<img src="https://i.imgur.com/K5Y9NKc.png" class="artwork" id="comic-bird" alt='illustration' referrerpolicy="no-referrer"/>
+					<div class="comic" id="floor2">
+						<img src="https://i.imgur.com/9ZCRmWz.png" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
+					</div>
+				</div>
+			</div>
+			<div class="toblack white"></div>
+			<div class="black">
 			<div class="night">
 				<p class="title">之夜</p>
 				<div class="comic" id="night">
@@ -202,16 +220,18 @@
 				<img src="https://i.imgur.com/Aq2PUSw.jpg" class="artwork" alt='work for Ghost Slayer' referrerpolicy="no-referrer"/>
 				<img src="https://i.imgur.com/lvVba7B.jpg" class="artwork" alt='work for Ghost Slayer' referrerpolicy="no-referrer"/>
 			</div>
-
-			<div class="blackgo blacktowhite"></div>
-			
-			<!--霸王別姬-->
-			<div class="series FarewellMyConcubine">
-				<p class="title">【霸王別姬】致敬</p>
-				<img src="https://i.imgur.com/JvgTn2l.png" class="artwork" alt='work for Farewell My Concubine' referrerpolicy="no-referrer"/>
-				<img src="https://i.imgur.com/66WoxM1.png" class="artwork" alt='work for Farewell My Concubine' referrerpolicy="no-referrer"/>
 			</div>
-
+			<div class="blackgo blacktowhite"></div>
+			<div class="white">
+			
+				<!--霸王別姬-->
+				<div class="series FarewellMyConcubine">
+					<p class="title">【霸王別姬】致敬</p>
+					<img src="https://i.imgur.com/JvgTn2l.png" class="artwork" alt='work for Farewell My Concubine' referrerpolicy="no-referrer"/>
+					<img src="https://i.imgur.com/66WoxM1.png" class="artwork" alt='work for Farewell My Concubine' referrerpolicy="no-referrer"/>
+				</div>
+			
+			</div>
 			<div class="whitego"></div>
 			
 			<!--媽祖-->
