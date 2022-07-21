@@ -123,6 +123,39 @@
     display:block;
 }
 
+/*---button---*/
+input{
+    display:none;
+}
+input:checked +label{
+    background-image:url("../image/png/button-21.png");
+}
+
+.int-button, .video-button, .program-button{
+    position:absolute;
+    right:0%;
+    width:10vw;
+    height:5.5vw;
+    background-size:contain;
+}
+
+.video-button{
+    background-image:url("../image/png/button-17.png");
+}
+
+.int-button{
+    background-image:url("../image/png/button-18.png");
+}
+
+.program-button{
+    background-image:url("../image/png/button-20.png")
+}
+
+.video{
+    opacity: 0;
+    transition: visibility 1s, opacity 0.5s linear;
+}
+
 /*---artwork---*/
 .comic{
     height:0vw;
@@ -188,31 +221,6 @@ div .line{
     padding:10px;
 }
 
-/*video button*/
-#floor1-video, #int{
-    display:none;
-}
-
-.int-button, .video-button, .program-button{
-    position:absolute;
-    right:0%;
-    width:10vw;
-    height:5.5vw;
-    background-size:contain;
-}
-
-.video-button{
-    background-image:url("../image/png/button-17.png");
-}
-
-.int-button{
-    background-image:url("../image/png/button-18.png");
-}
-
-.program-button{
-    background-image:url("../image/png/button-20.png")
-}
-
 /*floor1display*/
 #floor1display{
     margin-top:20px;
@@ -242,8 +250,6 @@ div .line{
 }
 
 .floor1 .video{
-    opacity: 0;
-    transition: visibility 1s, opacity 0.5s linear;
     background-color:aqua;
 }
 .floor1 .int-block{
@@ -290,9 +296,19 @@ div .line{
 .floor2>.sub-title{
     padding:10px;
 }
-.floor2 .program-button{
+.floor2 .program-button, .floor2 .video-button{
     position:absolute;
-    left:0;
+    left:15%;
+}
+
+#floor2-video1~.video-button{
+    top:6vw;
+}
+#floor2-video2~.video-button{
+    top:12vw;
+}
+#floor2-program:checked ~ .program-button{
+    background-image:url("../image/png/button-19.png");
 }
 
 #floor2display{
@@ -306,11 +322,33 @@ div .line{
     left:1%;
     bottom:-10%;
 }
-#floor2{
+#floor2, #floor2~.video{
     position:absolute;
     left:30%;
     width:70%;
 }
+#floor2~.video{
+    visibility: hidden;
+    height:100%;
+}
+#floor2-video1+label+.video{
+    background-color:red;
+}
+#floor2-video2+label+.video{
+    background-color:yellow;
+}
+
+#floor2-video1:checked+label+.video{
+    visibility:visible;
+    opacity: 1;
+}
+
+#floor2-video2:checked+label+.video{
+    visibility:visible;
+    opacity: 1;
+}
+
+
 
 /*---night---*/
 .night{
