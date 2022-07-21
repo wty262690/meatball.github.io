@@ -4,33 +4,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Meatball Portfolio</title>
-    <link href="css/drawing.css" rel="stylesheet" type="text/css">
+    <link href="css/create.css" rel="stylesheet" type="text/css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script defer src=https://Unpkg.com/processing-js></script>	
 	<script>
 		const ComicTitle = [
 				{
-					name: 'night',
-					link: []
+					name : 'floor1',
+					link : ["https://i.imgur.com/KaM7t5T.png","https://i.imgur.com/eM14Rdf.png","https://i.imgur.com/pS6xU5a.png","https://i.imgur.com/SQz5axx.png","https://i.imgur.com/xwZbSm8.png","https://i.imgur.com/djQyGDh.png","https://i.imgur.com/iF26szu.png","https://i.imgur.com/71YzKnb.png","https://i.imgur.com/4NXiBHx.png","https://i.imgur.com/cxPjTmM.png","https://i.imgur.com/mLJ5stg.png","https://i.imgur.com/Awh06HI.png","https://i.imgur.com/iFHqnmT.png","https://i.imgur.com/zoRRhj1.png","https://i.imgur.com/wzKivfl.png","https://i.imgur.com/EDOYf1C.png","https://i.imgur.com/HI49GfA.png","https://i.imgur.com/nl6hl5j.png","https://i.imgur.com/3KOewtD.png","https://i.imgur.com/W1kuQl6.png","https://i.imgur.com/eno3nOx.png","https://i.imgur.com/afXOBmJ.png","https://i.imgur.com/Pbju3SG.png","https://i.imgur.com/Cjtoo29.png","https://i.imgur.com/4qVNbH1.png","https://i.imgur.com/YLrFLGX.png","https://i.imgur.com/wbi3RDe.png","https://i.imgur.com/4GPDCHu.png","https://i.imgur.com/q6llicV.png","https://i.imgur.com/quh0ITF.png","https://i.imgur.com/OMPFEhO.png","https://i.imgur.com/5NRxyqT.png","https://i.imgur.com/Mw6d7rJ.png","https://i.imgur.com/VCKHesn.png"]
 				},
 				{
-					name: 'water',
-					link: ["https://i.imgur.com/WzbPIhR.jpg","https://i.imgur.com/3CxXktJ.jpg","https://i.imgur.com/S5kxlIS.jpg","https://i.imgur.com/1zeAGxB.jpg","https://i.imgur.com/mVuXjUM.jpg","https://i.imgur.com/MfAeGKc.jpg"]
-				}
+					name : 'floor2',
+					link : ["https://i.imgur.com/h9YQmWm.png","https://i.imgur.com/O17tTsj.png","https://i.imgur.com/gKMxSv3.png","https://i.imgur.com/MX2quQu.png","https://i.imgur.com/cmk0clJ.png","https://i.imgur.com/CtNodGk.png","https://i.imgur.com/2uALXaf.png","https://i.imgur.com/2USGjCa.png","https://i.imgur.com/1Ys01kW.png","https://i.imgur.com/OeMrjSx.png","https://i.imgur.com/ExZuQFv.png","https://i.imgur.com/VZ8etg6.png","https://i.imgur.com/2pa9wNH.png","https://i.imgur.com/UV2CDrb.png","https://i.imgur.com/y5c6tHX.png","https://i.imgur.com/vDHLyOX.png","https://i.imgur.com/DxlxVMJ.png","https://i.imgur.com/cqgmouS.png","https://i.imgur.com/N54QNTD.png","https://i.imgur.com/WI7VXy1.png","https://i.imgur.com/Dkx9baf.png"]
+				},
 			];
 			const Imagebar = [
-				{
-					name: 'Mazu-a',
-					link:["https://i.imgur.com/YKYfdIi.jpg","https://i.imgur.com/lZhkCV9.jpg","https://i.imgur.com/DJh0651.jpg","https://i.imgur.com/89ot71s.jpg"
-					]
-				},
-				{
-					name: 'Mazu-b',
-					link:["https://i.imgur.com/BDeiSRr.jpg","https://i.imgur.com/Hh3nZRT.jpg","https://i.imgur.com/3pPhdTR.jpg","https://i.imgur.com/rROw2ZS.jpg"]
-				},
-				{
-					name: 'Mazu-c',
-					link:["https://i.imgur.com/d0f2yPn.jpg","https://i.imgur.com/sCegBYH.jpg","https://i.imgur.com/e8mLEXu.jpg"]
-				}
 			];
 		function comicsize(){
 			var comic=document.getElementsByClassName("comic");
@@ -38,6 +26,14 @@
 			for (var i = 0, length = comic.length; i < length; i++){
 				var t=fistpage[i].height-10+"px";
 				comic[i].style.height=t;
+				if (i==0){
+					var display=document.getElementById("floor1display");
+					display.style.height=t;
+				}
+				else if (i==1){
+					var display=document.getElementById("floor2display");
+					display.style.height=t;
+				}
 			}
 		}
 
@@ -78,22 +74,7 @@
 			}
 			comicsize();
 		});
-		var cot=0;
-		function nex(){
-		console.log(Imagebar[0].link.length);
-		if(cot< Imagebar[0].link.length-1){
-			cot++;
-			var move=-cot*25+'%'
-			$('.imgs').animate({'margin-left':move},500)
-		}
-		}
-		function pre(){
-			if(cot>0){
-			cot--;
-			var move=-cot*25+'%'
-			$('.imgs').animate({'margin-left':move},500)
-			}
-		}
+
 		$(document).ready(function(){
 			$("input[name='int']").each(function(){
 				this.onclick=function(){
@@ -177,67 +158,49 @@
 				<img src="https://i.imgur.com/uZzB7Db.png" class="artwork" alt='cover or the series' referrerpolicy="no-referrer"/>
 			</div>
 			<!--***********漫畫***********-->
-			<div class="black">
-				<div class="water block">
-					<p class="title">如果地球上沒有水</p>
-					<div class="comic" id="water">
-						<img src="https://i.imgur.com/QA1p04M.jpg" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
-					</div>
-				</div>
-			<div class="night block">
-				<p class="title">之夜</p>
-				<div class="comic" id="night">
-					<img src="https://i.imgur.com/uiYOEPj.jpg" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
-				</div>
-				<span>work with 兀心</span>
-				<span>building...</span>
-			</div>
-
-			<!--***********系列***********-->
-			<!--鬼滅-->
-			<div class="series GhostSlayer block">
-				<p class="title">【鬼滅之刃】同人圖</p>
-				<img src="https://i.imgur.com/fgKmpe0.jpg" class="artwork" alt='work for Ghost Slayer' referrerpolicy="no-referrer"/>
-				<img src="https://i.imgur.com/Aq2PUSw.jpg" class="artwork" alt='work for Ghost Slayer' referrerpolicy="no-referrer"/>
-				<img src="https://i.imgur.com/lvVba7B.jpg" class="artwork" alt='work for Ghost Slayer' referrerpolicy="no-referrer"/>
-			</div>
-			</div>
-			<div class="blackgo blacktowhite"></div>
+			<div class="towhite"></div>
 			<div class="white">
-			
-				<!--霸王別姬-->
-				<div class="series FarewellMyConcubine block">
-					<p class="title">【霸王別姬】致敬</p>
-					<img src="https://i.imgur.com/JvgTn2l.png" class="artwork" alt='work for Farewell My Concubine' referrerpolicy="no-referrer"/>
-					<img src="https://i.imgur.com/66WoxM1.png" class="artwork" alt='work for Farewell My Concubine' referrerpolicy="no-referrer"/>
-				</div>
-			
-			</div>
-			<div class="whitego"></div>
-			
-			<!--媽祖-->
-			<div class="series Mazu block">
-				<p class="title">【媽祖】致敬</p>
-				<div id="Mazu-bigsize">
-					<img src="https://i.imgur.com/bpNTRvI.jpg" class="artwork" alt='work for Mazu' referrerpolicy="no-referrer"/>
-				</div>
-
-				<div id="Mazu-small"> 
-					<div class="imgs" id="Mazu">
-						<div class="imgs" id="Mazu-a"></div>
-						<div class="imgs" id="Mazu-b"></div>
-						<div class="imgs" id="Mazu-c"></div>
-					</div>
-					<div>
-						<div class="button" onclick="pre()" style="float:left;cursor:pointer">上一頁</div>
-						<div class="button" onclick="nex()" style="float:right;cursor:pointer">下一頁</div>
+				<div class="floor1 block">
+					<p class="title"> Ch.1</p>
+					<p class="title sub-title"> 親愛的，這個當興趣就好</p>
+					<div class="line"></div>
+					<div class="withint" id="floor1display">
+						<input type="checkbox" name="floor1-video" id="floor1-video">
+						<label for="floor1-video" class="video-button"></label>
+						<iframe class="video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>video(I can't put youtube on without error message)</iframe>
+						<div class="dropup-button"></div>
+						<div class="comic" id="floor1">
+							<img src="https://i.imgur.com/sG0GStX.jpg" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
+						</div>
+						<div class="drop-button"></div>
+						<!--src="https://www.youtube.com/embed/MDcvo3Y63ZM"-->
+						<input type="checkbox" name="int" id="int" value="floor1">
+						<label for="int" class="int-button"></label>
+						<div class="int-block"><div class="int" id="floor1-fileOutput"></div></div>
 					</div>
 				</div>
 
 
+				<div class="floor2 block">
+					<div class="line"></div>
+					<p class="title"> Ch.2</p>
+					<p class="title sub-title">Outside the Window</p>
+					<div class="line"></div>
+					<div id="floor2display">
+						<img src="https://i.imgur.com/K5Y9NKc.png" class="artwork" id="comic-bird" alt='illustration' referrerpolicy="no-referrer"/>
+						<div class="comic" id="floor2">
+							<img src="https://i.imgur.com/9ZCRmWz.png" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
+						</div>
+						<input type="checkbox" name="floor2" id="floor2-program">
+						<label for="floor2-program" class="program-button"></label>
+						<input type="checkbox" name="floor2" id="floor2-video1">
+						<label for="floor2-video1" class="video-button"></label>
+						<div class="video"></div>
+						<input type="checkbox" name="floor2" id="floor2-video2">
+						<label for="floor2-video2" class="video-button"></label>
+						<div class="video"></div>
+					</div>
+				</div>
 			</div>
-
-		</div>
-		
-	</body>
-</html>
+        </div>
+    </body>

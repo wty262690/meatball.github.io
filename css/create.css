@@ -1,0 +1,177 @@
+@import "main.css"; 
+@import "list.css"; 
+@import "artwork.css"; 
+
+/*---cover---*/
+.cover{
+    height:50vw;
+    position:relative;
+}
+.cover .int{
+    z-index:99999;
+    padding:0;
+    overflow:auto;
+    position:absolute;
+    width:50%;
+    right:15%;
+    bottom:0;
+}
+
+.cover .artwork{
+    position:absolute;
+    padding-top:20px;
+    width:70%;
+    left:15%;
+    bottom:0%;
+}
+
+
+/*---floor1---*/
+
+.floor1>.title{
+    padding-top:20px;
+}
+.floor1>.sub-title{
+    padding:10px;
+}
+
+/*floor1display*/
+#floor1display{
+    margin-top:20%;
+    margin-bottom:20px;
+    height:100vw;
+    position:relative;
+}
+
+.floor1 .drop-button, .floor1 .dropup-button{
+    left:40%;
+}
+
+.floor1 .drop-button{
+    bottom:0;
+}
+
+.floor1 .video-button{
+    bottom:0;
+}
+.floor1 .int-button{
+    bottom:6vw;
+}
+
+#floor1, .floor1 .video, .floor1 .int-block{
+    margin:0 auto;
+    margin-left:0%;
+    width:85%;
+}
+.floor1 .video, .floor1 .int-block, .floor1 .int{
+    position:absolute;
+    left:0%;
+    height:100%;
+    bottom:0;
+    visibility: hidden;
+}
+
+.floor1 .video{
+    background-color:aqua;
+}
+.floor1 .int-block{
+    overflow:hidden;
+}
+.floor1 .int{
+    opacity:0;
+    width:92%;
+    margin:auto;
+    padding:0;
+    padding-left: 4%;
+    padding-right:4%;
+    background-color:rgba(255, 255, 255, 0.925);
+    left:100%;
+    overflow-y:auto;
+    transition: visibility 1s, opacity 1s, left 0.7s linear;
+    letter-spacing:3px;
+    line-height:150%;
+}
+
+.floor1 .int::-webkit-scrollbar{
+    display:none;
+}
+
+#floor1-video:checked ~ .video{
+    visibility: visible;
+    opacity: 1;
+}
+
+#floor1-video:checked ~ .video-button{
+    background-image:url("../image/png/button-19.png")
+}
+
+#int:checked ~ .int-block .int{
+    visibility: visible;
+    opacity: 1;
+    left:0;
+}
+
+/*---floor2---*/
+.floor2{
+    padding-top:10%;
+}
+
+.floor2>.title{
+    padding-top:20px;
+}
+.floor2>.sub-title{
+    padding:10px;
+}
+.floor2 .program-button, .floor2 .video-button{
+    position:absolute;
+    left:10%;
+    margin-top:3vw;
+}
+
+#floor2-video1~.video-button{
+    top:6vw;
+}
+#floor2-video2~.video-button{
+    top:12vw;
+}
+#floor2-program:checked ~ .program-button{
+    background-image:url("../image/png/button-19.png");
+}
+
+#floor2display{
+    margin-top:10%;
+    position:relative;
+}
+#comic-bird{
+    position:absolute;
+    mix-blend-mode: darken;
+    width:50%;
+    left:1%;
+    bottom:-10%;
+}
+#floor2, #floor2~.video{
+    position:absolute;
+    left:30%;
+    width:70%;
+}
+#floor2~.video{
+    visibility: hidden;
+    height:100%;
+}
+#floor2-video1+label+.video{
+    background-color:red;
+}
+#floor2-video2+label+.video{
+    background-color:yellow;
+}
+
+#floor2-video1:checked+label+.video{
+    visibility:visible;
+    opacity: 1;
+}
+
+#floor2-video2:checked+label+.video{
+    visibility:visible;
+    opacity: 1;
+}
+
