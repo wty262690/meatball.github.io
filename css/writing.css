@@ -1,5 +1,10 @@
 @import "main.css"; 
 
+/*---menu---*/
+.menu{
+    background-color: rgb(255, 252, 228);
+}
+
 /*--story--*/
 .story{
 

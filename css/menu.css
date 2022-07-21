@@ -1,10 +1,9 @@
 
 .menu, .back{
-    background-color:rgb(255, 252, 228);
     position:fixed;
     width:100vw;
     margin:0;
-    height: 20px;
+    height: 10px;
     box-sizing: border-box;
     font-size: 20px;
     z-index: 3;
