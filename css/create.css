@@ -55,7 +55,7 @@
     bottom:0;
 }
 .floor1 .int-button{
-    bottom:6vw;
+    bottom:30px;
 }
 
 #floor1, .floor1 .video, .floor1 .int-block{
@@ -129,10 +129,10 @@
 }
 
 #floor2-video1~.video-button{
-    top:6vw;
+    top:30px;
 }
 #floor2-video2~.video-button{
-    top:12vw;
+    top:60px;
 }
 #floor2-program:checked ~ .program-button{
     background-image:url("../image/png/button-19.png");
