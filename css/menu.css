@@ -1,10 +1,9 @@
 
 .menu, .back{
-    background-color:rgb(255, 252, 228);
     position:fixed;
     width:100vw;
     margin:0;
-    height: 20px;
+    height: 10px;
     box-sizing: border-box;
     font-size: 20px;
     z-index: 3;
@@ -121,21 +120,26 @@
 
 
 .menu-item a:nth-child(1) {
-    margin-top:50vh;
+    margin-top:40vh;
     transition-duration: 1000ms;
 }
 .menu-item a:nth-child(2) {
-    margin-top:60vh;
+    margin-top:50vh;
     transition-duration: 900ms;
 }
 .menu-item a:nth-child(3) {
-    margin-top:70vh;
+    margin-top:60vh;
     transition-duration: 800ms;
 }
 
 .menu-item a:nth-child(4) {
-    margin-top:80vh;
+    margin-top:70vh;
     transition-duration: 700ms;
+}
+
+.menu-item a:nth-child(5) {
+    margin-top:80vh;
+    transition-duration: 600ms;
 }
 
 .menu-open:checked ~ .menu-item a { 
@@ -147,7 +151,7 @@
     transform: translate3d(-90px, 0px, 0);
 }
 
-.menu-open:checked ~ .menu-item a:nth-child(1) {
+.menu-open:checked ~ .menu-item a:nth-child(1){
     transition-duration: 1000ms;
 }
 
@@ -162,4 +166,10 @@
 .menu-open:checked ~ .menu-item a:nth-child(4) {
     transition-duration: 1600ms;
 }
+
+.menu-open:checked ~ .menu-item a:nth-child(5) {
+    transition-duration: 1800ms;
+}
+
+
 

@@ -1,208 +1,30 @@
 @import "main.css"; 
-/*---content---*/
-.content{
-    width:100vw;
-    margin:0 auto;
-    padding-top:100px;
-}
-.black, .white{
-    width:100%;
-}
+@import "list.css"; 
+@import "artwork.css"; 
 
-.black{
-    color:white;
-    background-color:black;
-}
-.white{
-    background-color: white;
-}
-
-.toblack, .blackgo, .whitego,.towhite{
-    width:100%;
+/*---cover---*/
+.cover{
     height:50vw;
-    background-size:contain;
-}
-
-.towhite{
-    background-image: url("../image/towhite.png");
-}
-.whitego{
-    background-image:url("../image/whiteto.png");
-}
-
-.toblack{
-    background-image:url("../image/yellow-to-black.png");
-}
-
-.blackgo{
-    background-image:url("../image/black-to-yellow.png");
-}
-
-.blacktowhite{
-    background-color:white;
-}
-
-/*---list---*/
-.story-open{
-    height:0;
-    width:0;
-    display:none;
-}
-
-.list-open{
-    display:none;
-}
-
-.list-open-button{
-    transition-duration:1s;
-    position:fixed;
-    width:2px;
-    left:2px;
-    margin:0px;
-    margin-top:calc(50vh + 20px);
-}
-
-.list-button{
-    transition: transform 1s, background-position-y 0s;
-    background-image:url("../image/png/listicon-13.png");
-    background-size:100%;
-    background-position-x:center;
-    background-position-y:0;
-    margin-top:80px;
-    height:calc(100vh - 90px);
-    width:15px;
-    border-left:3px solid;
-    border-color:rgb(76, 60, 60);
-}
-
-/*--story title (button in story list) --*/
-.story-list{
-    transition-duration:1s;
-    position: fixed;
-    font-size:23px;
-    margin:0 auto;
-    left:-13vw;
-    width:12vw;
-    height: calc(100% - 150px);
-    margin-top:100px;
-    overflow-y:auto;
-    word-wrap:break-word;;
-}
-.story-list::-webkit-scrollbar {
-    display: none;
-}
-
-.sub-story-open~span{
-    font-size:20px;
-}
-
-.list-br{
-    height:5vw;
-    min-height:20px;
-    max-height:50px;
-}
-
-.story-open-button{
-    margin:0;
-    width:40vw;
-    height:40px;
-}
-
-/*activity - for story list button*/
-.list-open:checked ~ .story-list{
-    transition-duration:1s;
-    transform: translate3d(14vw, 0, 0);
-}
-.list-open:checked +label>.list-open-button{
-    transform: translate3d(calc(14vw - 4px), 0, 0);
-}
-.sub-story-open~span{
-    display:none;
-}
-.story-open:hover ~ .sub-story-open~span{
-    display:block;
-}
-
-/*---artwork---*/
-.comic{
-    height:0vw;
-    white-space:pre-line;
-    overflow-y:auto;
-}
-.comic::-webkit-scrollbar {
-    display: none;
-}
-
-.title{
-    font-size:17px;
-}
-.sub-title{
-    font-size:12px;
-}
-
-.artwork{
-    width:100%;
-    margin: 0 auto;
-}
-
-.comic .artwork{
-    margin-top:-5px;
-}
-
-.int, .floor1, .floor2, .night, .water, .GhostSlayer, .FarewellMyConcubine,.Mazu{
-    margin:auto;
-    width:70%;
-    text-align: center;
-}
-/*---int---*/
-.int{
-    padding:20%;
-    padding-left:0;
-    padding-right:0;
-}
-
-/*---floor1---*/
-
-.floor1>.artwork{
-    padding-top:20px;
-    width:90%;
-}
-.floor1>.title{
-    padding-top:50px;
-}
-.floor1>.sub-title{
-    padding:10px;
-}
-
-#floor1display{
-    height:100vw;
     position:relative;
-    background-color:blueviolet;
 }
-
-#floor1, .floor1 .video{
-    margin:0 auto;
-    width:80%;
-}
-
-.floor1 .video{
-    left:10%;
+.cover .int{
+    z-index:99999;
+    padding:0;
+    overflow:auto;
     position:absolute;
-    bottom: 10px;
-    background-color:aqua;
-}
-
-/*---floor2---*/
-
-#comic-bird{
-    mix-blend-mode: darken;
     width:50%;
-    float:left;
+    right:15%;
+    bottom:0;
 }
 
-#floor2{
-    width:50%;
+.cover .artwork{
+    position:absolute;
+    padding-top:20px;
+    width:70%;
+    left:15%;
+    bottom:0%;
 }
+
 
 /*---night---*/
 .night{

@@ -9,14 +9,6 @@
 	<script>
 		const ComicTitle = [
 				{
-					name : 'floor1',
-					link : ["https://i.imgur.com/KaM7t5T.png","https://i.imgur.com/eM14Rdf.png","https://i.imgur.com/pS6xU5a.png","https://i.imgur.com/SQz5axx.png","https://i.imgur.com/xwZbSm8.png","https://i.imgur.com/djQyGDh.png","https://i.imgur.com/iF26szu.png","https://i.imgur.com/71YzKnb.png","https://i.imgur.com/4NXiBHx.png","https://i.imgur.com/cxPjTmM.png","https://i.imgur.com/mLJ5stg.png","https://i.imgur.com/Awh06HI.png","https://i.imgur.com/iFHqnmT.png","https://i.imgur.com/zoRRhj1.png","https://i.imgur.com/wzKivfl.png","https://i.imgur.com/EDOYf1C.png","https://i.imgur.com/HI49GfA.png","https://i.imgur.com/nl6hl5j.png","https://i.imgur.com/3KOewtD.png","https://i.imgur.com/W1kuQl6.png","https://i.imgur.com/eno3nOx.png","https://i.imgur.com/afXOBmJ.png","https://i.imgur.com/Pbju3SG.png","https://i.imgur.com/Cjtoo29.png","https://i.imgur.com/4qVNbH1.png","https://i.imgur.com/YLrFLGX.png","https://i.imgur.com/wbi3RDe.png","https://i.imgur.com/4GPDCHu.png","https://i.imgur.com/q6llicV.png","https://i.imgur.com/quh0ITF.png","https://i.imgur.com/OMPFEhO.png","https://i.imgur.com/5NRxyqT.png","https://i.imgur.com/Mw6d7rJ.png","https://i.imgur.com/VCKHesn.png","https://i.imgur.com/cmk0clJ.png",""]
-				},
-				{
-					name : 'floor2',
-					link : ["https://i.imgur.com/h9YQmWm.png","https://i.imgur.com/O17tTsj.png","https://i.imgur.com/gKMxSv3.png","https://i.imgur.com/MX2quQu.png","https://i.imgur.com/CtNodGk.png","https://i.imgur.com/2uALXaf.png","https://i.imgur.com/2USGjCa.png","https://i.imgur.com/1Ys01kW.png","https://i.imgur.com/OeMrjSx.png","https://i.imgur.com/ExZuQFv.png","https://i.imgur.com/VZ8etg6.png","https://i.imgur.com/2pa9wNH.png","https://i.imgur.com/UV2CDrb.png","https://i.imgur.com/y5c6tHX.png","https://i.imgur.com/vDHLyOX.png","https://i.imgur.com/DxlxVMJ.png","https://i.imgur.com/cqgmouS.png","https://i.imgur.com/N54QNTD.png","https://i.imgur.com/WI7VXy1.png","https://i.imgur.com/Dkx9baf.png"]
-				},
-				{
 					name: 'night',
 					link: []
 				},
@@ -64,6 +56,7 @@
 
 
 		window.onload=function(){
+			$('.menu').load('menu.html');
 			comicsize();
 			for (var i=0, length=ComicTitle.length; i<length; i++){
 				comicpage(ComicTitle[i]);
@@ -75,6 +68,14 @@
 	</script>
 	<script>
 		$(window).resize(function(){
+			if ($(window).width()<=1000){
+				$(".block").css("width","100%");
+				$(".block").css("min-width","100%");
+			}
+			else{
+				$(".block").css("width","80%");
+				$(".block").css("min-width","1000px");
+			}
 			comicsize();
 		});
 		var cot=0;
@@ -84,7 +85,6 @@
 			cot++;
 			var move=-cot*25+'%'
 			$('.imgs').animate({'margin-left':move},500)
-			//$('.imgs img').eq(cot).animate({'margin-left':'-50%'},500);
 		}
 		}
 		function pre(){
@@ -95,10 +95,20 @@
 			}
 		}
 		$(document).ready(function(){
-			$("input[name='video']").each(function(){
+			$("input[name='int']").each(function(){
 				this.onclick=function(){
-					if(this.checked) $(this).next().hide();  
-					else $(this).next().show();
+					if(this.checked) {
+						var file = new XMLHttpRequest();
+                        file.open("GET", "word/"+this.value+".txt");
+						var idname=this.value+"-fileOutput";
+                        file.onreadystatechange = function() {
+                            if (file.readyState === 4) {
+                                var allText = file.responseText;
+                                document.getElementById(idname).innerHTML = "<br>"+allText;
+                                }
+                            }
+                        file.send(null);
+					}
 				}
 			});
 		});
@@ -108,11 +118,6 @@
 	<body>
 		<nav class="menu nocopy">
 		</nav>
-		<script type="text/javascript">
-			$(document).ready(function () {
-				$('.menu').load('menu.html');
-			});
-		</script>
 
 	<nav class="nocopy">
 		<input type="radio" class="list-open" name="menu-open" id="list-open" checked="checked" />
@@ -164,39 +169,22 @@
 
 
 		<div class="content">
-			<div class="int">
-				<p class="title">丸蛋繪圖</p>
-				<pre>丸蛋繪圖，鐵定完蛋</pre>
+			<div class="cover">
+				<div class="int-block int">
+					<pre>
+					</pre>
+				</div>
+				<img src="https://i.imgur.com/uZzB7Db.png" class="artwork" alt='cover or the series' referrerpolicy="no-referrer"/>
 			</div>
 			<!--***********漫畫***********-->
-			<div class="towhite"></div>
-			<div class="white">
-				<div class="floor1">
-					<img src="https://i.imgur.com/tTGNe7c.png" class="artwork" alt='cover or the series' referrerpolicy="no-referrer"/>
-					<p class="title"> Ch.1</p>
-					<p class="title sub-title"> 親愛的，這個當興趣就好</p>
-					<div id="floor1display">
-						<input type="checkbox" name="video">
-						<div class="comic" id="floor1">
-							<img src="https://i.imgur.com/sG0GStX.jpg" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
-						</div>
-						<iframe class="video"src="https://www.youtube.com/embed/MDcvo3Y63ZM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						<div class="">video(I can't put youtube on without error message)</div>
-					</div>
-				</div>
-
-
-				<div class="floor2">
-					<p class="title">Outside the Window 窗外</p>
-					<img src="https://i.imgur.com/K5Y9NKc.png" class="artwork" id="comic-bird" alt='illustration' referrerpolicy="no-referrer"/>
-					<div class="comic" id="floor2">
-						<img src="https://i.imgur.com/9ZCRmWz.png" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
-					</div>
-				</div>
-			</div>
-			<div class="toblack white"></div>
 			<div class="black">
-			<div class="night">
+				<div class="water block">
+					<p class="title">如果地球上沒有水</p>
+					<div class="comic" id="water">
+						<img src="https://i.imgur.com/QA1p04M.jpg" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
+					</div>
+				</div>
+			<div class="night block">
 				<p class="title">之夜</p>
 				<div class="comic" id="night">
 					<img src="https://i.imgur.com/uiYOEPj.jpg" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
@@ -205,16 +193,9 @@
 				<span>building...</span>
 			</div>
 
-			<div class="water">
-				<p class="title">如果地球上沒有水</p>
-				<div class="comic" id="water">
-					<img src="https://i.imgur.com/QA1p04M.jpg" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
-				</div>
-			</div>
-
 			<!--***********系列***********-->
 			<!--鬼滅-->
-			<div class="series GhostSlayer">
+			<div class="series GhostSlayer block">
 				<p class="title">【鬼滅之刃】同人圖</p>
 				<img src="https://i.imgur.com/fgKmpe0.jpg" class="artwork" alt='work for Ghost Slayer' referrerpolicy="no-referrer"/>
 				<img src="https://i.imgur.com/Aq2PUSw.jpg" class="artwork" alt='work for Ghost Slayer' referrerpolicy="no-referrer"/>
@@ -225,7 +206,7 @@
 			<div class="white">
 			
 				<!--霸王別姬-->
-				<div class="series FarewellMyConcubine">
+				<div class="series FarewellMyConcubine block">
 					<p class="title">【霸王別姬】致敬</p>
 					<img src="https://i.imgur.com/JvgTn2l.png" class="artwork" alt='work for Farewell My Concubine' referrerpolicy="no-referrer"/>
 					<img src="https://i.imgur.com/66WoxM1.png" class="artwork" alt='work for Farewell My Concubine' referrerpolicy="no-referrer"/>
@@ -235,7 +216,7 @@
 			<div class="whitego"></div>
 			
 			<!--媽祖-->
-			<div class="series Mazu">
+			<div class="series Mazu block">
 				<p class="title">【媽祖】致敬</p>
 				<div id="Mazu-bigsize">
 					<img src="https://i.imgur.com/bpNTRvI.jpg" class="artwork" alt='work for Mazu' referrerpolicy="no-referrer"/>

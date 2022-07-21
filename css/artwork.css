@@ -1,0 +1,139 @@
+/*---content---*/
+.content{
+    width:100vw;
+    margin:0 auto;
+    padding-top:100px;
+}
+.black, .white{
+    width:100%;
+}
+
+.black{
+    color:white;
+    background-color:black;
+}
+.white{
+    background-color: white;
+}
+
+.toblack, .blackgo, .whitego,.towhite{
+    width:100%;
+    height:50vw;
+    background-size:contain;
+}
+
+.towhite{
+    background-image: url("../image/towhite.png");
+}
+.whitego{
+    background-image:url("../image/whiteto.png");
+}
+
+.toblack{
+    background-image:url("../image/yellow-to-black.png");
+}
+
+.blackgo{
+    background-image:url("../image/black-to-yellow.png");
+}
+
+.blacktowhite{
+    background-color:white;
+}
+
+/*---button---*/
+input{
+    display:none;
+}
+input:checked +label{
+    background-image:url("../image/png/button-21.png");
+}
+
+.int-button, .video-button, .program-button{
+    position:absolute;
+    right:0%;
+    width:9vw;
+    height:4.8vw;
+    background-size:contain;
+}
+
+.video-button{
+    background-image:url("../image/png/button-17.png");
+}
+
+.int-button{
+    background-image:url("../image/png/button-18.png");
+}
+
+.program-button{
+    background-image:url("../image/png/button-20.png")
+}
+
+.drop-button, .dropup-button{
+    position:absolute;
+    width:4vw;
+    height:3.5vw;
+    background-size:contain;
+    background-image:url("../image/png/dropbutton-22.png")
+}
+.dropup-button{
+    transform:rotate(180deg);
+}
+
+.video{
+    opacity: 0;
+    transition: visibility 1s, opacity 0.5s linear;
+}
+
+/*---artwork---*/
+.comic{
+    height:0vw;
+    white-space:pre-line;
+    overflow-y:auto;
+}
+.comic::-webkit-scrollbar {
+    display: none;
+}
+
+div .title{
+    font-size:15px;
+}
+.sub-title{
+    font-size:12px;
+}
+
+div .line{
+    margin:auto;
+    width:100%;
+}
+
+.artwork{
+    width:100%;
+    margin: 0 auto;
+}
+
+.comic .artwork{
+    margin-top:-4px;
+}
+
+.comic .firstpage{
+    margin-top:-20px;
+}
+
+
+.block{
+    margin:auto;
+    width:70%;
+    text-align: center;
+    min-width:1000px;
+}
+/*---int---*/
+.int{
+    padding:20%;
+    padding-left:0;
+    padding-right:0;
+    text-align:left;
+}
+.int > pre{
+    font-size: 12.5px;
+}
