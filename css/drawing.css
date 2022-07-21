@@ -142,7 +142,7 @@ div .title{
 
 div .line{
     margin:auto;
-    width:70%;
+    width:80%;
 }
 
 .artwork{
@@ -189,16 +189,27 @@ div .line{
 }
 
 /*---video button---*/
-#video{
+#video, #int{
     display:none;
 }
 
-.video-button{
+.int-button, .video-button{
     position:absolute;
     right:-20px;
-    bottom:0;
+    width:10%;
+    height:13%;
+    background-size:contain;
 }
 
+.video-button{
+    bottom:0;
+    background-image:url("../image/png/button-17.png");
+}
+
+.int-button{
+    bottom:13%;
+    background-image:url("../image/png/button-18.png");
+}
 
 #floor1display{
     margin-top:50px;
@@ -206,11 +217,11 @@ div .line{
     position:relative;
 }
 
-#floor1, .floor1 .video, .floor1, .floor1 .int-block{
+#floor1, .floor1 .video, .floor1 .int-block{
     margin:0 auto;
     width:80%;
 }
-.floor1 .video, .floor1 .int-block{
+.floor1 .video, .floor1 .int-block, .floor1 .int{
     position:absolute;
     left:10%;
     height:100%;
@@ -228,21 +239,31 @@ div .line{
 }
 .floor1 .int{
     opacity:0;
-    position:absolute;
-    width:100%;
+    width:92%;
     margin:auto;
-    height:100%;
     padding:0;
+    padding-left: 4%;
+    padding-right:4%;
     background-color:rgba(255, 255, 255, 0.925);
     left:100%;
-    bottom:0;
     overflow-y:auto;
-    transition: width 1s, visibility 0.5s, opacity 0.5s, left 0.5s linear;
+    transition: visibility 1s, opacity 1s, left 0.7s linear;
+    letter-spacing:3px;
+    line-height:30px;
+}
+
+.floor1 .int::-webkit-scrollbar{
+    display:none;
 }
 
 #video:checked ~ .video{
     visibility: visible;
     opacity: 1;
+}
+
+#video:checked ~ .video-button{
+
+    background-image:url("../image/png/button-19.png")
 }
 
 #int:checked ~ .int-block .int{
