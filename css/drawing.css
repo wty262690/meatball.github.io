@@ -151,6 +151,17 @@ input:checked +label{
     background-image:url("../image/png/button-20.png")
 }
 
+.drop-button, .dropup-button{
+    position:absolute;
+    width:4vw;
+    height:3.5vw;
+    background-size:contain;
+    background-image:url("../image/png/dropbutton-22.png")
+}
+.dropup-button{
+    transform:rotate(180deg);
+}
+
 .video{
     opacity: 0;
     transition: visibility 1s, opacity 0.5s linear;
@@ -184,7 +195,7 @@ div .line{
 }
 
 .comic .artwork{
-    margin-top:-3.5px;
+    margin-top:-4px;
 }
 
 .comic .firstpage{
@@ -192,10 +203,11 @@ div .line{
 }
 
 
-.int, .floor1, .floor2, .night, .water, .GhostSlayer, .FarewellMyConcubine,.Mazu{
+.block{
     margin:auto;
     width:70%;
     text-align: center;
+    min-width:1000px;
 }
 /*---int---*/
 .int{
@@ -243,10 +255,18 @@ div .line{
 
 /*floor1display*/
 #floor1display{
-    margin-top:20px;
+    margin-top:20%;
     margin-bottom:20px;
     height:100vw;
     position:relative;
+}
+
+.floor1 .drop-button, .floor1 .dropup-button{
+    left:40%;
+}
+
+.floor1 .drop-button{
+    bottom:0;
 }
 
 .floor1 .video-button{
@@ -310,6 +330,9 @@ div .line{
 }
 
 /*---floor2---*/
+.floor2{
+    padding-top:10%;
+}
 .floor2>.title{
     padding-top:20px;
 }
@@ -333,7 +356,7 @@ div .line{
 }
 
 #floor2display{
-    margin-top:20px;
+    margin-top:10%;
     position:relative;
 }
 #comic-bird{
