@@ -134,8 +134,8 @@ input:checked +label{
 .int-button, .video-button, .program-button{
     position:absolute;
     right:0%;
-    width:10vw;
-    height:5.5vw;
+    width:9vw;
+    height:4.8vw;
     background-size:contain;
 }
 
@@ -208,12 +208,32 @@ div .line{
     font-size: 12.5px;
 }
 
+/*---cover---*/
+.cover{
+    height:50vw;
+    position:relative;
+}
+.cover .int{
+    z-index:99999;
+    padding:0;
+    overflow:auto;
+    position:absolute;
+    width:50%;
+    right:15%;
+    bottom:0;
+}
+
+.cover .artwork{
+    position:absolute;
+    padding-top:20px;
+    width:70%;
+    left:15%;
+    bottom:0%;
+}
+
+
 /*---floor1---*/
 
-.floor1>.artwork{
-    padding-top:20px;
-    width:100%;
-}
 .floor1>.title{
     padding-top:20px;
 }
@@ -298,7 +318,8 @@ div .line{
 }
 .floor2 .program-button, .floor2 .video-button{
     position:absolute;
-    left:15%;
+    left:10%;
+    margin-top:3vw;
 }
 
 #floor2-video1~.video-button{
