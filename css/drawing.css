@@ -142,7 +142,7 @@ div .title{
 
 div .line{
     margin:auto;
-    width:80%;
+    width:100%;
 }
 
 .artwork{
@@ -179,7 +179,7 @@ div .line{
 
 .floor1>.artwork{
     padding-top:20px;
-    width:70%;
+    width:100%;
 }
 .floor1>.title{
     padding-top:20px;
@@ -189,38 +189,48 @@ div .line{
 }
 
 /*video button*/
-#video, #int{
+#floor1-video, #int{
     display:none;
 }
 
-.int-button, .video-button{
+.int-button, .video-button, .program-button{
     position:absolute;
     right:0%;
-    width:10%;
-    height:12%;
+    width:10vw;
+    height:5.5vw;
     background-size:contain;
 }
 
 .video-button{
-    bottom:0;
     background-image:url("../image/png/button-17.png");
 }
 
 .int-button{
-    bottom:13%;
     background-image:url("../image/png/button-18.png");
 }
 
+.program-button{
+    background-image:url("../image/png/button-20.png")
+}
+
+/*floor1display*/
 #floor1display{
-    margin-top:10px;
-    margin-bottom:10px;
+    margin-top:20px;
+    margin-bottom:20px;
     height:100vw;
     position:relative;
 }
 
+.floor1 .video-button{
+    bottom:0;
+}
+.floor1 .int-button{
+    bottom:6vw;
+}
+
 #floor1, .floor1 .video, .floor1 .int-block{
     margin:0 auto;
-    margin-left:5%;
+    margin-left:0%;
     width:85%;
 }
 .floor1 .video, .floor1 .int-block, .floor1 .int{
@@ -251,20 +261,19 @@ div .line{
     overflow-y:auto;
     transition: visibility 1s, opacity 1s, left 0.7s linear;
     letter-spacing:3px;
-    line-height:30px;
+    line-height:150%;
 }
 
 .floor1 .int::-webkit-scrollbar{
     display:none;
 }
 
-#video:checked ~ .video{
+#floor1-video:checked ~ .video{
     visibility: visible;
     opacity: 1;
 }
 
-#video:checked ~ .video-button{
-
+#floor1-video:checked ~ .video-button{
     background-image:url("../image/png/button-19.png")
 }
 
@@ -275,8 +284,19 @@ div .line{
 }
 
 /*---floor2---*/
+.floor2>.title{
+    padding-top:20px;
+}
+.floor2>.sub-title{
+    padding:10px;
+}
+.floor2 .program-button{
+    position:absolute;
+    left:0;
+}
 
 #floor2display{
+    margin-top:20px;
     position:relative;
 }
 #comic-bird{

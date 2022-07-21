@@ -6,6 +6,7 @@
     <title>Meatball Portfolio</title>
     <link href="css/drawing.css" rel="stylesheet" type="text/css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script defer src=https://Unpkg.com/processing-js></script>	
 	<script>
 		const ComicTitle = [
 				{
@@ -14,7 +15,7 @@
 				},
 				{
 					name : 'floor2',
-					link : ["https://i.imgur.com/h9YQmWm.png","https://i.imgur.com/O17tTsj.png","https://i.imgur.com/gKMxSv3.png","https://i.imgur.com/MX2quQu.png","https://i.imgur.com/CtNodGk.png","https://i.imgur.com/2uALXaf.png","https://i.imgur.com/2USGjCa.png","https://i.imgur.com/1Ys01kW.png","https://i.imgur.com/OeMrjSx.png","https://i.imgur.com/ExZuQFv.png","https://i.imgur.com/VZ8etg6.png","https://i.imgur.com/2pa9wNH.png","https://i.imgur.com/UV2CDrb.png","https://i.imgur.com/y5c6tHX.png","https://i.imgur.com/vDHLyOX.png","https://i.imgur.com/DxlxVMJ.png","https://i.imgur.com/cqgmouS.png","https://i.imgur.com/N54QNTD.png","https://i.imgur.com/WI7VXy1.png","https://i.imgur.com/Dkx9baf.png"]
+					link : ["https://i.imgur.com/h9YQmWm.png","https://i.imgur.com/O17tTsj.png","https://i.imgur.com/gKMxSv3.png","https://i.imgur.com/MX2quQu.png","https://i.imgur.com/cmk0clJ.png","https://i.imgur.com/CtNodGk.png","https://i.imgur.com/2uALXaf.png","https://i.imgur.com/2USGjCa.png","https://i.imgur.com/1Ys01kW.png","https://i.imgur.com/OeMrjSx.png","https://i.imgur.com/ExZuQFv.png","https://i.imgur.com/VZ8etg6.png","https://i.imgur.com/2pa9wNH.png","https://i.imgur.com/UV2CDrb.png","https://i.imgur.com/y5c6tHX.png","https://i.imgur.com/vDHLyOX.png","https://i.imgur.com/DxlxVMJ.png","https://i.imgur.com/cqgmouS.png","https://i.imgur.com/N54QNTD.png","https://i.imgur.com/WI7VXy1.png","https://i.imgur.com/Dkx9baf.png"]
 				},
 				{
 					name: 'night',
@@ -190,8 +191,8 @@
 					<p class="title sub-title"> 親愛的，這個當興趣就好</p>
 					<div class="line"></div>
 					<div class="withint" id="floor1display">
-						<input type="checkbox" name="video" id="video">
-						<label for="video" class="video-button"></label>
+						<input type="checkbox" name="floor1-video" id="floor1-video">
+						<label for="floor1-video" class="video-button"></label>
 						<iframe class="video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>video(I can't put youtube on without error message)</iframe>
 						<div class="comic" id="floor1">
 							<img src="https://i.imgur.com/sG0GStX.jpg" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
@@ -214,9 +215,13 @@
 						<div class="comic" id="floor2">
 							<img src="https://i.imgur.com/9ZCRmWz.png" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
 						</div>
+						<input type="checkbox" name="floor2-program" id="floor2-program">
+						<label for="floor2-program" class="program-button"></label>
+						<div></div>
 					</div>
 				</div>
 			</div>
+			
 			<div class="toblack white"></div>
 			<div class="black">
 			<div class="night">
