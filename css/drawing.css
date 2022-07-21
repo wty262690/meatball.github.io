@@ -172,7 +172,7 @@ div .line{
     text-align:left;
 }
 .int > pre{
-    font-size: 14px;
+    font-size: 12.5px;
 }
 
 /*---floor1---*/
@@ -188,16 +188,16 @@ div .line{
     padding:10px;
 }
 
-/*---video button---*/
+/*video button*/
 #video, #int{
     display:none;
 }
 
 .int-button, .video-button{
     position:absolute;
-    right:-20px;
+    right:0%;
     width:10%;
-    height:13%;
+    height:12%;
     background-size:contain;
 }
 
@@ -212,18 +212,20 @@ div .line{
 }
 
 #floor1display{
-    margin-top:50px;
+    margin-top:10px;
+    margin-bottom:10px;
     height:100vw;
     position:relative;
 }
 
 #floor1, .floor1 .video, .floor1 .int-block{
     margin:0 auto;
-    width:80%;
+    margin-left:5%;
+    width:85%;
 }
 .floor1 .video, .floor1 .int-block, .floor1 .int{
     position:absolute;
-    left:10%;
+    left:0%;
     height:100%;
     bottom:0;
     visibility: hidden;
@@ -274,17 +276,19 @@ div .line{
 
 /*---floor2---*/
 
+#floor2display{
+    position:relative;
+}
 #comic-bird{
     position:absolute;
     mix-blend-mode: darken;
     width:50%;
-    left:0;
-    bottom:0;
+    left:1%;
+    bottom:-10%;
 }
-
 #floor2{
-    margin:auto;
-    margin-left:20%;
+    position:absolute;
+    left:30%;
     width:70%;
 }
 
