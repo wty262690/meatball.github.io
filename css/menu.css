@@ -28,13 +28,6 @@
     transform: scale(1.4, 1.4);
 }
 
-/*---line---*/
-.line{
-    width:100%;
-    height:4.5vw;
-    background-image:url("../image/hr.svg");
-    background-size:cover;
-}
 /*---input---*/
 .menu-open {
     margin:0;

@@ -103,7 +103,7 @@
 }
 
 #floor1-video:checked ~ .video-button{
-    background-image:url("../image/png/button-19.png")
+    background-image:url("../image/png/button-25.png")
 }
 
 #int:checked ~ .int-block .int{
@@ -136,7 +136,7 @@
     top:60px;
 }
 #floor2-program:checked ~ .program-button{
-    background-image:url("../image/png/button-19.png");
+    background-image:url("../image/png/button-25.png");
 }
 
 #floor2display{

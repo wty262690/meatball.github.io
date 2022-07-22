@@ -58,7 +58,7 @@ input:checked +label{
 }
 
 .video-button{
-    background-image:url("../image/png/button-17.png");
+    background-image:url("../image/png/button-24.png");
 }
 
 .int-button{
@@ -66,7 +66,7 @@ input:checked +label{
 }
 
 .program-button{
-    background-image:url("../image/png/button-20.png")
+    background-image:url("../image/png/button-26.png")
 }
 
 .drop-button, .dropup-button{
@@ -96,15 +96,16 @@ input:checked +label{
 }
 
 div .title{
-    font-size:15px;
+    font-size:14px;
 }
 .sub-title{
-    font-size:12px;
+    font-size:10px;
 }
 
 div .line{
     margin:auto;
     width:100%;
+    height: 4vw;
 }
 
 .artwork{
@@ -118,6 +119,7 @@ div .line{
 
 .comic .firstpage{
     margin-top:-20px;
+    max-height:100vh;
 }
 
 

@@ -5,8 +5,8 @@ let button;
 function setup() {
     var canvas = createCanvas(400, 400);
     canvas.parent('canvasForHTML');
-    fingers = createVideo("/js/test2.mp4");
-    fingers.size(400, 400);
+    fingers = createVideo("/js/readbook2.mov");
+    fingers.size(600, 400);
     fingers.loop();
     fingers.hide();
     button = createButton('play');

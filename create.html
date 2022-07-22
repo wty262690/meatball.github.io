@@ -50,10 +50,21 @@
 			}
 		}
 
+		function windowsize(){
+			if ($(window).width()*(90/100)<=1000){
+				$(".block").css("width","90%");
+				$(".block").css("min-width","90%");
+			}
+			else{
+				$(".block").css("width","80%");
+				$(".block").css("min-width","1000px");
+			}
+			comicsize();
+		}
 
 		window.onload=function(){
 			$('.menu').load('menu.html');
-			comicsize();
+			windowsize()
 			for (var i=0, length=ComicTitle.length; i<length; i++){
 				comicpage(ComicTitle[i]);
 			}
@@ -64,15 +75,7 @@
 	</script>
 	<script>
 		$(window).resize(function(){
-			if ($(window).width()<=1000){
-				$(".block").css("width","100%");
-				$(".block").css("min-width","100%");
-			}
-			else{
-				$(".block").css("width","80%");
-				$(".block").css("min-width","1000px");
-			}
-			comicsize();
+			windowsize()
 		});
 
 		$(document).ready(function(){
@@ -139,29 +142,26 @@
 				<div class="floor1 block">
 					<p class="title"> #1</p>
 					<p class="title sub-title"> 親愛的，這個當興趣就好</p>
-					<div class="line"></div>
 					<div class="withint" id="floor1display">
 						<input type="checkbox" name="floor1-video" id="floor1-video">
 						<label for="floor1-video" class="video-button"></label>
-						<iframe class="video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>video(I can't put youtube on without error message)</iframe>
+						<iframe class="video"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>video(I can't put youtube on without error message)</iframe>
+						<!--src="https://www.youtube.com/embed/MDcvo3Y63ZM"-->
 						<div class="dropup-button"></div>
 						<div class="comic" id="floor1">
 							<img src="https://i.imgur.com/sG0GStX.jpg" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
 						</div>
 						<div class="drop-button"></div>
-						<!--src="https://www.youtube.com/embed/MDcvo3Y63ZM"-->
 						<input type="checkbox" name="int" id="int" value="floor1">
 						<label for="int" class="int-button"></label>
 						<div class="int-block"><div class="int" id="floor1-fileOutput"></div></div>
 					</div>
 				</div>
 
-
+				<hr>
 				<div class="floor2 block">
-					<div class="line"></div>
 					<p class="title"> #2</p>
 					<p class="title sub-title">Outside the Window</p>
-					<div class="line"></div>
 					<div id="floor2display">
 						<img src="https://i.imgur.com/K5Y9NKc.png" class="artwork" id="comic-bird" alt='illustration' referrerpolicy="no-referrer"/>
 						<div class="comic" id="floor2">
@@ -171,14 +171,15 @@
 						<label for="floor2-program" class="program-button"></label>
 						<input type="checkbox" name="floor2" id="floor2-video1">
 						<label for="floor2-video1" class="video-button"></label>
-						<div class="video"></div>
+						<iframe class="video" title="OusideTheWindow-whole story" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<!--src="https://www.youtube.com/embed/K3UH0omlYas"-->
 						<input type="checkbox" name="floor2" id="floor2-video2">
 						<label for="floor2-video2" class="video-button"></label>
-						<div class="video"></div>
+						<iframe class="video" title="OusideTheWindow-demo video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<!--src="https://www.youtube.com/embed/sACBsbbM3CI"-->
 					</div>
 				</div>
 			</div>
             <div class="whitego"></div>
-
         </div>
     </body>
