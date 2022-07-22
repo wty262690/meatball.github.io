@@ -16,6 +16,8 @@
     width: 40vw;
 }
 .wordblock{
+    z-index:999;
+    position:relative;
     padding-top:45px;
     margin:0 auto;
     margin-top:min(5vw,60px);
@@ -77,6 +79,7 @@
     font-size: 14px;
 }
 
+
 /*---gif of head---*/
 .head{
     mix-blend-mode: darken;
@@ -86,6 +89,7 @@
 
 /*---illustration---*/
 .illustration{
+    z-index:0;
     transition: right 500ms;
     position:relative;
     margin-left:20vw;
@@ -98,4 +102,8 @@
 
 .ill-item{
     width:100%;
+}
+
+.p5Canvas{
+    z-index:0;
 }

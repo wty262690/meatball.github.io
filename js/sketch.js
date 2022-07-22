@@ -3,10 +3,10 @@ let fingers;
 let button;
 
 function setup() {
-    var canvas = createCanvas(400, 400);
+    var canvas = createCanvas(min(windowWidth,600), 400);
     canvas.parent('canvasForHTML');
     fingers = createVideo("/js/readbook2.mov");
-    fingers.size(600, 400);
+    fingers.size(min(windowWidth,600), 400);
     fingers.loop();
     fingers.hide();
     button = createButton('play');
@@ -29,4 +29,10 @@ function toggleVid() {
     button.html('pause');
   }
   playing = !playing;
+}
+
+function windowResized(){
+  canvas = createCanvas(max(10,min(windowWidth,600)), max(10,min(400,windowWidth/2)));
+  canvas.parent('canvasForHTML');
+
 }
