@@ -1,4 +1,11 @@
 /*---list---*/
+.list span, .story-list label span, .story-list.title{
+    z-index: 4;
+}
+.story-list.title{
+    font-size:15px;
+}
+
 .story-open{
     height:0;
     width:0;
@@ -49,7 +56,8 @@
 }
 
 .sub-story-open~span{
-    font-size:20px;
+    font-size:12px;
+    margin-top:20px;
 }
 
 .list-br{

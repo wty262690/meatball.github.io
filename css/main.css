@@ -33,6 +33,14 @@ p, a , pre {
     font-family:"titlefont", "Microsoft JhengHei";
 }
 
+/*---line---*/
+.line{
+    width:100%;
+    height:4.5vw;
+    background-image:url("../image/hr.svg");
+    background-size:cover;
+}
+
 @font-face {
     font-family: titlefont;
     src: url("font/03HomuraM-SemiLight-2.otf") format("opentype");
