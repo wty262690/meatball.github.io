@@ -1,7 +1,7 @@
 let playing = true;
 let vid,readbook,headup,headdown;
 let button;
-
+let showVid = true;
 function setup() {
     setcanvas();
     readbook = createVideo("/js/video/readbook.mp4");
@@ -12,38 +12,54 @@ function setup() {
     readbook.hide();
     headup.hide();
     headdown.hide();
+    readbook.play();
     vid=readbook;
+    draw();
+    setTimeout(() => showVid = false, 1000);
 }
 
-function afterLoad() { 
-  text("The video has finished loading and will"+ " now play!", 20, 40); 
-  readbook.loop();
-  vid=readbook;
-  image(vid,0,0,width,height);
-}
-
+let playnow=0;
 function draw() {
-  background(0);
   image(vid,0,0,width,height);
-}
-
-
-function windowResized(){
-  setcanvas();
-}
-
-function mouseClicked() {
-  if (playing) {
-    vid.pause();
-    vid=headup;
-    headup.play();
-    //button.html('play');
-  } else {
-    vid.pause();
-    vid=readbook;
-    readbook.loop();
+  if ((mouseX>0 && mouseY<width) && (mouseY>0 && mouseY<height)){
+    cursor('grab');
   }
-  playing = !playing;
+  if (!showVid){
+    switch(playnow){
+      case 0: 
+        vid=readbook;
+        if (int(random(-100, 100))==0){
+          vid.play();
+          showVid=true;
+          setTimeout(() => showVid = false, 1500);
+        }
+        break;
+      case 1:
+        headup.play();
+        vid=headup;
+        showVid=true;
+        setTimeout(() => showVid = false, 800);
+        playnow=3;
+        break;
+      case 2:
+        headdown.play();
+        vid=headdown;
+        showVid=true;
+        setTimeout(() => showVid = false, 800);
+        playnow=0;
+        break;
+      case 3:
+        if(!dis() || random(0,1)<=0.005 ) playnow=2;
+        break;
+    }
+  }
+}
+
+
+function mousePressed() {
+  if (dis() && playnow!=3){
+    playnow=1;
+  }
 }
 
 function setcanvas(){
@@ -56,4 +72,13 @@ function setcanvas(){
   }
   canvas.parent('canvasForHTML');
   
+}
+
+function windowResized(){
+  setcanvas();
+}
+
+function dis(){
+  if ((mouseX>0 && mouseY<width) && (mouseY>0 && mouseY<height)) return true;
+  else return false;
 }
