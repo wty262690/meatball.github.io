@@ -31,7 +31,7 @@ function draw() {
         if (int(random(-100, 100))==0){
           vid.play();
           showVid=true;
-          setTimeout(() => showVid = false, 1500);
+          setTimeout(() => showVid = false, random(1500,5000));
         }
         break;
       case 1:
@@ -49,7 +49,9 @@ function draw() {
         playnow=0;
         break;
       case 3:
-        if(!dis() || random(0,1)<=0.005 ) playnow=2;
+        showVid=true;
+        setTimeout(() => showVid = false, random(2000,5000));
+        playnow=2;
         break;
     }
   }
@@ -57,7 +59,7 @@ function draw() {
 
 
 function mousePressed() {
-  if (dis() && playnow!=3){
+  if (dis() && playnow!=3 && playnow!=2){
     playnow=1;
   }
 }
