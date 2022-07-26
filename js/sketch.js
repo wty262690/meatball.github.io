@@ -15,7 +15,7 @@ function setup() {
     readbook.play();
     vid=readbook;
     draw();
-    setTimeout(() => showVid = false, 1000);
+    setTimeout(() => showVid = false, random(2500,5000));
 }
 
 let playnow=0;
@@ -31,7 +31,7 @@ function draw() {
         if (int(random(-100, 100))==0){
           vid.play();
           showVid=true;
-          setTimeout(() => showVid = false, random(1500,5000));
+          setTimeout(() => showVid = false, random(2500,5000));
         }
         break;
       case 1:
