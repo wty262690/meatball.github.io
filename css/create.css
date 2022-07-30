@@ -27,11 +27,15 @@
 
 
 /*---floor1---*/
+.floor1>.title-block{
+    background-size:contain;
+    height:10vw;
+}
 
-.floor1>.title{
+.floor1>.title-block>.title{
     padding-top:20px;
 }
-.floor1>.sub-title{
+.floor1>.title-block>.sub-title{
     padding:10px;
 }
 

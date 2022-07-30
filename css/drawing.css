@@ -44,9 +44,18 @@
 
 
 /*---water---*/
+.black .title{
+    color:white;
+}
 
 #water{
-    width:45%;
+    margin:auto;
+    width:80%;
+    max-height:100vh;
+    max-width:calc(100vh/4092*2893);
+}
+.water{
+    width:30%;
 }
 
 /*---Ghost Slayer---*/

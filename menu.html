@@ -16,9 +16,9 @@
 						this.checked=false;
 						old=null;
 						/*---writing---*/
-						$(".story").css("width","85vw")
-						$(".story").css("padding-left","10px")
-						$(".story").css("padding-right","0vw")
+						$(".block").css("width","85vw")
+						$(".block").css("padding-left","10px")
+						$(".block").css("padding-right","0vw")
 						/*---int---*/
 						$(".illustration").css("right","0vw")
 						if ($(window).width()*(40/100)>=400){
@@ -30,18 +30,18 @@
 					} 
 					else{
 						old=this;
-						$(".story").css("width","75vw")
+						$(".block").css("width","75vw")
 						if (this.id=="menu-open"){
 							/*---writing---*/
-							$(".story").css("padding-left","0px")
-							$(".story").css("padding-right","13vw")
+							$(".block").css("padding-left","0px")
+							$(".block").css("padding-right","13vw")
 							/*---int---*/
 							$(".profile").css("margin-left","1.5vw")
 							$(".illustration").css("right","5vw")
 						}
 						else if (this.id=="list-open"){
-							$(".story").css("padding-left","13vw")
-							$(".story").css("padding-right","0px")
+							$(".block").css("padding-left","13vw")
+							$(".block").css("padding-right","0px")
 						}
 					}
 				}

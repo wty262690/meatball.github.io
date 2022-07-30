@@ -75,11 +75,12 @@
 				comicpage(Imagebar[i]);
 			}
 		}
+
+		$(window).resize(function(){
+			windowsize();
+		});
 	</script>
 	<script>
-		$(window).resize(function(){
-			windowsize()
-		});
 
 		$(document).ready(function(){
 			$("input[name='int']").each(function(){
@@ -143,8 +144,10 @@
 			<div class="towhite"></div>
 			<div class="white">
 				<div class="floor1 block">
-					<p class="title"> #1</p>
-					<p class="title sub-title"> 親愛的，這個當興趣就好</p>
+					<div class="title-block">
+						<p class="title"> #1</p>
+						<p class="title sub-title"> 親愛的，這個當興趣就好</p>
+					</div>
 					<div class="withint" id="floor1display">
 						<input type="checkbox" name="floor1-video" id="floor1-video">
 						<label for="floor1-video" class="video-button"></label>
@@ -159,9 +162,9 @@
 						<label for="int" class="int-button"></label>
 						<div class="int-block"><div class="int" id="floor1-fileOutput"></div></div>
 					</div>
+					<div class="line"></div>
 				</div>
 
-				<hr>
 				<div class="floor2 block">
 					<p class="title"> #2</p>
 					<p class="title sub-title">Outside the Window</p>
