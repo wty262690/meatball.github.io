@@ -50,8 +50,12 @@
 
 #water{
     margin:auto;
-    width:50%;
+    width:80%;
     max-height:100vh;
+    max-width:calc(100vh/4092*2893);
+}
+.water{
+    width:30%;
 }
 
 /*---Ghost Slayer---*/

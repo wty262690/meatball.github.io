@@ -57,8 +57,21 @@
 			}
 		}
 
+		function windowresize(){
+			if ($(window).width()<=1000){
+				$(".block").css("width","100%");
+				$(".block").css("min-width","100%");
+			}
+			else{
+				$(".block").css("width","80%");
+				$(".block").css("min-width","1000px");
+			}
+			comicsize();
+		}
+
 
 		window.onload=function(){
+			windowresize();
 			$('.menu').load('menu.html');
 			comicsize();
 			for (var i=0, length=ComicTitle.length; i<length; i++){
@@ -71,15 +84,7 @@
 	</script>
 	<script>
 		$(window).resize(function(){
-			if ($(window).width()<=1000){
-				$(".block").css("width","100%");
-				$(".block").css("min-width","100%");
-			}
-			else{
-				$(".block").css("width","80%");
-				$(".block").css("min-width","1000px");
-			}
-			comicsize();
+			windowresize()
 		});
 		var cot=0;
 		function nex(){

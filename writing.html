@@ -50,35 +50,6 @@
         $( window ).scroll(function() {
             $( ".list-open-button" ).css( "background-position-y",-($(window).scrollTop())/20);
         });
-        $(document).ready(function(){
-            var old=null;
-            $("input[name='menu-open']").each(function(){
-                if(this.checked){
-                    old=this;
-                }
-                this.onclick=function(){
-                    if(this==old){
-                        this.checked=false;
-                        old=null;
-                        $(".story").css("width","85vw")
-                        $(".story").css("padding-left","10px")
-                        $(".story").css("padding-right","0vw")
-                    } 
-                    else{
-                        old=this;
-                        $(".story").css("width","75vw")
-                        if (this.id=="menu-open"){
-                            $(".story").css("padding-left","0px")
-                            $(".story").css("padding-right","13vw")
-                        }
-                        else if (this.id=="list-open"){
-                            $(".story").css("padding-left","13vw")
-                            $(".story").css("padding-right","0px")
-                        }
-                    }
-                }
-            });
-        });
     </script>
     </head>
     <body>
@@ -118,7 +89,7 @@
                 <div class="list-br"></div>
             </div>
 
-            <div class="story" id="story">
+            <div class="block" id="story">
                 <div class="cover"></div>
                 <div class="title" id="title"></div>
                 <div id="fileOutput" rows="15" cols="60"></div>
