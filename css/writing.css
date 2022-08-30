@@ -39,7 +39,9 @@ sup{
     height:50px;
 }
 
-
+#fileOutput .illustrate{
+    width:100%;
+}
 
 /*---input---*/
 .story-open{

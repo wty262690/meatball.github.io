@@ -30,6 +30,7 @@
 				var t=fistpage[i].height-10+"px";
 				comic[i].style.height=t;
 				if (i==0){
+					console.log(t);
 					var display=document.getElementById("floor1display");
 					display.style.height=t;
 				}
@@ -55,11 +56,21 @@
 
 		function windowsize(){
 			if ($(window).width()*(90/100)<=1000){
-				$(".block").css("width","90%");
-				$(".block").css("min-width","90%");
+				if ($("input[name='menu-open']")[0].checked==true || $("input[name='menu-open']")[1].checked==true ){
+					$(".block").css("width","65%");
+				}
+				else{	
+					$(".block").css("width","100%");
+				}
+				$(".block").css("min-width","100%");
 			}
 			else{
-				$(".block").css("width","80%");
+				if ($("input[name='menu-open']")[0].checked==true || $("input[name='menu-open']")[1].checked==true ){
+					$(".block").css("width","75vw");
+				}
+				else{
+					$(".block").css("width","85%");
+				}
 				$(".block").css("min-width","1000px");
 			}
 			comicsize();

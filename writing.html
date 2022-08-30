@@ -10,6 +10,18 @@
     <link href="css/writing.css" rel="stylesheet" type="text/css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
+        const StoryListName = [
+        {
+            value:['hero','beleive','Cthulhu','robothuman','Cradles','insomnai'],
+            name:['英雄夢','貫徹的信念','克蘇魯&#x2015;聖誕夜','固有色','把一首歌寫成一篇短篇小說','失眠的人 &#8901; 和 &#8901; 失眠的人'],
+        }
+        ]
+        window.onload=function(){
+            var storylist=document.getElementById('story-list');
+			for(var i=0, length=StoryListName[0].value.length; i<length; i++){
+				storylist.innerHTML+="<label class='story-open-button'><input type='radio' class='story-open' name='story-open' value='"+StoryListName[0].value[i]+"' onclick='clicktitle()'/><span id='"+StoryListName[0].value[i]+"'>"+StoryListName[0].name[i]+"</span></label><div class='list-br'></div>";
+			}
+        }
         var oldstory=null;
         function clicktitle(){
             var radios = document.getElementsByClassName('story-open');
@@ -66,28 +78,8 @@
             <label for="list-open">
                 <span class="list-open-button list-button" id="list-open-button"></span>
             </label>
-            <div class="story-list title" >
-                <label class="story-open-button">
-                    <input type="radio" class="story-open" name="story-open" value="hero" onclick="clicktitle()"/>
-                    <span id="hero">英雄夢</span>
-                </label>
-                <div class="list-br"></div>
-                <label class="story-open-button">
-                    <input type="radio" class="story-open" name="story-open" value="beleive" onclick="clicktitle()"/>
-                    <span id="beleive">貫徹的信念</span>
-                </label>
-                <div class="list-br"></div>
-                <label class="story-open-button">
-                    <input type="radio" class="story-open" name="story-open" value="Cthulhu" onclick="clicktitle()"/>
-                    <span id="Cthulhu">克蘇魯&#x2015;聖誕夜</span>
-                </label>
-                <div class="list-br"></div>
-                <label class="story-open-button">
-                    <input type="radio" class="story-open" name="story-open" value="robothuman" onclick="clicktitle()"/>
-                    <span id="robothuman">固有色</span>
-                </label>
-                <div class="list-br"></div>
-            </div>
+
+            <div class="story-list title" id="story-list"></div>
 
             <div class="block" id="story">
                 <div class="cover"></div>
