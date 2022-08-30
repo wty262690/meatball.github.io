@@ -5,7 +5,13 @@
 .story-list.title{
     font-size:15px;
 }
+.story-open~.numofword{
+    font-size: 10px;
+    width:100%;
+    text-align: right;
+}
 
+/*---input---*/
 .story-open{
     height:0;
     width:0;
@@ -16,10 +22,11 @@
     display:none;
 }
 
+/*---story list button---*/
 .list-open-button{
     transition-duration:1s;
     position:fixed;
-    width:2px;
+    width:100%;
     left:2px;
     margin:0px;
     margin-top:calc(50vh + 20px);
@@ -40,36 +47,32 @@
 
 /*--story title (button in story list) --*/
 .story-list{
+    font-size:23px;
     transition-duration:1s;
     position: fixed;
-    font-size:23px;
     margin:0 auto;
     left:-13vw;
     width:12vw;
     height: calc(100% - 150px);
     margin-top:100px;
     overflow-y:auto;
-    word-wrap:break-word;;
+    word-wrap:break-word;
 }
 .story-list::-webkit-scrollbar {
     display: none;
 }
+.list-br{
+    visibility:hidden;
+    height:25px;
+    min-height:10px;
+    max-height:50px;
+    background-image:url("../image/hr.svg");
+    background-size: cover;
+}
+
 
 .sub-story-open~span{
     font-size:12px;
-    margin-top:20px;
-}
-
-.list-br{
-    height:5vw;
-    min-height:20px;
-    max-height:50px;
-}
-
-.story-open-button{
-    margin:0;
-    width:40vw;
-    height:40px;
 }
 
 /*activity - for story list button*/
@@ -85,4 +88,8 @@
 }
 .story-open:hover ~ .sub-story-open~span{
     display:block;
+}
+
+.story-open-button:hover + .list-br{
+    visibility: visible;
 }

@@ -1,4 +1,5 @@
 @import "main.css"; 
+@import "list.css"; 
 
 /*---menu---*/
 .menu{
@@ -41,83 +42,5 @@ sup{
 
 #fileOutput .illustrate{
     width:100%;
-}
-
-/*---input---*/
-.story-open{
-    height:0;
-    width:0;
-    display:none;
-}
-
-.list-open{
-    display:none;
-}
-
-/*---story list button---*/
-.list-open-button{
-    transition-duration:1s;
-    position:fixed;
-    width:2px;
-    left:2px;
-    margin:0px;
-    margin-top:calc(50vh + 20px);
-}
-
-.list-button{
-    transition: transform 1s, background-position-y 0s;
-    background-image:url("../image/png/listicon-13.png");
-    background-size:100%;
-    background-position-x:center;
-    background-position-y:0;
-    margin-top:80px;
-    height:calc(100vh - 90px);
-    width:15px;
-    border-left:3px solid;
-    border-color:rgb(76, 60, 60);
-}
-
-/*--story title (button in story list) --*/
-.story-list{
-    transition-duration:1s;
-    position: fixed;
-    margin:0 auto;
-    left:-13vw;
-    width:12vw;
-    height: calc(100% - 150px);
-    margin-top:100px;
-    overflow-y:auto;
-    word-wrap:break-word;;
-}
-.story-list::-webkit-scrollbar {
-    display: none;
-}
-
-.list-br{
-    visibility:hidden;
-    height:25px;
-    min-height:10px;
-    max-height:50px;
-    background-image:url("../image/hr.svg");
-    background-size: cover;
-}
-
-.story-open-button{
-    margin:0;
-    width:40vw;
-    height:40px;
-}
-
-/*activity - for story list button*/
-.list-open:checked ~ .story-list{
-    transition-duration:1s;
-    transform: translate3d(14vw, 0, 0);
-}
-.list-open:checked +label>.list-open-button{
-    transform: translate3d(calc(14vw - 4px), 0, 0);
-}
-
-.story-open-button:hover + .list-br{
-    visibility: visible;
 }
 
