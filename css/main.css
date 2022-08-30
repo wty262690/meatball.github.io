@@ -1,5 +1,6 @@
 html {
     overflow: -moz-hidden-unscrollable;
+    cursor: url('../image/png/mouse-31.png'), auto;
     height: 100%;
 }
 
@@ -51,7 +52,10 @@ a,a:hover,a:active,a:visited,a:link,a:focus{
     -webkit-tap-highlight-color: transparent;
     outline:none;
     text-decoration: none;
+}
 
+a,label{
+    cursor: url('../image/png/mouse-30.png'), auto;
 }
 
 .nocopy{

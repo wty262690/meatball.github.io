@@ -81,7 +81,6 @@ sup{
 .story-list{
     transition-duration:1s;
     position: fixed;
-    font-size:23px;
     margin:0 auto;
     left:-13vw;
     width:12vw;
@@ -95,9 +94,12 @@ sup{
 }
 
 .list-br{
-    height:5vw;
-    min-height:20px;
+    visibility:hidden;
+    height:25px;
+    min-height:10px;
     max-height:50px;
+    background-image:url("../image/hr.svg");
+    background-size: cover;
 }
 
 .story-open-button{
@@ -113,5 +115,9 @@ sup{
 }
 .list-open:checked +label>.list-open-button{
     transform: translate3d(calc(14vw - 4px), 0, 0);
+}
+
+.story-open-button:hover + .list-br{
+    visibility: visible;
 }
 
