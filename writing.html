@@ -25,14 +25,12 @@
             str=str.replace(/\w{1,}/g,'t');
             str=str.replace(/\s+/g,'');
             
-            console.log(str);
             return str.length;
         }
 			for(var i=0, length=StoryListName[0].value.length; i<length; i++){
                 const xhttp = new XMLHttpRequest();
                 xhttp.onload = function() {
                     var allText = this.responseText;
-                    console.log(allText.length);
                     StoryListName[0].story.push(allText);
                     StoryListName[0].wordnum.push(getWordCount(allText));
                 }
@@ -42,7 +40,7 @@
         window.onload= function(){
             var storylist=document.getElementById('story-list');
             for(var i=0, length=StoryListName[0].value.length; i<length; i++){
-            storylist.innerHTML+="<label class='story-open-button'><input type='radio' class='story-open' name='story-open' value='"+StoryListName[0].value[i]+"' onclick='clicktitle()'/><span id='"+StoryListName[0].value[i]+"'>"+StoryListName[0].name[i]+"</span><div class='numofword'>"+StoryListName[0].wordnum[i]+"字</div></label><div class='list-br'></div>";
+            storylist.innerHTML+="<label class='story-open-button'><input type='radio' class='story-open' name='story-open' value='"+StoryListName[0].value[i]+"' onclick='clicktitle()'/><span id='"+StoryListName[0].value[i]+"'>"+StoryListName[0].name[i]+"</span><div class='numofword'>"+StoryListName[0].wordnum[i]+"字</div><div class='list-br'></div></label>";
             }
         }
         var oldstory=null;
