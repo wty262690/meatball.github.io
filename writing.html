@@ -14,7 +14,7 @@
         {
             value:['hero','beleive','Cthulhu','robothuman','Cradles','insomnai'],
             name:['英雄夢','貫徹的信念','克蘇魯&#x2015;聖誕夜','固有色','把一首歌寫成一篇短篇小說','失眠的人 &#8901; 和 &#8901; 失眠的人'],
-            index:[],
+            load:[],
             story:[],
             wordnum:[],
         }
@@ -22,7 +22,7 @@
         for(var i=0, length=StoryListName[0].value.length; i<length; i++){
             StoryListName[0].story.push('');
             StoryListName[0].wordnum.push(0);
-                StoryListName[0].index.push(i);            
+            StoryListName[0].load.push(false);         
                 const xhttp = new XMLHttpRequest();
                 xhttp.onload = function() {
                     var allText = this.responseText;
@@ -34,17 +34,24 @@
                     StoryListName[0].story[index]=allText;
                     StoryListName[0].wordnum[index]=getWordCount(allText);
                     console.log("open");
+                    createstorylist();
                 }
                 xhttp.open("GET", "word/"+StoryListName[0].value[i]+".txt");
                 xhttp.send(null);
         }
-        window.onload= function(){
+        function createstorylist(){
             var storylist=document.getElementById('story-list');
             for(var i=0, length=StoryListName[0].value.length; i<length; i++){
+                if (StoryListName[0].wordnum[i]==0) break;
+                if (StoryListName[0].load[i]) continue;
                 console.log(StoryListName[0].wordnum[0]);
                 storylist.innerHTML+="<label class='story-open-button'><input type='radio' class='story-open' name='story-open' value='"+StoryListName[0].value[i]+"' onclick='clicktitle()'/><span id='"+StoryListName[0].value[i]+"'>"+StoryListName[0].name[i]+"</span><div class='numofword'>"+StoryListName[0].wordnum[i]+"字</div><div class='list-br'></div></label>";
+                StoryListName[0].load[i]=true;
             }
+        }
+        window.onload= function(){
             console.log("onload");
+            endloading();
         }
         function getWordCount(str){
             str=str.replace(/<.{1,}>/gi,'');
@@ -82,7 +89,13 @@
         }
         function endloading()
         {
-        　　document.getElementById('loading').style.visibility='hidden';
+            var timeoutID = window.setInterval(( () => console.log("Hello!") ), 10);
+            window.clearInterval(timeoutID);
+            var objLoading = document.getElementById("loading");   
+            if (objLoading != null)   
+            {   
+                objLoading.style.display = "none";   
+            }   
         }
     </script>
     
@@ -116,8 +129,5 @@
                 <div id="fileOutput" rows="15" cols="60"></div>
             </div>
         </nav>
-        <script>
-            　　endloading();
-        </script>
     </body>
 </html>

@@ -67,7 +67,7 @@ a,label{
     user-select:none;
 }
 
-.loading{
+#loading{
     width:100vw;
     height:100vh;
     background-color:purple;
