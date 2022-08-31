@@ -150,8 +150,7 @@
 
 <img src="https://i.imgur.com/HAaTNT9.png" class="illustrate" alt='illustrate-white' referrerpolicy="no-referrer"/>
 
-<br>
-
+<div class="dividing-line"></div>
 註
 1. 回歸 Regression: 
 由佛洛伊德Freud 提出，屬於心理防衛機制defense mechanism 的一種。意旨當成年人受到巨大壓力或衝擊等負面情緒後，出現如孩童般的行為及表現。
@@ -162,8 +161,7 @@
 4. 鉛白Lead White: 
 被廣泛使用在油畫中的白色顏料，但具有毒性，20世紀時被鈦白Titanium white及鋅白Zinc white等白色顏料取代，現今已經很少使用。
 
-<br>
-
+<div class="dividing-line"></div>
 <b><a href="https://www.youtube.com/watch?v=KBtk5FUeJbk">《Cradles》</a></b>
 作詞/作曲：Danny Maisonneuve
 主唱：Sub Urban
