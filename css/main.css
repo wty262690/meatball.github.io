@@ -66,3 +66,9 @@ a,label{
     -ms-user-select:none;
     user-select:none;
 }
+
+.loading{
+    width:100vw;
+    height:100vh;
+    background-color:purple;
+}

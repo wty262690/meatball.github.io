@@ -80,6 +80,10 @@
                 }
             }
         }
+        function endloading()
+        {
+        　　document.getElementById('loading').style.visibility='hidden';
+        }
     </script>
     
     <script>
@@ -89,6 +93,7 @@
     </script>
     </head>
     <body>
+        <div id="loading"></div>
         <nav class="menu nocopy">
 		</nav>
 		<script type="text/javascript">
@@ -111,6 +116,8 @@
                 <div id="fileOutput" rows="15" cols="60"></div>
             </div>
         </nav>
-
+        <script>
+            　　endloading();
+        </script>
     </body>
 </html>
