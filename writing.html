@@ -14,25 +14,34 @@
         {
             value:['hero','beleive','Cthulhu','robothuman','Cradles','insomnai'],
             name:['英雄夢','貫徹的信念','克蘇魯&#x2015;聖誕夜','固有色','把一首歌寫成一篇短篇小說','失眠的人 &#8901; 和 &#8901; 失眠的人'],
+            index:[],
             story:[],
             wordnum:[],
         }
         ]
         for(var i=0, length=StoryListName[0].value.length; i<length; i++){
-                    const xhttp = new XMLHttpRequest();
-                    xhttp.onload = function() {
-                        var allText = this.responseText;
-                        StoryListName[0].story.push(allText);
-                        StoryListName[0].wordnum.push(getWordCount(allText));
-                        console.log("open");
-                    }
-                    xhttp.open("GET", "word/"+StoryListName[0].value[i]+".txt");
-                    xhttp.send(null);
+                StoryListName[0].story.push('');
+                StoryListName[0].wordnum.push(0);
+                StoryListName[0].index.push(i);            
+                const xhttp = new XMLHttpRequest();
+                xhttp.onload = function() {
+                    var allText = this.responseText;
+                    var Url=this.responseURL;
+                    Url= Url.split(/[\\/]/g).pop().split('.')[0];
+                    console.log(Url);
+                    var index = StoryListName[0].value.indexOf(Url);
+                    console.log("index of 'john': " + index);
+                    StoryListName[0].story[index]=allText;
+                    StoryListName[0].wordnum[index]=getWordCount(allText);
+                    console.log("open");
+                }
+                xhttp.open("GET", "word/"+StoryListName[0].value[i]+".txt");
+                xhttp.send(null);
         }
         window.onload= function(){
             var storylist=document.getElementById('story-list');
             for(var i=0, length=StoryListName[0].value.length; i<length; i++){
-        //        openfile(i);
+                console.log(StoryListName[0].wordnum[0]);
                 storylist.innerHTML+="<label class='story-open-button'><input type='radio' class='story-open' name='story-open' value='"+StoryListName[0].value[i]+"' onclick='clicktitle()'/><span id='"+StoryListName[0].value[i]+"'>"+StoryListName[0].name[i]+"</span><div class='numofword'>"+StoryListName[0].wordnum[i]+"字</div><div class='list-br'></div></label>";
             }
             console.log("onload");
