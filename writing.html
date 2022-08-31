@@ -18,32 +18,33 @@
             wordnum:[],
         }
         ]
+        for(var i=0, length=StoryListName[0].value.length; i<length; i++){
+                    const xhttp = new XMLHttpRequest();
+                    xhttp.onload = function() {
+                        var allText = this.responseText;
+                        StoryListName[0].story.push(allText);
+                        StoryListName[0].wordnum.push(getWordCount(allText));
+                        console.log("open");
+                    }
+                    xhttp.open("GET", "word/"+StoryListName[0].value[i]+".txt");
+                    xhttp.send(null);
+        }
+        window.onload= function(){
+            var storylist=document.getElementById('story-list');
+            for(var i=0, length=StoryListName[0].value.length; i<length; i++){
+        //        openfile(i);
+                storylist.innerHTML+="<label class='story-open-button'><input type='radio' class='story-open' name='story-open' value='"+StoryListName[0].value[i]+"' onclick='clicktitle()'/><span id='"+StoryListName[0].value[i]+"'>"+StoryListName[0].name[i]+"</span><div class='numofword'>"+StoryListName[0].wordnum[i]+"字</div><div class='list-br'></div></label>";
+            }
+            console.log("onload");
+        }
         function getWordCount(str){
             str=str.replace(/<.{1,}>/gi,'');
             str=str.replace(/[，……。'！......？—」「。、：-]/gi,'');
             str=str.replace(/[(),:;～”“－·《》?/]/gi,'');
             str=str.replace(/\w{1,}/g,'t');
             str=str.replace(/\s+/g,'');
-            
+            console.log(str.length);
             return str.length;
-        }
-		for(var i=0, length=StoryListName[0].value.length; i<length; i++){
-                const xhttp = new XMLHttpRequest();
-                xhttp.onload = function() {
-                    var allText = this.responseText;
-                    StoryListName[0].story.push(allText);
-                    StoryListName[0].wordnum.push(getWordCount(allText));
-                }
-                xhttp.open("GET", "word/"+StoryListName[0].value[i]+".txt");
-                xhttp.send(null);
-                console.log("open");
-		}
-        window.onload= function(){
-            var storylist=document.getElementById('story-list');
-            for(var i=0, length=StoryListName[0].value.length; i<length; i++){
-            storylist.innerHTML+="<label class='story-open-button'><input type='radio' class='story-open' name='story-open' value='"+StoryListName[0].value[i]+"' onclick='clicktitle()'/><span id='"+StoryListName[0].value[i]+"'>"+StoryListName[0].name[i]+"</span><div class='numofword'>"+StoryListName[0].wordnum[i]+"字</div><div class='list-br'></div></label>";
-            }
-            console.log("onload");
         }
         var oldstory=null;
         function clicktitle(){
