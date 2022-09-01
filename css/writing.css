@@ -8,11 +8,12 @@
 
 /*--story--*/
 .cover{
+    transition: width 1s;
     position:fixed;
     margin:0;
     height:100vh;
     top:0;
-    width:75%;
+    width: 75vw;
     background-image:url("../image/png/cover.png");
     background-size:100%;
 }
