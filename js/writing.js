@@ -17,12 +17,9 @@
                     var allText = this.responseText;
                     var Url=this.responseURL;
                     Url= Url.split(/[\\/]/g).pop().split('.')[0];
-                    console.log(Url);
                     var index = StoryListName[0].value.indexOf(Url);
-                    console.log("index of 'john': " + index);
                     StoryListName[0].story[index]=allText;
                     StoryListName[0].wordnum[index]=getWordCount(allText);
-                    console.log("open");
                     createstorylist();
                 }
                 xhttp.open("GET", "word/"+StoryListName[0].value[i]+".txt");
@@ -33,13 +30,11 @@
             for(var i=0, length=StoryListName[0].value.length; i<length; i++){
                 if (StoryListName[0].wordnum[i]==0) break;
                 if (StoryListName[0].load[i]) continue;
-                console.log(StoryListName[0].wordnum[0]);
                 storylist.innerHTML+="<label class='story-open-button'><input type='radio' class='story-open' name='story-open' value='"+StoryListName[0].value[i]+"' onclick='clicktitle()'/><span id='"+StoryListName[0].value[i]+"'>"+StoryListName[0].name[i]+"</span><div class='numofword'>"+StoryListName[0].wordnum[i]+"字</div><div class='list-br'></div></label>";
                 StoryListName[0].load[i]=true;
             }
         }
         window.onload= function(){
-            console.log("onload");
             endloading();
         }
         function getWordCount(str){
@@ -48,7 +43,6 @@
             str=str.replace(/[(),:;～”“－·《》?/]/gi,'');
             str=str.replace(/\w{1,}/g,'t');
             str=str.replace(/\s+/g,'');
-            console.log(str.length);
             return str.length;
         }
         var oldstory=null;
@@ -59,12 +53,15 @@
             for (var i = 0, length = radios.length; i < length; i++) {
                 if (radios[i].checked) {
                     if(radios[i]==oldstory){
+                        $(".cover").fadeIn(1000,function t(){                        
+                            oldstory=null;
+                            title.innerHTML=""
+                            document.getElementById("fileOutput").innerHTML = "";
+                        });
                         radios[i].checked=false;
-                        oldstory=null;
-                        title.innerHTML=""
-                        document.getElementById("fileOutput").innerHTML = "";
                     }
                     else{
+                        $(".cover").fadeOut(1000);
                         oldstory=radios[i];
                         var storytitle = document.getElementById(radios[i].value);
                         title.innerHTML="<p class='title story-title'>"+storytitle.textContent+"</p>"
@@ -78,8 +75,6 @@
         }
         function endloading()
         {
-            var timeoutID = window.setInterval(( () => console.log("Hello!") ), 10);
-            window.clearInterval(timeoutID);
             var objLoading = document.getElementById("loading");   
             if (objLoading != null)   
             {   

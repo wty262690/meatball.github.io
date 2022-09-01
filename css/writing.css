@@ -7,6 +7,16 @@
 }
 
 /*--story--*/
+.cover{
+    position:fixed;
+    margin:0;
+    height:100vh;
+    top:0;
+    width:75%;
+    background-image:url("../image/png/cover.png");
+    background-size:100%;
+}
+
 .block{
 
     letter-spacing:2px;
