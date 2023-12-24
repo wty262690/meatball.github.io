@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head >
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Taiwan</title>
+    <link href="main.css" rel="stylesheet" type="text/css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		var width, height, genheight ;
+		var drawposition = 0, genposition = 0;
+		var wordline = 1
+		var drawspeed = 10, genspeed = 15;
+		var alltext, alltextline, inputtext="";
+		var keyword = "Taiwan";
+		var img;
+		my_function = null;
+		var genindex=0, numofgen = 0;
+		var t=setInterval(MoveDrawPosition,500);
+		var t=setInterval(InputWord,2000);
+		var t=setInterval(setgenposition, genspeed * 1000);
+		function MoveDrawPosition(){
+			drawposition -= drawspeed;
+			document.getElementById("draw").style['background-position-y'] = drawposition + "px";
+			document.getElementById("generate").style['background-position-y'] = drawposition + "px";
+		}
+
+		function readTextFile(filename) {
+			var rawFile = new XMLHttpRequest();
+			rawFile.open("GET", filename+".txt", true);
+			rawFile.onreadystatechange = function() {
+				console.log("here")
+				if (rawFile.readyState === 4) {
+					console.log("now here")
+					alltext = rawFile.responseText;
+					alltextline = alltext.split('\n');
+				}
+			}
+			rawFile.send();
+		}
+		function InputWord(){
+			document.getElementById("word-image").innerHTML = '<div class= "word centerparent child" id = "imagparent"><div class="word centerparent child" id="promtimg""></div></div><div class="word centerparent child" id = "prompt">' +alltextline[wordline] + "</div>";
+			inputtext = "<div>" + alltextline[wordline-1]+ "</div>" + inputtext;
+			document.getElementById("word-word").innerHTML = inputtext;
+			img = document.getElementById("promtimg");
+			img.style['background-image'] = "url(image"+keyword+"/"+(wordline)+".jpg)";
+			img.addEventListener("load", (event) => {
+				const { naturalWidth, naturalHeight, width, height } = img;
+				if (naturalWidth > naturalHeight){
+					img.style['height'] = "auto"
+					img.style['width'] = "95%"
+				}
+				else{
+					img.style['height'] = "100px"
+					img.style['width'] = "auto"
+				}
+			});
+			addwordline();
+		}
+		function addwordline(){
+			wordline+=1;
+			wordline = wordline % alltextline.length;
+
+		}
+		
+		window.onload=function(){
+			width = window.innerWidth;
+			height = window.innerHeight;
+			genheight = width*(58/100);
+			readTextFile(keyword);
+			numofgen = Math.floor((height / genheight )) +2; 
+			genindex = numofgen;
+			creategenchild()
+			setgenposition()
+		}
+		var onresize = function(e) {
+			width = window.innerWidth;
+			height = window.innerHeight;
+			genheight = width*58/100;
+		}
+
+		function creategenchild(){
+			document.getElementById("generate").innerHTML = ""
+			for (i = 0; i < numofgen; i++) {
+				document.getElementById("generate").innerHTML += "<div class= 'generate gen-img child' id='gen-img"+i+"'> </div>";
+			}
+			setgenposition(false)
+			setimagegenchild()
+		}
+
+		function addgenchild(){	
+			genindex = genindex+1;
+			console.log(genindex)			
+			document.getElementById("generate").innerHTML += "<div class= 'generate gen-img child' id='gen-img"+i+"'> </div>";
+			setimagegenchild()
+		}
+		
+		function setimagegenchild(){
+			gen = document.getElementsByClassName("gen-img")
+			var i = 0;
+			Array.from(gen).forEach((img) => {
+				img.style['background-image'] = "url(gen_"+keyword+"/"+(((i)% 30)+1)+".jpg)";
+				i++;
+			})
+		}
+		$().ready(function(){
+			//jQuery function
+			my_function = function(genposition )
+			{
+				console.log("here")
+				$('#generate').animate({
+						scrollTop: genposition
+					}, genspeed * 1000, 'linear');
+			}
+		})
+
+		function setgenposition(transformornot){
+			gen = document.getElementsByClassName("gen-img")
+			console.log(Math.floor(genindex - numofgen +1)  ,genheight, genposition)
+			console.log("add")
+			addgenchild()
+			my_function(genposition );
+			genposition += genheight;
+		}
+
+		window.addEventListener("resize", onresize);
+</script>
+<script>
+</script>
+	</head>
+	<body>
+
+	<div class="draw" id="draw"></div>
+
+    <div class="word" id="word">
+		<div class="word child" id="word-image"><div class="word child" id="promtimg"></div></div>
+		<div class="word child" id="word-word"></div>
+    </div>
+
+	<div class="generate" id="generate"></div>
+
+    </body>

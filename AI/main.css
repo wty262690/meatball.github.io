@@ -1,0 +1,103 @@
+body{
+    margin:0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow:  clip;
+}
+
+body::-webkit-scrollbar , #word-word::-webkit-scrollbar, .generate::-webkit-scrollbar{
+    display: none;
+}
+
+.draw, .word, .generate{
+    position:absolute;
+    width:33vw;
+    height: 100vh;
+    margin: 0;
+}
+
+.draw{
+    transition: background-position-y 1s;
+    transition-timing-function: linear;
+    background-color: red;
+    background-size: 33vw;
+    background-position-y: 0px;
+    background-image: url(1.jpg);
+
+} 
+
+.generate{
+    overflow-y: scroll;
+    left: 67vw;
+    width:33vw;
+    background-color: black;
+    background-position: top;
+}
+
+
+.word{
+    color: white;
+    font-size: 12px;
+    width:34vw;
+    left: 33vw;
+    background-color: black;
+    word-wrap:break-word;
+}
+
+.child{
+    left:0vw;
+}
+
+.centerparent{
+    display: flex;
+    justify-content: center;    
+    align-items: center;  
+    text-align: center;
+    vertical-align: middle;
+}
+
+#imagparent{
+    top : 20px;
+    width: 40%;
+    height: 100px;
+}
+
+#promtimg{ 
+    left:3%;
+    background-position: center;
+    background-size:contain;
+    background-repeat: no-repeat;
+    height: auto;
+    width: 95%;
+    height: 100px;
+}
+#prompt{
+    text-align: left;
+    top : 20px;
+    width: 50%;
+    position:absolute;
+    left: 45%;
+    height: 100px;
+}
+
+#word-image{
+    height: 100px;
+    background-color: black;
+}
+
+#word-word{
+    overflow-y: scroll; 
+    width: 96%;
+    padding: 2%;    
+    top: 140px;
+}
+
+.gen-img{
+    background-size: 100%;
+    background-repeat:no-repeat;
+    overflow: clip;
+    position: relative;
+    top:0px;
+    width: 100%;
+    height: 58vw;
+}
