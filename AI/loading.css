@@ -1,0 +1,10 @@
+#loading{
+    position: fixed;
+    display:block;
+    width: 100vw;
+    height: 100vh;
+    background-color: pink;
+    z-index: 9999999;
+    transition: opacity 1s;
+    opacity : 1;
+}

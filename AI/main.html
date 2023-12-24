@@ -8,6 +8,7 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="../image/favicon_io/favicon-16x16.png">
 	<title>Taiwan</title>
     <link href="main.css" rel="stylesheet" type="text/css">
+	<link href="loading.css" rel="stylesheet" type="text/css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
 		var width, height, genheight ;
@@ -32,15 +33,14 @@
 			var rawFile = new XMLHttpRequest();
 			rawFile.open("GET", filename+".txt", true);
 			rawFile.onreadystatechange = function() {
-				console.log("here")
 				if (rawFile.readyState === 4) {
-					console.log("now here")
 					alltext = rawFile.responseText;
 					alltextline = alltext.split('\n');
 				}
 			}
 			rawFile.send();
 		}
+
 		function InputWord(){
 			document.getElementById("word-image").innerHTML = '<div class= "word centerparent child" id = "imagparent"><div class="word centerparent child" id="promtimg""></div></div><div class="word centerparent child" id = "prompt">' +alltextline[wordline] + "</div>";
 			inputtext = "<div>" + alltextline[wordline-1]+ "</div>" + inputtext;
@@ -60,10 +60,10 @@
 			});
 			addwordline();
 		}
+
 		function addwordline(){
 			wordline+=1;
 			wordline = wordline % alltextline.length;
-
 		}
 		
 		window.onload=function(){
@@ -75,7 +75,9 @@
 			genindex = numofgen;
 			creategenchild()
 			setgenposition()
+			setInterval(endloading, 5000);
 		}
+
 		var onresize = function(e) {
 			width = window.innerWidth;
 			height = window.innerHeight;
@@ -93,7 +95,6 @@
 
 		function addgenchild(){	
 			genindex = genindex+1;
-			console.log(genindex)			
 			document.getElementById("generate").innerHTML += "<div class= 'generate gen-img child' id='gen-img"+i+"'> </div>";
 			setimagegenchild()
 		}
@@ -106,11 +107,11 @@
 				i++;
 			})
 		}
+
 		$().ready(function(){
 			//jQuery function
 			my_function = function(genposition )
 			{
-				console.log("here")
 				$('#generate').animate({
 						scrollTop: genposition
 					}, genspeed * 1000, 'linear');
@@ -119,8 +120,6 @@
 
 		function setgenposition(transformornot){
 			gen = document.getElementsByClassName("gen-img")
-			console.log(Math.floor(genindex - numofgen +1)  ,genheight, genposition)
-			console.log("add")
 			addgenchild()
 			my_function(genposition );
 			genposition += genheight;
@@ -128,11 +127,12 @@
 
 		window.addEventListener("resize", onresize);
 </script>
-<script>
-</script>
+	<script src="loading.js"></script>
 	</head>
 	<body>
-
+	<div id = "loading">
+		<div>人機互動</div>
+	</div>
 	<div class="draw" id="draw"></div>
 
     <div class="word" id="word">

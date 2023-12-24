@@ -3,6 +3,7 @@ body{
     -ms-overflow-style: none;
     scrollbar-width: none;
     overflow:  clip;
+    z-index: 0;
 }
 
 body::-webkit-scrollbar , #word-word::-webkit-scrollbar, .generate::-webkit-scrollbar{
