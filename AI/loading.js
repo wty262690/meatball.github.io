@@ -8,8 +8,8 @@ function endloading()
         objLoading.style.opacity = 0;
         let intervalID = setInterval(() => {
             console.log("display");
-            objLoading.style.display = "none"
+            objLoading.style.display = "none";
+            clearInterval(intervalID);
         }, 1000);   
-        clearInterval(intervalID);
     }   
 }

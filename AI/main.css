@@ -100,8 +100,10 @@ body::-webkit-scrollbar , #word-word::-webkit-scrollbar, .generate::-webkit-scro
 #word-word{
     overflow-y: scroll; 
     width: 96%;
+    height: 100vh;
     padding: 2%;    
     /*top: 140px;*/
+    align-content: end;
 }
 
 .gen-img{

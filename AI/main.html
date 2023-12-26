@@ -75,7 +75,7 @@
 			genindex = numofgen;
 			creategenchild()
 			setgenposition()
-			setInterval(endloading, 5000);
+			setInterval(endloading, genspeed * 1000);
 		}
 
 		var onresize = function(e) {
@@ -131,7 +131,9 @@
 	</head>
 	<body>
 	<div id = "loading">
-		<div>人機互動</div>
+		<div id = "title">人機互動</div>
+		<div id = "small title">human–computer interaction</div>
+		<div id = "line"></div>
 	</div>
 	<div class="draw" id="draw"></div>
 
