@@ -12,21 +12,22 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
 		var width, height, genheight ;
-		var drawposition = 0, genposition = 0;
 		var wordline = 1
-		var drawspeed = 10, genspeed = 15;
-		var alltext, alltextline, inputtext="";
+		var drawspeed = 2, genspeed = 60;
+		var drawposition = -drawspeed, genposition = 0;
+		var alltext="", alltextline="", inputtext="";
 		var keyword = "Taiwan";
 		var img;
 		my_function = null;
 		var genindex=0, numofgen = 0;
-		var t=setInterval(MoveDrawPosition,500);
-		var t=setInterval(InputWord,2000);
-		var t=setInterval(setgenposition, genspeed * 1000);
+		//var t=setInterval(MoveDrawPosition,500);
+		var istyping = false;
+		//var t=setInterval(InputWord,2000);
+		//var t=setInterval(setgenposition, genspeed * 1000);
 		function MoveDrawPosition(){
+			console.log("move" + drawposition)
 			drawposition -= drawspeed;
 			document.getElementById("draw").style['background-position-y'] = drawposition + "px";
-			document.getElementById("generate").style['background-position-y'] = drawposition + "px";
 		}
 
 		function readTextFile(filename) {
@@ -42,8 +43,10 @@
 		}
 
 		function InputWord(){
-			document.getElementById("word-image").innerHTML = '<div class= "word centerparent child" id = "imagparent"><div class="word centerparent child" id="promtimg""></div></div><div class="word centerparent child" id = "prompt">' +alltextline[wordline] + "</div>";
+			console.log(alltextline[0]);
+			document.getElementById("word-image").innerHTML = '<div class= "word centerparent child" id = "imagparent"><div class="word centerparent child" id="promtimg""></div></div><div class="word centerparent child" id = "prompt">' +"</div>";
 			inputtext = "<div>" + alltextline[wordline-1]+ "</div>" + inputtext;
+			typing(alltextline[wordline], document.getElementById("prompt"),100);
 			document.getElementById("word-word").innerHTML = inputtext;
 			img = document.getElementById("promtimg");
 			img.style['background-image'] = "url(image"+keyword+"/"+(wordline)+".jpg)";
@@ -59,6 +62,8 @@
 				}
 			});
 			addwordline();
+			//while(istyping) { sleep(3000)}
+			//InputWord();
 		}
 
 		function addwordline(){
@@ -70,12 +75,13 @@
 			width = window.innerWidth;
 			height = window.innerHeight;
 			genheight = width*(58/100);
+			genposition = genheight;
 			readTextFile(keyword);
 			numofgen = Math.floor((height / genheight )) +2; 
 			genindex = numofgen;
 			creategenchild()
-			setgenposition()
-			setInterval(endloading, genspeed * 1000);
+			console.log("here")
+			loading()
 		}
 
 		var onresize = function(e) {
@@ -89,7 +95,7 @@
 			for (i = 0; i < numofgen; i++) {
 				document.getElementById("generate").innerHTML += "<div class= 'generate gen-img child' id='gen-img"+i+"'> </div>";
 			}
-			setgenposition(false)
+			//setgenposition()
 			setimagegenchild()
 		}
 
@@ -112,28 +118,48 @@
 			//jQuery function
 			my_function = function(genposition )
 			{
+				console.log("gen" + genposition);
 				$('#generate').animate({
-						scrollTop: genposition
+					scrollTop: genposition
 					}, genspeed * 1000, 'linear');
 			}
 		})
 
-		function setgenposition(transformornot){
+		function setgenposition(){
 			gen = document.getElementsByClassName("gen-img")
 			addgenchild()
-			my_function(genposition );
+			my_function(genposition);
 			genposition += genheight;
 		}
 
 		window.addEventListener("resize", onresize);
+
+		function typing(word, element, time){
+			istyping = true;
+			w = 0;
+			//console.log("typing");
+			element.innerHTML = "";
+			let typeword = setInterval(() => {
+				element.innerHTML += word[w];
+				//console.log(word[w]);
+				if (w == word.length-1) {
+					istyping = false;
+					clearInterval(typeword);
+				}
+					else w ++;
+			}, time);   
+		}
+
 </script>
 	<script src="loading.js"></script>
 	</head>
 	<body>
 	<div id = "loading">
-		<div id = "title">人機互動</div>
-		<div id = "small title">human–computer interaction</div>
-		<div id = "line"></div>
+		<div class = "centerparent" id = "divloading">
+			<div class = "title" id = "loadingtitle"></div>
+			<div class = "smalltitle" id = "loadingsmalltitle">human–computer interaction</div>
+			<div id = "line"></div>
+		</div>
 	</div>
 	<div class="draw" id="draw"></div>
 

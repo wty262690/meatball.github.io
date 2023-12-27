@@ -1,3 +1,8 @@
+@font-face {
+    font-family: titlefont;
+    src: url("../css/font/03HomuraM-SemiLight-2.otf") format("opentype");
+}
+
 body{
     margin:0;
     -ms-overflow-style: none;
