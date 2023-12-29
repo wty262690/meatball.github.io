@@ -1,0 +1,45 @@
+#loading{
+    position: fixed;
+    display:block;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    z-index: 9999999;
+    transition: opacity 5s;
+    opacity : 1;
+    text-align: right;
+}
+
+.title{
+    font-family: titlefont;
+}
+
+#divloading{
+    height: 100vh;
+    word-break: break-all;
+}
+
+#loadingtitle{
+    width: 100vw;
+    font-size: 50px;
+    letter-spacing: 10px;
+}
+
+#loadingsmalltitle{
+    opacity : 0;
+    transition: opacity 5s;
+    position: absolute;
+    padding-top: 100px;
+    width: 100vw;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+#line{
+    position: absolute;
+    padding-top: 150px;
+    width: 50%;
+    height: 1px;
+    border-bottom: 1px solid white;
+}

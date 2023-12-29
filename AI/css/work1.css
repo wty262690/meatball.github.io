@@ -1,0 +1,105 @@
+.draw, .word, .generate{
+    position:absolute;
+    width:33vw;
+    height: 100vh;
+    margin: 0;
+}
+
+.draw{
+    transition: background-position-y 1s;
+    transition-timing-function: linear;
+    background-color: red;
+    background-size: 33vw;
+    background-position-y: 0px;
+    background-image: url(../image/1.jpg);
+
+} 
+
+.generate{
+    overflow-y: scroll;
+    left: 67vw;
+    width:33vw;
+    background-color: black;
+    background-position: top;
+}
+
+
+.word{
+    color: white;
+    font-size: 12px;
+    width:34vw;
+    left: 33vw;
+    background-color: black;
+    word-wrap:break-word;
+}
+
+.child{
+    left:0vw;
+}
+
+.centerparent{
+    display: flex;
+    justify-content: center;    
+    align-items: center;  
+    text-align: center;
+    vertical-align: middle;
+}
+
+#imagparent{
+    /*top : 20px;*/
+    width: 34vw;
+    height: 50vh;
+    border: 0px;
+    border-bottom:solid white 0.5vh;
+    border-top:solid white 0.5vh;
+}
+
+#promtimg{ 
+    left:3%;
+    top:10%;
+    background-position: center;
+    background-size:contain;
+    background-repeat: no-repeat;
+    width: 95%;
+    height: 70%;
+    border-bottom: solid black 1vh;
+}
+#prompt{
+    text-align: left;
+    top : 40vh;
+    width: 100%;
+    position:absolute;
+    border-top:solid black 5vh;
+    /*left: 45%;*/
+    height: 30%;
+    background-color: black;
+    color:white;
+}
+
+#word-image{
+    position: fixed;
+    left:33vw;
+    top:20vh;
+    height: 100px;
+    /*background-color: black;*/
+    z-index: 1;
+}
+
+#word-word{
+    overflow-y: scroll; 
+    width: 96%;
+    height: 100vh;
+    padding: 2%;    
+    /*top: 140px;*/
+    align-content: end;
+}
+
+.gen-img{
+    background-size: 100%;
+    background-repeat:no-repeat;
+    overflow: clip;
+    position: relative;
+    top:0px;
+    width: 100%;
+    height: 58vw;
+}

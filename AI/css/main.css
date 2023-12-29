@@ -1,0 +1,18 @@
+@font-face {
+    font-family: titlefont;
+    src: url("../../css/font/03HomuraM-SemiLight-2.otf") format("opentype");
+}
+
+body{
+    margin:0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow:  clip;
+    z-index: 0;
+    background-color: black;
+    color : white;
+}
+
+body::-webkit-scrollbar , #word-word::-webkit-scrollbar, .generate::-webkit-scrollbar{
+    display: none;
+}
