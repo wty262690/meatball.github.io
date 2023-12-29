@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head >
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="apple-touch-icon" sizes="180x180" href="../image/favicon_io/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../image/favicon_io/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../image/favicon_io/favicon-16x16.png">
+	<title>Taiwan</title>
+    <link href="./css/main.css" rel="stylesheet" type="text/css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		var width, height, genheight ;
+		var wordline = 1
+		var drawspeed = 2, genspeed = 60;
+		var drawposition = -drawspeed, genposition = 0;
+		var alltext="", alltextline="", inputtext="";
+		var keyword = "Taiwan";
+		var img;
+		my_function = null;
+		var genindex=0, numofgen = 0;
+		//var t=setInterval(MoveDrawPosition,500);
+		var istyping = false;
+		//var t=setInterval(InputWord,2000);
+		//var t=setInterval(setgenposition, genspeed * 1000);
+		function MoveDrawPosition(){
+			console.log("move" + drawposition)
+			drawposition -= drawspeed;
+			document.getElementById("draw").style['background-position-y'] = drawposition + "px";
+		}
+
+		function InputWord(){
+			console.log(alltextline[0]);
+			document.getElementById("word-image").innerHTML = '<div class= "word centerparent child" id = "imagparent"><div class="word centerparent child" id="promtimg""></div></div><div class="word centerparent child" id = "prompt">' +"</div>";
+			inputtext = "<div>" + alltextline[wordline-1]+ "</div>" + inputtext;
+			typing(alltextline[wordline], document.getElementById("prompt"),100);
+			document.getElementById("word-word").innerHTML = inputtext;
+			img = document.getElementById("promtimg");
+			img.style['background-image'] = "url(image"+keyword+"/"+(wordline)+".jpg)";
+			img.addEventListener("load", (event) => {
+				const { naturalWidth, naturalHeight, width, height } = img;
+				if (naturalWidth > naturalHeight){
+					img.style['height'] = "auto"
+					img.style['width'] = "95%"
+				}
+				else{
+					img.style['height'] = "100px"
+					img.style['width'] = "auto"
+				}
+			});
+			addwordline();
+		}
+
+		window.onload=function(){
+			width = window.innerWidth;
+			height = window.innerHeight;
+			genheight = width*(58/100);
+			genposition = genheight;
+			readTextFile(keyword);
+			numofgen = Math.floor((height / genheight )) +2; 
+			genindex = numofgen;
+			creategenchild()
+			console.log("here")
+			loading()
+		}
+
+		var onresize = function(e) {
+			width = window.innerWidth;
+			height = window.innerHeight;
+			genheight = width*58/100;
+		}
+		window.addEventListener("resize", onresize);
+
+		$().ready(function(){
+			//jQuery function
+			my_function = function(genposition )
+			{
+				console.log("gen" + genposition);
+				$('#generate').animate({
+					scrollTop: genposition
+					}, genspeed * 1000, 'linear');
+			}
+		})
+
+</script>
+	<script src="./js/loading.js"></script>
+	<script src="./js/main.js"></script>
+
+	</head>
+	<body>
+
+	<div class = "title" id = "title">人機互動</div>
+	<div class = "smalltitle" id = "smalltitle">human–computer interaction</div>
+	<div class = "smalltitle" id = "workdescribe">
+		<div>創作動機</div>
+		<div>作品內容</div>
+	</div>
+
+	<div>Taiwan</div><a href="../AI/work1.html">work</a>
+
+	<div>其他嘗試</div>
+    
+	<div class="work" id="Taiwan">
+		<div class="word child" id="word-image"><div class="word child" id="promtimg"></div></div>
+		<div class="word child" id="word-word"></div>
+    </div>
+    
+	<div class="work" id="Taiwanese">
+		<div class="word child" id="word-image"><div class="word child" id="promtimg"></div></div>
+		<div class="word child" id="word-word"></div>
+    </div>
+
+	<div class="work" id="CameraImage">
+		<div class="word child" id="word-image"><div class="word child" id="promtimg"></div></div>
+		<div class="word child" id="word-word"></div>
+    </div>
+	
+	<div class="work" id="CameraImage3">
+		<div class="word child" id="word-image"><div class="word child" id="promtimg"></div></div>
+		<div class="word child" id="word-word"></div>
+    </div>
+
+    </body>
