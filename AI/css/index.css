@@ -3,43 +3,66 @@ body{
 }
 
 .workdiv{
+    margin:0;
+    margin-top: 10px;
+    padding:0;
+    border-top: white solid 0.1vh;
+    border-bottom: white solid 0.5vh;
     width: 100vw;
-    height: 250px;
+    height: 300px;
 }
 
 .word{
     overflow-y: scroll;
-    width: 50%;
+    width: 53%;
+    padding-left:5%;
+    padding-right:2%;
     height: 90%;
-    padding-left: 50vw;
+    text-align: left;
+    font-size: 15px;
+}
+
+.word::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 3.5px;
+}
+
+.word::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .img{
-    width: 50%;
-    height: 200px;
-    position: absolute;
+    width: 40%;
+    height: 80%;
 }
 
 .imagparent{
     width: 100%;
-    height:180px;
+    height:80%;
 }
 
 .promtimg{
     background-size:contain;
-    margin-top:20px;
+    top:0px;
+    margin-left: 5%;
+    margin-top: 5%;
     background-position: center;
     background-repeat: no-repeat;
     height: 100%;
-    width: 50%;
+    width: 100%;
 
 }
 
 .prompt{
-    text-align: left;
-    width: 100%;
+    text-align:center;
+    width: 90%;
     top: 50%;
-    padding-top:2px;
-    height: 50px;
+    padding:5%;
+    padding-left:7.5%;
+    padding-bottom: 0px;
+    /*padding-left: 25%;*/
+    height: 20%;
     color:white;
+    font-size: 15px;
 }

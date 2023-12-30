@@ -10,9 +10,16 @@ function readTextFile(filename) {
             console.log("loading" + filename)
             alltext = rawFile.responseText;
             alltextline = alltext.split('\n');
-            allline[textindex] = alltextline;
-            lineindex [textindex] = 1;
-            console.log("loading end" + textindex)
+            var i = 0;
+            switch(filename){
+                case "Taiwan": i = 0; break;
+                case "Taiwanese": i = 1; break;
+                case "CameraImage": i = 2; break;
+                case "CameraImage3": i = 3; break;
+                default: i=4; break;
+            }
+            allline[i] = alltextline;
+            lineindex[i] = 1;
             textindex ++;
         }
     }
@@ -37,7 +44,7 @@ async function typing(word, element, time){
 
 
 async function InputWord(index, keyword, lines, imagetype){
-    document.getElementById(keyword + "-image").innerHTML = '<div class= "work centerparent child imagparent" id = "imagparent"><div class="work centerparent child promtimg" id="' + keyword + '-promtimg""></div></div><div class="work centerparent child prompt" id = "' + keyword + '-prompt">' +"</div>";
+    document.getElementById(keyword + "-image").innerHTML = '<div class= "work centerparent child imagparent" id = "imagparent"><div class="work centerparent child promtimg" id="' + keyword + '-promtimg""></div></div><div class="work child prompt" id = "' + keyword + '-prompt">' +"</div>";
     img = document.getElementById(keyword + "-promtimg");
     img.style['background-image'] = "url(./image/image"+keyword+"/"+(lineindex[index])+imagetype;
     console.log("loading")

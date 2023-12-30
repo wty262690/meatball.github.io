@@ -13,8 +13,12 @@ body{
     color : white;
 }
 
-body::-webkit-scrollbar , #word-word::-webkit-scrollbar, .generate::-webkit-scrollbar, .word::-webkit-scrollbar{
+body::-webkit-scrollbar , #word-word::-webkit-scrollbar, .generate::-webkit-scrollbar{
     display: none;
+}
+
+.title{
+    font-family: titlefont;
 }
 
 .centerparent{
