@@ -1,0 +1,45 @@
+body{
+    overflow-y: auto;
+}
+
+.workdiv{
+    width: 100vw;
+    height: 250px;
+}
+
+.word{
+    overflow-y: scroll;
+    width: 50%;
+    height: 90%;
+    padding-left: 50vw;
+}
+
+.img{
+    width: 50%;
+    height: 200px;
+    position: absolute;
+}
+
+.imagparent{
+    width: 100%;
+    height:180px;
+}
+
+.promtimg{
+    background-size:contain;
+    margin-top:20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 50%;
+
+}
+
+.prompt{
+    text-align: left;
+    width: 100%;
+    top: 50%;
+    padding-top:2px;
+    height: 50px;
+    color:white;
+}

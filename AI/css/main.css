@@ -13,6 +13,14 @@ body{
     color : white;
 }
 
-body::-webkit-scrollbar , #word-word::-webkit-scrollbar, .generate::-webkit-scrollbar{
+body::-webkit-scrollbar , #word-word::-webkit-scrollbar, .generate::-webkit-scrollbar, .word::-webkit-scrollbar{
     display: none;
+}
+
+.centerparent{
+    display: flex;
+    justify-content: center;    
+    align-items: center;  
+    text-align: center;
+    vertical-align: middle;
 }

@@ -8,60 +8,39 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="../image/favicon_io/favicon-16x16.png">
 	<title>Taiwan</title>
     <link href="./css/main.css" rel="stylesheet" type="text/css">
+    <link href="./css/index.css" rel="stylesheet" type="text/css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
 		var width, height, genheight ;
-		var wordline = 1
 		var drawspeed = 2, genspeed = 60;
 		var drawposition = -drawspeed, genposition = 0;
-		var alltext="", alltextline="", inputtext="";
 		var keyword = "Taiwan";
 		var img;
 		my_function = null;
 		var genindex=0, numofgen = 0;
-		//var t=setInterval(MoveDrawPosition,500);
 		var istyping = false;
-		//var t=setInterval(InputWord,2000);
-		//var t=setInterval(setgenposition, genspeed * 1000);
-		function MoveDrawPosition(){
-			console.log("move" + drawposition)
-			drawposition -= drawspeed;
-			document.getElementById("draw").style['background-position-y'] = drawposition + "px";
-		}
-
-		function InputWord(){
-			console.log(alltextline[0]);
-			document.getElementById("word-image").innerHTML = '<div class= "word centerparent child" id = "imagparent"><div class="word centerparent child" id="promtimg""></div></div><div class="word centerparent child" id = "prompt">' +"</div>";
-			inputtext = "<div>" + alltextline[wordline-1]+ "</div>" + inputtext;
-			typing(alltextline[wordline], document.getElementById("prompt"),100);
-			document.getElementById("word-word").innerHTML = inputtext;
-			img = document.getElementById("promtimg");
-			img.style['background-image'] = "url(image"+keyword+"/"+(wordline)+".jpg)";
-			img.addEventListener("load", (event) => {
-				const { naturalWidth, naturalHeight, width, height } = img;
-				if (naturalWidth > naturalHeight){
-					img.style['height'] = "auto"
-					img.style['width'] = "95%"
-				}
-				else{
-					img.style['height'] = "100px"
-					img.style['width'] = "auto"
-				}
-			});
-			addwordline();
-		}
 
 		window.onload=function(){
 			width = window.innerWidth;
 			height = window.innerHeight;
-			genheight = width*(58/100);
-			genposition = genheight;
-			readTextFile(keyword);
-			numofgen = Math.floor((height / genheight )) +2; 
-			genindex = numofgen;
-			creategenchild()
-			console.log("here")
-			loading()
+			var works = document.getElementsByClassName("workdiv");
+			for (var i = 0; i < works.length; i++) {
+				var keyword = works[i].id;
+				readTextFile(keyword);
+			}
+			let set_InputWord1 = setInterval(() => {
+				if (allline[0][0] != undefined && 
+					allline[1][0] != undefined &&
+					allline[2][0] != undefined &&
+					allline[3][0] != undefined 
+					) {
+					InputWord(0, works[0].id, allline[0], ".jpg");
+					InputWord(1, works[1].id, allline[1], ".jpg");
+					InputWord(2, works[2].id, allline[2], ".png");
+					InputWord(3, works[3].id, allline[3], ".png");
+					clearInterval(set_InputWord1);
+				}
+			}, 100);   
 		}
 
 		var onresize = function(e) {
@@ -98,26 +77,26 @@
 
 	<div>Taiwan</div><a href="../AI/work1.html">work</a>
 
-	<div>其他嘗試</div>
+	<div>作品與</div>
     
-	<div class="work" id="Taiwan">
-		<div class="word child" id="word-image"><div class="word child" id="promtimg"></div></div>
-		<div class="word child" id="word-word"></div>
+	<div class="workdiv work" id="Taiwan">
+		<div class="work child img" id="Taiwan-image"><div class="work child" id="Taiwan-promtimg"></div></div>
+		<div class="work child word" id="Taiwan-word"></div>
     </div>
     
-	<div class="work" id="Taiwanese">
-		<div class="word child" id="word-image"><div class="word child" id="promtimg"></div></div>
-		<div class="word child" id="word-word"></div>
+	<div class="workdiv work" id="Taiwanese">
+		<div class="work child img" id="Taiwanese-image"><div class="work child" id="Taiwanese-promtimg"></div></div>
+		<div class="work child word" id="Taiwanese-word"></div>
     </div>
 
-	<div class="work" id="CameraImage">
-		<div class="word child" id="word-image"><div class="word child" id="promtimg"></div></div>
-		<div class="word child" id="word-word"></div>
+	<div class="workdiv work" id="CameraImage">
+		<div class="work child img" id="CameraImage-image"><div class="work child" id="CameraImage-promtimg"></div></div>
+		<div class="work child word" id="CameraImage-word"></div>
     </div>
 	
-	<div class="work" id="CameraImage3">
-		<div class="word child" id="word-image"><div class="word child" id="promtimg"></div></div>
-		<div class="word child" id="word-word"></div>
+	<div class="workdiv work" id="CameraImage3">
+		<div class="work child img" id="CameraImage3-image"><div class="work child" id="CameraImage3-promtimg"></div></div>
+		<div class="work child word" id="CameraImage3-word"></div>
     </div>
 
     </body>

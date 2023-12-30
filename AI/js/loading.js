@@ -24,8 +24,10 @@ function endloading()
         objLoading.style.opacity = 0;
         InputWord();
         let set_InputWord = setInterval(() => {
-            if (alltext != "" && !istyping) {
-                InputWord();
+            console.log(lineindex[0]);
+            if (allline[0][0] != undefined) {
+                InputWord(0, "Taiwan", allline[0], ".jpg");
+                clearInterval(set_InputWord);
             }
         }, 2000);   
         let set_MoveDrawPosition = setInterval(() => {

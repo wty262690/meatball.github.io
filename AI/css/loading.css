@@ -16,11 +16,13 @@
 }
 
 #divloading{
+    width: 100vw;
     height: 100vh;
     word-break: break-all;
 }
 
 #loadingtitle{
+    /*position: absolute;*/
     width: 100vw;
     font-size: 50px;
     letter-spacing: 10px;

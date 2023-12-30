@@ -1,27 +1,68 @@
+var alltext="", alltextline="", inputtext="";
+var allline = [], lineindex = []; 
+
+var textindex = 0;
 function readTextFile(filename) {
     var rawFile = new XMLHttpRequest();
     rawFile.open("GET", "./word/" + filename + ".txt", true);
     rawFile.onreadystatechange = function() {
         if (rawFile.readyState === 4) {
+            console.log("loading" + filename)
             alltext = rawFile.responseText;
             alltextline = alltext.split('\n');
+            allline[textindex] = alltextline;
+            lineindex [textindex] = 1;
+            console.log("loading end" + textindex)
+            textindex ++;
         }
     }
     rawFile.send();
 }
 
-function typing(word, element, time){
+function delay(milliseconds){
+    return new Promise(resolve => {
+        setTimeout(resolve, milliseconds);
+    });
+}
+
+async function typing(word, element, time){
     istyping = true;
-    w = 0;
-    //console.log("typing");
     element.innerHTML = "";
-    let typeword = setInterval(() => {
+    for (var w=0; w < word.length; w++ ){
         element.innerHTML += word[w];
-        //console.log(word[w]);
-        if (w == word.length-1) {
-            istyping = false;
-            clearInterval(typeword);
+        await delay(time);
+    }
+    istyping = false;
+}
+
+
+async function InputWord(index, keyword, lines, imagetype){
+    document.getElementById(keyword + "-image").innerHTML = '<div class= "work centerparent child imagparent" id = "imagparent"><div class="work centerparent child promtimg" id="' + keyword + '-promtimg""></div></div><div class="work centerparent child prompt" id = "' + keyword + '-prompt">' +"</div>";
+    img = document.getElementById(keyword + "-promtimg");
+    img.style['background-image'] = "url(./image/image"+keyword+"/"+(lineindex[index])+imagetype;
+    console.log("loading")
+    img.addEventListener("load", (event) => {
+        const { naturalWidth, naturalHeight, width, height } = img;
+        if (naturalWidth > naturalHeight){
+            img.style['height'] = "auto"
+            img.style['width'] = "100%"
         }
-            else w ++;
-    }, time);   
+        else{
+            img.style['height'] = "100%"
+            img.style['width'] = "auto"
+        }
+    });
+    typing(lines[lineindex[index]], document.getElementById(keyword + "-prompt"),100).then(() => {
+        delay(1000).then(() => {
+        inputtext = "<div>" + lines[lineindex[index]]+ "</div>";
+        document.getElementById(keyword + "-word").innerHTML = inputtext + document.getElementById(keyword + "-word").innerHTML;
+        addwordline(index);
+        InputWord(index, keyword, lines, imagetype);
+        })
+    })
+}
+
+function addwordline(index){
+    lineindex[index] ++ ;
+    lineindex[index] = lineindex[index] % allline[index].length;
 }
