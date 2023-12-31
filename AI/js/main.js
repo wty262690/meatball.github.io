@@ -15,7 +15,7 @@ function readTextFile(filename) {
                 case "Taiwan": i = 0; break;
                 case "Taiwanese": i = 1; break;
                 case "CameraImage": i = 2; break;
-                case "CameraImage3": i = 3; break;
+                case "CameraImage2": i = 3; break;
                 default: i=4; break;
             }
             allline[i] = alltextline;
