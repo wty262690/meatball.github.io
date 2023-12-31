@@ -1,0 +1,40 @@
+#motivation, #content{
+    padding-left: 10%;
+    width: 80%;
+}
+
+#divtitle{
+    width: 100vw;
+    height: 100vh;
+}
+
+#title{
+    font-size: 50px;
+}
+
+#smalltitle{
+    padding : 10px;
+    font-size: 15px;
+}
+
+.subtitle{
+    padding-top: 10px;
+    font-size: 20px;
+    font-weight:bold;
+}
+
+.mark{
+    padding-top: 10px;
+    font-size: 15px;
+    font-weight:bold;
+}
+
+
+.quote{
+    width: 100%;
+    text-align: center;
+}
+
+.english{
+    letter-spacing: 1px;
+}
