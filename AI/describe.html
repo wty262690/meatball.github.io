@@ -22,8 +22,9 @@
     <pre>    資料庫的內容有時與個人的經驗有所不同，更像是整體社會的意識集合體。為了完成AI模型背後的機制，這些資料被賦予了權重與標籤，使得模型能夠實現邏輯的判定，並輸出最理想的結果。然而，這些合理的手段卻凸顯了資料庫中的缺失以及偏頗，其中包括刻板印象和種族歧視等。一些不合適的標籤或缺失的資料，使得AI在創作時將一些負面訊息視為定義，產生了我們未曾想過的表述。
     </pre>
 
-    <div class = "mark">在它理解我的同時，我也希望自己能夠理解它</div>  
+    <div class = "mark">創作目的</div>  
     <pre>
+  在它理解我的同時，我也希望自己能夠理解它。
   我想透過我的作品來呈現這些資料在我以及AI的詮釋與轉譯之下所產生的對話，並思考對於AI而言，我們（指台灣人、我、以及我周遭的人事物等）將如何被解讀，而這些意義又如何被轉化、重現。
     </pre>
 
@@ -36,26 +37,27 @@
 <div id = "content">
     <div class = "subtitle">作品內容</div>
     <pre>
-  AI模型/ GEN2
-  形式/ 三頻影像，由左至右分別為:
-  . 我根據AI的提示詞以及自身經驗繪製的圖像
-  . 原始圖像資料
-  . AI模型根據提示詞生成圖像。
+AI模型/ GEN2
+形式/ 三頻影像，由左至右分別為:
+
+<div class = "ul">根據AI的提示詞以及自身經驗繪製的圖像</div>
+<div class = "ul">原始圖像資料以及該圖像所生成的提示詞</div>
+<div class = "ul">AI模型根據提示詞生成的圖像</div>
     </pre>
     <div class = "mark">資料庫</div>
     <pre>
-  作品的圖片資料有兩種來源:
-  1. 網路爬蟲分別抓取於 google search 中與"Taiwan"與"Taiwanese"相關的影像。
-    <div id = "recod_download">資料庫蒐集</div>
-  2. 將我生活中的錄像，以五秒一張的方式處理成圖片資料。討論AI和。
-  分別對兩種問題提出討論
+作品中的圖片資料有兩種來源:
+
+<div class = "centerparent divdivul"><div class = "divul"><div class = "ul">由網路爬蟲程式於<nobr class="english">google</nobr>引擎中抓取獲得。搜索的關鍵詞有<nobr class="english">"Taiwan"</nobr>以及<nobr class="english">"Taiwanese"</nobr>。</div>
+<div class = "ul">將生活中的錄像，以五秒一張的方式處理成圖片資料。</div></div>
+  <div style="width: 50%;"><div id = "recod_download"></div><div>-圖片資源蒐集-</div></div>
     </pre>
 
     <div class = "mark">資料處理</div>
-    並獲取AI模型對這些圖片下的promt
-    <div id = "recod_genpromt">提示詞生成</div>
-    <pre>
-  作品中將獲取的圖像資料經過AI模型生成promt的功能處理，取得AI對這些圖片下的promt
-    </pre>
+    <div class = "centerparent divdivul"><div class = "divul"><pre class = "ul" style="border:none;">在獲取圖片資料後，將其放入AI模型中，以取的模型對這些圖片下的提示字。</pre></div>
+    <div style="width: 50%;"><div id = "recod_genpromt"></div><div>-提示詞生成-</div></div>
+  </div>
+  <div style="height: 50px;"></div>
+  <div class = "space"><div class="line" id = "spaceline"></div></div>
 </div> 
 </body>
