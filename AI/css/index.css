@@ -2,8 +2,18 @@ body{
     overflow-y: auto;
 }
 
+#divtitle{
+    width: 100vw;
+    height: 100vh;
+}
+
 #title{
     font-size: 50px;
+}
+
+#smalltitle{
+    padding : 10px;
+    font-size: 15px;
 }
 
 
