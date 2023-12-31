@@ -2,6 +2,11 @@ body{
     overflow-y: auto;
 }
 
+#title{
+    font-size: 50px;
+}
+
+
 .workdiv{
     margin:0;
     margin-top: 10px;
@@ -65,4 +70,30 @@ body{
     height: 20%;
     color:white;
     font-size: 15px;
+}
+
+.gen{
+    background-size:contain;
+    top:0px;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80%;
+    width: 50%;
+    filter: blur(1px);
+}
+
+#recod_download, #recod_genpromt{
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50vw;
+    height: 200px;
+}
+
+#recod_download{
+    background-image: url("../image/record_image_download.gif");
+}
+
+#recod_genpromt{
+    background-image: url("../image/record_genpromt.gif");
 }
