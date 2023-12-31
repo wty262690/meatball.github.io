@@ -39,6 +39,7 @@
 					InputWord(1, works[1].id, allline[1], ".jpg");
 					InputWord(2, works[2].id, allline[2], ".jpg");
 					InputWord(3, works[3].id, allline[3], ".jpg");
+					console.log("end")
 					clearInterval(set_InputWord1);
 				}
 			}, 100);   
@@ -47,20 +48,8 @@
 		var onresize = function(e) {
 			width = window.innerWidth;
 			height = window.innerHeight;
-			genheight = width*58/100;
 		}
 		window.addEventListener("resize", onresize);
-
-		$().ready(function(){
-			//jQuery function
-			my_function = function(genposition )
-			{
-				console.log("gen" + genposition);
-				$('#generate').animate({
-					scrollTop: genposition
-					}, genspeed * 1000, 'linear');
-			}
-		})
 
 </script>
 	<script src="./js/loading.js"></script>
@@ -73,46 +62,15 @@
 		<div class = "title" id = "title">人機互動<div class = "smalltitle" id = "smalltitle">human-computer interaction</div></div>
 		<div class = "line"></div>
 	</div>
+
 	<div>work1</div><a href="../AI/work1.html">Taiwan</a>
-	<div class = "smalltitle" id = "workdescribe">
-		<div class = "subtitle">創作動機</div>
-		<div class = "mark">關於創作</div>
-
-		<div class = "quote">
-			<pre>“Art is the most intense mode of individualism that the world has known.” 
-							- Oscar Wilde
-			</pre>
-		</div>
-
-		<pre>創作時，我們根據自身的感官經驗、成長歷程等衍生出自已的想像，無論是視覺影像、音樂甚至概念，意圖重現或重組感官的刺激。
-
-		當我們將創作脈絡聚焦於自身經驗時，AI模型的創作概念卻是基於其背後的龐大資料庫，創作出潛藏於資料庫中的集體社會意識。
-		</pre>
-		<div class = "mark">個人經驗 & 集體意識</div>
-		<pre>
-		資訊內容有時與個人經驗不同，像是整體社會的意識集合，搜尋的結果因為演算法而擁有優先序，
-		如同作品
-		
-		同時我也好奇在AI的資料庫中，我們(指涉台灣人、我、我周遭的人事物等)將會被如何解讀，在其創作中又將如何重新呈現。
-		</pre>
-
-	</div>
-	
-	<div>作品內容</div>
-	<div>
-		AI模型/ GEN2
-		形式/ 三頻影像，由左至右分別為:衍生圖像、爬蟲圖像、AI生成圖像。
-		
-		作品中使用的影像源自於兩個方面。
-		為使用網路爬蟲分別抓取於 google search 中與"Taiwan"與"Taiwanese"相關的影像。
-		自己的錄像，以五秒一張圖片的方式處理。
-		
-		<div id = "recod_download">資料庫蒐集</div>
-		並獲取AI模型對這些圖片下的promt
-		<div id = "recod_genpromt">提示詞生成</div>
-
-		依照promt衍生根據自身所具備的經驗，繪製出想像中的圖像。
-	</div>
+	<nav class = "smalltitle" id = "workdescribe">
+	</nav>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('#workdescribe').load('describe.html');
+		});
+	</script>
     
 	<div class="workdiv work centerparent" id="Taiwan">
 		<div class="work child img" id="Taiwan-image"><div class="work child" id="Taiwan-promtimg"></div></div>
