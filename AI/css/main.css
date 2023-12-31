@@ -17,6 +17,11 @@ body::-webkit-scrollbar , #word-word::-webkit-scrollbar, .generate::-webkit-scro
     display: none;
 }
 
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    }
+
 .title{
     font-family: titlefont;
 }

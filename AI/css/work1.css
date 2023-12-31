@@ -33,6 +33,10 @@
     word-wrap:break-word;
 }
 
+.word::-webkit-scrollbar {
+    display: none;
+}
+
 .child{
     left:0vw;
 }
@@ -49,7 +53,7 @@
 
 #Taiwan-promtimg{ 
     left:3%;
-    top:10%;
+    top:10%;    
     background-position: center;
     background-size:contain;
     background-repeat: no-repeat;
@@ -59,8 +63,10 @@
 }
 
 #Taiwan-prompt{
+    text-align: center;
     top : 42vh;
-    width: 100%;
+    width: 90%;
+    padding-left: 5%;
     position:absolute;
     border-top:solid black 1vh;
     /*left: 10px;*/

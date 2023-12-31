@@ -16,6 +16,22 @@ body{
     font-size: 15px;
 }
 
+.subtitle{
+    padding: 10px;
+    font-size: 20px;
+    font-weight:bold;
+}
+
+.mark{
+    padding: 10px;
+    font-size: 15px;
+    font-weight:bold;
+}
+
+.quote{
+    width: 100vw;
+    text-align: center;
+}
 
 .workdiv{
     margin:0;
