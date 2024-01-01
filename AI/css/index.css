@@ -83,3 +83,15 @@ body{
     margin: 10px;
     width:100%;
 }
+
+#work1img{
+    background-position: center;
+    background-size: contain;
+    width: 80vw; 
+    height: 45vw; 
+    background-repeat: no-repeat;
+    background-image: url('../image/Taiwan.jpg');
+}
+
+#divwork1{
+}

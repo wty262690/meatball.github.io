@@ -11,6 +11,7 @@ body{
     letter-spacing: 1px;
     font-family: system-ui;
     overflow:  visible;
+    overflow-x: hidden;
     z-index: 0;
     background-color: black;
     color : white;
@@ -65,7 +66,14 @@ pre {
 
 a{
     color: white;
-    
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+a,a:hover,a:active,a:visited,a:link,a:focus{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    outline:none;
+    text-decoration: none;
 }
 
 #contentbody{
