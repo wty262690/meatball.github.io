@@ -44,9 +44,14 @@
 					clearInterval(set_InputWord1);
 				}
 			}, 100);   
+			let set_background = setInterval(() => {
+				console.log( document.getElementById('work1img').style["background-position-y"])
+				document.getElementById('work1img').style["background-position-y"] = backgroundtop + "px"; 
+				backgroundtop -= backgroundtopspeed;
+			}, 1000) 
 			console.log("onload")
 		}
-
+		var backgroundtop=0, backgroundtopspeed = 10;
 		var onresize = function(e) {
 			width = window.innerWidth;
 			height = window.innerHeight;
@@ -77,14 +82,14 @@
 
 	<div class = "centerparent" style="width: 80%; padding-left: 10%;" id = "divwork1">
 		<a href="../AI/work1.html">
-		<div id = "work1img"></div>
+		<div id = "work1img">TAIWAN</div>
 		<div style="width: 100%;">
 			<div class="mark">#1 _ Taiwan</div>
 			<div class="br"></div>
-			<pre>
+			<pre style="text-align: left;">
 2023.12
-三頻影像
-媒材/ AI模型GEN2
+媒材/ AI 插畫 網頁
+形式/ 三頻影像
 			</pre>
 		</div>
 		</a>

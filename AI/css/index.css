@@ -85,13 +85,18 @@ body{
 }
 
 #work1img{
+    position: absolute;
     background-position: center;
-    background-size: contain;
-    width: 80vw; 
-    height: 45vw; 
-    background-repeat: no-repeat;
-    background-image: url('../image/Taiwan.jpg');
-}
-
-#divwork1{
+    background-size: 100%;
+    text-align: center;
+    line-height: 200px;
+    width: 4.5em;
+    left:1.5em;
+    height: 200px;
+    background-image: url('../image/home-04.png');
+    -webkit-background-clip: text;
+    font-size: 4.5em;
+    font-weight:bold;
+    -webkit-text-fill-color: transparent;
+    transition: background-position-y 1s linear;
 }
