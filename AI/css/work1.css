@@ -47,8 +47,8 @@
     height: 50vh;
     border: 0px;
     background-color: black;
-    border-bottom:solid white 0.5vh;
-    border-top:solid white 0.5vh;
+    border-bottom:solid white 0.1vh;
+    border-top:solid white 0.1vh;
 }
 
 #Taiwan-promtimg{ 
@@ -112,3 +112,19 @@
     height: 58vw;
 }
 
+#back{
+    position: absolute;
+    background-image: url('../image/home-02.png');
+    background-size:contain;
+    width:20px;
+    height: 20px;
+    margin : 10px;
+    background-repeat: no-repeat;
+    opacity: 1;
+    transition: opacity 1s;
+    z-index: 99;
+}
+
+#back:hover{
+    opacity: 1;
+}
