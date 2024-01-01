@@ -42,7 +42,7 @@ function workstart()
                 endload()
                 isloading = false;
                 clearInterval(intervalID);
-            }, 5000);   
+            }, 1000);   
     }   
     
 
