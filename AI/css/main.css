@@ -10,7 +10,7 @@ body{
     line-height: 18px;
     letter-spacing: 1px;
     font-family: system-ui;
-    overflow:  clip;
+    overflow:  visible;
     z-index: 0;
     background-color: black;
     color : white;
@@ -86,4 +86,40 @@ a{
     background: black;
     opacity: 1;
     transition: opacity 5s;
+}
+
+#divtitle{
+    width: 100vw;
+    height: 100vh;
+}
+
+#title{
+    line-height: 50px;
+    font-size: 50px;
+}
+
+#smalltitle{
+    line-height: 18px;
+    padding : 10px;
+    font-size: 15px;
+    font-family: system-ui;
+}
+
+.subtitle{
+    padding-top: 10px;
+    font-size: 20px;
+    font-weight:bold;
+}
+
+.mark{
+    padding-top: 10px;
+    font-size: 15px;
+    font-weight:bold;
+}
+
+
+#quote{
+    width: 100%;
+    text-align: center;
+    letter-spacing: 1px;
 }

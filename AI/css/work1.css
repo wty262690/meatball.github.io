@@ -76,8 +76,8 @@
 }
 
 #Taiwan-image{
-    position: fixed;
-    left:33vw;
+    /*position: fixed;*/
+    /*left:33vw;*/
     top:20vh;
     height: 100px;
     background-color: black;

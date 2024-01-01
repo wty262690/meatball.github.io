@@ -22,41 +22,12 @@
 		var img;
 		my_function = null;
 		var genindex=0, numofgen = 0;
-		//var t=setInterval(MoveDrawPosition,500);
 		var istyping = false;
-		//var t=setInterval(InputWord,2000);
-		//var t=setInterval(setgenposition, genspeed * 1000);
 		function MoveDrawPosition(){
 			drawposition -= drawspeed;
 			document.getElementById("draw").style['background-position-y'] = drawposition + "px";
 		}
-/*
-		function InputWord(){
-			document.getElementById("word-image").innerHTML = '<div class= "word centerparent child" id = "imagparent"><div class="word centerparent child" id="promtimg""></div></div><div class="word centerparent child" id = "prompt">' +"</div>";
-			inputtext = "<div>" + alltextline[wordline-1]+ "</div>" + inputtext;
-			typing(alltextline[wordline], document.getElementById("prompt"),100);
-			document.getElementById("word-word").innerHTML = inputtext;
-			img = document.getElementById("promtimg");
-			img.style['background-image'] = "url("+ imagepath +keyword+"/"+(wordline)+".jpg)";
-			img.addEventListener("load", (event) => {
-				const { naturalWidth, naturalHeight, width, height } = img;
-				if (naturalWidth > naturalHeight){
-					img.style['height'] = "auto"
-					img.style['width'] = "95%"
-				}
-				else{
-					img.style['height'] = "100px"
-					img.style['width'] = "auto"
-				}
-			});
-			addwordline();
-		}
 
-		function addwordline(){
-			wordline+=1;
-			wordline = wordline % alltextline.length;
-		}
-*/		
 		window.onload=function(){
 			width = window.innerWidth;
 			height = window.innerHeight;
@@ -66,7 +37,8 @@
 			numofgen = Math.floor((height / genheight )) +2; 
 			genindex = numofgen;
 			creategenchild()
-			loading()
+			workstart()
+			document.getElementById("contentbody").addEventListener("wheel", zoom, { passive: false });
 		}
 
 		var onresize = function(e) {
@@ -101,13 +73,14 @@
 		}
 
 		$().ready(function(){
-			//jQuery function
+			$('#loading').load('loading.html');
 			my_function = function(genposition )
 			{
 				$('#generate').animate({
 					scrollTop: genposition
 					}, genspeed * 1000, 'linear');
 			}
+			console.log("ready");
 		})
 
 		function setgenposition(){
@@ -117,18 +90,47 @@
 			genposition += genheight;
 		}
 
+		var istop = true;
+		function zoom(event) {
+			event.preventDefault();
+			console.log(event.deltaY, istop)
+			if(!istop && event.deltaY<-10)  {
+				console.log("to top"); 
+				window.scrollTo({
+					top: 0,
+					behavior: "smooth",
+				});
+				istop = !istop;
+			}
+			if(istop && event.deltaY>10){ 
+				console.log("to bottom"); 
+				window.scrollTo({
+					top: document.body.scrollHeight,
+					behavior: "smooth",
+				});
+				istop = !istop;
+			}
+		}
+
 </script>
 	<script src="./js/loading.js"></script>
 	<script src="./js/main.js"></script>
 	</head>
 	<body>
-	<div id = "loading">
+	<!---<div id = "loading">
 		<div class = "centerparent" id = "divloading">
 			<div class = "title" id = "loadingtitle"></div>
 			<div class = "smalltitle" id = "loadingsmalltitle">human–computer interaction</div>
 			<div class = "line" id = "line"></div>
 		</div>
-	</div>
+	</div>--->
+	<nav class = "loading" id = "loading"></nav>
+	
+	<div id = "contentbody">
+		<div class = "title centerparent" id = "divtitle">
+			<div class = "title" id = "title">#1<div class = "smalltitle" id = "smalltitle">Taiwan</div></div>
+			<div class = "line"></div>
+		</div>
 	<div class="draw" id="draw"></div>
 	
     <div class="word" id="Taiwan">
@@ -137,5 +139,5 @@
     </div>
 
 	<div class="generate" id="generate"></div>
-
+	</div>
     </body>

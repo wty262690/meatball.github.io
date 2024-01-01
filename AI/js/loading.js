@@ -1,11 +1,11 @@
 var isloading = true;
 function loading(){
-    typing("人機互動", document.getElementById("loadingtitle"),200);
+    //typing("人機互動", document.getElementById("loadingtitle"),200);
     var next = true;
     let smalltitleopacity = setInterval(() => {
         if (!istyping && next){
             next = false;
-            typing("human–computer interaction", document.getElementById("loadingsmalltitle"),100);
+            //typing("human–computer interaction", document.getElementById("loadingsmalltitle"),100);
             document.getElementById("loadingsmalltitle").style.opacity = 1;
         }
         else if (!istyping && !next){
@@ -15,13 +15,13 @@ function loading(){
     }, 2000);
 }
 
-function endloading()
+function workstart()
 {
     var objLoading = document.getElementById("loading");   
     
     if (objLoading != null)   
     {   
-        objLoading.style.opacity = 0;
+        //objLoading.style.opacity = 0;
         InputWord();
         let set_InputWord = setInterval(() => {
             console.log(lineindex[0]);
@@ -38,7 +38,8 @@ function endloading()
             setgenposition();
         }, genspeed * 1000);  
         let intervalID = setInterval(() => {
-                objLoading.style.display = "none";
+                //objLoading.style.display = "none";
+                endload()
                 isloading = false;
                 clearInterval(intervalID);
             }, 5000);   

@@ -40,9 +40,11 @@
 					InputWord(2, works[2].id, allline[2], ".jpg");
 					InputWord(3, works[3].id, allline[3], ".jpg");
 					console.log("end")
+					endload();
 					clearInterval(set_InputWord1);
 				}
 			}, 100);   
+			console.log("onload")
 		}
 
 		var onresize = function(e) {
@@ -51,26 +53,38 @@
 		}
 		window.addEventListener("resize", onresize);
 
-</script>
+	</script>
 	<script src="./js/loading.js"></script>
 	<script src="./js/main.js"></script>
 
 	</head>
 	<body>
-
+	
+	<nav class = "loading" id = "loading"></nav>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('#loading').load('loading.html');
+			$('#workdescribe').load('describe.html');
+			console.log("ready");
+		});
+	</script>
+	
+	<div id = "contentbody">
 	<div class = "title centerparent" id = "divtitle">
 		<div class = "title" id = "title">人機互動<div class = "smalltitle" id = "smalltitle">human-computer interaction</div></div>
 		<div class = "line"></div>
 	</div>
 
-	<div>work1</div><a href="../AI/work1.html">Taiwan</a>
-	<nav class = "smalltitle" id = "workdescribe">
-	</nav>
-	<script type="text/javascript">
-		$(document).ready(function () {
-			$('#workdescribe').load('describe.html');
-		});
-	</script>
+	<div class = "centerparent" style="width: 80%; padding-left: 10%;">
+		<div class = "promtimg" style="border-radius:1000%; width: 50vw; height: 30vw; background-image: url('./image/Taiwan.jpg');"></div>
+		<div style="width: 100%;">
+			<a href="../AI/work1.html">
+			<div>人機互動 #1</div>
+			<div>2024</div>
+			Taiwan</a>
+		</div>
+	</div>
+	<nav class = "smalltitle" id = "workdescribe"></nav>
     
 	<div class="centerparent worktitle">
 		<div class="br"></div>
@@ -114,4 +128,5 @@
     </div>
 
 	<div class = "space" style="padding-top:120px;"><div class = "line spaceline"></div></div>
+	</div>
     </body>

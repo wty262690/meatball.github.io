@@ -73,3 +73,17 @@ function addwordline(index){
     lineindex[index] ++ ;
     lineindex[index] = lineindex[index] % allline[index].length;
 }
+
+function endload(){
+    console.log("endloadinging");
+    document.getElementById("contentbody").style["visibility"] = "visible";
+    document.getElementById("loadingdiv").style["opacity"] = "0";
+    console.log("endloading");
+    console.log(document.getElementById("loading").style["opacity"])
+    let endload = setInterval(() => {
+        document.getElementById("loading").style["visibility"] = "hidden";
+        document.getElementById("contentbody").style["position"] = "relative";
+        clearInterval(endload);
+    }, 2000);
+    console.log("endload");
+}
