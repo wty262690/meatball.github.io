@@ -1,7 +1,8 @@
 .draw, .word, .generate{
+    height: 100vh;
+    max-height: 100vw;
     position:absolute;
     width:33vw;
-    height: 100vh;
     margin: 0;
 }
 
@@ -10,6 +11,7 @@
     transition-timing-function: linear;
     background-color: red;
     background-size: 33vw;
+    left: 0px;
     background-position-y: 0px;
     background-image: url(../image/1.jpg);
 
@@ -44,7 +46,7 @@
 .imagparent{
     /*top : 20px;*/
     width: 34vw;
-    height: 50vh;
+    height: 100%;
     border: 0px;
     background-color: black;
     border-bottom:solid white 0.1vh;
@@ -52,34 +54,34 @@
 }
 
 #Taiwan-promtimg{ 
-    left:3%;
-    top:10%;    
+    position:absolute;
+    top:3%;
+    left:4%;
     background-position: center;
     background-size:contain;
     background-repeat: no-repeat;
-    width: 95%;
+    width: 92%;
     height: 70%;
     border-bottom: solid black 1vh;
 }
 
 #Taiwan-prompt{
     text-align: center;
-    top : 42vh;
+    top : 73%;
     width: 90%;
     padding-left: 5%;
     position:absolute;
     border-top:solid black 1vh;
     /*left: 10px;*/
-    height: 30%;
-    background-color: black;
+    height: 25%;
     color:white;
 }
 
 #Taiwan-image{
     /*position: fixed;*/
     /*left:33vw;*/
-    top:20vh;
-    height: 100px;
+    
+    height: 50vh;
     background-color: black;
     z-index: 1;
     opacity: 1;
@@ -98,8 +100,7 @@
     width: 96%;
     height: 100vh;
     padding: 2%;    
-    /*top: 140px;*/
-    align-content: end;
+    text-align: left;
 }
 
 .gen-img{
@@ -127,4 +128,16 @@
 
 #back:hover{
     opacity: 1;
+}
+
+#workbody{
+    display: inline-flex;
+    height:100vh;
+}
+
+#Taiwan #T{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
 }
