@@ -1,6 +1,6 @@
 .draw, .word, .generate{
     height: 100vh;
-    max-height: 100vw;
+    max-height: 150vw;
     position:absolute;
     width:33vw;
     margin: 0;
