@@ -85,13 +85,11 @@ body{
 }
 
 #work1img{
-    position: absolute;
     background-position: center;
     background-size: 100%;
     text-align: center;
     line-height: 200px;
     width: 4.5em;
-    left:1.5em;
     height: 200px;
     background-image: url('../image/home-04.png');
     -webkit-background-clip: text;
@@ -99,4 +97,23 @@ body{
     font-weight:bold;
     -webkit-text-fill-color: transparent;
     transition: background-position-y 1s linear;
+}
+
+#div_work1html{
+    cursor: pointer;
+    transition: background-color 1s;
+    background-color: black;
+    box-shadow: 0 0 10px white;
+    text-shadow:0 0 10px white;
+    border-radius: 20px;
+}
+
+#div_work1html:hover{
+    background-color: gray;
+}
+
+#div_work1html pre{
+    text-align: left;
+    margin-left: 20px;
+    border-left: solid 1px white;
 }
