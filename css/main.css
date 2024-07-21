@@ -100,7 +100,3 @@ a,label{
 .link{
     cursor:pointer;
 }
-
-.content{
-    transition-duration: 200ms;
-}

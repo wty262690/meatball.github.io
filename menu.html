@@ -2,59 +2,9 @@
     <head >
         <link href="css/menu.css" rel="stylesheet" type="text/css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="js/menu.js"></script>
     </head>
     <body>
-    <script>
-		$(document).ready(function(){
-			var old=null;
-			$("input[name='menu-open']").each(function(){
-				if(this.checked){
-					old=this;
-				}
-				this.onclick=function(){
-					if(this==old){
-						this.checked=false;
-						old=null;
-						/*---index---*/
-						$(".content").css("width", "100vw");
-						/*---writing---*/
-						$(".block").css("width","85vw")
-						$(".cover").css("width","85vw")
-						$(".block").css("padding-left","10px")
-						$(".block").css("padding-right","0vw")
-						/*---int---*/
-						$(".illustration").css("right","0vw")
-						if ($(window).width()*(40/100)>=400){
-							$(".profile").css("margin-left","6vw");
-						}
-						else{
-							$(".profile").css("margin-left","10vw");
-						}
-					} 
-					else{
-						old=this;
-						console.log("wwwww");
-						$(".block").css("width","75vw")
-						$(".cover").css("width","75vw")
-						if (this.id=="menu-open"){
-							/*---index---*/
-							$(".content").css("width", "85vw");
-							/*---writing---*/
-							$(".block").css("padding-left","0px")
-							$(".block").css("padding-right","13vw")
-							/*---int---*/
-							$(".profile").css("margin-left","1.5vw")
-							$(".illustration").css("right","5vw")
-						}
-						else if (this.id=="list-open"){
-							$(".block").css("padding-left","13vw")
-							$(".block").css("padding-right","0px")
-						}
-					}
-				}
-			});
-		});
-	</script>
     <input type="radio" class="menu-open" name="menu-open" id="menu-open" aria-labelledby="menu" />
         <label class="menu-open-button" for="menu-open">
             <span class="hamburger hamburger-1"></span>
@@ -62,11 +12,11 @@
             <span class="hamburger hamburger-3"></span>
         </label>
 		<div class="menu-item">
-			<a href="/create.html" class="item" aria-labelledby="menu-drawing">無法歸類</a>
-			<a href="/drawing.html" class="item" aria-labelledby="menu-drawing">繪圖</a>
-			<a href="/writing.html" class="item" aria-labelledby="menu-writing">寫作</a>
-			<a href="/programming.html" class="item" aria-labelledby="menu-programming">程式設計</a>
-			<a href="/int.html" class="item" aria-labelledby="menu-drawing">關於貢丸</a>
+			<a href="/drawing.html" class="item" aria-labelledby="menu-drawing">繪圖<div></div></a>
+			<a href="/writing.html" class="item" aria-labelledby="menu-writing">寫作<div></div></a>
+			<a href="/programming.html" class="item" aria-labelledby="menu-programming">程式設計<div></div></a>
+			<a href="/create.html" class="item" aria-labelledby="menu-drawing">無法歸類<div></div></a>
+			<a href="/int.html" class="item" aria-labelledby="menu-drawing">關於貢丸<div></div></a>
 		</div>
 		<!---<a href="/index.html" class="back" aria-labelledby="back"></a>--->
 	</nav>

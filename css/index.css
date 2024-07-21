@@ -1,5 +1,10 @@
 @import "main.css"; 
 
+.content{
+    width:100vw;
+    transition-duration: 200ms;
+}
+
 #icon{
     padding-top:1vh;
     width:100%;
