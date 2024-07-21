@@ -23,14 +23,15 @@
 			];
 			const Imagebar = [
 			];
-		function comicsize(){
+
+			function comicsize(){
 			var comic=document.getElementsByClassName("comic");
 			var fistpage=document.getElementsByClassName("firstpage");
 			for (var i = 0, length = comic.length; i < length; i++){
 				var t=fistpage[i].height-10+"px";
 				comic[i].style.height=t;
 				if (i==0){
-					console.log(t);
+					console.log(t + "hihi");
 					var display=document.getElementById("floor1display");
 					display.style.height=t;
 				}
@@ -60,9 +61,8 @@
 					$(".block").css("width","65%");
 				}
 				else{	
-					$(".block").css("width","100%");
+					$(".block").css("width","85%");
 				}
-				$(".block").css("min-width","100%");
 			}
 			else{
 				if ($("input[name='menu-open']")[0].checked==true || $("input[name='menu-open']")[1].checked==true ){
@@ -71,14 +71,13 @@
 				else{
 					$(".block").css("width","85%");
 				}
-				$(".block").css("min-width","1000px");
 			}
 			comicsize();
 		}
 
 		window.onload=function(){
 			$('.menu').load('menu.html');
-			windowsize()
+			windowsize();
 			for (var i=0, length=ComicTitle.length; i<length; i++){
 				comicpage(ComicTitle[i]);
 			}
@@ -91,9 +90,10 @@
 			windowsize();
 		});
 	</script>
-	<script>
 
+	<script>
 		$(document).ready(function(){
+			comicsize();
 			$("input[name='int']").each(function(){
 				this.onclick=function(){
 					if(this.checked) {
@@ -112,6 +112,7 @@
 			});
 		});
 	</script>
+
 	</script>
 	</head>
 	<body>
@@ -125,7 +126,7 @@
 		</label>
 		<div class="story-list title" >
 			<label class="story-open-button">
-				<input type="radio" class="story-open" name="story-open" />
+				<input type="radio" class="list-open" name="story-open" />
 				<span>我</span>
                     <hr>
 					<input type="radio" class="story-open sub-story-open" name="digital-painting" />
@@ -143,13 +144,17 @@
 	</nav>
 
 
-		<div class="content">
-			<div class="cover">
-				<div class="int-block int">
+		<!---<div class="content">--->
+			<div class="block">
+				<div class="workcover centerparent-flex">
+				我系列
+				<!---<div class="int-block int">
 					<pre>
 					</pre>
 				</div>
 				<img src="https://i.imgur.com/uZzB7Db.png" class="artwork" alt='cover or the series' referrerpolicy="no-referrer"/>
+				--->
+				</div>
 			</div>
 			<!--***********漫畫***********-->
 			<div class="towhite"></div>
@@ -198,5 +203,5 @@
 				</div>
 			</div>
             <div class="whitego"></div>
-        </div>
+        <!---</div>--->
     </body>

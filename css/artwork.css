@@ -1,5 +1,6 @@
 /*---content---*/
 .content{
+    position:absolute;
     width:100vw;
     margin:0 auto;
     padding-top:100px;
@@ -126,7 +127,6 @@ div .line{
 .block{
     margin:auto;
     text-align: center;
-    min-width:1000px;
 
     transition-duration:1s;
     padding-left:13vw;

@@ -100,7 +100,7 @@
     transform: translate3d(14vw, 0, 0);
 }
 .list-open:checked +label>.list-open-button{
-    transform: translate3d(calc(14vw - 4px), 0, 0);
+    transform: translate3d(calc(15vw - 4px), 0, 0);
 }
 .sub-story-open~span{
     display:none;
