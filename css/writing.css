@@ -14,6 +14,7 @@
     height:100vh;
     top:0;
     width: 75vw;
+    background-color: rgb(255, 252, 228);
     /*background-image:url("../image/png/cover.png");*/
     /*background-size:100%;*/
 }
@@ -25,7 +26,7 @@
 #cover-tree, #cover-back{
     position:absolute;
     width:80%;
-    max-width:150vh;
+    max-width:100vh;
     border-bottom: 2px solid rgb(102, 85, 54);
 }
 #cover-tree{
