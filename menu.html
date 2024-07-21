@@ -15,6 +15,8 @@
 					if(this==old){
 						this.checked=false;
 						old=null;
+						/*---index---*/
+						$(".content").css("width", "100vw");
 						/*---writing---*/
 						$(".block").css("width","85vw")
 						$(".cover").css("width","85vw")
@@ -35,6 +37,8 @@
 						$(".block").css("width","75vw")
 						$(".cover").css("width","75vw")
 						if (this.id=="menu-open"){
+							/*---index---*/
+							$(".content").css("width", "85vw");
 							/*---writing---*/
 							$(".block").css("padding-left","0px")
 							$(".block").css("padding-right","13vw")
@@ -64,6 +68,6 @@
 			<a href="/programming.html" class="item" aria-labelledby="menu-programming">程式設計</a>
 			<a href="/int.html" class="item" aria-labelledby="menu-drawing">關於貢丸</a>
 		</div>
-		<a href="/index.html" class="back" aria-labelledby="back"></a>
+		<!---<a href="/index.html" class="back" aria-labelledby="back"></a>--->
 	</nav>
 </body>

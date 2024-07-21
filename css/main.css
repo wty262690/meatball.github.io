@@ -1,6 +1,6 @@
 html {
     overflow: -moz-hidden-unscrollable;
-    cursor: url('../image/png/mouse-31.png'), auto;
+    /*cursor: url('../image/png/mouse-31.png'), auto;*/
     height: 100%;
 }
 
@@ -22,7 +22,7 @@ body {
 }
 
 p, a , pre {
-    color: rgb(76, 60, 60);
+    color: rgb(110, 89, 62);
     font-size: 15px;
     margin:0 auto;
     white-space: pre-wrap;
@@ -55,7 +55,7 @@ a,a:hover,a:active,a:visited,a:link,a:focus{
 }
 
 a,label{
-    cursor: url('../image/png/mouse-30.png'), auto;
+    /*cursor: url('../image/png/mouse-30.png'), auto;*/
 }
 
 .nocopy{
@@ -71,4 +71,36 @@ a,label{
     width:100vw;
     height:100vh;
     background-color:purple;
+}
+
+.dividing-line{
+    margin-top:2vw;
+    width:100%;
+    height:9vw;
+    background-image:url("../image/br.gif");
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.centerparent-flex, .centerparent-grid{
+    justify-content: center;    
+    align-items: center;  
+    text-align: center;
+    vertical-align: middle;
+}
+.centerparent-flex{
+    display: flex;
+}
+.centerparent-grid{
+    display: inline-block;
+}
+
+.link{
+    cursor:pointer;
+}
+
+.content{
+    transition-duration: 200ms;
 }

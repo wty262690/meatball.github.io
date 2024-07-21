@@ -20,16 +20,19 @@
 #cover-tree{
     position:absolute;
     right:0;
-    top:100px;
-    width:100%;
-    max-width:100vh;
+    /*top:100px;*/
+    bottom:0;
+    right: -50px;
+    width:100vw;
+    max-width:150vh;
 }
 #cover-back{
     position:absolute;
     bottom:0;
-    width:100%;
-    max-height:100vh;
-    max-width: 100vh;
+    width:100vw;
+    left: -50px;
+    /*max-height:100vh;*/
+    max-width: 150vh;
 }
 
 .block{
@@ -67,12 +70,4 @@ sup{
 
 #fileOutput .illustrate{
     width:100%;
-}
-
-.dividing-line{
-    margin-top:2vw;
-    width:100%;
-    height:9vw;
-    background-image:url("../image/br.gif");
-    background-size:100%;
 }
