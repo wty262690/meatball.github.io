@@ -9,6 +9,9 @@
     position:relative;
     transition-duration: 200ms;
 }
+#workcover-title{
+    height:50%;
+}
 .workcover .int{
     padding:0;
     overflow:auto;
@@ -26,6 +29,13 @@
     bottom:0%;
 }
 
+/*---video---*/
+#movie_player{
+    background-color: rgba(255, 255, 255, 0);
+}
+.ytp-chrome-top, .ytp-show-cards-title{
+    visibility: hidden;
+}
 
 /*---floor1---*/
 .floor1>.title-block{

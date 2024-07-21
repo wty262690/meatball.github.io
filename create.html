@@ -90,6 +90,37 @@
 			windowsize();
 		});
 	</script>
+	<script>
+		var tag = document.createElement('script');
+		tag.src = "https://www.youtube.com/iframe_api";
+		var firstScriptTag = document.getElementsByTagName('script')[0];
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+		var player;
+		function onYouTubeIframeAPIReady() {
+			player = new YT.Player('video', {
+			videoId: 'MDcvo3Y63ZM',
+			playerVars: {
+				'playsinline': 1
+			},
+			events: {
+				'onReady': onPlayerReady,
+				'onStateChange': onPlayerStateChange
+			}
+			});
+		}
+		function onPlayerReady(event) {}
+		function onPlayerStateChange(event) {}
+		function stopVideo() {
+			player.stopVideo();
+		}
+		function pauseVideo() {
+			player.pauseVideo();
+		}
+		function controlVideo(vidFunc, index) {
+			player.pauseVideo();
+		}
+	</script>
 
 	<script>
 		$(document).ready(function(){
@@ -111,6 +142,7 @@
 				}
 			});
 		});
+
 	</script>
 
 	</script>
@@ -146,34 +178,33 @@
 
 		<!---<div class="content">--->
 			<div class="block">
-				<div class="workcover centerparent-flex">
-				我系列
-				<!---<div class="int-block int">
-					<pre>
-					</pre>
+				<div class="workcover centerparent-grid">
+				<div class= "workcover-title">
+					<div class ="subtitle">我 系列</div>
+					<div class = "subsubtitle">2021 - 2022</div>
 				</div>
-				<img src="https://i.imgur.com/uZzB7Db.png" class="artwork" alt='cover or the series' referrerpolicy="no-referrer"/>
-				--->
 				</div>
+				
 			</div>
 			<!--***********漫畫***********-->
 			<div class="towhite"></div>
 			<div class="white">
 				<div class="floor1 block">
 					<div class="title-block">
-						<p class="title"> #1</p>
-						<p class="title sub-title"> 親愛的，這個當興趣就好</p>
+						<p class="subtitle">I</p>
+						<p class="title"> 親愛的，這個當興趣就好</p>
 					</div>
 					<div class="withint" id="floor1display">
-						<input type="checkbox" name="floor1-video" id="floor1-video">
+						<input type="checkbox" name="floor1-video" id="floor1-video" onClick="controlVideo('pauseVideo',0);">
 						<label for="floor1-video" class="video-button"></label>
-						<iframe class="video"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>video(I can't put youtube on without error message)</iframe>
-						<!--src="https://www.youtube.com/embed/MDcvo3Y63ZM"-->
-						<div class="dropup-button"></div>
+						<div id = "video"></div>
+						<!---<iframe class="video" id = "videoId" width="560" height="315" src="https://www.youtube.com/embed/MDcvo3Y63ZM?si=uhzwGIXB2DeLWmyp" src="https://www.youtube.com/embed/4tPAY5n40c0?rel=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+						--->
+						<!--<div class="dropup-button"></div>--->
 						<div class="comic" id="floor1">
 							<img src="https://i.imgur.com/sG0GStX.jpg" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
 						</div>
-						<div class="drop-button"></div>
+						<!--<div class="drop-button"></div>--->
 						<input type="checkbox" name="int" id="int" value="floor1">
 						<label for="int" class="int-button"></label>
 						<div class="int-block"><div class="int" id="floor1-fileOutput"></div></div>
