@@ -13,6 +13,7 @@ $(document).ready(function(){
                 /*---writing---*/
                 $(".block").css("width","85vw")
                 $(".cover").css("width","85vw")
+                $("#cover-word").css("width","85vw")
                 $(".block").css("padding-left","10px")
                 $(".block").css("padding-right","10px")
                 /*---int---*/
@@ -26,9 +27,10 @@ $(document).ready(function(){
             } 
             else{
                 old=this;
-                console.log("wwwww");
                 $(".block").css("width","75vw")
                 $(".cover").css("width","75vw")
+                $("#cover-word").css("width","75vw")
+                
                 if (this.id=="menu-open"){
                     /*---index---*/
                     $(".content").css("width", "85vw");

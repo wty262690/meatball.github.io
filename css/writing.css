@@ -8,6 +8,7 @@
 
 /*--story--*/
 .cover{
+    transition-duration:500ms;
     transition: width 500ms;
     position:fixed;
     margin:0;
@@ -18,10 +19,25 @@
     /*background-image:url("../image/png/cover.png");*/
     /*background-size:100%;*/
 }
+#cover-word{
+    transition-duration:500ms;
+    position: absolute;
+    top:70vh;
+    height: 20vh;
+}
 #cover-div{
-    visibility: hidden;
-    position:absolute;
-    bottom: 1vh;
+    /*position:absolute;*/
+    top: 80vh;
+    width:75vw;
+}
+#cover-title{
+    z-index: 5;
+    /*position:absolute;*/
+    top: 75vh;
+    font-size: 25px;
+    letter-spacing: 3vw;
+    color: white; 
+    text-shadow: black 0.1em 0.1em 0.2em
 }
 #cover-tree, #cover-back{
     position:absolute;

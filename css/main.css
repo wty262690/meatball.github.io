@@ -95,7 +95,7 @@ a,label{
     display: flex;
 }
 .centerparent-grid{
-    display: inline-block;
+    display: grid;
 }
 
 .link{
