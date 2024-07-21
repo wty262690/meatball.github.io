@@ -1,8 +1,8 @@
 
         const StoryListName = [
         {
-            value:['hero','beleive','Cthulhu','robothuman','Cradles','insomnai'],
-            name:['英雄夢','貫徹的信念','克蘇魯&#x2015;聖誕夜','固有色','把一首歌寫成一篇短篇小說','失眠的人 &#8901; 和 &#8901; 失眠的人'],
+            value:['hero','beleive','Cthulhu','robothuman','Cradles','insomnai','joke'],
+            name:['英雄夢','貫徹的信念','克蘇魯&#x2015;聖誕夜','固有色','把一首歌寫成一篇短篇小說','失眠的人 &#8901; 和 &#8901; 失眠的人', 'THE JOKE'],
             load:[],
             story:[],
             wordnum:[],
