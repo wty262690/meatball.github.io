@@ -19,6 +19,7 @@ body {
     background-size: cover;
     background-color: rgb(255, 252, 228);
     margin:0;
+    text-align:justify;
 }
 
 p, a , pre {
@@ -78,7 +79,7 @@ a,label{
     width:100%;
     height:9vw;
     background-image:url("../image/br.gif");
-    background-size:contain;
+    background-size:min(100%, 700px);
     background-position: center;
     background-repeat: no-repeat;
 }

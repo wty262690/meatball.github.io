@@ -14,7 +14,7 @@ $(document).ready(function(){
                 $(".block").css("width","85vw")
                 $(".cover").css("width","85vw")
                 $(".block").css("padding-left","10px")
-                $(".block").css("padding-right","0vw")
+                $(".block").css("padding-right","10px")
                 /*---int---*/
                 $(".illustration").css("right","0vw")
                 if ($(window).width()*(40/100)>=400){

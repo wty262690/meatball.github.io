@@ -9,24 +9,25 @@
     z-index: 3;
 }
 .menu{
-    padding-top:40px;
-    padding-bottom:40px;
+    padding-top:35px;
+    padding-bottom:15px;
 }
 
 /*---back button---*/
-.back{
-    width:30px;
-    height:30px;
-    margin-left:1vw;
+.logo{
+    width:25px;
+    height:25px;
+    margin-left:20px;
     margin-top:-15px;
-    background-image: url("../image/back.svg");
+    background-image: url("../image/png/logo-28.png");
     background-size: cover;
     z-index:1;
 }
 
-.back:hover{
-    transform: scale(1.4, 1.4);
+.logo:hover{
+    transform: scale(1.2, 1.2);
 }
+
 
 /*---input---*/
 .menu-open {
@@ -79,6 +80,7 @@
     z-index: 2;
     position: fixed;
     right: calc(1vw + 20px);
+    top: 30px;
     width: 15px;
     height: 15px;
     color: white;

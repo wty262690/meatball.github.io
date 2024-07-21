@@ -28,7 +28,8 @@
 
 /*---story list button---*/
 .list-open-button{
-    transition-duration:1s;
+    cursor: pointer;
+    transition-duration:500ms;
     position:fixed;
     width:100%;
     left:2px;
@@ -37,28 +38,36 @@
 }
 
 .list-button{
-    transition: transform 1s, background-position-y 0s;
-    background-image:url("../image/png/listicon-13.png");
+    transition: transform 500ms, background-position-y 0s;
+    background-image:url("../image/png/list-13.png");
     background-size:100%;
     background-position-x:center;
     background-position-y:0;
-    margin-top:80px;
-    height:calc(100vh - 90px);
-    width:15px;
-    border-left:3px solid;
-    border-color:rgb(76, 60, 60);
+    margin-top:50px;
+    height:calc(100vh - 60px);
+    width:10px;
+    border-left:2px;
+    background-color: rgb(180, 159, 124);
 }
 
 /*--story title (button in story list) --*/
+.story-open-button{
+  cursor: pointer;
+}
+
+.story-open-button span{    
+    color: rgb(110, 89, 62);
+}
+
 .story-list{
     font-size:23px;
-    transition-duration:1s;
+    transition-duration:500ms;
     position: fixed;
     margin:0 auto;
     left:-13vw;
     width:12vw;
     height: calc(100vh - 150px);
-    margin-top:100px;
+    margin-top:80px;
     overflow-y:auto;
     word-wrap:break-word;
 }
@@ -71,7 +80,7 @@
     height:25px;
     min-height:10px;
     max-height:50px;
-    background-image:url("../image/hr.svg");
+    background-image:url("../image/png/br-11.png");
     background-size: cover;
 }
 

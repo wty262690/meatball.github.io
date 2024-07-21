@@ -83,5 +83,5 @@
         }
 
         $( window ).scroll(function() {
-            $( ".list-open-button" ).css( "background-position-y",-($(window).scrollTop())/20);
+            $( ".list-open-button" ).css( "background-position-y",-($(window).scrollTop()));
         });
