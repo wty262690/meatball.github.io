@@ -30,7 +30,9 @@
 }
 
 /*---video---*/
-
+.video{
+    transition-duration: 1s;
+}
 
 /*---floor1---*/
 .floor1>.title-block{
@@ -47,6 +49,7 @@
 
 /*floor1display*/
 #floor1display{
+    transition-duration: 1s;
     margin-top:20%;
     margin-bottom:20px;
     height:100vw;
@@ -151,6 +154,7 @@
 }
 
 #floor2display{
+    transition-duration: 1s;
     margin-top:10%;
     position:relative;
 }
@@ -187,3 +191,46 @@
     opacity: 1;
 }
 
+/*---web---*/
+.web-image{
+    width:100%;
+    max-width: 1000px;
+    transition-duration: 500ms;
+}
+#IPTAweb{
+    width:100%;
+}
+
+#light-image:hover{
+    filter: drop-shadow(1px 1px 1vw #70643a);
+}
+#IPTA-image:hover{
+    filter: saturate(300%);
+}
+
+
+.webtitle-block{
+    padding-top: 10vw;
+    line-height: 20px;
+}
+
+
+/*---AI---*/
+.AItitle-block p{
+    color: white;
+}
+
+#work1img{
+    background-position: center;
+    background-size: 100%;
+    text-align: center;
+    line-height: 200px;
+    width: 100%;
+    background-image: url('../AI/image/home-04.png');
+    -webkit-background-clip: text;
+    font-size: 5vw;
+    background-size:contain;
+    font-weight:bold;
+    -webkit-text-fill-color: transparent;
+    transition: background-position-y 1s linear;
+}

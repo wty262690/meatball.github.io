@@ -90,23 +90,24 @@ input:checked +label{
 
 /*---artwork---*/
 .comic{
+    transition-duration: 1s;
     height:0vw;
     white-space:pre-line;
     overflow-y:auto;
 }
-.comic::-webkit-scrollbar-track, .int::-webkit-scrollbar
+.comic::-webkit-scrollbar-track, .int::-webkit-scrollbar-track
 {
 	background-color: #ffffff00;
 }
 .comic::-webkit-scrollbar, .int::-webkit-scrollbar
 {
 	width: 5px;
-	background-color: #ffffff00;
+	background-color: rgb(255, 242, 219);;
 }
-.comic::-webkit-scrollbar-thumb, .int::-webkit-scrollbar
+.comic::-webkit-scrollbar-thumb, .int::-webkit-scrollbar-thumb
 {
 	border-radius: 10px;
-	background-color: rgb(255, 242, 219);
+	background-color: rgb(180, 159, 124);
 }
 
 div .title{

@@ -104,7 +104,8 @@
 
 /*---menu item---*/
 
-.item{  
+.item{ 
+    direction: rtl;
     visibility: hidden;
     opacity: 0;
     height:50px;
@@ -158,7 +159,7 @@
     transition-duration: 600ms;
 }
 
-.menu-open:checked ~ .menu-item a { 
+.menu-open:checked ~ .menu-item a{ 
     visibility:visible;
     opacity: 1;
     transition: display 0s, opacity,transform 1000ms;
@@ -188,4 +189,26 @@
 }
 
 
+.type-list{
+    padding-left: 10px;
+}
 
+.type-item {  
+    visibility: hidden;
+    position:absolute;
+    opacity: 0;
+    height:50px;
+    font-family:"titlefont";
+    font-size: 10px;
+    background-size:cover;
+    width:13vw;
+    transition: left 1s;
+    left: -13vw;
+}
+
+.type-open:checked ~ .type-list .type-item{
+    visibility:visible;
+    position:relative;
+    opacity: 1;
+    left: 0px;
+}
