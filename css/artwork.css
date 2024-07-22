@@ -53,9 +53,11 @@ input:checked +label{
 .int-button, .video-button, .program-button{
     position:absolute;
     right:0%;
-    width:60px;
-    height:32px;
-    background-size:contain;
+    width:min(8vw,9vh);
+    height:min(8vw,9vh);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:120%;
 }
 
 .video-button{

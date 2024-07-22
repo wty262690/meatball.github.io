@@ -30,12 +30,7 @@
 }
 
 /*---video---*/
-#movie_player{
-    background-color: rgba(255, 255, 255, 0);
-}
-.ytp-chrome-top, .ytp-show-cards-title{
-    visibility: hidden;
-}
+
 
 /*---floor1---*/
 .floor1>.title-block{
@@ -68,10 +63,10 @@
 }
 
 .floor1 .video-button{
-    bottom:0;
+    bottom:0px;
 }
 .floor1 .int-button{
-    bottom:30px;
+    bottom:min(5vw,9vh);
 }
 
 #floor1, .floor1 .video, .floor1 .int-block{
@@ -145,10 +140,10 @@
 }
 
 #floor2-video1~.video-button{
-    top:30px;
+    top: min(5vw,9vh);
 }
 #floor2-video2~.video-button{
-    top:60px;
+    top: min(10vw,18vh);
 }
 #floor2-program:checked ~ .program-button{
     background-image:url("../image/png/button-25.png");

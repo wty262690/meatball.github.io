@@ -46,6 +46,7 @@ $(document).ready(function(){
                     $(".block").css("padding-right","0px")
                 }
             }
+            windowsize();
         }
     });
 });

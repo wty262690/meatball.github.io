@@ -85,3 +85,4 @@
         $( window ).scroll(function() {
             $( ".list-open-button" ).css( "background-position-y",-($(window).scrollTop()));
         });
+        function windowsize(){}
