@@ -94,8 +94,19 @@ input:checked +label{
     white-space:pre-line;
     overflow-y:auto;
 }
-.comic::-webkit-scrollbar {
-    display: none;
+.comic::-webkit-scrollbar-track, .int::-webkit-scrollbar
+{
+	background-color: #ffffff00;
+}
+.comic::-webkit-scrollbar, .int::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: #ffffff00;
+}
+.comic::-webkit-scrollbar-thumb, .int::-webkit-scrollbar
+{
+	border-radius: 10px;
+	background-color: rgb(255, 242, 219);
 }
 
 div .title{

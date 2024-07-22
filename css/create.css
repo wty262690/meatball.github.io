@@ -51,6 +51,7 @@
     margin-bottom:20px;
     height:100vw;
     position:relative;
+    direction:rtl;
 }
 
 
@@ -103,9 +104,9 @@
     line-height:150%;
 }
 
-.floor1 .int::-webkit-scrollbar{
+/*.floor1 .int::-webkit-scrollbar{
     display:none;
-}
+}*/
 
 #floor1-video:checked ~ .video{
     visibility: visible;
