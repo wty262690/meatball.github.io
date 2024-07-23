@@ -9,6 +9,8 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="image/favicon_io/favicon-16x16.png">
     <link href="css/create.css" rel="stylesheet" type="text/css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/list.js"></script>
+	<script src="js/comic.js"></script>
 	<script defer src=https://Unpkg.com/processing-js></script>	
 	<script>
 		const StoryList = [
@@ -69,34 +71,8 @@
 					size : 1.16517285531,
 				},
 			];
-			const Imagebar = [
+		const Imagebar = [
 			];
-
-			function comicsize(){
-			var comic=document.getElementsByClassName("comic");
-			var fistpage=document.getElementsByClassName("firstpage");
-			const element = document.querySelector('.block')
-			for (var i = 0, length = comic.length; i < length; i++){
-				var commicwidth = self.innerWidth * element.style.width.split('vw')[0] /100;
-				var t=commicwidth/ComicTitle[i].size*ComicTitle[i].displaysize+"px";
-				comic[i].style.height=t;
-				var display=document.getElementById("floor"+(i+1)+"display");
-				display.style.height=t;
-			}
-		}
-
-		function comicpage(array){
-			var comic=document.getElementById(array.name);
-			for(var i=0, length=array.link.length; i<length; i++){
-			comic.innerHTML+="<img src='"+array.link[i]+"' class='artwork' alt='comic pages' referrerpolicy='no-referrer'/>";
-			}
-		}
-		function imagebar(array){
-			var image=document.getElementById(array.name);
-			for(var i=0, length=array.link.length; i<length; i++){
-			image.innerHTML+="<img src='"+array.link[i]+"' class='artwork' alt='images in image bar' referrerpolicy='no-referrer'/>";
-			}
-		}
 
 		function windowsize(){
 			if ($(window).width()*(90/100)<=1000){
@@ -134,29 +110,6 @@
 		$(window).resize(function(){
 			windowsize();
 		});
-		function createstorylist(){
-            var storylist=document.getElementById('story-list');
-            for(var i=0; i<StoryList.length; i++){
-                storylist.innerHTML+="<label class='story-open-button'><input type='radio' class='story-open type-open' name='type-open' value='"+StoryList[i].typevalue+"' onclick='clicktype(this)'/><span id='"+StoryList[i].typevalue+"'>"+StoryList[i].type+"</span><div class='list-br'></div><div id='"+StoryList[i].typevalue+"-sub' class='type-list'></div></label>";
-				var typediv = document.getElementById(StoryList[i].typevalue+'-sub');
-				for (var j=0; j<StoryList[i].name.length; j++){
-					typediv.innerHTML+="<label class='substory-open-button type-item'><input type='radio' class='story-open' name='story-open' value='"+StoryList[i].namevalue[j]+"' onclick='clickstory()'/><span id='"+StoryList[i].namevalue[j]+"'>"+StoryList[i].name[j]+"</span><div class='list-br'></div></label>";
-				}
-            }
-        }
-		function clicktype(el){
-			var type = document.getElementsByClassName('type-block');
-			for(var i =0; i < type.length; i++){
-				var t = type[i];
-				if (t.getAttribute( 'id' ) == el.getAttribute( 'value' ) +'-block'){
-					t.style.display = "block";
-				}
-				else{
-					t.style.display = "none";
-				}
-			}
-		}
-		function clickstory(){}
 	</script>
 	<script>
 		var tag = document.createElement('script');
@@ -249,8 +202,28 @@
 	</nav>
 
 			<!--***********虛擬實境***********-->
-			<div class = "type-block" id = "VR-block"></div>
-			
+			<div class = "type-block" id = "VR-block">
+				<div class="block">
+					<div class="workcover centerparent-grid">
+					<div class= "workcover-title">
+						<div class ="subtitle">RUN?RUN...RUN!</div>
+						<div class = "subsubtitle">2024 by R.A.M<br>清華大學藝術學院學士班第三屆畢業展作品</div>
+					</div>
+					</div>
+				</div>
+				
+				<div class="block">
+					<div class="centerparent-grid">
+							<a id="lightweb" target="_blank" class="centerparent-grid" rel="noopener noreferrer" href = 'https://ramvr2024.github.io/demo.html'>
+								<img class="web-image" id="light-image" src="image/work/VR/run/cover2.png">
+							</a>
+							<div class="webtitle-block title-block">
+								<p class="title"></p>
+								<p class="subsubtitle"></p>
+							</div>
+					</div>
+				</div>
+			</div>
 			<!--***********遊戲設計***********-->
 			<div class = "type-block" id = "game-block"></div>
 
@@ -301,7 +274,7 @@
 					<div class="workcover centerparent-grid">
 					<div class= "workcover-title">
 						<div class ="subtitle">網頁作品</div>
-						<div class = "subsubtitle">參與製作</div>
+						<div class = "subsubtitle">合作成果</div>
 					</div>
 					</div>
 				</div>

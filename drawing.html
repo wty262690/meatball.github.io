@@ -9,16 +9,42 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="image/favicon_io/favicon-16x16.png">
     <link href="css/drawing.css" rel="stylesheet" type="text/css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/list.js"></script>
+	<script src="js/comic.js"></script>
 	<script>
+		const StoryList = [
+			{
+				type : '電腦繪圖',
+				typevalue : 'digital',
+				name : ['漫畫','圖畫'],
+				namevalue : ['comic','picture'],
+			},
+			{
+				type : '傳統美術',
+				typevalue : 'traditional',
+				name : ['塗鴉','素描'],
+				namevalue : ['doodle','sketch'],
+			},
+			{
+				type : '委託作品成果',
+				typevalue : 'commercial',
+				name : ['舞者葉夜', '作家'],
+				namevalue : ['YA','writer'],
+			},
+		];
 		const ComicTitle = [
 				{
-					name: 'night',
-					link: []
+					name: 'water',
+					link: ["https://i.imgur.com/WzbPIhR.jpg","https://i.imgur.com/3CxXktJ.jpg","https://i.imgur.com/S5kxlIS.jpg","https://i.imgur.com/1zeAGxB.jpg","https://i.imgur.com/mVuXjUM.jpg","https://i.imgur.com/MfAeGKc.jpg"],
+					displaysize : 0.85,
+					size : 0.72397397397,
 				},
 				{
-					name: 'water',
-					link: ["https://i.imgur.com/WzbPIhR.jpg","https://i.imgur.com/3CxXktJ.jpg","https://i.imgur.com/S5kxlIS.jpg","https://i.imgur.com/1zeAGxB.jpg","https://i.imgur.com/mVuXjUM.jpg","https://i.imgur.com/MfAeGKc.jpg"]
-				}
+					name: 'night',
+					link: [],
+					displaysize : 0.45,
+					size : 0.72397397397,
+				},
 			];
 			const Imagebar = [
 				{
@@ -35,28 +61,8 @@
 					link:["https://i.imgur.com/d0f2yPn.jpg","https://i.imgur.com/sCegBYH.jpg","https://i.imgur.com/e8mLEXu.jpg"]
 				}
 			];
-		function comicsize(){
-			var comic=document.getElementsByClassName("comic");
-			var fistpage=document.getElementsByClassName("firstpage");
-			for (var i = 0, length = comic.length; i < length; i++){
-				var t=fistpage[i].height-10+"px";
-				comic[i].style.height=t;
-			}
-		}
 
-		function comicpage(array){
-			var comic=document.getElementById(array.name);
-			for(var i=0, length=array.link.length; i<length; i++){
-			comic.innerHTML+="<img src='"+array.link[i]+"' class='artwork' alt='comic pages' referrerpolicy='no-referrer'/>";
-			}
-		}
-		function imagebar(array){
-			var image=document.getElementById(array.name);
-			for(var i=0, length=array.link.length; i<length; i++){
-			image.innerHTML+="<img src='"+array.link[i]+"' class='artwork' alt='images in image bar' referrerpolicy='no-referrer'/>";
-			}
-		}
-
+		/*
 		function windowresize(){
 			if ($(window).width()<=1000){
 				$(".block").css("width","100%");
@@ -68,10 +74,30 @@
 			}
 			comicsize();
 		}
+		*/
 
+		function windowsize(){
+			if ($(window).width()*(90/100)<=1000){
+				if ($("input[name='menu-open']")[0].checked==true || $("input[name='menu-open']")[1].checked==true ){
+					$(".block").css("width","65vw");
+				}
+				else{	
+					$(".block").css("width","85vw");
+				}
+			}
+			else{
+				if ($("input[name='menu-open']")[0].checked==true || $("input[name='menu-open']")[1].checked==true ){
+					$(".block").css("width","75vw");
+				}
+				else{
+					$(".block").css("width","85vw");
+				}
+			}
+			comicsize();
+		}
 
 		window.onload=function(){
-			windowresize();
+			windowsize();
 			$('.menu').load('menu.html');
 			comicsize();
 			for (var i=0, length=ComicTitle.length; i<length; i++){
@@ -80,12 +106,16 @@
 			for (var i=0, length=Imagebar.length; i<length; i++){
 				comicpage(Imagebar[i]);
 			}
+			createstorylist();
+			document.getElementsByClassName('story-open')[0].checked = true;
+			clicktype(document.getElementsByClassName('story-open')[0]);
 		}
 	</script>
 	<script>
 		$(window).resize(function(){
-			windowresize()
+			windowsize()
 		});
+
 		var cot=0;
 		function nex(){
 		console.log(Imagebar[0].link.length);
@@ -127,94 +157,59 @@
 		<nav class="menu nocopy">
 		</nav>
 
-	<nav class="nocopy">
-		<input type="radio" class="list-open" name="menu-open" id="list-open" checked="checked" />
-		<label for="list-open">
-			<span class="list-open-button list-button" id="list-open-button"></span>
-		</label>
-		<div class="story-list title" >
-			<label class="story-open-button">
-				<input type="radio" class="story-open" name="story-open" />
-				<span>創作</span>
-					<input type="radio" class="story-open sub-story-open" name="digital-painting" />
-					<span>漫畫</span>
-					<input type="radio" class="story-open sub-story-open" name="digital-painting" />
-					<span>系列</span>
+		<nav class="nocopy list">
+			<input type="radio" class="list-open" name="menu-open" id="list-open" checked="checked" />
+			<label for="list-open">
+				<span class="list-open-button list-button" id="list-open-button"></span>
 			</label>
-			<div class="list-br"></div>
-			<label class="story-open-button">	
-				<input type="radio" class="story-open" name="story-open" />
-				<span>傳統美術</span>
-					<input type="radio" class="story-open sub-story-open" name="traditional-painting" />
-					<span>素描</span>
-			</label>
-			<div class="list-br"></div>
-			<label class="story-open-button">	
-				<input type="radio" class="story-open" name="story-open" />
-				<span>委託作品</span>
-					<input type="radio" class="story-open sub-story-open" name="for-sb" />
-					<span>貢丸</span>
-					<input type="radio" class="story-open sub-story-open" name="for-sb" />
-					<span>夜葉</span>
-					<input type="radio" class="story-open sub-story-open" name="for-sb" />
-					<span>火焰</span>
-					<input type="radio" class="story-open sub-story-open" name="for-sb" />
-					<span>暴風雨之後</span>
-					<input type="radio" class="story-open sub-story-open" name="for-sb" />
-					<span>棲居清華藝集聯展</span>
-					<input type="radio" class="story-open sub-story-open" name="for-sb" />
-					<span>清華大學ACG蔓延社</span>
-					<input type="radio" class="story-open sub-story-open" name="for-sb" />
-					<span>清華大學大第二屆新生領航營</span>
-			</label>
-			<div class="list-br"></div>
-			<label class="story-open-button">	
-				<input type="radio" class="story-open" name="story-open" />
-				<span>塗鴉不分區</span>
-			</label>
-		</div>
-	</nav>
+			<div id = "story-list" class="story-list title" ></div>
+		</nav>
 
-
-		<div class="content">
-			<div class="cover">
-				<div class="int-block int">
-					<pre>
-					</pre>
+		<!--***********電腦繪圖***********-->
+		<div class = "type-block" id = "digital-block">
+			<div class="block">
+				<div class="workcover centerparent-grid">
+				<div class= "workcover-title">
+					<div class ="subtitle">RUN?RUN...RUN!</div>
+					<div class = "subsubtitle">2024 by R.A.M<br>清華大學藝術學院學士班第三屆畢業展作品</div>
+				</div>
 				</div>
 			</div>
+
 			<!--***********漫畫***********-->
 			<div class="toblack"></div>
 			<div class="black">
-				<div class="water block">
+			<div class="block">
+				<div class="water" id ="waterdisplay">
 					<p class="title">如果地球上沒有水</p>
 					<div class="comic" id="water">
 						<img src="https://i.imgur.com/QA1p04M.jpg" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
 					</div>
 				</div>
-			<div class="night block">
-				<p class="title">之夜</p>
-				<div class="comic" id="night">
-					<img src="https://i.imgur.com/uiYOEPj.jpg" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
-				</div>
-				<span>work with 兀心</span>
-				<span>building...</span>
+				<div class="night" id = "nightdisplay">
+					<p class="title">之夜</p>
+					<div class="comic" id="night">
+						<img src="https://i.imgur.com/uiYOEPj.jpg" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
+					</div>
+					<span>work with 兀心</span>
+					<span>building...</span>
 			</div>
 
 			<!--***********系列***********-->
 			<!--鬼滅-->
-			<div class="series GhostSlayer block">
+			<div class="series GhostSlayer">
 				<p class="title">【鬼滅之刃】同人圖</p>
 				<img src="https://i.imgur.com/fgKmpe0.jpg" class="artwork" alt='work for Ghost Slayer' referrerpolicy="no-referrer"/>
 				<img src="https://i.imgur.com/Aq2PUSw.jpg" class="artwork" alt='work for Ghost Slayer' referrerpolicy="no-referrer"/>
 				<img src="https://i.imgur.com/lvVba7B.jpg" class="artwork" alt='work for Ghost Slayer' referrerpolicy="no-referrer"/>
 			</div>
 			</div>
+			</div>
 			<div class="blackgo blacktowhite"></div>
 			<div class="white">
 			
 				<!--霸王別姬-->
-				<div class="series FarewellMyConcubine block">
+				<div class="series FarewellMyConcubine">
 					<p class="title">【霸王別姬】致敬</p>
 					<img src="https://i.imgur.com/JvgTn2l.png" class="artwork" alt='work for Farewell My Concubine' referrerpolicy="no-referrer"/>
 					<img src="https://i.imgur.com/66WoxM1.png" class="artwork" alt='work for Farewell My Concubine' referrerpolicy="no-referrer"/>
@@ -244,7 +239,6 @@
 
 
 			</div>
-
 		</div>
 		
 	</body>
