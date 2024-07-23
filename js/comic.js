@@ -3,15 +3,24 @@ function comicsize(){
     const element = document.querySelector('.block');
     var s = element.style.width.split('vw')[0];
     s = s.split('%')[0];
-    console.log(s)
+    var maxheight = self.innerHeight * 0.85;
     for (var i = 0, length = comic.length; i < length; i++){
         var commicwidth = self.innerWidth * s /100;
-        var t=commicwidth/ComicTitle[i].size*ComicTitle[i].displaysize+"px";
-        comic[i].style.height=t;
-        console.log(t);
+        var t=commicwidth/ComicTitle[i].size*ComicTitle[i].displaysize;
         var display=document.getElementById(ComicTitle[i].name+"display");
-        display.style.height=t;
-        console.log('next', t);
+        comic[i].style.height=t +"px";
+        if (t >=  maxheight){
+            var w = maxheight * ComicTitle[i].size;
+            comic[i].style.width = w +'px';
+            display.style.width = w +'px';
+            display.style.height= maxheight +"px";
+        }
+        else{
+            comic[i].style.width= ComicTitle[i].displaysize * 100 +'%';
+            display.style.width='100%';
+            display.style.height= t +"px";
+        
+        }
     }
 }
 

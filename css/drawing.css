@@ -28,18 +28,20 @@
 
 /*---night---*/
 .night{
-    height:4px;
+    /*height:4px;*/
 }
 .night span{
-    padding:10px;
+    /*padding:10px;
     left:20%;
-    position:absolute;
+    position:absolute;*/
 }
 
 #night{
-    padding:10px;
+    /*padding:10px;
     float:left;
-    width:45%;
+    width:45%;*/
+    margin: auto;
+    width:85%;
 }
 
 
@@ -113,4 +115,17 @@
 }
 .Mazu .button{
     background-color:black;
+}
+
+#zoomwindow{
+    z-index: 999999;
+    visibility: hidden;
+    position: fixed;
+    opacity: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.655);
+}
+#zoomwindow-img{
+    width: 90%;
 }

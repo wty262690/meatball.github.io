@@ -42,7 +42,7 @@
 				{
 					name: 'night',
 					link: [],
-					displaysize : 0.45,
+					displaysize : 0.85,
 					size : 0.72397397397,
 				},
 			];
@@ -62,38 +62,39 @@
 				}
 			];
 
-		/*
-		function windowresize(){
-			if ($(window).width()<=1000){
-				$(".block").css("width","100%");
-				$(".block").css("min-width","100%");
-			}
-			else{
-				$(".block").css("width","80%");
-				$(".block").css("min-width","1000px");
-			}
-			comicsize();
-		}
-		*/
-
 		function windowsize(){
+			var blocksize = 0;
 			if ($(window).width()*(90/100)<=1000){
 				if ($("input[name='menu-open']")[0].checked==true || $("input[name='menu-open']")[1].checked==true ){
 					$(".block").css("width","65vw");
+					blocksize = 65;
 				}
 				else{	
 					$(".block").css("width","85vw");
+					blocksize = 85;
 				}
 			}
 			else{
 				if ($("input[name='menu-open']")[0].checked==true || $("input[name='menu-open']")[1].checked==true ){
 					$(".block").css("width","75vw");
+					blocksize = 75;
 				}
 				else{
 					$(".block").css("width","85vw");
+					blocksize = 85;
 				}
 			}
 			comicsize();
+
+			if ($(window).width() *blocksize/100 <$(window).height()){
+				$("#zoomwindow-img").css("width","90%");
+				$("#zoomwindow-img").css("height","auto");
+			}
+			else{
+				$("#zoomwindow-img").css("width","auto");
+				$("#zoomwindow-img").css("height","85vh");
+			}
+
 		}
 
 		window.onload=function(){
@@ -110,12 +111,25 @@
 			document.getElementsByClassName('story-open')[0].checked = true;
 			clicktype(document.getElementsByClassName('story-open')[0]);
 		}
+
+		function zoom(img){
+			var zoomimg = document.getElementById("zoomwindow-img");
+			zoomimg.src = img.getAttribute('src')
+			$("#zoomwindow").css('visibility', 'visible');
+			$("#zoomwindow").css('opacity', '1');
+		}
+		function zoomclose(){
+			$("#zoomwindow").css('visibility', 'hidden');
+			$("#zoomwindow").css('opacity', '0');
+		}
 	</script>
 	<script>
 		$(window).resize(function(){
 			windowsize()
 		});
-
+		$(document).on ("click", ".artwork", function () {
+			zoom(this);
+		});
 		var cot=0;
 		function nex(){
 		console.log(Imagebar[0].link.length);
@@ -128,7 +142,7 @@
 		function pre(){
 			if(cot>0){
 			cot--;
-			var move=-cot*25+'%'
+			var move=-cot*25+'%';
 			$('.imgs').animate({'margin-left':move},500)
 			}
 		}
@@ -165,6 +179,14 @@
 			<div id = "story-list" class="story-list title" ></div>
 		</nav>
 
+		<div class="centerparent-grid" id="zoomwindow" onclick="zoomclose()">
+		<div class="block">
+			<div >
+				<img id="zoomwindow-img" src="https://i.imgur.com/fgKmpe0.jpg">
+			</div>
+		</div>
+		</div>
+		
 		<!--***********電腦繪圖***********-->
 		<div class = "type-block" id = "digital-block">
 			<div class="block">
@@ -177,15 +199,14 @@
 			</div>
 
 			<!--***********漫畫***********-->
-			<div class="toblack"></div>
-			<div class="black">
-			<div class="block">
+			<div class="block centerparent-grid">
 				<div class="water" id ="waterdisplay">
 					<p class="title">如果地球上沒有水</p>
 					<div class="comic" id="water">
 						<img src="https://i.imgur.com/QA1p04M.jpg" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
 					</div>
 				</div>
+				
 				<div class="night" id = "nightdisplay">
 					<p class="title">之夜</p>
 					<div class="comic" id="night">
@@ -193,18 +214,23 @@
 					</div>
 					<span>work with 兀心</span>
 					<span>building...</span>
+				</div>
 			</div>
 
+			<div class="toblack"></div>
+			<div class="black">
+			<div class="block">
 			<!--***********系列***********-->
 			<!--鬼滅-->
 			<div class="series GhostSlayer">
 				<p class="title">【鬼滅之刃】同人圖</p>
-				<img src="https://i.imgur.com/fgKmpe0.jpg" class="artwork" alt='work for Ghost Slayer' referrerpolicy="no-referrer"/>
-				<img src="https://i.imgur.com/Aq2PUSw.jpg" class="artwork" alt='work for Ghost Slayer' referrerpolicy="no-referrer"/>
-				<img src="https://i.imgur.com/lvVba7B.jpg" class="artwork" alt='work for Ghost Slayer' referrerpolicy="no-referrer"/>
+				<img src="https://i.imgur.com/fgKmpe0.jpg" class="artwork" alt='work for Ghost Slayer' referrerpolicy="no-referrer" />
+				<img src="https://i.imgur.com/Aq2PUSw.jpg" class="artwork" alt='work for Ghost Slayer' referrerpolicy="no-referrer" />
+				<img src="https://i.imgur.com/lvVba7B.jpg" class="artwork" alt='work for Ghost Slayer' referrerpolicy="no-referrer" "/>
 			</div>
 			</div>
 			</div>
+		
 			<div class="blackgo blacktowhite"></div>
 			<div class="white">
 			
