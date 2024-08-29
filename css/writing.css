@@ -12,13 +12,11 @@
     transition: width 500ms;
     position:relative;
     margin:0;
-    height:50vh;
+    height:40vh;
     height:50dvh;
     width: 75vw;
     width: 75dvw;
     background-color: rgb(255, 252, 228);
-    /*background-image:url("../image/png/cover.png");*/
-    /*background-size:100%;*/
 }
 #cover-word{
     transition-duration:500ms;
@@ -59,10 +57,8 @@
 }
 
 .block{
-
     letter-spacing:2px;
     line-height: 40px;
-
     transition-duration:500ms;
     margin:0 auto;
     border-bottom:20px;
