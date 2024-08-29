@@ -112,12 +112,6 @@
     background-image:url("../image/png/button-25.png")
 }
 
-#int:checked ~ .int-block .int{
-    visibility: visible;
-    opacity: 1;
-    left:0;
-}
-
 /*---floor2---*/
 .floor2{
     padding-top:10%;

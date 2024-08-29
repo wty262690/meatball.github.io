@@ -27,10 +27,15 @@ p, a , pre {
     color: rgb(110, 89, 62);
     font-size: 15px;
     margin:0 auto;
+    
     white-space: pre-wrap;
     word-wrap: break-word;
     font-family:"LiSong Pro";
     direction: ltr;
+}
+
+.mark{
+    font-weight: bold;
 }
 
 .title{
@@ -51,7 +56,8 @@ p, a , pre {
     width:100%;
     height:4.5vw;
     background-image:url("../image/png/br-11.png");
-    background-size:cover;
+    background-size:contain;
+    background-repeat:repeat-x;
 }
 
 @font-face {

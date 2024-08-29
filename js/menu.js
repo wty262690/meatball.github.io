@@ -20,9 +20,11 @@ $(document).ready(function(){
                 $(".illustration").css("right","0vw")
                 if ($(window).width()*(40/100)>=400){
                     $(".profile").css("margin-left","6vw");
+                    //$(".profile").css("width","80vw");
                 }
                 else{
                     $(".profile").css("margin-left","10vw");
+                    //$(".profile").css("width","80vw");
                 }
             } 
             else{
@@ -38,7 +40,7 @@ $(document).ready(function(){
                     $(".block").css("padding-left","0px")
                     $(".block").css("padding-right","13vw")
                     /*---int---*/
-                    $(".profile").css("margin-left","1.5vw")
+                    $(".profile").css("margin-left","5vw")
                     $(".illustration").css("right","5vw")
                 }
                 else if (this.id=="list-open"){

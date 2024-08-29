@@ -1,4 +1,5 @@
 @import "main.css"; 
+@import "button.css"; 
 
 /*---biggest block---*/
 .profile{
@@ -32,6 +33,43 @@
 
 }
 
+/*---cv---*/
+.introductionbar{
+    height: 30vh;
+}
+.int-block{
+    width: 100%;
+    height: 30vh;
+    top: 30%;
+    position: absolute;
+    overflow: hidden;
+    
+}
+.int{
+    width: 96%;
+    position: absolute;
+    overflow-x: hidden;
+    background-color: rgba(255, 252, 228, 0.925);
+    height: 30vh;
+    padding-top:15px;
+    padding-left:0px;
+}
+
+.int::-webkit-scrollbar-track
+{
+	background-color: #ffffff00;
+}
+.int::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: rgb(255, 242, 219);;
+}
+.int::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: rgb(180, 159, 124);
+}
+
 /*---word in word block*/
 
 .line{
@@ -39,6 +77,7 @@
 }
 
 .meatballname{
+    margin:0px;
     font-size: 40px;
 }
 
@@ -54,14 +93,14 @@
 /*---webicon---*/
 
 .webiconblock{
-    display:block;
+    /*display:block;*/
     width:100%;
     height:100%;    
 }
 
 .webiconblock a{
-    padding:min(4vw,25px);
-    padding-left:min(4vw,25px);
+    /*padding:min(4vw,25px);
+    padding-left:min(4vw,25px);*/
     white-space:nowrap;
 }
 
@@ -90,7 +129,7 @@
 /*---illustration---*/
 .illustration{
     z-index:0;
-    margin-left:20vw;
+    /*margin-left:20vw;*/
     transition: right 500ms;
     position:relative;
     margin-top:60px;
@@ -99,7 +138,9 @@
     width:80vw;
     /*mix-blend-mode: darken;*/
 }
-
+#canvasForHTML{
+    direction: rtl;
+}
 .ill-item{
     width:100%;
 }

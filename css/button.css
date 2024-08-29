@@ -1,0 +1,87 @@
+/*---button---*/
+input{
+    display:none;
+}
+input:checked +label{
+    background-image:url("../image/png/button-21.png");
+}
+
+.int-button, .video-button, .program-button{
+    cursor: pointer;
+    position:absolute;
+    right:0%;
+    width: min(8vw, 7vh);
+    width: min(8dvw, 7dvh);
+    height:min(8vw, 7vh);
+    height:min(8dvw, 7dvh);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:130%;
+}
+
+.video-button{
+    background-image:url("../image/png/button-24.png");
+}
+
+.video-button:checked ~ .video{
+    visibility: visible;
+    opacity: 1;
+}
+
+.int-button{
+    background-image:url("../image/png/button-23.png");
+}
+
+.program-button{
+    background-image:url("../image/png/button-26.png")
+}
+
+.drop-button, .dropup-button{
+    position:absolute;
+    width:4vw;
+    height:3.5vw;
+    background-size:contain;
+    background-image:url("../image/png/dropbutton-22.png")
+}
+.dropup-button{
+    transform:rotate(180deg);
+}
+
+.video{
+    opacity: 0;
+    transition: visibility 1s, opacity 0.5s linear;
+}
+
+/*---int---*/
+
+#int:checked ~ .int-block .int{
+    visibility: visible;
+    opacity: 1;
+    left:0;
+}
+
+.int-block{
+    position: absolute;
+    left: 0%;
+    height: 100%;
+    bottom: 0;
+    visibility: hidden;
+    margin: 0 auto;
+    margin-left: 0%;
+    width: 85%;
+}
+
+.int{
+    opacity: 0;
+    width: 92%;
+    margin: auto;
+    padding: 0;
+    padding-left: 4%;
+    padding-right: 4%;
+    background-color: rgba(255, 255, 255, 0.925);
+    left: 100%;
+    overflow-y: auto;
+    transition: visibility 1s, opacity 1s, left 0.7s linear;
+    letter-spacing: 3px;
+    line-height: 150%;
+}

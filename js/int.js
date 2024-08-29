@@ -30,6 +30,35 @@ window.onload=function(){
     resize();
     var file = new XMLHttpRequest();
     file.open("GET", "word/introduciton.txt", false);
+    $("input[name='int']").each(function(){
+        this.onclick=function(){
+            var idname=this.value+"-fileOutput";
+            var ouputelment = document.getElementById(idname);
+            if(this.checked) {
+                var file = new XMLHttpRequest();
+                file.open("GET", "word/"+this.value+".txt");
+                file.onreadystatechange = function() {
+                    if (file.readyState === 4) {
+                        var allText = file.responseText;
+                        ouputelment.innerHTML = allText;
+                        $("#" + idname).css({
+                            'visibility' : "visible",
+                            'opacity': '1',
+                            'left': "0%",
+                        });
+                        }
+                    }
+                file.send(null);
+            }
+            else{
+                $("#"+idname).css({
+                    'visibility' : "hidden",
+                    'opacity': '0',
+                    'left': "100%",
+                });
+            }
+        }
+    });
     file.onreadystatechange = function() {
         if (file.readyState === 4) {
             var allText = file.responseText;
