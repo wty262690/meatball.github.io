@@ -17,10 +17,13 @@
 	</head>
 	<body>
 		<div id="loading"></div>
+
+		<div class="maincontent">
 		<nav class="menu nocopy">
 		</nav>
 		<script type="text/javascript">
 			$(document).ready(function () {
+				$('#loading').load('loading.html');
 				$('.menu').load('menu.html');
 			});
 		</script>
@@ -54,6 +57,7 @@
 		</div>
 		<div class="illustration">
 			<div id="canvasForHTML"></div>
+		</div>
 		</div>
 	</body>
 </html>

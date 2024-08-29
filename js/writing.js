@@ -73,16 +73,13 @@
                 }
             }
         }
-        function endloading()
-        {
-            var objLoading = document.getElementById("loading");   
-            if (objLoading != null)   
-            {   
-                objLoading.style.display = "none";   
-            }   
-        }
 
         $( window ).scroll(function() {
             $( ".list-open-button" ).css( "background-position-y",-($(window).scrollTop()));
         });
         function windowsize(){}
+        
+        $(document).ready(function () {
+            $('.menu').load('menu.html');
+            $('#loading').load('loading.html');
+        });

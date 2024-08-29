@@ -8,29 +8,27 @@
     <link rel="icon" type="image/png" sizes="32x32" href="image/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="image/favicon_io/favicon-16x16.png">
     <link href="css/programming.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./js/program.js"></script>
     <script defer src=https://Unpkg.com/processing-js></script>	
-    <script defer src=soundfile.js></script>	
     </head>
     <body>
-		<nav class="menu">
-            <input type="checkbox" class="menu-open" name="menu-open" id="menu-open"/>
-            <label class="menu-open-button" for="menu-open">
-                <span class="hamburger hamburger-1"></span>
-                <span class="hamburger hamburger-2"></span>
-                <span class="hamburger hamburger-3"></span>
-            </label>
-            <a href="/drawing.html" class="menu-item item"></a>
-            <a href="/writing.html" class="menu-item item"></a>
-            <a href="/programming.html" class="menu-item item"></a>
-			<a href="/index.html" class="back"></a>
-		</nav>
-        <div class="processing">
+		<!---<div id="loading"></div>--->
+		<nav class="menu nocopy"></nav>
+		
+		<div class="content">
+            <div class="block centerparent-flex" style="height: 100vh; height: 100dvh;">
+                <div>...building...</div>
+            </div>
+
+		</div>
+        <!---<div class="processing">
             <canvas data-processing-sources="
             sockets/OutsideTheWindow/OutsideTheWindow.pde 
             sockets/OutsideTheWindow/pageclass.pde 
             sockets/OutsideTheWindow/startwindow.pde 
             sockets/OutsideTheWindow/comicwindow.pde 
             sockets/ArrayQueue.pde" class="processing"></canvas>
-        </div>
+        </div>--->
 	</body>
 </html>

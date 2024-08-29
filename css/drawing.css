@@ -25,25 +25,42 @@
     bottom:0%;
 }
 
+/*---lake---*/
+#lake{
+    margin: auto;
+}
+
 
 /*---night---*/
-.night{
-    /*height:4px;*/
-}
-.night span{
-    /*padding:10px;
-    left:20%;
-    position:absolute;*/
-}
-
-#night{
-    /*padding:10px;
-    float:left;
-    width:45%;*/
+#nightblock2{
     margin: auto;
-    width:85%;
+}
+#nightblock2 img{
+    padding-bottom: 5px;
 }
 
+#nightblock2 div img{
+    width:95%;
+}
+.artworkbar{
+    position: relative;
+    white-space: normal;
+    word-break: break-all;
+}
+#night-display{
+    width: 85%;
+    margin: auto;
+}
+/*
+#night-cover{
+    width: 40%;
+}
+#night-18{
+    width: 50%;
+}
+#night-7{
+    width: 50%;
+}*/
 
 /*---water---*/
 .black .title{
@@ -59,6 +76,33 @@
 }
 .water{
     width:100%;
+}
+
+/*---rabbit---*/
+
+#rabbitdisplay{
+    transition-duration: 1s;
+    position:relative;
+}
+
+#rabbit, #rabbit~.video{
+    position:absolute;
+    /*left:30%;*/
+    width:85%;
+    height:100%;
+}
+#rabbit~.video{
+    width:85%;
+    visibility: hidden;
+    left:0px;
+}
+
+#rabbit-video1:checked+label+.video{
+    visibility:visible;
+    opacity: 1;
+}
+.rabbit div::-webkit-scrollbar, .rabbit div::-webkit-scrollbar-thumb{   
+    display: none;
 }
 
 /*---Ghost Slayer---*/

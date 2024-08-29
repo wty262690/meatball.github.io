@@ -41,6 +41,6 @@ window.onload=function(){
     }
 
 
-    $(window).resize(function(){
-        resize();
-    });
+$(window).resize(function(){
+    resize();
+});

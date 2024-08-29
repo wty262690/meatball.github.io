@@ -4,14 +4,6 @@
 
 /*---cover---*/
 
-.workcover{
-    height:50vw;
-    position:relative;
-    transition-duration: 200ms;
-}
-#workcover-title{
-    height:50%;
-}
 .workcover .int{
     padding:0;
     overflow:auto;

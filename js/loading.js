@@ -1,10 +1,13 @@
 function endloading()
 {
-    var timeoutID = window.setInterval(( () => console.log("Hello!") ), 10);
-    window.clearInterval(timeoutID);
-    var objLoading = document.getElementById("loading");   
-    if (objLoading != null)   
-    {   
-        objLoading.style.display = "none";   
-    }   
+    $(".maincontent").css("opacity","1");
+    var objLoading = document.getElementById("loading");
+    objLoading.style.opacity = "0";
+    setTimeout(() => {
+        if (objLoading != null)   
+        {   
+            objLoading.style.display = "none";   
+        }   
+        console.log("endloading");
+    }, "2100");
 }

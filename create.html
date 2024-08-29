@@ -11,6 +11,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="js/list.js"></script>
 	<script src="js/comic.js"></script>
+	<script src="js/loading.js"></script>
+	<script src="js/youtube.js"></script>
 	<script defer src=https://Unpkg.com/processing-js></script>	
 	<script>
 		const StoryList = [
@@ -106,36 +108,15 @@
 			createstorylist();
 			document.getElementsByClassName('story-open')[0].checked = true;
 			clicktype(document.getElementsByClassName('story-open')[0]);
+			endloading();
 		}
 		$(window).resize(function(){
 			windowsize();
 		});
 	</script>
 	<script>
-		var tag = document.createElement('script');
-		tag.src = "https://www.youtube.com/iframe_api";
-		var firstScriptTag = document.getElementsByTagName('script')[0];
-		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
 		var player = [];
 		var list = ['MDcvo3Y63ZM','K3UH0omlYas','sACBsbbM3CI']
-		function onYouTubeIframeAPIReady() {
-			var video = document.getElementsByClassName('video');
-			for (var i =0; i < video.length; i++){
-				player[i] = new YT.Player('video'+i, {
-				videoId: list[i],
-				playerVars: {
-					'playsinline': 1
-				},
-				events: {
-					'onReady': onPlayerReady,
-					'onStateChange': onPlayerStateChange
-				}
-				});
-			}
-		}
-		function onPlayerReady(event) {}
-		function onPlayerStateChange(event) {}
 		function controlVideo(vidFunc, index) {
 			switch (index){
 				case -1 : {
@@ -166,6 +147,7 @@
 
 	<script>
 		$(document).ready(function(){
+			$('#loading').load('loading.html');
 			comicsize();
 			$("input[name='int']").each(function(){
 				this.onclick=function(){
@@ -190,9 +172,10 @@
 	</script>
 	</head>
 	<body>
-		<nav class="menu nocopy">
-		</nav>
+	<nav id="loading"></nav>
 
+	<div class="maincontent">
+	<nav class="menu nocopy"></nav>
 	<nav class="nocopy list">
 		<input type="radio" class="list-open" name="menu-open" id="list-open" checked="checked" />
 		<label for="list-open">
@@ -378,4 +361,5 @@
 			<!--***********仿生藝術***********-->
 			<div class = "type-block" id = "bio-block"></div>
         <!---</div>--->
+	</div>
     </body>

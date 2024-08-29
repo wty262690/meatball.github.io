@@ -8,15 +8,16 @@ function comicsize(){
         var commicwidth = self.innerWidth * s /100;
         var t=commicwidth/ComicTitle[i].size*ComicTitle[i].displaysize;
         var display=document.getElementById(ComicTitle[i].name+"display");
-        comic[i].style.height=t +"px";
         if (t >=  maxheight){
             var w = maxheight * ComicTitle[i].size;
             comic[i].style.width = w +'px';
+            comic[i].style.height= maxheight +"px";
             display.style.width = w +'px';
             display.style.height= maxheight +"px";
         }
         else{
             comic[i].style.width= ComicTitle[i].displaysize * 100 +'%';
+            comic[i].style.height=t +"px";
             display.style.width='100%';
             display.style.height= t +"px";
         

@@ -10,17 +10,13 @@
     <link href="css/writing.css" rel="stylesheet" type="text/css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/writing.js"></script>
+    <script src="js/loading.js"></script>
     </head>
     <body>
         <div id="loading"></div>
-        <nav class="menu nocopy">
-		</nav>
-		<script type="text/javascript">
-			$(document).ready(function () {
-				$('.menu').load('menu.html');
-			});
-		</script>
-        
+
+        <div class="maincontent">
+        <nav class="menu nocopy"></nav>
         <nav class="nocopy">
             <input type="radio" class="list-open" name="menu-open" id="list-open" checked="checked" aria-labelledby="story-list"/>
             <label for="list-open" >
@@ -43,5 +39,6 @@
         
             </div>
         </nav>
+        </div>
     </body>
 </html>

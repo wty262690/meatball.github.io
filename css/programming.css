@@ -1,5 +1,8 @@
 @import "main.css"; 
-
+.block{
+    transition-duration: 200ms;
+}    
+/*
 .menu-open:checked + .menu-open-button .hamburger-1 {
     transform: translate3d(-8.5px, -2.5px, 0) rotate(45deg);
 }
@@ -69,4 +72,4 @@
     transform: translate3d(100px, 400px, 0);
 }
 
-
+*/

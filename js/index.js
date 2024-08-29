@@ -1,6 +1,9 @@
 $(document).ready(function () {
     $('.menu').load('menu.html');
-    //$("head").append("main.html")
+    $('#loading').load('loading.html');
 });
+window.onload= function(){
+    endloading();
+}
 function windowsize(){}
 
