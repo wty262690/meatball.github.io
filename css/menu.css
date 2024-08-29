@@ -141,6 +141,7 @@
 
 .menu-item a:nth-child(1) {
     margin-top:40vh;
+    margin-top:40dvh;
     transition-duration: 1000ms;
 }
 .menu-item a:nth-child(2) {
