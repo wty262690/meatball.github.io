@@ -53,7 +53,8 @@
             for (var i = 0, length = radios.length; i < length; i++) {
                 if (radios[i].checked) {
                     if(radios[i]==oldstory){
-                        $(".cover").fadeIn(1000,function t(){                        
+                        $("#fileOutput, #title").fadeOut(1000, function storyclose(){
+                            $(".cover").fadeIn(1000);
                             oldstory=null;
                             title.innerHTML=""
                             document.getElementById("fileOutput").innerHTML = "";
@@ -61,13 +62,15 @@
                         radios[i].checked=false;
                     }
                     else{
-                        $(".cover").fadeOut(1000);
-                        oldstory=radios[i];
-                        var storytitle = document.getElementById(radios[i].value);
-                        title.innerHTML="<p class='title story-title'>"+storytitle.textContent+"</p>"
+                        $(".cover").fadeOut(1000, function storyopen(){
+                            $("#fileOutput, #title").fadeIn(1000);
+                            oldstory=radios[i];
+                            var storytitle = document.getElementById(radios[i].value);
+                            title.innerHTML="<p class='title story-title'>"+storytitle.textContent+"</p>"
 
-                        document.getElementById("fileOutput").innerHTML = "<br>"+StoryListName[0].story[i]+"<div class='buttom'></div>";
-                        window.scrollTo(0,0);
+                            document.getElementById("fileOutput").innerHTML = "<br>"+StoryListName[0].story[i]+"<div class='buttom'></div>";
+                            window.scrollTo(0,0);
+                        });
                         break;
                     }
                 }
@@ -82,4 +85,5 @@
         $(document).ready(function () {
             $('.menu').load('menu.html');
             $('#loading').load('loading.html');
+            $("#fileOutput, #title").fadeOut(1)
         });
