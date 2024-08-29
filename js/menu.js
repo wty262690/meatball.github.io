@@ -17,14 +17,12 @@ $(document).ready(function(){
                 $(".block").css("padding-left","10px")
                 $(".block").css("padding-right","10px")
                 /*---int---*/
-                $(".illustration").css("right","0vw")
+                $(".illustration").css("right","0px")
                 if ($(window).width()*(40/100)>=400){
-                    $(".profile").css("margin-left","6vw");
-                    //$(".profile").css("width","80vw");
+                    $(".profile").css("margin-left","auto");
                 }
                 else{
-                    $(".profile").css("margin-left","10vw");
-                    //$(".profile").css("width","80vw");
+                    $(".profile").css("margin-left","auto");
                 }
             } 
             else{
