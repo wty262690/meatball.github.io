@@ -12,7 +12,7 @@ function comicsize(){
             var w = maxheight * ComicTitle[i].size;
             comic[i].style.width = w +'px';
             comic[i].style.height= maxheight +"px";
-            display.style.width = 'auto';
+            display.style.width =  w + 'px';
             display.style.height= maxheight +"px";
         }
         else{

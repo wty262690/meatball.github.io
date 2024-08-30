@@ -3,6 +3,7 @@
 .content{
     position:absolute;
     width:100vw;
+    width:100dvw;
     margin:0 auto;
     padding-top:100px;
 }
@@ -21,8 +22,9 @@
 .toblack, .blackgo, .whitego,.towhite{
     width:100%;
     height:min(50vw,30vh);
+    height:min(50dvw,30dvh);
     /*background-size:contain;*/
-    background-size: 300px;
+    background-size: 500px;
     background-repeat: repeat-x;
 }
 
@@ -52,6 +54,7 @@
 /*---artwork---*/
 .workcover{
     height:50vw;
+    height:50dvw;
     position:relative;
     transition-duration: 200ms;
 }
@@ -62,6 +65,7 @@
 
 .artwrok-title{
     height: 10vw;
+    height: 10dvw;
     line-height: 20px;
 }
 
@@ -97,6 +101,7 @@ div .line{
     margin:auto;
     width:100%;
     height: 4.3vw;
+    height: 4.3dvw;
 }
 .hoverimg img:nth-child(1){
     display: block;
@@ -116,15 +121,16 @@ div .line{
 
 .waterfall {
     width: 100%;
-    margin: 0px auto;
     column-count: 2;
     column-gap: 1vw;
+    column-gap: 1dvw;
     text-align: justify;
     text-justify: inter-word;
 }
 .waterfall .artwork{
     box-sizing: border-box;
-    margin: 1vw auto 0;
+    margin: 2vw auto 0;
+    margin: 2dvw auto 0;
     break-inside: avoid;
     /*定義頁面、列或是區域發生中斷時的元素表現方式。 auto->元素中斷、acoid->元素不中斷*/
 }
@@ -136,6 +142,7 @@ div .line{
 .artwork-end{
     width:100%;
     height:30vw;
+    height:30dvw;
 }
 
 .comic .artwork{
@@ -145,6 +152,7 @@ div .line{
 .comic .firstpage{
     margin-top:-20px;
     max-height:85vh;
+    max-height:85dvh;
 }
 
 .block{
@@ -153,8 +161,10 @@ div .line{
 
     transition-duration:1s;
     padding-left:13vw;
-    padding-right:0vw;
+    padding-left:13dvw;
+    padding-right:0px;
     width:75vw;
+    width:75dvw;
 }
 
 

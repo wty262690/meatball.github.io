@@ -25,6 +25,23 @@
     bottom:0%;
 }
 
+.title-block{
+    padding:5vh 0 5vh;
+    padding:5dvh 0 5dvh;
+    margin: auto;
+}
+
+/*---illustration---*/
+#littleman-blood{
+    padding-top:20%;
+    padding-left: 50%;
+    width: 50%;
+}
+#illustrationdisplay .artwork{
+    margin:2vw auto;
+    margin: 2dvw auto;
+}
+
 /*---lake---*/
 #lake{
     margin: auto;
@@ -80,26 +97,31 @@
 
 /*---rabbit---*/
 
-#rabbitdisplay{
+#rabbit2display, #rabbit1display{
     transition-duration: 1s;
     position:relative;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
 }
 
-#rabbit, #rabbit~.video{
+#rabbit2,#rabbit1, #rabbit2~.video, #rabbit1~.video{
     position:absolute;
-    /*left:30%;*/
     width:85%;
-    height:100%;
+    height:85%;
+    top:0px;
 }
-#rabbit~.video{
-    width:85%;
+#rabbit2~.video, #rabbit1~.video{
     visibility: hidden;
     left:0px;
 }
 
-#rabbit-video1:checked+label+.video{
+#rabbit2-video1:checked+label+.video, #rabbit1-video1:checked+label+.video{
     visibility:visible;
     opacity: 1;
+}
+.rabbit label.video-button {
+    top: 10px;
 }
 .rabbit div::-webkit-scrollbar, .rabbit div::-webkit-scrollbar-thumb{   
     display: none;
