@@ -7,7 +7,7 @@
     margin-left: auto;
     padding-top:100px;
     width:75vw;
-    transition: margin-left 500ms ease-in-out;
+    transition: margin-left 500s ease-in-out;
 }
 .photoblock{
     float:left;
@@ -15,6 +15,7 @@
     text-align: center;
     margin-top:min(10vw,70px);
     width: 40vw;
+    width: 40dvw;
 }
 .wordblock{
     z-index:999;
@@ -22,8 +23,10 @@
     padding-top:45px;
     margin:0 auto;
     margin-top:min(5vw,60px);
+    margin-top:min(5dvw,60px);
     float:left;
     width: 40vw;
+    width: 40dvw;
 }
 
 /*---word in photo block*/
@@ -52,6 +55,7 @@
     overflow-x: hidden;
     background-color: rgba(255, 252, 228, 0.925);
     height: 30vh;
+    height: 30dvh;
     padding-top:0px;
     padding-left:0px;
 }
@@ -130,14 +134,13 @@
 /*---illustration---*/
 .illustration{
     z-index:0;
-    /*margin-left:20vw;*/
     transition: right 500ms;
     position:relative;
     margin-top:60px;
     right:0%;
     bottom:0;
     width:80vw;
-    /*mix-blend-mode: darken;*/
+    width:80dvw;
 }
 #canvasForHTML{
     direction: rtl;

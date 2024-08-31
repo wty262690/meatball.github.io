@@ -25,6 +25,9 @@ function draw() {
     cursor('grab');
   }
   if (!showVid){
+    readbook.hide();
+    headup.hide();
+    headdown.hide();
     switch(playnow){
       case 0: 
         vid=readbook;

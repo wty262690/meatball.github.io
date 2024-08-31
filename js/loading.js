@@ -1,6 +1,6 @@
 function endloading()
 {
-    $(".maincontent").css("opacity","1");
+    $(".maincontent").css("visibility","visible");
     var objLoading = document.getElementById("loading");
     objLoading.style.opacity = "0";
     setTimeout(() => {

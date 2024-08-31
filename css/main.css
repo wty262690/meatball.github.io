@@ -87,7 +87,7 @@ a,label{
 
 
 .maincontent{
-    opacity: 0;
+    visibility: hidden;
 }
 
 #loading{
