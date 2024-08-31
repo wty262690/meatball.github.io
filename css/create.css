@@ -29,7 +29,7 @@
 /*---floor1---*/
 .floor1>.title-block{
     background-size:contain;
-    height:10vw;
+    /*height:10vw;*/
 }
 
 .floor1>.title-block>.title{
@@ -42,9 +42,10 @@
 /*floor1display*/
 #floor1display{
     transition-duration: 1s;
-    margin-top:20%;
+    margin-top:10%;
     margin-bottom:20px;
     height:100vw;
+    height:100dvw;
     position:relative;
     direction:rtl;
 }
@@ -63,6 +64,7 @@
 }
 .floor1 .int-button{
     bottom:min(5vw,9vh);
+    bottom:min(5dvw,9dvh);
 }
 
 #floor1, .floor1 .video, .floor1 .int-block{

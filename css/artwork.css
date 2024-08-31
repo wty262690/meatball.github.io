@@ -64,8 +64,8 @@
 }
 
 .artwrok-title{
-    height: 10vw;
-    height: 10dvw;
+    padding-bottom: 5vw;
+    padding-bottom: 5dvw;
     line-height: 20px;
 }
 
@@ -91,10 +91,10 @@
 }
 
 div .title{
-    font-size:14px;
+    font-size:1rem;
 }
 .sub-title{
-    font-size:10px;
+    font-size:0.8rem;
 }
 
 div .line{
@@ -176,5 +176,5 @@ div .line{
     text-align:left;
 }
 .int > pre{
-    font-size: 12.5px;
+    font-size: 1rem;
 }
