@@ -126,8 +126,10 @@ div .line{
     column-gap: 1dvw;
     text-align: justify;
     text-justify: inter-word;
+    
 }
-.waterfall .artwork{
+.waterfall img{
+    
     box-sizing: border-box;
     margin: 2vw auto 0;
     margin: 2dvw auto 0;
@@ -138,6 +140,10 @@ div .line{
 .artwork{
     width:100%;
     margin: 0 auto;
+    border-radius: 1rem;
+}
+.comic .artwork{
+    border-radius: 0px;
 }
 .artwork-end{
     width:100%;

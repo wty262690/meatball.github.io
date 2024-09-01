@@ -112,7 +112,7 @@
     height:50px;
     position:absolute;
     font-family:"titlefont";
-    font-size: 1rem;
+    font-size: 0.8rem;
     background-size:cover;
     text-align: right;
     right:-75px;
@@ -207,7 +207,7 @@
     opacity: 0;
     height:50px;
     font-family:"titlefont";
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     background-size:cover;
     width:13vw;
     width:13dvw;
