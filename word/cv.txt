@@ -1,6 +1,5 @@
 <p class="introduction title">CV</p>
 <pre>
-
 <div class="mark">學歷</div>2024.9 - 台北藝術大學新媒體藝術碩士班
 2020.9 - 2024.6 國立清華大學藝術學院學士班 第一專長科技藝術 第二專長資訊工程
 

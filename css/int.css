@@ -90,9 +90,9 @@
     font-size: 20px;
 }
 
-#fileOutput{
-    letter-spacing:3px;
-    line-height: 34px;
+#fileOutput, #cv-fileOutput{
+    letter-spacing: 0.1rem;
+    line-height: 2rem;
 }
 
 /*---webicon---*/
