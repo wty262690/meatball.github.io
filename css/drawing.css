@@ -47,6 +47,13 @@
     margin: auto;
 }
 
+/*---shop---*/
+#shop{
+    margin: auto;
+}
+#shopwaterfall{
+    columns: 3;
+}
 
 /*---night---*/
 #nightblock2{

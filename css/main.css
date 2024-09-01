@@ -49,10 +49,14 @@ p, a , pre {
 .black .subsubtitle{
     color:rgb(221, 221, 221);
 }
-.subsubtitle{
+.subsubtitle, .subsubtitle a{
     font-family: "titlefont", "Microsoft JhengHei";
     color:rgb(154, 153, 131);
-    font-size: 0.5rem;
+    font-size: 0.7rem;
+}
+
+.underline{
+    text-decoration: underline;
 }
 
 /*---line---*/
