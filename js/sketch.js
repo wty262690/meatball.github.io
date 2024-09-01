@@ -15,7 +15,7 @@ function setup() {
     readbook.play();
     vid=readbook;
     draw();
-    setTimeout(() => showVid = false, random(2500,5000));
+    setTimeout(() => showVid = true, random(2500,5000));
 }
 
 let playnow=0;
