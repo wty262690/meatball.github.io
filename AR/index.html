@@ -75,7 +75,9 @@
     <!-- Our scene uses the ar component. -->
     <a-scene ar="worldSensing:true">
       <!-- When we have a raycaster hit, we use this ball to show where. -->
-      <a-sphere id="ball" radius="0.01" position="0 0.005 -0.5"></a-sphere>
+      <a-sphere id="ball" radius="0.01" position="0 0.005 -0.5">
+        <a-entity gltf-model="url(3d/Xbot2.glb)" ></a-entity>
+      </a-sphere>
 
       <a-camera>
         <!-- A hit from AR, rather than A-Frame objects, hits this entity. -->
