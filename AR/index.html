@@ -75,6 +75,7 @@
     <!-- Our scene uses the ar component. -->
     <a-scene ar="worldSensing:true">
       <!-- When we have a raycaster hit, we use this ball to show where. -->
+      <a-entity id="object-container"></a-entity>
       <a-sphere id="ball" radius="0.01" position="0 0.005 -0.5">
         <a-entity gltf-model="url(3d/Xbot2.glb)" ></a-entity>
       </a-sphere>
@@ -122,6 +123,14 @@
           }
           ball.setAttribute('position', point);
           ball.setAttribute('visible', true);
+          for (var i=0; i<evt.detail.intersections.length; i++){
+            const newObject = document.createElement('a-box');
+            newObject.setAttribute('position', intersectedPoint);
+            newObject.setAttribute('scale', '0.1 0.1 0.1');
+            newObject.setAttribute('color', '#4CC3D9');
+            
+            document.querySelector('#object-container').appendChild(newObject);
+          }
         });
         raycaster.addEventListener('raycaster-intersection-cleared', function (evt) {
           var clearedEls = evt.detail.clearedEls;
