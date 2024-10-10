@@ -1,4 +1,4 @@
-aframe-ar-plane
-=========================
+# A-Frame-World-Tracking
+Example of World Tracking on the Browser (web SLAM) powered by Web Assembly and A-Frame
 
-Example of plane detection and visualization using aframe-ar.
+The project is still in developement.
