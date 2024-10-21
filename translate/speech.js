@@ -25,7 +25,7 @@ else {
   var recognition = new webkitSpeechRecognition(); 
   recognition.continuous = true;
   recognition.interimResults = true;
-
+  infoBox.innerText = "本瀏覽器支援語音辨識";
   recognition.onstart = function() { 
     recognizing = true; 
     startStopButton.value = "stop"; 
