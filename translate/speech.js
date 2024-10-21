@@ -19,13 +19,13 @@ function startButton(event) {
 }
 
 if (!('webkitSpeechRecognition' in window)) {  
-    infoBox.innerText = "本瀏覽器不支援語音辨識，請更換瀏覽器！(Chrome 25 版以上才支援語音辨識)";
+  infoBox.innerText = "本瀏覽器不支援語音辨識，請更換瀏覽器！(Chrome 25 版以上才支援語音辨識)";
 } 
 else {
   var recognition = new webkitSpeechRecognition(); 
   recognition.continuous = true;
   recognition.interimResults = true;
-  infoBox.innerText = "本瀏覽器支援語音辨識";
+
   recognition.onstart = function() { 
     recognizing = true; 
     startStopButton.value = "stop"; 
@@ -36,7 +36,7 @@ else {
     recognizing = false;
     startStopButton.value = "start";  
     tempBox.innerHTML = '...'; 
-    infoBox.innerText = ""; 
+    infoBox.innerText = "支援"; 
   };
 
   recognition.onresult = function(event) {
