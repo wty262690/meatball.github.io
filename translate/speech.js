@@ -19,7 +19,7 @@ function startButton(event) {
 }
 
 if (!('webkitSpeechRecognition' in window)) {  
-  infoBox.innerText = "本瀏覽器不支援語音辨識，請更換瀏覽器！(Chrome 25 版以上才支援語音辨識)";
+    tempBox.innerText = "本瀏覽器不支援語音辨識，請更換瀏覽器！(Chrome 25 版以上才支援語音辨識)";
 } 
 else {
   var recognition = new webkitSpeechRecognition(); 
