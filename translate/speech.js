@@ -29,14 +29,14 @@ else {
   recognition.onstart = function() { 
     recognizing = true; 
     startStopButton.value = "stop"; 
-    infoBox.innerText = "...請開始說話...";  
+    //infoBox.innerText = "...請開始說話...";  
   };
 
   recognition.onend = function() { 
     recognizing = false;
     startStopButton.value = "start";  
     tempBox.innerHTML = '...'; 
-    infoBox.innerText = "支援"; 
+    //infoBox.innerText = "支援"; 
   };
 
   recognition.onresult = function(event) {
@@ -47,4 +47,8 @@ else {
     if (interim_transcript.trim().length > 0) 
         tempBox.innerText = interim_transcript;
   };
+}
+function speakButton(event) {
+  var msg = new SpeechSynthesisUtterance('你好，這是語音輸入測試');
+  window.speechSynthesis.speak(msg);
 }
