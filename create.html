@@ -15,6 +15,7 @@
 	<script src="js/youtube.js"></script>
 	<script defer src=https://Unpkg.com/processing-js></script>	
 	<script>
+		const path = "./html/create/";
 		const StoryList = [
 			{
 				type : '虛擬實境',
@@ -59,20 +60,7 @@
 				namevalue : ['eap'],
 			},
 		];
-		const ComicTitle = [
-				{
-					name : 'floor1',
-					link : ["https://i.imgur.com/KaM7t5T.png","https://i.imgur.com/eM14Rdf.png","https://i.imgur.com/pS6xU5a.png","https://i.imgur.com/SQz5axx.png","https://i.imgur.com/xwZbSm8.png","https://i.imgur.com/djQyGDh.png","https://i.imgur.com/iF26szu.png","https://i.imgur.com/71YzKnb.png","https://i.imgur.com/4NXiBHx.png","https://i.imgur.com/cxPjTmM.png","https://i.imgur.com/mLJ5stg.png","https://i.imgur.com/Awh06HI.png","https://i.imgur.com/iFHqnmT.png","https://i.imgur.com/zoRRhj1.png","https://i.imgur.com/wzKivfl.png","https://i.imgur.com/EDOYf1C.png","https://i.imgur.com/HI49GfA.png","https://i.imgur.com/nl6hl5j.png","https://i.imgur.com/3KOewtD.png","https://i.imgur.com/W1kuQl6.png","https://i.imgur.com/eno3nOx.png","https://i.imgur.com/afXOBmJ.png","https://i.imgur.com/Pbju3SG.png","https://i.imgur.com/Cjtoo29.png","https://i.imgur.com/4qVNbH1.png","https://i.imgur.com/YLrFLGX.png","https://i.imgur.com/wbi3RDe.png","https://i.imgur.com/4GPDCHu.png","https://i.imgur.com/q6llicV.png","https://i.imgur.com/quh0ITF.png","https://i.imgur.com/OMPFEhO.png","https://i.imgur.com/5NRxyqT.png","https://i.imgur.com/Mw6d7rJ.png","https://i.imgur.com/VCKHesn.png"],
-					displaysize : 0.85,
-					size : 1.77788127699,
-				},
-				{
-					name : 'floor2',
-					link : ["https://i.imgur.com/h9YQmWm.png","https://i.imgur.com/O17tTsj.png","https://i.imgur.com/gKMxSv3.png","https://i.imgur.com/MX2quQu.png","https://i.imgur.com/cmk0clJ.png","https://i.imgur.com/CtNodGk.png","https://i.imgur.com/2uALXaf.png","https://i.imgur.com/2USGjCa.png","https://i.imgur.com/1Ys01kW.png","https://i.imgur.com/OeMrjSx.png","https://i.imgur.com/ExZuQFv.png","https://i.imgur.com/VZ8etg6.png","https://i.imgur.com/2pa9wNH.png","https://i.imgur.com/UV2CDrb.png","https://i.imgur.com/y5c6tHX.png","https://i.imgur.com/vDHLyOX.png","https://i.imgur.com/DxlxVMJ.png","https://i.imgur.com/cqgmouS.png","https://i.imgur.com/N54QNTD.png","https://i.imgur.com/WI7VXy1.png","https://i.imgur.com/Dkx9baf.png"],
-					displaysize : 0.7,
-					size : 1.16517285531,
-				},
-			];
+		var ComicTitle = [];
 		const Imagebar = [
 			];
 
@@ -98,16 +86,15 @@
 
 		window.onload=function(){
 			$('.menu').load('menu.html');
-			windowsize();
-			for (var i=0, length=ComicTitle.length; i<length; i++){
-				comicpage(ComicTitle[i]);
-			}
+			/*
 			for (var i=0, length=Imagebar.length; i<length; i++){
 				comicpage(Imagebar[i]);
 			}
+			*/
 			createstorylist();
 			document.getElementsByClassName('story-open')[0].checked = true;
 			clicktype(document.getElementsByClassName('story-open')[0]);
+			//windowsize();
 			endloading();
 		}
 		$(window).resize(function(){
@@ -148,7 +135,7 @@
 	<script>
 		$(document).ready(function(){
 			$('#loading').load('loading.html');
-			comicsize();
+			/*
 			$("input[name='int']").each(function(){
 				this.onclick=function(){
 					if(this.checked) {
@@ -165,6 +152,7 @@
 					}
 				}
 			});
+			*/
 		});
 
 	</script>
@@ -185,287 +173,26 @@
 	</nav>
 
 			<!--***********虛擬實境***********-->
-			<div class = "type-block" id = "VR-block">
-				<div class="block">
-					<div class="workcover centerparent-grid">
-					<div class= "workcover-title">
-						<div class ="subtitle">虛擬實境</div>
-						<div class = "subsubtitle">Virtual Reality</div>
-					</div>
-					</div>
-				</div>
-				
-				<div class="block">
-					<div class="artwrok-title">
-						<div class ="title">RUN?RUN...RUN!</div>
-						<div class = "subsubtitle">2024 work by R.A.M<br>清華大學藝術學院學士班第三屆畢業展作品</div>
-					</div>
-					<div class="centerparent-grid">
-							<a id="lightweb" target="_blank" class="centerparent-grid" rel="noopener noreferrer" href = 'https://ramvr2024.github.io/demo.html'>
-								<img class="web-image" id="light-image" src="image/work/VR/run/cover2.png">
-							</a>
-							<div class="webtitle-block title-block">
-								<p class="title"></p>
-								<p class="subsubtitle"></p>
-							</div>
-					</div>
-				</div>
+			<div class = "type-block" id = "VR-block"></div>
 
-				<div class="toblack"></div>
-				<div class="black">
-				<div class="block">
-					<div class="artwrok-title">
-						<div class ="title">人偶 The Doll</div>
-						<div class = "subsubtitle">2023</div>
-					</div>
-					<img class="artwork" src="./image/work/VR/doll/cover.png">
-					<div class ="title">...building...</div>
-					<div class="artwork-end"></div>
-				</div>
-
-				<div class="block">
-					<div class="artwrok-title">
-						<div class ="title">Shadow Boxing VR</div>
-						<div class = "subsubtitle">2023</div>
-						<div class = "subsubtitle">四人共同創作</div>
-					</div>
-					<img class="artwork" src="./image/work/VR/shadow/poster.png">
-					<div class ="title">...building...</div>
-					<div class="artwork-end"></div>
-				</div>
-				</div>
-			</div>
 			<!--***********遊戲設計***********-->
-			<div class = "type-block" id = "game-block">
-				<div class="block">
-				<div class="workcover centerparent-grid">
-					<div class= "workcover-title">
-						<div class ="subtitle">遊戲開發</div>
-						<div class = "subsubtitle">Game Development</div>
-					</div>
-				</div>
-				</div>
-				<div class="towhite"></div>
-				<div class="white">
-				<div class="block">
-					<div class="artwrok-title">
-						<div class ="title">偶遇 The Puppet</div>
-						<div class = "subsubtitle">2023</div>
-						<div class = "subsubtitle">四人共同創作</div>
-						<div class = "subsubtitle">創意遊戲設計大賽 視覺設計獎 佳作</div>
-					</div>
-					<img class="artwork" src="./image/work/game/puppet/poster.png">
-					<div class ="title">...building...</div>
-					<div class="artwork-end"></div>
-				</div>
-				</div>
-			</div>
+			<div class = "type-block" id = "game-block"></div>
 
 			<!--***********AI藝術***********-->
-			<div class = "type-block" id = "AI-block">
-				<div class="block">
-					<div class="workcover centerparent-grid">
-					<div class= "workcover-title">
-						<div class ="subtitle">AI藝術作品</div>
-						<div class = "subsubtitle">使用AI技術</div>
-					</div>
-					</div>
-				</div>
-				<div class="toblack"></div>
-				<div class="black">
-					<div class="block">
-						<div class="centerparent-grid">
-								<a id="hmiweb" target="_blank" class="centerparent-grid" rel="noopener noreferrer" href = 'https://wty262690.github.io/AI/index.html'>
-									<div class="centerparent-grid" style="width: 100vw;">
-										<div id = "work1img">INTELLIGENCE INTERACTION</div>
-										<div id = "hmi-dividingline" class="dividing-darkline"></div>
-									</div>
-									<script>
-										var drawposition=0, drawspeed=1;
-										let movedraw = setInterval(() => {
-											MoveDrawPosition()
-										}, 1000);   
-										function MoveDrawPosition(){
-											drawposition -= drawspeed;
-											document.getElementById("work1img").style['background-position-y'] = drawposition + "px";
-										}
-									</script>
-									<!---<img class="AI-image" id="hmi-image" src="image/work/web/light/lightweb-cover.png">
-								---></a>
-								<div class="AItitle-block title-block">
-									<p class="title">智慧互動</p>
-									<p class="subsubtitle">2023</p>
-								</div>
-							</div>
-					</div>
-				</div>
-				<div class="blackgo"></div>
-			</div>
+			<div class = "type-block" id = "AI-block"></div>
 
 			<!--***********網頁設計***********-->
-			<div class = "type-block" id = "web-block">
-				<div class="block">
-					<div class="workcover centerparent-grid">
-					<div class= "workcover-title">
-						<div class ="subtitle">網頁作品</div>
-						<div class = "subsubtitle">合作成果</div>
-					</div>
-					</div>
-				</div>
-
-				<div class="block">
-					<div class="centerparent-grid">
-							<a id="lightweb" target="_blank" class="centerparent-grid" rel="noopener noreferrer" href = 'https://www.vetri.com.tw/blog/'>
-								<img class="web-image" id="light-image" src="image/work/web/light/lightweb-cover.png">
-							</a>
-							<div class="webtitle-block title-block">
-								<p class="title">光合玻璃藝術有限公司 官方網站</p>
-								<p class="subsubtitle">2023 參與網頁設計與架設</p>
-							</div>
-						</div>
-				</div>
-				
-				
-					<div class="towhite"></div>
-					
-				<div class="white">
-				<div class="block">
-					<div class="centerparent-grid">
-						<a id="IPTAweb" target="_blank" class="centerparent-grid" rel="noopener noreferrer" href = 'https://ipta.nthu.edu.tw/acquiring_your_signal/psychological_test/'>
-							<img class="web-image" id="IPTA-image" src="image/work/web/IPTA/cover.gif">
-						</a>
-						<div class="webtitle-block title-block">
-							<p class="title">清華大學藝術學院學士班第三屆畢業展覽 心理測驗網站<br>《正在尋找你的位置 Acquiring Your Signal...》</p>
-							<p class="subsubtitle">2024 網頁架設</p>
-						</div>
-					</div>
-				</div>
-				</div>
-				
-				<div class="whitego"></div>
-
-			</div>
+			<div class = "type-block" id = "web-block"></div>
 
 			<!--***********互動影像***********-->
-			<div class = "type-block" id = "ReactiveWork-block">
-				<div class="block">
-					<div class="workcover centerparent-grid">
-					<div class= "workcover-title">
-						<div class ="subtitle">互動影像</div>
-						<div class = "subsubtitle">Interactive Media</div>
-					</div>
-					</div>
-				</div>
-				<!---<div class="content">--->
-				<div class="block">
-					<div class="workcover centerparent-grid">
-					<div class= "workcover-title">
-						<div class ="subtitle">我 系列</div>
-						<div class = "subsubtitle">2021 - 2022</div>
-					</div>
-					</div>
-				</div>
-			<div class="towhite"></div>
-			<div class="white">
-				<div class="floor1 block">
-					<div class="title-block">
-						<p class="subtitle">I</p>
-						<p class="title"> 親愛的，這個當興趣就好</p>
-					</div>
-					<div class="withint" id="floor1display">
-						<input type="checkbox" name="floor1-video" id="floor1-video" onClick="controlVideo('pauseVideo',0);">
-						<label for="floor1-video" class="video-button"></label>
-						<div class = "video" id = "video0"></div>
-						
-						<div class="comic" id="floor1">
-							<img src="https://i.imgur.com/sG0GStX.jpg" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
-						</div>
-						
-						<input type="checkbox" name="int" id="int" value="floor1">
-						<label for="int" class="int-button"></label>
-						<div class="int-block"><div class="int" id="floor1-fileOutput"></div></div>
-					</div>
-					<div class="line"></div>
-				</div>
-
-				<div class="floor2 block">
-					<p class="title"> II</p>
-					<p class="title sub-title">Outside the Window</p>
-					<div id="floor2display">
-						<img src="https://i.imgur.com/K5Y9NKc.png" class="artwork" id="comic-bird" alt='illustration' referrerpolicy="no-referrer"/>
-						<div class="comic" id="floor2">
-							<img src="https://i.imgur.com/9ZCRmWz.png" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
-						</div>
-						<input type="checkbox" name="floor2" id="floor2-program" onClick="controlVideo('pauseVideo',-1);">
-						<label for="floor2-program" class="program-button"></label>
-						
-						<input type="checkbox" name="floor2" id="floor2-video1" onClick="controlVideo('pauseVideo',1);">
-						<label for="floor2-video1" class="video-button"></label>
-						<div class = "video" id = "video1"></div>
-						
-						<input type="checkbox" name="floor2" id="floor2-video2" onClick="controlVideo('pauseVideo',2);">
-						<label for="floor2-video2" class="video-button"></label>
-						<div class = "video" id = "video2"></div>
-						
-					</div>
-				</div>
-			</div>
-            <div class="whitego"></div>
-			</div>
+			<div class = "type-block" id = "ReactiveWork-block"></div>
 
 			<!--***********數位製造***********-->
-			<div class = "type-block" id = "Maker-block">
-				<div class="block">
-					<div class="workcover centerparent-grid">
-					<div class= "workcover-title">
-						<div class ="subtitle">數位自造</div>
-						<div class = "subsubtitle">Digital Maker</div>
-					</div>
-					</div>
-				</div>
-				<div class="block">
-					<div class="artwrok-title">
-						<div class ="title">關不掉的鬧鐘</div>
-						<div class = "subsubtitle">2021</div>
-						<div class = "subsubtitle">三人共同創作</div>
-					</div>
-					<img class="artwork" src="./image/work/maker/clock/cover.jpg">
-					<div class ="title">...building...</div>
-					<div class="artwork-end"></div>
-				</div>
-				<div class="block">
-					<div class="artwrok-title">
-						<div class ="title">下雨了嗎?</div>
-						<div class = "subsubtitle">2021</div>
-						<div class = "subsubtitle">三人共同創作</div>
-					</div>
-					<img class="artwork" src="./image/work/maker/rain/cover.PNG">
-					<div class ="title">...building...</div>
-					<div class="artwork-end"></div>
-				</div>
-			</div>
+			<div class = "type-block" id = "Maker-block"></div>
 
 			<!--***********仿生藝術***********-->
-			<div class = "type-block" id = "bio-block">
-				<div class="block">
-					<div class="workcover centerparent-grid">
-					<div class= "workcover-title">
-						<div class ="subtitle">仿生藝術</div>
-						<div class = "subsubtitle">bionic art</div>
-					</div>
-					</div>
-				</div>
-				<div class="block">
-					<div class="artwrok-title">
-						<div class ="title">EAP</div>
-						<div class = "subsubtitle">2022</div>
-						<div class = "subsubtitle">兩人共同創作</div>
-					</div>
-					<img class="artwork" src="./image/work/bio/EAP/cover.jpg">
-					<div class ="title">...building...</div>
-					<div class="artwork-end"></div>
-				</div>
-			</div>
+			<div class = "type-block" id = "bio-block"></div>
+
         <!---</div>--->
 	</div>
     </body>

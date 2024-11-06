@@ -14,6 +14,14 @@ function clicktype(el){
         var t = type[i];
         if (t.getAttribute( 'id' ) == el.getAttribute( 'value' ) +'-block'){
             t.style.display = "block";
+            console.log("ID=", t.getAttribute( 'id' ).split('-')[0], ComicTitle)
+            var idname = t.getAttribute( 'id' ).split('-')[0];
+            $('#' + idname+"-block").load(path+idname+'.html');
+			/*
+            for (var i=0, length=Imagebar.length; i<length; i++){
+				comicpage(Imagebar[i]);
+			}
+            */
         }
         else{
             t.style.display = "none";
@@ -21,3 +29,17 @@ function clicktype(el){
     }
 }
 function clickstory(){}
+function loadint(){
+    $("input[name='int']").each(function(){
+            var file = new XMLHttpRequest();
+            file.open("GET", "word/"+this.value+".txt");
+            var idname=this.value+"-fileOutput";
+            file.onreadystatechange = function() {
+                if (file.readyState === 4) {
+                    var allText = file.responseText;
+                    document.getElementById(idname).innerHTML = "<br>"+allText;
+                    }
+                }
+            file.send(null);
+    });
+}

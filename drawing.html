@@ -14,12 +14,19 @@
 	<script src="js/comic.js"></script>
 	<script src="js/youtube.js"></script>
 	<script>
+		const path = "./html/drawing/";
 		const StoryList = [
 			{
-				type : '電腦繪圖',
-				typevalue : 'digital',
-				name : ['插畫','漫畫'],
-				namevalue : ['illustration','comic'],
+				type : '插畫',
+				typevalue : 'illustration',
+				name : [],
+				namevalue : [],
+			},
+			{
+				type : '漫畫',
+				typevalue : 'comic',
+				name : [],
+				namevalue : [],
 			},
 			{
 				type : '傳統美術',
@@ -34,38 +41,7 @@
 				namevalue : ['YA','freshman','freshman','rainday'],
 			},
 		];
-		const ComicTitle = [
-				{
-					name: 'rabbit1',
-					link: [],
-					displaysize : 0.85,
-					size : 1.26041666667,
-				},
-				{
-					name: 'rabbit2',
-					link: [],
-					displaysize : 0.85,
-					size : 1.26041666667,
-				},
-				{
-					name: 'lake',
-					link: ["https://i.imgur.com/QZOfxdO.png", "https://i.imgur.com/MxbNQfi.png", "https://i.imgur.com/Q2D4JrK.png", "https://i.imgur.com/zprB6wm.png"],
-					displaysize : 0.85,
-					size : 0.72397397397,
-				},	
-				{
-					name: 'shop',
-					link: ["https://i.imgur.com/i2tdQ2S.jpg", "https://i.imgur.com/zGtft1Z.jpg", "https://i.imgur.com/84gvlIP.jpg", "https://i.imgur.com/4f2M9bm.jpg", "https://i.imgur.com/eoUpAS3.jpg", "https://i.imgur.com/xOgQJof.jpg", "https://i.imgur.com/3PKiOsM.jpg", "https://i.imgur.com/aTkZTZ7.jpg", "https://i.imgur.com/kZkyFpZ.jpg", "https://i.imgur.com/ZXYCwjx.jpg", "https://i.imgur.com/LdWy2ZK.jpg", "https://i.imgur.com/26TEiwM.jpg", "https://i.imgur.com/tqydeZM.jpg", "https://i.imgur.com/jkjz7j7.jpg", "https://i.imgur.com/5WPHnpQ.jpg"],
-					displaysize : 0.85,
-					size : 0.7527804878,
-				},		
-				{
-					name: 'water',
-					link: ["https://i.imgur.com/WzbPIhR.jpg","https://i.imgur.com/3CxXktJ.jpg","https://i.imgur.com/S5kxlIS.jpg","https://i.imgur.com/1zeAGxB.jpg","https://i.imgur.com/mVuXjUM.jpg","https://i.imgur.com/MfAeGKc.jpg"],
-					displaysize : 0.85,
-					size : 0.72397397397,
-				},
-			];
+		var ComicTitle = [];
 			const Imagebar = [
 				/*
 				{
@@ -116,7 +92,7 @@
 					blocksize = 85;
 				}
 			}
-			comicsize();
+			//comicsize();
 
 			if ($(window).width() *blocksize/100 < $(window).height()){
 				$("#zoomwindow-img").css("width","90%");
@@ -132,6 +108,7 @@
 		window.onload=function(){
 			windowsize();
 			$('.menu').load('menu.html');
+			/*
 			comicsize();
 			for (var i=0, length=ComicTitle.length; i<length; i++){
 				comicpage(ComicTitle[i]);
@@ -139,6 +116,7 @@
 			for (var i=0, length=Imagebar.length; i<length; i++){
 				comicpage(Imagebar[i]);
 			}
+			*/
 			createstorylist();
 			document.getElementsByClassName('story-open')[0].checked = true;
 			clicktype(document.getElementsByClassName('story-open')[0]);
@@ -225,364 +203,17 @@
 		</div>
 		</div>
 		
-		<!--***********電腦繪圖***********-->
-		<div class = "type-block" id = "digital-block">
+		<!--***********插畫***********-->
+		<div class = "type-block" id = "illustration-block"></div>
 
-            <!--***********插畫***********-->
-			<div class="block">
-				<div class="workcover centerparent-grid">
-				<div class= "workcover-title">
-					<div class ="subtitle">插畫</div>
-					<div class = "subsubtitle">illustration</div>
-				</div>
-				</div>
-			</div>
-
-			<div class="towhite"></div>
-			<div class="white">
-				<div class="rabbit block">
-					<img src="https://i.imgur.com/eFmMrMB.png" class="artwork" alt='rabbit' referrerpolicy="no-referrer" />
-					<div class="artwork-end"></div>
-					<div class="title-block">
-						<p class="title">Rabbit I</p>
-						<p class="subsubtitle">2022</p>
-					</div>
-					<div class="comic" id="rabbit1display">
-						<div id="rabbit1">
-							<img src="https://i.imgur.com/Pkf4Vl1.png" class="artwork firstpage" alt='gril and rabbit1' referrerpolicy="no-referrer" />
-						</div>
-						<input type="checkbox" name="rabbit1" id="rabbit1-video1" onClick="controlVideo('pauseVideo',0);">
-						<label for="rabbit1-video1" class="video-button"></label>
-						<div class = "video" id = "video0"></div>	
-					</div>
-					<div class="title-block">
-						<p class="title">Rabbit II</p>
-						<p class="subsubtitle">2022</p>
-					</div>
-					<div class="comic" id="rabbit2display">
-						<div id="rabbit2">
-							<img src="https://i.imgur.com/9tH6pZa.png" class="artwork firstpage" alt='gril and rabbit2' referrerpolicy="no-referrer" />
-						</div>
-						
-						<input type="checkbox" name="rabbit2" id="rabbit2-video1" onClick="controlVideo('pauseVideo',0);">
-						<label for="rabbit2-video1" class="video-button"></label>
-						<div class = "video" id = "video1"></div>
-					</div>
-				</div>
-
-			<div class="block centerparent-grid">
-				<div class="title-block">
-					<p class="title">其他</p>
-					<p class="subsubtitle">2020 - 2024</p>
-				</div>
-				<div class="centerparent-grid" id ="illustrationdisplay">
-					<div class="waterfall">
-						<img src="https://i.imgur.com/TW9MtRI.png" class="artwork" alt='blindperson' referrerpolicy="no-referrer"/>
-						<img src="https://i.imgur.com/zpmwpzr.jpeg" class="artwork" alt='work for NTHU ACG club2' referrerpolicy="no-referrer" style="width: 87%;"/>
-						<img src="https://i.imgur.com/VDjB6Sw.png" class="artwork" alt='fish' referrerpolicy="no-referrer"/>			
-						<img src="https://i.imgur.com/YtBr7ZA.png" class="artwork" alt='birthday' referrerpolicy="no-referrer"/>
-					</div>
-					<img src="https://i.imgur.com/UefArtd.png" class="artwork" alt='work for NTHU ACG club1' referrerpolicy="no-referrer" />
-					<img src="https://i.imgur.com/ueIVhKx.jpeg" class="artwork" alt='work for NTHU ACG club2' referrerpolicy="no-referrer"/>
-					<div class="waterfall">
-						<img src="https://i.imgur.com/FWtlRGt.jpeg" class="artwork" alt='meatball' referrerpolicy="no-referrer"/>
-						<img src="https://i.imgur.com/TustaOJ.png" class="artwork" alt='work for NTHU ACG club2' referrerpolicy="no-referrer" style="width: 140%;"/>
-						<img src="https://i.imgur.com/ZZX1vl4.png" class="artwork" alt='work for NTHU ACG club2' referrerpolicy="no-referrer" />
-						<img src="https://i.imgur.com/BiIcOJM.jpeg" class="artwork" alt='work for NTHU ACG club2' referrerpolicy="no-referrer" />
-
-					</div>
-					<img src="https://i.imgur.com/CkxCFdP.png" class="artwork" alt='work for NTHU ACG club2' referrerpolicy="no-referrer" />
-
-					<div class="waterfall">
-						<img src="https://i.imgur.com/G80bVZz.jpeg" class="artwork" alt='fish' referrerpolicy="no-referrer"/>
-						<img src="https://i.imgur.com/z0931yl.jpeg" class="artwork" alt='fish' referrerpolicy="no-referrer"/>
-						<img src="https://i.imgur.com/7Et7k31.jpeg" class="artwork" alt='fish' referrerpolicy="no-referrer"/>
-						<img src="https://i.imgur.com/vOnMoaK.jpeg" class="artwork" alt='longhairgril' referrerpolicy="no-referrer" style="width: 115%;"/>
-					</div>
-					<img src="https://i.imgur.com/EuhHMe4.png" class="artwork" id="littleman-blood" alt='littleman-blood' referrerpolicy="no-referrer"/>
-				</div>
-				<div class="artwork-end"></div>
-			</div>
-			</div>
-			<div class="whitego"></div>
-			
-			<div class="toblack"></div>
-			<div class="black">
-			<div class="block">
-			<!--***********系列***********-->
-			<!--鬼滅-->
-			<div class="series GhostSlayer">
-				<div class="title-block">
-					<p class="title">【鬼滅之刃】同人圖</p>
-					<p class="subsubtitle">2020 - 2021</p>
-				</div>
-				<img src="https://i.imgur.com/fgKmpe0.jpg" class="artwork" alt='work for Ghost Slayer' referrerpolicy="no-referrer" />
-				<img src="https://i.imgur.com/Aq2PUSw.jpg" class="artwork" alt='work for Ghost Slayer' referrerpolicy="no-referrer" />
-				<img src="https://i.imgur.com/lvVba7B.jpg" class="artwork" alt='work for Ghost Slayer' referrerpolicy="no-referrer" "/>
-			</div>
-			</div>
-			</div>
-		
-			<div class="blackgo blacktowhite"></div>
-			<div class="white">
-			<div class = "block">
-				<!--霸王別姬-->
-				<div class="series FarewellMyConcubine">
-					<div class="title-block">
-						<p class="title">【霸王別姬】致敬</p>
-						<p class="subsubtitle">2022</p>
-					</div>
-					<img src="https://i.imgur.com/JvgTn2l.png" class="artwork" alt='work for Farewell My Concubine' referrerpolicy="no-referrer"/>
-					<img src="https://i.imgur.com/66WoxM1.png" class="artwork" alt='work for Farewell My Concubine' referrerpolicy="no-referrer"/>
-				</div>
-			</div>			
-			</div>
-			<div class="whitego"></div>
-			
-			<!--媽祖-->
-			<!---<div class="series Mazu block">
-				<p class="title">【媽祖】致敬</p>
-				<div id="Mazu-bigsize">
-					<img src="https://i.imgur.com/bpNTRvI.jpg" class="artwork" alt='work for Mazu' referrerpolicy="no-referrer"/>
-				</div>
-
-				<div id="Mazu-small"> 
-					<div class="imgs" id="Mazu">
-						<div class="imgs" id="Mazu-a"></div>
-						<div class="imgs" id="Mazu-b"></div>
-						<div class="imgs" id="Mazu-c"></div>
-					</div>
-					<div>
-						<div class="button" onclick="pre()" style="float:left;cursor:pointer">上一頁</div>
-						<div class="button" onclick="nex()" style="float:right;cursor:pointer">下一頁</div>
-					</div>
-				</div>
-			</div>
-			</div>--->
-
-
-			<!--***********漫畫***********-->
-			<div class="block">
-				<div class="workcover centerparent-grid">
-				<div class= "workcover-title">
-					<div class ="subtitle">漫畫</div>
-					<div class = "subsubtitle">comic</div>
-				</div>
-				</div>
-			</div>
-			
-			<div class="towhite"></div>
-			<div class="white">
-			<div class="block lake centerparent-grid">
-				<div class="artwrok-title">
-					<p class="title">湖中女神</p>
-					<div class = "subsubtitle">2022 直式漫畫 共5頁</div>
-				</div>
-				<div class="centerparent-grid" id ="lakedisplay">
-					<div class="comic" id="lake">
-						<img src="https://i.imgur.com/TgeTtlL.png" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
-					</div>
-				</div>
-				<div class="artwork-end"></div>
-			</div>
-
-
-			<div class="block centerparent-grid">
-				<div class="artwrok-title">
-					<p class="title">奇夢商店街</p>
-					<div class = "subsubtitle">文本出自合作作家 <a class="mark" href="https://www.penana.com/user/2789/%E9%97%87%E5%A4%9C%E6%98%9F%E6%B2%B3/portfolio">闇夜星河</a></div>
-				</div>
-				<div class="centerparent-grid" id ="shopdisplay">
-					<div class="comic" id="shop">
-						<img src="https://i.imgur.com/eXYuO42.jpg" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
-					</div>
-				</div>	
-			</div>
-			<div class="block">
-				<div class="artwork-end"></div>
-				<div class="artwrok-title">
-					<p class="title">...building...</p>
-				</div>
-				<div class = "waterfall" id="shopwaterfall">
-					<img src="https://i.imgur.com/0vp4YXv.png" class="artwork" alt='fish' referrerpolicy="no-referrer"/>
-					<img src="https://i.imgur.com/omipriT.png" class="artwork" alt='fish' referrerpolicy="no-referrer"/>
-					<img src="https://i.imgur.com/PRduPJd.png" class="artwork" alt='fish' referrerpolicy="no-referrer"/>
-					<img src="https://i.imgur.com/yZBPVkp.jpeg" class="artwork" alt='fish' referrerpolicy="no-referrer"/>
-					<img src="https://i.imgur.com/7WytNyl.jpeg" class="artwork" alt='fish' referrerpolicy="no-referrer"/>
-				</div>
-				<div class="artwork-end"></div>
-			</div>
-
-
-			<div class="block centerparent-grid">
-				<div class="artwrok-title">
-					<p class="title">如果地球上沒有水</p>
-					<div class = "subsubtitle">2021 直式漫畫 共5頁</div>
-				</div>
-				<div class="water" id ="waterdisplay">
-					<div class="comic" id="water">
-						<img src="https://i.imgur.com/QA1p04M.jpg" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
-					</div>
-				</div>
-				<div class="artwork-end"></div>
-			</div>
-
-			<div class="toblack"></div>
-			<div class="black">
-			<div class="block centerparent-grid">
-				<div class="artwrok-title">
-					<p class="title">沃普爾吉斯之夜之夜</p>
-					<div class = "subsubtitle">文本出自合作作家 兀心</div>
-				</div>
-				<div id="night-display">
-						<img src="https://i.imgur.com/mEixN6T.jpeg" class="artwork" alt='fish' referrerpolicy="no-referrer"/>
-						<img src="https://i.imgur.com/QcJbvl1.png" class="artwork" alt='fish' referrerpolicy="no-referrer"/>
-							
-						<div class = "waterfall">
-							<img src="https://i.imgur.com/uiYOEPj.jpeg" id="night-cover" class="artwork" alt='fish' referrerpolicy="no-referrer"/>
-							<img src="https://i.imgur.com/1q81yoy.jpeg" id="night-7" class="artwork" alt='fish' referrerpolicy="no-referrer"/>
-							<img src="https://i.imgur.com/vnSMokH.jpeg" id="night-18" class="artwork" alt='fish' referrerpolicy="no-referrer"/>
-							
-							<img src="https://i.imgur.com/gbryKLQ.jpeg" class="artwork" alt='fish' referrerpolicy="no-referrer"/>
-							<img src="https://i.imgur.com/FCWBanp.jpeg" class="artwork" alt='fish' referrerpolicy="no-referrer"/>
-							<div class = "hoverimg">
-								<img src="https://i.imgur.com/DcWLZi0.jpeg" class="artwork" alt='fish' referrerpolicy="no-referrer"/>
-								<img src="https://i.imgur.com/rercnYq.png" class="artwork" alt='fish' referrerpolicy="no-referrer"/>
-							</div>
-							
-						</div>
-
-						<img src="https://i.imgur.com/9LKvT6G.jpeg" class="artwork" alt='fish' referrerpolicy="no-referrer"/>
-						
-				</div>				
-				<div class="artwork-end"></div>
-				<div class="artwrok-title">
-					<p class="title">...building...</p>
-				</div>
-				<div class="artwork-end"></div>
-			</div>
-			</div>
-
-			<!---
-			<div class="block centerparent-grid">
-				<div class="artwrok-title">
-					<p class="title">三魂行</p>
-					<div class = "subsubtitle">機甲設計大賽 第三名</div>
-				</div>
-				<div class="centerparent-grid" id ="fishdispaly">
-					<div class="centerparent-flex" id="">
-						<img src="https://i.imgur.com/iisAFEC.png" class="artwork" alt='introduction of meka' referrerpolicy="no-referrer"/>
-						<div style="height: max-content; overflow: scroll;">
-							<img src="https://i.imgur.com/0KwFy7D.jpeg" class="artwork" alt='small story of meka' referrerpolicy="no-referrer"/>
-						</div>
-					</div>
-				</div>
-				<div class="artwork-end"></div>
-			</div>
-			--->
-
-			</div>
-		</div>
+		<!--***********漫畫***********-->
+		<div class = "type-block" id = "comic-block"></div>
 
 		<!--***********傳統繪圖***********-->
-		<div class = "type-block" id = "traditional-block">
-
-			<div class="block">
-				<div class="workcover centerparent-grid">
-				<div class= "workcover-title">
-					<div class ="subtitle">傳統繪圖</div>
-					<div class = "subsubtitle">traditional painting</div>
-				</div>
-				</div>
-			</div>
-
-			<div class="towhite"></div>
-			<div class="white">
-
-			<div class="block">
-				<div class="artwrok-title">
-					<p class="title">塗鴉</p>
-					<div class = "subsubtitle">graffiti (in class)</div>
-				</div>
-			</div>
-
-			<div class="block" id = "graffitidisplay">
-				<img src="https://i.imgur.com/RYRxmuP.jpg" class="artwork" alt='work for wty' referrerpolicy="no-referrer" />
-				<div class="waterfall">
-					<img src="https://i.imgur.com/bA81Fdc.jpeg" class="artwork" alt='work for wty' referrerpolicy="no-referrer" />
-					<img src="https://i.imgur.com/aA6G8Ri.png" class="artwork" alt='work for wty' referrerpolicy="no-referrer" />
-					<img src="https://i.imgur.com/MDSZEi4.png" class="artwork" alt='work for wty' referrerpolicy="no-referrer" />
-					<img src="https://i.imgur.com/idBn0vP.png" class="artwork" alt='work for wty' referrerpolicy="no-referrer" />
-					<img src="https://i.imgur.com/Bcy8LXe.png" class="artwork" alt='work for wty' referrerpolicy="no-referrer" />
-					<img src="https://i.imgur.com/AjjtvcX.png" class="artwork" alt='work for wty' referrerpolicy="no-referrer" />
-					<img src="https://i.imgur.com/xP40Oc6.png" class="artwork" alt='work for wty' referrerpolicy="no-referrer" />
-					<img src="https://i.imgur.com/O25ETqp.png" class="artwork" alt='work for wty' referrerpolicy="no-referrer" />
-					<img src="https://i.imgur.com/qr4aHbD.png" class="artwork" alt='work for wty' referrerpolicy="no-referrer" />
-				</div>
-				<div class="waterfall">
-					<img src="https://i.imgur.com/2QG0WRu.png" class="artwork" alt='work for wty' referrerpolicy="no-referrer" />
-					<img src="https://i.imgur.com/0KCOsHO.png" class="artwork" alt='work for wty' referrerpolicy="no-referrer" />
-					<img src="https://i.imgur.com/BpDuW9W.jpg" class="artwork" alt='work for wty' referrerpolicy="no-referrer" />
-					<div class = "hoverimg">
-						<img src="https://i.imgur.com/PdZRkVz.jpg" class="artwork" alt='work for wty' referrerpolicy="no-referrer" />
-						<img src="https://i.imgur.com/cD3PIUs.jpeg" class="artwork" alt='work for wty' referrerpolicy="no-referrer" />
-					</div>
-					<img src="https://i.imgur.com/Wd0wLx5.png" class="artwork" alt='work for wty' referrerpolicy="no-referrer" />
-					<img src="https://i.imgur.com/vKkcdG3.png" class="artwork" alt='work for wty' referrerpolicy="no-referrer" />
-					<img src="https://i.imgur.com/VpmvM0G.png" class="artwork" alt='work for wty' referrerpolicy="no-referrer" />
-					<div class = "hoverimg">
-						<img src="https://i.imgur.com/XzKvAHF.jpg" class="artwork" alt='mother with color' referrerpolicy="no-referrer" />
-						<img src="https://i.imgur.com/ipL10ls.jpg" class="artwork" alt='mother' referrerpolicy="no-referrer" />
-					</div>
-				</div>
-				<img src="https://i.imgur.com/G5QOLWJ.jpg" class="artwork" alt='work for wty' referrerpolicy="no-referrer" />
-				<div class="waterfall">
-				</div>
-				<div class="artwork-end"></div>
-			</div>
-
-			<div class="block">
-				<div class="artwrok-title">
-					<p class="title">素描</p>
-					<div class = "subsubtitle">sketch</div>
-				</div>
-			</div>
-			<div class="block">
-				<div class="waterfall">
-					<img src="https://i.imgur.com/B5EqkT6.png" class="artwork" alt='work for wty' referrerpolicy="no-referrer" />
-					<img src="https://i.imgur.com/sX9Hq1O.png" class="artwork" alt='work for wty' referrerpolicy="no-referrer" />
-					<img src="https://i.imgur.com/vS7xAmb.png" class="artwork" alt='work for wty' referrerpolicy="no-referrer" />
-					<img src="https://i.imgur.com/HHTfdFX.png" class="artwork" alt='work for wty' referrerpolicy="no-referrer" />
-				</div>
-			</div>
-			</div>
-			<div class="whitego"></div>
-		</div>
+		<div class = "type-block" id = "traditional-block"></div>
 
 		<!--***********委託***********-->
-		<div class = "type-block" id = "commercial-block">
-			<div class="block">
-				<div class="workcover centerparent-grid">
-				<div class= "workcover-title">
-					<div class ="subtitle">其他合作成果</div>
-					<div class = "subsubtitle">...building...</div>
-				</div>
-				</div>
-			</div>
-			<!---
-			<div class="towhite"></div>
-			<div class="white">
-			<div class="block">
-				<p class="title">清華大學ACG蔓延社</p>
-				<img src="https://i.imgur.com/UefArtd.png" class="artwork" alt='work for wty' referrerpolicy="no-referrer" />
-				<img src="https://i.imgur.com/ueIVhKx.jpeg" class="artwork" alt='work for wty' referrerpolicy="no-referrer" />
-
-				<img src="https://i.imgur.com/EuhHMe4.png" class="artwork" alt='work for wty' referrerpolicy="no-referrer" />
-			</div>
-			</div>
-			<div class="whitego"></div>
-			-->
-		</div>
+		<div class = "type-block" id = "commercial-block"></div>
 			
 		</div>
 	</body>

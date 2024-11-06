@@ -1,0 +1,83 @@
+<script>
+    ComicTitle = [
+        {
+            name : 'floor1',
+            link : ["https://i.imgur.com/KaM7t5T.png","https://i.imgur.com/eM14Rdf.png","https://i.imgur.com/pS6xU5a.png","https://i.imgur.com/SQz5axx.png","https://i.imgur.com/xwZbSm8.png","https://i.imgur.com/djQyGDh.png","https://i.imgur.com/iF26szu.png","https://i.imgur.com/71YzKnb.png","https://i.imgur.com/4NXiBHx.png","https://i.imgur.com/cxPjTmM.png","https://i.imgur.com/mLJ5stg.png","https://i.imgur.com/Awh06HI.png","https://i.imgur.com/iFHqnmT.png","https://i.imgur.com/zoRRhj1.png","https://i.imgur.com/wzKivfl.png","https://i.imgur.com/EDOYf1C.png","https://i.imgur.com/HI49GfA.png","https://i.imgur.com/nl6hl5j.png","https://i.imgur.com/3KOewtD.png","https://i.imgur.com/W1kuQl6.png","https://i.imgur.com/eno3nOx.png","https://i.imgur.com/afXOBmJ.png","https://i.imgur.com/Pbju3SG.png","https://i.imgur.com/Cjtoo29.png","https://i.imgur.com/4qVNbH1.png","https://i.imgur.com/YLrFLGX.png","https://i.imgur.com/wbi3RDe.png","https://i.imgur.com/4GPDCHu.png","https://i.imgur.com/q6llicV.png","https://i.imgur.com/quh0ITF.png","https://i.imgur.com/OMPFEhO.png","https://i.imgur.com/5NRxyqT.png","https://i.imgur.com/Mw6d7rJ.png","https://i.imgur.com/VCKHesn.png"],
+            displaysize : 0.85,
+            size : 1.77788127699,
+        },
+        {
+            name : 'floor2',
+            link : ["https://i.imgur.com/h9YQmWm.png","https://i.imgur.com/O17tTsj.png","https://i.imgur.com/gKMxSv3.png","https://i.imgur.com/MX2quQu.png","https://i.imgur.com/cmk0clJ.png","https://i.imgur.com/CtNodGk.png","https://i.imgur.com/2uALXaf.png","https://i.imgur.com/2USGjCa.png","https://i.imgur.com/1Ys01kW.png","https://i.imgur.com/OeMrjSx.png","https://i.imgur.com/ExZuQFv.png","https://i.imgur.com/VZ8etg6.png","https://i.imgur.com/2pa9wNH.png","https://i.imgur.com/UV2CDrb.png","https://i.imgur.com/y5c6tHX.png","https://i.imgur.com/vDHLyOX.png","https://i.imgur.com/DxlxVMJ.png","https://i.imgur.com/cqgmouS.png","https://i.imgur.com/N54QNTD.png","https://i.imgur.com/WI7VXy1.png","https://i.imgur.com/Dkx9baf.png"],
+            displaysize : 0.7,
+            size : 1.16517285531,
+        },
+    ];
+    createcomic();
+    onYouTubeIframeAPIReady();
+    windowsize();
+    loadint();
+</script>
+<div class="block">
+    <div class="workcover centerparent-grid">
+    <div class= "workcover-title">
+        <div class ="subtitle">互動影像</div>
+        <div class = "subsubtitle">Interactive Media</div>
+    </div>
+    </div>
+</div>
+<!---<div class="content">--->
+<div class="block">
+    <div class="workcover centerparent-grid">
+    <div class= "workcover-title">
+        <div class ="subtitle">我 系列</div>
+        <div class = "subsubtitle">2021 - 2022</div>
+    </div>
+    </div>
+</div>
+<div class="towhite"></div>
+<div class="white">
+<div class="floor1 block">
+    <div class="title-block">
+        <p class="subtitle">I</p>
+        <p class="title"> 親愛的，這個當興趣就好</p>
+    </div>
+    <div class="withint" id="floor1display">
+        <input type="checkbox" name="floor1-video" id="floor1-video" onClick="controlVideo('pauseVideo',0);">
+        <label for="floor1-video" class="video-button"></label>
+        <div class = "video" id = "video0"></div>
+        
+        <div class="comic" id="floor1">
+            <img src="https://i.imgur.com/sG0GStX.jpg" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
+        </div>
+        
+        <input type="checkbox" name="int" id="int" value="floor1">
+        <label for="int" class="int-button"></label>
+        <div class="int-block"><div class="int" id="floor1-fileOutput"></div></div>
+    </div>
+    <div class="line"></div>
+</div>
+
+<div class="floor2 block">
+    <p class="title"> II</p>
+    <p class="title sub-title">Outside the Window</p>
+    <div id="floor2display">
+        <img src="https://i.imgur.com/K5Y9NKc.png" class="artwork" id="comic-bird" alt='illustration' referrerpolicy="no-referrer"/>
+        <div class="comic" id="floor2">
+            <img src="https://i.imgur.com/9ZCRmWz.png" class="artwork firstpage" alt='comic pages' referrerpolicy="no-referrer"/>
+        </div>
+        <input type="checkbox" name="floor2" id="floor2-program" onClick="controlVideo('pauseVideo',-1);">
+        <label for="floor2-program" class="program-button"></label>
+        
+        <input type="checkbox" name="floor2" id="floor2-video1" onClick="controlVideo('pauseVideo',1);">
+        <label for="floor2-video1" class="video-button"></label>
+        <div class = "video" id = "video1"></div>
+        
+        <input type="checkbox" name="floor2" id="floor2-video2" onClick="controlVideo('pauseVideo',2);">
+        <label for="floor2-video2" class="video-button"></label>
+        <div class = "video" id = "video2"></div>
+        
+    </div>
+</div>
+</div>
+<div class="whitego"></div>
