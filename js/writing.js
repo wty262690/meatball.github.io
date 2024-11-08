@@ -84,8 +84,6 @@ $( window ).scroll(function() {
 function windowsize(){}
 
 window.onload= function(){
-    $('#loading').load('loading.html');
-    $('.menu').load('menu.html');
     $("#fileOutput, #title").fadeOut(1)
     openallstory();
 }

@@ -123,8 +123,8 @@ $(document).ready(function(){
 
 window.onload=function(){
     console.log("window onload")
-    $('#loading').load('loading.html');
-    $('.menu').load('menu.html');
+    //$('#loading').load('loading.html');
+    //$('.menu').load('menu.html');
 
     /*
     comicsize();

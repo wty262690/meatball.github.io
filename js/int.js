@@ -27,8 +27,8 @@ function windowsize() {
 }
 
 $(document).ready(function () {
-    $('#loading').load('loading.html');
-    $('.menu').load('menu.html');
+    //$('#loading').load('loading.html');
+    //$('.menu').load('menu.html');
 });
 
 window.onload=function(){

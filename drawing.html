@@ -12,9 +12,12 @@
 	</head>
 	<body>
 		<nav id="loading"></nav>
+		<script>$('#loading').load('loading.html');</script>
 		
 		<div class="maincontent" style="visibility: hidden;">
 		<nav class="menu nocopy"></nav>
+		<script>$('.menu').load('menu.html');</script>
+
 		<nav class="nocopy list">
 			<input type="radio" class="list-open" name="menu-open" id="list-open" checked="checked" />
 			<label for="list-open">

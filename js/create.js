@@ -103,8 +103,8 @@ window.onload=function(){
         comicpage(Imagebar[i]);
     }
     */
-    $('#loading').load('loading.html');
-    $('.menu').load('menu.html');
+    //$('#loading').load('loading.html');
+    //$('.menu').load('menu.html');
 }
 $(window).resize(function(){
     windowsize();
