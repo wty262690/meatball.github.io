@@ -86,23 +86,28 @@ $(document).ready(function(){
         }
     });
     */
+    var storyopen= setInterval(() => {
+        try{
+            document.getElementsByClassName('story-open')[0].checked = true;
+            clicktype(document.getElementsByClassName('story-open')[0]);        
+            clearInterval(storyopen)
+        }
+        catch(e){}
+    }, 1000);
 });
 
 window.onload=function(){
+    /*
+    for (var i=0, length=Imagebar.length; i<length; i++){
+        comicpage(Imagebar[i]);
+    }
+    */
     $('#loading').load('loading.html');
     $('.menu').load('menu.html');
     $('head').append('<link href="css/create.css?v=' + config.version + '" rel="stylesheet" />');
     $('head').append('<script src="js/youtube.js?ver='+ config.version + '"><' + '/script>');
     $('head').append('<script src="js/list.js?ver='+ config.version + '"><' + '/script>');	
     $('head').append('<script src="js/comic.js?ver='+ config.version + '"><' + '/script>');
-    /*
-    for (var i=0, length=Imagebar.length; i<length; i++){
-        comicpage(Imagebar[i]);
-    }
-    */
-    createstorylist();
-    document.getElementsByClassName('story-open')[0].checked = true;
-    clicktype(document.getElementsByClassName('story-open')[0]);
 }
 $(window).resize(function(){
     windowsize();
