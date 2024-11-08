@@ -29,11 +29,10 @@ function windowsize() {
 $(document).ready(function () {
     //$('#loading').load('loading.html');
     //$('.menu').load('menu.html');
+    windowsize();
 });
 
 window.onload=function(){
-
-    windowsize();
     var file = new XMLHttpRequest();
     file.open("GET", "word/introduciton.txt", false);
     $("input[name='int']").each(function(){
@@ -72,7 +71,8 @@ window.onload=function(){
             }
         }
     file.send(null);
-    }
+    windowsize();
+}
 
 
 $(window).resize(function(){
