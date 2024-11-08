@@ -42,4 +42,3 @@ function loadint(){
             file.send(null);
     });
 }
-createstorylist();

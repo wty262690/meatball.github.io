@@ -27,9 +27,6 @@ function windowsize() {
 }
 
 $(document).ready(function () {
-    $('head').append('<link href="css/int.css?v=' + config.version + '" rel="stylesheet" />');
-    $('head').append('<script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>');
-    $('head').append('<script src="js/sketch.js?ver='+ config.version + '"><' + '/script>');
     $('#loading').load('loading.html');
     $('.menu').load('menu.html');
 });

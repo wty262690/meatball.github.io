@@ -88,6 +88,7 @@ $(document).ready(function(){
     */
     var storyopen= setInterval(() => {
         try{
+            createstorylist();
             document.getElementsByClassName('story-open')[0].checked = true;
             clicktype(document.getElementsByClassName('story-open')[0]);        
             clearInterval(storyopen)
@@ -104,10 +105,6 @@ window.onload=function(){
     */
     $('#loading').load('loading.html');
     $('.menu').load('menu.html');
-    $('head').append('<link href="css/create.css?v=' + config.version + '" rel="stylesheet" />');
-    $('head').append('<script src="js/youtube.js?ver='+ config.version + '"><' + '/script>');
-    $('head').append('<script src="js/list.js?ver='+ config.version + '"><' + '/script>');	
-    $('head').append('<script src="js/comic.js?ver='+ config.version + '"><' + '/script>');
 }
 $(window).resize(function(){
     windowsize();

@@ -4,6 +4,10 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
 		$('head').append('<script src="config.js?ver='+ new Date().getTime() + '"><' + '/script>');
+		$('head').append('<link href="css/create.css?v=' + config.version + '" rel="stylesheet" />');
+		$('head').append('<script src="js/youtube.js?ver='+ config.version + '"><' + '/script>');
+		$('head').append('<script src="js/list.js?ver='+ config.version + '"><' + '/script>');	
+		$('head').append('<script src="js/comic.js?ver='+ config.version + '"><' + '/script>');
 	</script>
 	<script src="js/create.js?ver=1"></script>
 
