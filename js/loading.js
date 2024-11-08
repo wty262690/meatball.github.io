@@ -11,7 +11,11 @@ function endloading()
     }, "2100");
 }
 
+/*
 $(document).ready(function () {
     endloading();
-
 })
+*/
+window.onload = function(){
+    endloading();
+}
