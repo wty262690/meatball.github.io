@@ -117,7 +117,13 @@ $(document).ready(function(){
         catch(e){}
     }, 1000);
     windowsize();
-
+    var endload= setInterval(() => {
+        try{
+            endloading();
+            clearInterval(endload)
+        }
+        catch(e){}
+    }, 1000);
     console.log("document end")
 });
 

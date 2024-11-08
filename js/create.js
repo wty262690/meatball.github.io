@@ -95,6 +95,13 @@ $(document).ready(function(){
         }
         catch(e){}
     }, 1000);
+    var endload= setInterval(() => {
+        try{
+            endloading();
+            clearInterval(endload)
+        }
+        catch(e){}
+    }, 1000);
 });
 
 window.onload=function(){

@@ -86,6 +86,13 @@ function windowsize(){}
 window.onload= function(){
     $("#fileOutput, #title").fadeOut(1)
     openallstory();
+    var endload= setInterval(() => {
+        try{
+            endloading();
+            clearInterval(endload)
+        }
+        catch(e){}
+    }, 1000);
 }
 $(document).ready(function () {
 });

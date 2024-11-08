@@ -72,6 +72,13 @@ window.onload=function(){
         }
     file.send(null);
     windowsize();
+    var endload= setInterval(() => {
+        try{
+            endloading();
+            clearInterval(endload)
+        }
+        catch(e){}
+    }, 1000);
 }
 
 

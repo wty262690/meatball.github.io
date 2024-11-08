@@ -13,8 +13,10 @@ function endloading()
 
 
 $(document).ready(function () {
+    /*
     console.log("endloading")
     endloading();
+    */
 })
 
 /*
