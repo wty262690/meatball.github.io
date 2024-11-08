@@ -112,15 +112,17 @@
     overflow: hidden;
 }
 
-#rabbit2,#rabbit1, #rabbit2~.video, #rabbit1~.video{
+#rabbit2,#rabbit1,#rabbit2~.video, #rabbit1~.video{
     position:absolute;
     width:85%;
     height:85%;
     top:0px;
 }
+
 #rabbit2~.video, #rabbit1~.video{
     visibility: hidden;
     left:0px;
+    height:100%;
 }
 
 #rabbit2-video1:checked+label+.video, #rabbit1-video1:checked+label+.video{

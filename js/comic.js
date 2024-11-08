@@ -1,14 +1,10 @@
 function comicsize(){
-    var comic=document.getElementsByClassName("comic");
     const element = document.querySelector('.block');
-    console.log(document)
     var s = element.style.width.split('vw')[0];
     s = s.split('%')[0];
-    console.log(comic)
     var maxheight = self.innerHeight * 0.85;
     for (var i = 0; i < ComicTitle.length; i++){
         var commicwidth = self.innerWidth * s /100;
-        console.log(ComicTitle[i])
         var t=commicwidth/ComicTitle[i].size*ComicTitle[i].displaysize;
         var display=document.getElementById(ComicTitle[i].name+"display");
         let child = display.querySelector('.comic');

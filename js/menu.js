@@ -19,10 +19,10 @@ $(document).ready(function(){
                 /*---int---*/
                 $(".illustration").css("right","0px")
                 if ($(window).width()*(40/100)>=400){
-                    $(".profile").css("margin-left","auto");
+                    $(".profile").css("margin-left","10vw");
                 }
                 else{
-                    $(".profile").css("margin-left","auto");
+                    $(".profile").css("margin-left","10vw");
                 }
             } 
             else{

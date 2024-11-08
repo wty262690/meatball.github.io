@@ -14,7 +14,6 @@ function clicktype(el){
         var t = type[i];
         if (t.getAttribute( 'id' ) == el.getAttribute( 'value' ) +'-block'){
             t.style.display = "block";
-            console.log("ID=", t.getAttribute( 'id' ).split('-')[0], ComicTitle)
             var idname = t.getAttribute( 'id' ).split('-')[0];
             $('#' + idname+"-block").load(path+idname+'.html');
 			/*

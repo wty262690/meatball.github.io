@@ -5,7 +5,6 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 
 function onYouTubeIframeAPIReady() {
-    console.log("video");
     var video = document.getElementsByClassName('video');
     for (var i =0; i < video.length; i++){
         player[i] = new YT.Player('video'+i, {

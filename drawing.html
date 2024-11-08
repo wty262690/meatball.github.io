@@ -1,18 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head >
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Meatball Portfolio</title>
-	<link rel="apple-touch-icon" sizes="180x180" href="image/favicon_io/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="image/favicon_io/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="image/favicon_io/favicon-16x16.png">
-    <link href="css/drawing.css" rel="stylesheet" type="text/css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="js/list.js"></script>
-	<script src="js/loading.js"></script>
-	<script src="js/comic.js"></script>
-	<script src="js/youtube.js"></script>
+	<script>
+		$('head').append('<script src="config.js?ver='+ new Date().getTime() + '"><' + '/script>');
+	</script>
 	<script>
 		const path = "./html/drawing/";
 		const StoryList = [
@@ -106,9 +98,12 @@
 		}
 
 		window.onload=function(){
-			windowsize();
+			$('#loading').load('loading.html');
 			$('.menu').load('menu.html');
-			/*
+			$('head').append('<link href="css/drawing.css?v=' + config.version + '" rel="stylesheet" />');
+			$('head').append('<script src="js/list.js?ver='+ config.version + '"><' + '/script>');	
+			$('head').append('<script src="js/comic.js?ver='+ config.version + '"><' + '/script>');
+				/*
 			comicsize();
 			for (var i=0, length=ComicTitle.length; i<length; i++){
 				comicpage(ComicTitle[i]);
@@ -120,7 +115,7 @@
 			createstorylist();
 			document.getElementsByClassName('story-open')[0].checked = true;
 			clicktype(document.getElementsByClassName('story-open')[0]);
-			endloading();
+			windowsize();
 		}
 
 		function zoom(img){
@@ -161,7 +156,6 @@
 			}
 		}
 		$(document).ready(function(){
-			$('#loading').load('loading.html');
 			$("input[name='int']").each(function(){
 				this.onclick=function(){
 					if(this.checked) {
@@ -178,6 +172,8 @@
 					}
 				}
 			});
+			$('head').append('<script src="js/youtube.js?ver='+ config.version + '"><' + '/script>');
+
 		});
 	</script>
 	</script>
@@ -185,7 +181,7 @@
 	<body>
 		<nav id="loading"></nav>
 		
-		<div class="maincontent">
+		<div class="maincontent" style="visibility: hidden;">
 		<nav class="menu nocopy"></nav>
 		<nav class="nocopy list">
 			<input type="radio" class="list-open" name="menu-open" id="list-open" checked="checked" />

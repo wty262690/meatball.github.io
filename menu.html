@@ -1,8 +1,9 @@
 
     <head >
-        <link href="css/menu.css" rel="stylesheet" type="text/css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="js/menu.js"></script>
+        <script src="js/menu.js"></script>
+		<script>
+			$('head').append('<link href="css/menu.css?v=' + config.version + '" rel="stylesheet" type="text/css">');
+		</script>
     </head>
     <body>
 	<nav>

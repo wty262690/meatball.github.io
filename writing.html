@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
     <head >
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Meatball Portfolio</title>
-	<link rel="apple-touch-icon" sizes="180x180" href="image/favicon_io/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="image/favicon_io/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="image/favicon_io/favicon-16x16.png">
-    <link href="css/writing.css" rel="stylesheet" type="text/css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/writing.js"></script>
-    <script src="js/loading.js"></script>
+    <script>
+		$('head').append('<script src="config.js?ver='+ new Date().getTime() + '"><' + '/script>');
+	</script>
+    <script src="js/writing.js?ver=1"></script>
     </head>
     <body>
         <div id="loading"></div>
 
-        <div class="maincontent">
+        <div class="maincontent" style="visibility: hidden;">
         <nav class="menu nocopy"></nav>
         <nav class="nocopy">
             <input type="radio" class="list-open" name="menu-open" id="list-open" checked="checked" aria-labelledby="story-list"/>

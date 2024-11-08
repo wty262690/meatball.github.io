@@ -8,6 +8,10 @@ function endloading()
         {   
             objLoading.style.display = "none";   
         }   
-        console.log("endloading");
     }, "2100");
 }
+
+$(document).ready(function () {
+    endloading();
+
+})

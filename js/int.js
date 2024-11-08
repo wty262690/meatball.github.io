@@ -1,4 +1,4 @@
-function resize() {
+function windowsize() {
     var radios = document.getElementsByClassName('menu-open');
     if ($(window).width()*(40/100)>=400){
             $(".photoblock").css("float","left");
@@ -24,10 +24,19 @@ function resize() {
             $(".illustration").css("width","80vw");
             $(".illustration").css("position","relative");
         }
-    //$(".photoblock").css("height",$(".head").height());
 }
+
+$(document).ready(function () {
+});
+
 window.onload=function(){
-    resize();
+    $('head').append('<link href="css/int.css?v=' + config.version + '" rel="stylesheet" />');
+    $('head').append('<script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>');
+    $('head').append('<script src="js/sketch.js?ver='+ config.version + '"><' + '/script>');
+    $('#loading').load('loading.html');
+    $('.menu').load('menu.html');
+
+    windowsize();
     var file = new XMLHttpRequest();
     file.open("GET", "word/introduciton.txt", false);
     $("input[name='int']").each(function(){
@@ -66,10 +75,9 @@ window.onload=function(){
             }
         }
     file.send(null);
-    endloading();
     }
 
 
 $(window).resize(function(){
-    resize();
+    windowsize();
 });
