@@ -16,6 +16,8 @@ $(document).ready(function () {
     endloading();
 })
 */
+
 window.onload = function(){
+    console.log("endloading")
     endloading();
 }

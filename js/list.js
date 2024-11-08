@@ -21,6 +21,7 @@ function clicktype(el){
 				comicpage(Imagebar[i]);
 			}
             */
+            window.scrollTo(0,0);
         }
         else{
             t.style.display = "none";
