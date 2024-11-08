@@ -11,13 +11,15 @@ function endloading()
     }, "2100");
 }
 
-/*
+
 $(document).ready(function () {
+    console.log("endloading")
     endloading();
 })
-*/
 
+/*
 window.onload = function(){
     console.log("endloading")
     endloading();
 }
+*/
