@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!---<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/addons/p5.sound.min.js"></script>
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>--->
+    <!---<script src="callpython.js"></script>--->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+    <script src="https://unpkg.com/ml5@0.12.2/dist/ml5.min.js"></script>  
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <main><!---<py-script> print('Hello, World!') </py-script>---></main>
+    <!---<script src="ml5/ConvlutionalNetworkVideo.js"></script>--->
+    <div id = "prequestion"><div><pre class="answer inlineblock"><b>Welcome to this fortune-telling ritual, guided by the wisdom of AI.</b>
+Follow the path as instructed to complete your personal future analysis. This is a passage—one that demands precision and focus.
+
+Adhere to the following rules without exception:
+<ul><li>Input commands exactly as prompted to proceed with your analysis. Any irrelevant input will disrupt the ritual and cause it to pause immediately.</li><li>The results are fleeting, subject to the ebb and flow of unseen forces. Future observations may subtly alter the course of what you see today.</li></ul>
+</pre>
+</div></div>
+    <div id="input"><div id = "inputicon" class = "inlineblock">></div>
+      <div class="placeholder" data-placeholder="my placeholder">
+        <textarea id = "inputbox" type="text" onkeyup="autoheight('inputbox')"></textarea>
+      </div>
+      <!---<div class = "answer"></div>--->
+      <script src='./js/tm/sketch.js'></script>
+    </div>
+  </body>
+  <script src="./js/sheet.js"></script>
+  <script>
+    var ProcessStatus=0;
+    var labelstatus=0, labelprocess, cameraprocess;
+    $("document").ready(function(){
+      addboolinput();
+    })
+    $("#inputbox").keydown(function (event){inputkeydown(event, event.target.value,sheet[ProcessStatus].type)});
+
+    function inputkeydown(event, value, type) {
+      if (event.keyCode == 13 && !event.shiftKey)
+      {
+          event.preventDefault();
+      }
+      if(event.keyCode == 13){
+            if (type == "bool"){
+              $('.boolinput').replaceWith('<pre class = "inlineblock">' + value +'</pre>')
+            }
+            if (value.toLowerCase() == 'yes' || value.toLowerCase() == 'ye' || value.toLowerCase() == 'y') value = 'y';
+            var answer = ""
+            var inputanswer = ""
+            switch (value){
+              case sheet[ProcessStatus-1].P: case "0":
+                type = sheet[ProcessStatus-1].type;
+                console.log("status", ProcessStatus,sheet[ProcessStatus-1].P)
+                switch(ProcessStatus){
+                  case 1: cameraopen(); break;
+                  case 2: 
+                    $("#input").css("visibility", "hidden");
+                    $("#prequestion").append("[BUILD]process building...<p id = 'camerawaiting'></p>");
+                    start(); 
+                    return;
+                  case 3:{
+                    openinput()
+                    return;
+                  }
+                  case 6: case 8: case 10: case 12: case 14:{
+                    $("#input").css("visibility", "hidden");
+                    getlabel(labelstatus); 
+                    break;
+                  }
+                }
+                
+                switch(sheet[ProcessStatus].type){
+                  case "bool":
+                    addboolinput();
+                    break;
+                  case "analysis": 
+                    answer = "<p id = 'labelstatus_"+labelstatus+"'>...</p>"
+                    $("#prequestion").append("<div><div class = 'question'>> "+sheet[ProcessStatus-1].P+"</div><pre class = 'answer'>"+answer+"</pre></div>");
+                    break;
+                  case "end": 
+                    $("#input").css("visibility", "hidden");
+                    answer = sheet[ProcessStatus].A;
+                    $("#prequestion").append("<div><div class = 'question'>> "+sheet[ProcessStatus-1].P+"</div><pre class = 'answer'>"+"</pre></div>");
+                    typeWriter(".answer", answer, function (){});
+                    ProcessStatus++
+                    break;
+                  default:
+                    answer = sheet[ProcessStatus].A;
+                    $("#input").css("visibility", "hidden");
+                    $(".placeholder").attr('data-placeholder', sheet[ProcessStatus].P); 
+                    $("#prequestion").append("<div><div class = 'question'>> "+sheet[ProcessStatus-1].P+"</div><pre class = 'answer'>"+"</pre></div>");
+                    typeWriter(".answer", answer, function (){
+                      $("#input").css("visibility", "visible"); 
+                      $("#inputbox").focus();
+                    });
+                    ProcessStatus++
+                    break;
+                }
+                break;
+              default: 
+                if (type == "bool"){ ProcessStatus--; addboolinput(); }
+                else {
+                  $("#input").css("visibility", "hidden");
+                  $("#prequestion").append("<div><div class = 'question'>> "+ value+"</div><pre class = 'answer'>"+"</pre></div>");
+                  typeWriter(".answer", sheet[ProcessStatus-1].A, function (){
+                    $("#input").css("visibility", "visible");
+                    $("#inputbox").focus();
+                  });
+                }
+              }
+          $("#inputbox").val("");
+          $('html, body').animate({scrollTop:$(document).height()}, 'slow');
+        };
+    }
+
+    function waitcamera(){
+        $("#camerawaiting").append("<div>[SUCCESS]The process was built successfully.</div>")
+        console.log("get camera end");
+        addboolinput()
+        //clearInterval(cameraprocess);
+    }
+    function waitlabel(){
+      console.log("get label end",labelstatus);
+      let labelanswer = ""
+      let count = 0, enteronce = false;
+      let labellist = [label[count].label];
+      const l = labelsheet[labelstatus];
+      switch(labelstatus){
+        case 0: 
+          while(labellist.length>0){
+            const len = labellist.length;
+            const l1 = labellist[len-1];
+            switch(l1){
+              case "Normal person": case "manager": case "Emperor": case "famous": 
+                if (!enteronce) {
+                  labelanswer += '\n<b>' + l.lab[0] +'_'+ l1.toUpperCase() +'</b>\n'+ l.sentecnes[0] + '\n';
+                  labelanswer += l[l1] +'\n';
+                }
+                labellist.pop();
+                enteronce = true;
+                break;
+              case "bachelor": case"master": case "doctorate":
+                if (!enteronce){
+                  count ++;
+                  labellist.push(label[count].label);
+                }
+                else{
+                  if (len <= 1)  labelanswer += '\n<b>' + l.lab[1] +'</b>\n' + l.sentecnes[1] + l[l1] +'\n';
+                  labellist.pop();
+                }
+                break;
+              default: 
+                labelanswer += '\nerror_' + l1;
+                labellist.pop();
+                break;
+            }
+          }
+          break;
+        case 1: case 2: case 3: case 4:
+          while(labellist.length>0){
+            const l1 = labellist[labellist.length-1];
+            const l = labelsheet[labelstatus];
+            switch(l1){
+              case "long married":case "Late married": case "rich": case "eligible": case "move abroad": case 'jobless': case 'prisoner': case 'car accident': case 'war': case 'sleep': case 'natural cause': case 'illness': case 'health problem': case 'shoted': case "Break up": 
+                labelanswer += '\n<b>' + l.lab[0] +'_' + l.smalllab[l.smalllabindex[l1]] +'</b>\n'+ l.sentecnes[0] + '\n';
+                labelanswer += l[l1] +'\n';
+                labellist.pop();
+                break;
+              case "Cheating":case "betray": case "married a lot": case "bankruptcy": case "nouveau riche":
+                if (!enteronce) {
+                  labelanswer += '\n<b>' + l.lab[0] +'_' + l.smalllab[l.smalllabindex[l1]] +'</b>\n'+ l.sentecnes[0] + '\n';
+                  labelanswer += l[l1] +'\n';
+                  labelanswer += '\n<b>' + l.lab[1]  +'</b>\n'+ l['warning'][l1] + '\n';
+                }
+                labellist.pop();
+                break;
+              case "normal":
+                if (labelstatus == 4){
+                  labelanswer += '\n<b>' + l.lab[0] +'_' + l.smalllab[l.smalllabindex[l1]] +'</b>\n'+ l.sentecnes[0] + '\n' + l[l1] +'\n';
+                  labellist.pop();
+                  break;
+                }
+              case "single": case "poor":
+                labelanswer += '\n<b>' + l.lab[0] +'_' + l.smalllab[l.smalllabindex[l1]] +'</b>\n' + l[l1] +'\n';
+                labellist.pop();
+                break;
+              default: 
+                labelanswer += '\nerror_' + l1;
+                labellist.pop();
+                break;
+            }
+          }
+          
+      }
+      //$("#labelstatus_"+labelstatus).append(labelanswer +'...')
+      typeWriter("#labelstatus_"+labelstatus, labelanswer +'...', function(){
+        $(".placeholder").attr('data-placeholder', sheet[ProcessStatus].P);
+        $("#input").css("visibility", "visible");
+        $("#inputbox").focus();
+        ProcessStatus ++;
+        labelstatus ++;
+      })
+    }
+
+    function addboolinput(){
+      $("#prequestion").append("<div><div class = 'question'>"+"</div><pre class = 'answer inlineblock'>"+"</pre><input class = 'boolinput' type='text' autofocus></div>");
+      $("#input").css("visibility", "hidden");
+      typeWriter(".answer", sheet[ProcessStatus].A, function (){
+        $("#prequestion").css("display","inline-block");
+        $(".boolinput").keydown(function (event){inputkeydown(event, this.value, "bool")});
+        $(".boolinput").attr('placeholder', sheet[ProcessStatus++].P);
+        $(".boolinput").focus();
+      });
+    }
+
+    function openinput(){
+      $("#input").css("visibility", "visible");
+      autoheight('inputbox');
+      $("#inputbox").focus();
+      $(".placeholder").attr('data-placeholder', sheet[ProcessStatus++].P);
+    }
+
+    function autoheight(element) {
+        var el = document.getElementById(element);
+        el.style.height = "1em";
+        el.style.height = (el.scrollHeight)+"px";
+    }
+
+    function typeWriter(el, answer, callback) {
+      if (answer.length>0) {
+        if (answer[0] == '<'){ 
+          $( el ).last().append(answer.slice(0,answer.search("</b>")+4));
+          setTimeout(typeWriter, 10, el, answer.slice(answer.search("</b>")+4,answer.length),callback);
+        }
+        else{
+          $( el ).last().append(answer.slice(0,1));
+          setTimeout(typeWriter, 10, el, answer.slice(1,answer.length),callback);
+        }
+      }
+      else callback();
+    }
+  </script>
+</html>

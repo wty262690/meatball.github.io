@@ -1,0 +1,80 @@
+body{
+    padding: 5vw;
+    background-color: black;
+    color:white;
+    overflow-x: hidden;
+}
+
+body, pre, div, input, input:focus, textarea, textarea:focus{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+}
+textarea{resize: none;}
+input, textarea{
+    width: 80vw;
+    background-color: black;
+    color: white;
+    border: 0px;
+    padding: 0px;
+    overflow:visible;
+    height: 1em;
+}
+#inputbox{
+    position: absolute;
+}
+.boolinput{
+    width: 3em;
+}
+
+input:focus, textarea:focus{
+    padding: 0px;
+    border:0px;
+    outline: none !important;
+}
+
+
+.placeholder
+{
+    width: 80vw;
+    position: relative;
+    inline-size: 20em;
+    height: 1em;
+    display: inline-block;
+}
+
+.placeholder::after
+{
+    width: 80vw;
+    position: absolute;
+    font-family: 'Courier New', Courier, monospace;
+    left: 0px;
+    top: 0px;
+    content: attr(data-placeholder);
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.answer{
+    margin-top: 0px;
+    margin-bottom: 1em;
+}
+
+p, a , pre {
+    margin:0px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.inlineblock {
+    display: inline;
+}
+
+b{
+    /*font-family: blod;*/
+    font-size:1.1em;
+}
+
+ul{
+    margin:0;
+    padding-left: 1.2em;
+}
